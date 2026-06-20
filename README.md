@@ -160,6 +160,26 @@ pnpm --filter @claudex/extension build      # → apps/extension/dist
 > 데이터가 바뀌면 popup 이 실행 시 원격에서 자동 갱신합니다(앱 재빌드 불필요). 번들 사본까지
 > 최신으로 맞추려면 `pnpm --filter @claudex/extension build` 를 다시 실행하세요.
 
+## 데스크탑 앱 (Tauri)
+
+`apps/desktop` 은 **웹 빌드(`apps/web/dist`)를 프론트엔드로 그대로 재사용**하는 Tauri v2 래퍼입니다.
+같은 `packages/core` 검색 + 번들된 데이터로 **오프라인 네이티브 앱**(`.app`/`.dmg`)이 됩니다.
+
+요구사항: **Rust** (`rustup`) + Xcode Command Line Tools (macOS).
+
+```bash
+# 개발 (창 띄우고 핫리로드)
+pnpm --filter @claudex/desktop app:dev
+
+# 배포 빌드 → .app + .dmg
+pnpm --filter @claudex/desktop app:build
+# 결과: apps/desktop/src-tauri/target/release/bundle/{macos,dmg}/
+```
+
+- 아이콘은 루트 로고에서 생성됨(`tauri icon`). 창 기본 980×720.
+- 첫 빌드는 Rust 의존성 컴파일로 수 분 소요, 이후는 캐시되어 빠릅니다.
+- 데이터는 빌드 시 번들됩니다. 최신으로 갱신하려면 다시 빌드하세요(추후 `loadDictionary` 원격 갱신을 붙일 수 있음).
+
 ## 라이선스 / 출처
 
 비공식 프로젝트입니다. 모든 명령어·스킬 데이터의 출처는 Anthropic의 Claude Code 공식 문서입니다.

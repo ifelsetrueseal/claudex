@@ -5,6 +5,10 @@ dist/
 *.log
 *.tsbuildinfo
 
+# Rust / Tauri build artifacts
+target/
+apps/desktop/src-tauri/gen/
+
 # Secrets — never commit (DeepL key etc.)
 .env
 .env.*

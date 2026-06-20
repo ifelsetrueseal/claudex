@@ -151,7 +151,7 @@ async function main(): Promise<void> {
 
   // Pull official Claude Code videos (RSS, no key). Keep previous on failure.
   let officialVideos = prev?.officialVideos ?? []
-  const fetchedVideos = await fetchOfficialVideos(8)
+  const fetchedVideos = await fetchOfficialVideos(20)
   if (fetchedVideos.length) officialVideos = fetchedVideos
   console.log(`official videos: ${officialVideos.length}`)
 

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-20T05:07:18.096Z",
+  "fetchedAt": "2026-06-20T05:12:00.678Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -1378,6 +1378,54 @@
       "title": "Claude Fable 5 beats Pokémon FireRed only using vision",
       "url": "https://www.youtube.com/watch?v=Ty_50J84fMY",
       "published": "2026-06-09T20:31:49+00:00"
+    },
+    {
+      "videoId": "6YPqoARpYuQ",
+      "title": "Claude Fable 5 plays Factorio",
+      "url": "https://www.youtube.com/watch?v=6YPqoARpYuQ",
+      "published": "2026-06-09T17:18:28+00:00"
+    },
+    {
+      "videoId": "5f5JYLZHdhw",
+      "title": "Claude Fable 5 simulates the solar system and predicts a solar eclipse",
+      "url": "https://www.youtube.com/watch?v=5f5JYLZHdhw",
+      "published": "2026-06-09T17:18:25+00:00"
+    },
+    {
+      "videoId": "xmP7bhigCWE",
+      "title": "Claude Fable 5 sets a fluid simulation to Beethoven",
+      "url": "https://www.youtube.com/watch?v=xmP7bhigCWE",
+      "published": "2026-06-09T17:18:23+00:00"
+    },
+    {
+      "videoId": "tpjJeH1pPws",
+      "title": "Claude Fable 5 designs a 3D-printable model in a Claude-built CAD editor",
+      "url": "https://www.youtube.com/watch?v=tpjJeH1pPws",
+      "published": "2026-06-09T17:18:20+00:00"
+    },
+    {
+      "videoId": "LrZHnKS_L6k",
+      "title": "Working Like a Lawyer with Claude",
+      "url": "https://www.youtube.com/watch?v=LrZHnKS_L6k",
+      "published": "2026-06-08T20:55:45+00:00"
+    },
+    {
+      "videoId": "Hth_tLaC2j8",
+      "title": "Reflecting on a year of Claude Code",
+      "url": "https://www.youtube.com/watch?v=Hth_tLaC2j8",
+      "published": "2026-06-08T16:31:07+00:00"
+    },
+    {
+      "videoId": "n4ZxEznNaIY",
+      "title": "How Anthropic uses Claude in GTM Engineering",
+      "url": "https://www.youtube.com/watch?v=n4ZxEznNaIY",
+      "published": "2026-06-05T17:32:49+00:00"
+    },
+    {
+      "videoId": "UAmKyyZ-b9E",
+      "title": "Introducing Cowork: Claude Code for the rest of your work",
+      "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
+      "published": "2026-01-12T20:02:22+00:00"
     }
   ]
 }

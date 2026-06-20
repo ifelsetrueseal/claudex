@@ -4,6 +4,11 @@ on:
   # Deploy on every push to main…
   push:
     branches: [main]
+  # …after the daily `sync` run (its bot commit uses GITHUB_TOKEN, which does
+  # NOT trigger the push event above, so the site would otherwise go stale)…
+  workflow_run:
+    workflows: ["sync"]
+    types: [completed]
   # …and allow manual runs.
   workflow_dispatch:
 
@@ -21,6 +26,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # When triggered by the sync run, only deploy if that run succeeded.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
 

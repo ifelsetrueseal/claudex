@@ -1,0 +1,26 @@
+{
+  "name": "claudex",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "sync": "tsx scripts/build-index.ts",
+    "dev": "pnpm --filter @claudex/web dev",
+    "build": "turbo run build",
+    "build:web": "pnpm --filter @claudex/web build",
+    "typecheck": "turbo run typecheck"
+  },
+  "dependencies": {
+    "@claudex/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}

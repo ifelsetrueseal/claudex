@@ -1,0 +1,41 @@
+name: sync
+
+on:
+  schedule:
+    # Daily at 00:00 UTC (09:00 KST)
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Collect + build index
+        run: pnpm sync
+
+      - name: Commit if changed
+        run: |
+          FILES="packages/core/data/entries.json apps/web/public/data/entries.json"
+          if [ -n "$(git status --porcelain $FILES)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add $FILES
+            git commit -m "chore: sync entries ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No changes to commit."
+          fi

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>claudex — Claude Code 명령어 &amp; 스킬 도감</title>
+    <meta
+      name="description"
+      content="Claude Code 빌트인 슬래시 명령어와 번들 스킬을 매일 자동 수집해 색인하는 도감."
+    />
+    <style>
+      :root {
+        --bg: #0d0e11;
+        --panel: #14161b;
+        --panel-2: #191c22;
+        --border: #262a33;
+        --text: #d7dae0;
+        --muted: #8a90a0;
+        --faint: #5c6270;
+        --accent: #d97757; /* terracotta */
+        --skill: #34d3c0; /* teal */
+        --req: #e3b341; /* gold */
+        --opt: #5db2ff; /* cyan/blue */
+        --mark: #d97757;
+        --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo,
+          Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        color-scheme: dark;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 15px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* very faint scanline texture */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 50;
+        background: repeating-linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.014) 0px,
+          rgba(255, 255, 255, 0.014) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+      }
+
+      .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+
+      header .title {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin: 0;
+      }
+      .title .slash {
+        color: var(--accent);
+      }
+      .cursor {
+        display: inline-block;
+        width: 0.6ch;
+        height: 1.1em;
+        margin-left: 2px;
+        vertical-align: -0.15em;
+        background: var(--accent);
+        animation: blink 1.1s steps(1) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .tagline {
+        color: var(--muted);
+        margin: 8px 0 0;
+        font-size: 14px;
+      }
+      .meta {
+        color: var(--faint);
+        font-size: 12.5px;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 16px;
+      }
+      .meta a {
+        color: var(--faint);
+        text-decoration: underline dotted;
+      }
+      .meta a:hover {
+        color: var(--muted);
+      }
+      .meta strong {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .controls {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: linear-gradient(var(--bg) 78%, transparent);
+        padding: 22px 0 14px;
+        margin-top: 22px;
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0 14px;
+      }
+      .search:focus-within {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.15);
+      }
+      .search .prompt {
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .search input {
+        flex: 1;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        color: var(--text);
+        font-family: inherit;
+        font-size: 15px;
+        padding: 13px 0;
+      }
+      .search input::placeholder {
+        color: var(--faint);
+      }
+      .search kbd {
+        color: var(--faint);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 1px 6px;
+        font-size: 11px;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .tab {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-family: inherit;
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .tab:hover {
+        color: var(--text);
+        border-color: var(--faint);
+      }
+      .tab[aria-selected="true"] {
+        color: var(--bg);
+        background: var(--accent);
+        border-color: var(--accent);
+        font-weight: 600;
+      }
+      .tab:focus-visible {
+        outline: 2px solid var(--opt);
+        outline-offset: 2px;
+      }
+      .count {
+        margin-left: auto;
+        color: var(--faint);
+        font-size: 12.5px;
+      }
+      .count b {
+        color: var(--text);
+      }
+
+      .results {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .entry {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+      }
+      .entry.skill {
+        border-left-color: var(--skill);
+      }
+      .entry.command {
+        border-left-color: var(--accent);
+      }
+
+      .entry-head {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .name {
+        font-size: 16px;
+        font-weight: 600;
+        word-break: break-word;
+      }
+      .name .slash {
+        color: var(--accent);
+      }
+      .name .arg-req {
+        color: var(--req);
+      }
+      .name .arg-opt {
+        color: var(--opt);
+      }
+
+      .badge {
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 2px 7px;
+        border-radius: 4px;
+      }
+      .badge.skill {
+        color: var(--bg);
+        background: var(--skill);
+      }
+      .badge.cmd {
+        color: var(--muted);
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+      }
+
+      .desc {
+        color: var(--muted);
+        margin: 8px 0 0;
+        font-size: 13.5px;
+      }
+      .desc code {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 0 4px;
+        font-size: 12.5px;
+        color: var(--text);
+      }
+      .desc a {
+        color: var(--opt);
+        text-decoration: underline dotted;
+      }
+      .desc a:hover {
+        text-decoration: underline;
+      }
+
+      .aliases {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--faint);
+      }
+      .aliases code {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 0 5px;
+        color: var(--muted);
+      }
+
+      mark {
+        background: rgba(217, 119, 87, 0.28);
+        color: inherit;
+        border-radius: 2px;
+        padding: 0 1px;
+      }
+
+      .empty,
+      .status {
+        color: var(--faint);
+        text-align: center;
+        padding: 50px 0;
+        font-size: 14px;
+      }
+
+      footer {
+        margin-top: 40px;
+        color: var(--faint);
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.7;
+      }
+      footer a {
+        color: var(--faint);
+        text-decoration: underline dotted;
+      }
+
+      @media (max-width: 560px) {
+        .wrap {
+          padding: 28px 14px 60px;
+        }
+        header .title {
+          font-size: 23px;
+        }
+        .search kbd {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cursor {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1 class="title"><span class="slash">/</span>claudex<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="tagline">
+          Claude Code 빌트인 명령어와 번들 스킬 도감 · updated daily
+        </p>
+        <div class="meta" id="meta"></div>
+      </header>
+
+      <div class="controls">
+        <label class="search">
+          <span class="prompt" aria-hidden="true">&gt;</span>
+          <input
+            id="q"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="명령어·스킬 검색…  (예: clear, review, model)"
+            aria-label="검색"
+          />
+          <kbd>/</kbd>
+        </label>
+        <div class="tabs" role="tablist" aria-label="필터">
+          <button class="tab" role="tab" data-filter="all" aria-selected="true">전체</button>
+          <button class="tab" role="tab" data-filter="command" aria-selected="false">명령어</button>
+          <button class="tab" role="tab" data-filter="skill" aria-selected="false">스킬</button>
+          <span class="count" id="count"></span>
+        </div>
+      </div>
+
+      <main id="results" class="results" aria-live="polite">
+        <p class="status">불러오는 중…</p>
+      </main>
+
+      <footer>
+        claudex는 비공식 도구입니다. 데이터 출처는
+        <a href="https://code.claude.com/docs/en/commands" target="_blank" rel="noopener noreferrer">Anthropic 공식 문서</a>.
+        <br />
+        매일 자동 수집되어 색인됩니다.
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

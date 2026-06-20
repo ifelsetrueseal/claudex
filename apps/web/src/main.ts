@@ -23,6 +23,7 @@ const I18N = {
     source: 'source:',
     aliases: 'aliases:',
     newBadge: 'NEW',
+    copy: 'Copy command',
     loadError: 'Failed to load data. Did you run <code>pnpm sync</code> first?',
     footerLead: 'claudex is an unofficial tool. Data from',
     footerSource: 'Anthropic official docs',
@@ -41,6 +42,7 @@ const I18N = {
     source: '출처:',
     aliases: '별칭:',
     newBadge: '신규',
+    copy: '명령어 복사',
     loadError: '데이터를 불러오지 못했습니다. <code>pnpm sync</code> 를 먼저 실행했나요?',
     footerLead: 'claudex는 비공식 도구입니다. 데이터 출처는',
     footerSource: 'Anthropic 공식 문서',
@@ -178,6 +180,7 @@ function renderEntry(entry: Entry, words: string[]): string {
     <div class="entry-head">
       <span class="name">${renderName(entry.name, words)}${renderArgs(entry.args)}</span>
       ${newBadge}${badge}${ver}
+      <button class="copy" type="button" data-cmd="${esc(entry.name)}" title="${esc(t().copy)}" aria-label="${esc(t().copy)}: ${esc(entry.name)}">⧉</button>
     </div>
     ${desc ? `<p class="desc">${renderDesc(desc, words)}</p>` : ''}
     ${aliases}
@@ -265,6 +268,45 @@ function setLang(next: Lang): void {
 // Boot
 // ---------------------------------------------------------------------------
 
+async function copyText(s: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(s)
+    return true
+  } catch {
+    // Fallback for non-secure contexts / older browsers.
+    try {
+      const ta = document.createElement('textarea')
+      ta.value = s
+      ta.style.position = 'fixed'
+      ta.style.opacity = '0'
+      document.body.appendChild(ta)
+      ta.select()
+      const ok = document.execCommand('copy')
+      ta.remove()
+      return ok
+    } catch {
+      return false
+    }
+  }
+}
+
+/** Delegated handler so copy buttons survive result re-renders. */
+function onResultsClick(e: MouseEvent): void {
+  const btn = (e.target as HTMLElement).closest('.copy') as HTMLButtonElement | null
+  if (!btn) return
+  const cmd = btn.dataset.cmd ?? ''
+  void copyText(cmd).then((ok) => {
+    if (!ok) return
+    const original = btn.textContent
+    btn.textContent = '✓'
+    btn.classList.add('ok')
+    setTimeout(() => {
+      btn.textContent = original
+      btn.classList.remove('ok')
+    }, 1200)
+  })
+}
+
 function debounce<T extends (...a: never[]) => void>(fn: T, ms: number): T {
   let timer: ReturnType<typeof setTimeout>
   return ((...args: never[]) => {
@@ -292,6 +334,7 @@ async function boot(): Promise<void> {
   applyLang()
 
   els.q.addEventListener('input', debounce(update, 80))
+  els.results.addEventListener('click', onResultsClick)
   for (const tab of els.tabs) {
     tab.addEventListener('click', () => setFilter((tab.dataset.filter as Filter) ?? 'all'))
   }

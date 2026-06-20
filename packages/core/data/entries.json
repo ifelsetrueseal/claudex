@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-20T04:50:37.508Z",
+  "fetchedAt": "2026-06-20T05:07:18.096Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -1344,16 +1344,40 @@
       "published": "2026-06-18T16:54:52+00:00"
     },
     {
-      "videoId": "Hth_tLaC2j8",
-      "title": "Reflecting on a year of Claude Code",
-      "url": "https://www.youtube.com/watch?v=Hth_tLaC2j8",
-      "published": "2026-06-08T16:31:07+00:00"
+      "videoId": "H3XQeGNia8o",
+      "title": "The Briefing: Financial Services",
+      "url": "https://www.youtube.com/watch?v=H3XQeGNia8o",
+      "published": "2026-06-16T20:42:02+00:00"
     },
     {
-      "videoId": "UAmKyyZ-b9E",
-      "title": "Introducing Cowork: Claude Code for the rest of your work",
-      "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-      "published": "2026-01-12T20:02:22+00:00"
+      "videoId": "tRsQsTMvPNg",
+      "title": "Claude FM 🎵 music for thinking and building",
+      "url": "https://www.youtube.com/watch?v=tRsQsTMvPNg",
+      "published": "2026-06-12T18:12:55+00:00"
+    },
+    {
+      "videoId": "2GbJl_-3bMs",
+      "title": "Claude FM 🎵 music for thinking and building",
+      "url": "https://www.youtube.com/watch?v=2GbJl_-3bMs",
+      "published": "2026-06-12T18:12:02+00:00"
+    },
+    {
+      "videoId": "N4efO8viXXo",
+      "title": "Code with Claude Tokyo 2026: Opening Keynote",
+      "url": "https://www.youtube.com/watch?v=N4efO8viXXo",
+      "published": "2026-06-12T01:13:08+00:00"
+    },
+    {
+      "videoId": "8NVZMRyCrn4",
+      "title": "The Problem Solvers | Michael Truell at Cursor",
+      "url": "https://www.youtube.com/watch?v=8NVZMRyCrn4",
+      "published": "2026-06-10T16:00:31+00:00"
+    },
+    {
+      "videoId": "Ty_50J84fMY",
+      "title": "Claude Fable 5 beats Pokémon FireRed only using vision",
+      "url": "https://www.youtube.com/watch?v=Ty_50J84fMY",
+      "published": "2026-06-09T20:31:49+00:00"
     }
   ]
 }

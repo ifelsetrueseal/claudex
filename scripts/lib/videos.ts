@@ -3,10 +3,14 @@
 import type { OfficialVideo } from '@claudex/core'
 import { fetchText } from './markdown'
 
-// @claude (product) + @anthropic-ai (announcements/research)
-const CHANNEL_IDS = ['UCV03SRZXJEz-hchIAogeJOg', 'UCrDwWp7EBBv4NwvScIpBDOA']
+// @claude is all Claude-product content → show everything. @anthropic-ai mixes in
+// research/announcements → keep a light relevance filter there.
+const CHANNELS = [
+  { id: 'UCV03SRZXJEz-hchIAogeJOg', filterRelevant: false }, // @claude
+  { id: 'UCrDwWp7EBBv4NwvScIpBDOA', filterRelevant: true }, // @anthropic-ai
+]
 
-// Keep only Claude Code-relevant titles (the feeds also carry unrelated content).
+// Relevance filter (only applied where filterRelevant is true).
 const RELEVANT = /claude code|cowork|\bmcp\b|subagent|slash command|agent skill/i
 
 const feedUrl = (channelId: string) =>
@@ -24,27 +28,28 @@ function decodeEntities(s: string): string {
     )
 }
 
-function parseFeed(xml: string): OfficialVideo[] {
+function parseFeed(xml: string, filterRelevant: boolean): OfficialVideo[] {
   const out: OfficialVideo[] = []
   for (const m of xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
     const e = m[1]
     const videoId = /<yt:videoId>([^<]+)<\/yt:videoId>/.exec(e)?.[1]
     const title = decodeEntities(/<title>([^<]*)<\/title>/.exec(e)?.[1] ?? '').trim()
     const published = /<published>([^<]+)<\/published>/.exec(e)?.[1] ?? ''
-    if (!videoId || !title || !RELEVANT.test(title)) continue
+    if (!videoId || !title) continue
+    if (filterRelevant && !RELEVANT.test(title)) continue
     out.push({ videoId, title, url: `https://www.youtube.com/watch?v=${videoId}`, published })
   }
   return out
 }
 
 /** Return the most recent relevant videos across channels, deduped, newest first. */
-export async function fetchOfficialVideos(limit = 8): Promise<OfficialVideo[]> {
+export async function fetchOfficialVideos(limit = 20): Promise<OfficialVideo[]> {
   const all: OfficialVideo[] = []
-  for (const id of CHANNEL_IDS) {
+  for (const ch of CHANNELS) {
     try {
-      all.push(...parseFeed(await fetchText(feedUrl(id))))
+      all.push(...parseFeed(await fetchText(feedUrl(ch.id)), ch.filterRelevant))
     } catch (err) {
-      console.warn(`video feed ${id} failed: ${(err as Error).message}`)
+      console.warn(`video feed ${ch.id} failed: ${(err as Error).message}`)
     }
   }
   const seen = new Set<string>()

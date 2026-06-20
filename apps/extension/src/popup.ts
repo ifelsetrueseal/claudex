@@ -2,7 +2,7 @@ import { loadDictionary, search } from '@claudex/core'
 import type { Dictionary, Entry, EntryType } from '@claudex/core'
 import bundledData from '@claudex/core/data/entries.json'
 
-type Filter = 'all' | EntryType | 'new'
+type Filter = 'all' | EntryType | 'new' | 'videos'
 type Lang = 'en' | 'ko'
 
 const bundled = bundledData as unknown as Dictionary
@@ -18,6 +18,7 @@ const I18N = {
     command: 'Commands',
     skill: 'Skills',
     newBadge: 'NEW',
+    videos: 'Videos',
     aliases: 'aliases:',
     empty: 'No results.',
     copy: 'Copy command',
@@ -29,6 +30,7 @@ const I18N = {
     command: '명령어',
     skill: '스킬',
     newBadge: '신규',
+    videos: '영상',
     aliases: '별칭:',
     empty: '결과 없음.',
     copy: '명령어 복사',
@@ -163,7 +165,27 @@ function renderEntry(e: Entry, words: string[]): string {
 }
 
 // --- flow ---
+function renderVideosView(): void {
+  const vids = dict.officialVideos ?? []
+  els.count.innerHTML = `<b>${vids.length}</b>`
+  els.list.innerHTML = vids.length
+    ? `<div class="vgrid">${vids
+        .map(
+          (v) =>
+            `<a class="vcard" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">
+              <img loading="lazy" src="https://i.ytimg.com/vi/${esc(v.videoId)}/mqdefault.jpg" alt="" />
+              <div class="vt">${esc(v.title)}</div>
+            </a>`,
+        )
+        .join('')}</div>`
+    : `<p class="empty">${esc(t().empty)}</p>`
+}
+
 function update(): void {
+  if (filter === 'videos') {
+    renderVideosView()
+    return
+  }
   const query = els.q.value.trim()
   const words = query.toLowerCase().split(/\s+/).filter(Boolean)
   let rows = search(dict.entries, query).map((r) => r.entry)
@@ -180,12 +202,17 @@ function applyLang(): void {
   document.documentElement.lang = lang
   els.q.placeholder = t().search
   const newCount = dict.entries.filter(isNew).length
+  const videoCount = dict.officialVideos?.length ?? 0
   if (filter === 'new' && newCount === 0) filter = 'all'
+  if (filter === 'videos' && videoCount === 0) filter = 'all'
   for (const tab of els.tabs) {
     const key = (tab.dataset.filter as Filter) ?? 'all'
     if (key === 'new') {
       tab.textContent = `${t().newBadge} (${newCount})`
       tab.hidden = newCount === 0
+    } else if (key === 'videos') {
+      tab.textContent = t().videos
+      tab.hidden = videoCount === 0
     } else if (key === 'all') {
       tab.textContent = t().all
     } else {

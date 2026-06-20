@@ -258,7 +258,7 @@ function renderVideosView(): void {
   const vids = dict?.officialVideos ?? []
   els.count.innerHTML = `<b>${vids.length}</b>`
   els.videos.innerHTML = vids.length
-    ? `<div class="video-row">${vids
+    ? `<div class="video-grid">${vids
         .map(
           (v) =>
             `<a class="vid" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">
@@ -337,63 +337,6 @@ async function copyText(s: string): Promise<boolean> {
   }
 }
 
-/** Make the video strip scroll horizontally with the mouse wheel and by dragging,
- *  with no visible scrollbar. Listeners live on the container so they survive
- *  re-renders; they operate on the inner .video-row at event time. */
-function setupVideoScroll(): void {
-  const row = () => els.videos.querySelector('.video-row') as HTMLElement | null
-
-  // Vertical wheel → horizontal scroll.
-  els.videos.addEventListener(
-    'wheel',
-    (e) => {
-      const r = row()
-      if (!r || Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return
-      r.scrollLeft += e.deltaY
-      e.preventDefault()
-    },
-    { passive: false },
-  )
-
-  // Drag to scroll; suppress the click that follows a real drag.
-  let down = false
-  let moved = 0
-  let startX = 0
-  let startLeft = 0
-  els.videos.addEventListener('pointerdown', (e) => {
-    const r = row()
-    if (!r) return
-    down = true
-    moved = 0
-    startX = e.clientX
-    startLeft = r.scrollLeft
-    els.videos.classList.add('dragging')
-  })
-  els.videos.addEventListener('pointermove', (e) => {
-    const r = row()
-    if (!down || !r) return
-    const dx = e.clientX - startX
-    moved = Math.max(moved, Math.abs(dx))
-    r.scrollLeft = startLeft - dx
-  })
-  const end = () => {
-    down = false
-    els.videos.classList.remove('dragging')
-  }
-  els.videos.addEventListener('pointerup', end)
-  els.videos.addEventListener('pointerleave', end)
-  els.videos.addEventListener(
-    'click',
-    (e) => {
-      if (moved > 5) {
-        e.preventDefault()
-        e.stopPropagation()
-      }
-    },
-    true,
-  )
-}
-
 /** Delegated handler so copy buttons survive result re-renders. */
 function onResultsClick(e: MouseEvent): void {
   const btn = (e.target as HTMLElement).closest('.copy') as HTMLButtonElement | null
@@ -439,7 +382,6 @@ async function boot(): Promise<void> {
 
   els.q.addEventListener('input', debounce(update, 80))
   els.results.addEventListener('click', onResultsClick)
-  setupVideoScroll()
   for (const tab of els.tabs) {
     tab.addEventListener('click', () => setFilter((tab.dataset.filter as Filter) ?? 'all'))
   }

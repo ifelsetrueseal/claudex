@@ -30,6 +30,11 @@
         box-sizing: border-box;
       }
 
+      /* Ensure the hidden attribute always wins over display rules. */
+      [hidden] {
+        display: none !important;
+      }
+
       html {
         color-scheme: dark;
       }
@@ -419,46 +424,36 @@
       }
 
       .videos {
-        margin-top: 40px;
+        margin-top: 18px;
       }
-      .videos h2 {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--muted);
-        margin: 0 0 12px;
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
       }
-      .video-row {
-        display: flex;
-        gap: 12px;
-        overflow-x: auto;
-        padding-bottom: 6px;
-        cursor: grab;
-        user-select: none;
-        scrollbar-width: none; /* Firefox: hide scrollbar */
-        -ms-overflow-style: none; /* old Edge */
+      @media (max-width: 640px) {
+        .video-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
-      .video-row::-webkit-scrollbar {
-        display: none; /* Chrome/Safari: hide scrollbar */
-      }
-      .videos.dragging .video-row {
-        cursor: grabbing;
-      }
-      .vid img {
-        -webkit-user-drag: none;
+      @media (max-width: 400px) {
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .vid {
-        flex: 0 0 200px;
         text-decoration: none;
         color: var(--text);
       }
       .vid img {
-        width: 200px;
+        width: 100%;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         display: block;
         border-radius: 8px;
         border: 1px solid var(--border);
         background: var(--panel-2);
+        -webkit-user-drag: none;
       }
       .vid .vt {
         font-size: 12.5px;

@@ -1,7 +1,7 @@
 import { search } from '@claudex/core'
 import type { Dictionary, Entry, EntryType } from '@claudex/core'
 
-type Filter = 'all' | EntryType | 'new'
+type Filter = 'all' | EntryType | 'new' | 'videos'
 type Lang = 'en' | 'ko'
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/entries.json`
@@ -24,6 +24,7 @@ const I18N = {
     aliases: 'aliases:',
     newBadge: 'NEW',
     copy: 'Copy command',
+    videos: 'Videos',
     officialVideos: 'Official Claude Code videos',
     loadError: 'Failed to load data. Did you run <code>pnpm sync</code> first?',
     footerLead: 'claudex is an unofficial tool. Data from',
@@ -44,6 +45,7 @@ const I18N = {
     aliases: '별칭:',
     newBadge: '신규',
     copy: '명령어 복사',
+    videos: '영상',
     officialVideos: '공식 Claude Code 영상',
     loadError: '데이터를 불러오지 못했습니다. <code>pnpm sync</code> 를 먼저 실행했나요?',
     footerLead: 'claudex는 비공식 도구입니다. 데이터 출처는',
@@ -205,6 +207,14 @@ function renderEntry(entry: Entry, words: string[]): string {
 // ---------------------------------------------------------------------------
 
 function update(): void {
+  // Videos live in their own view — never mixed into command search.
+  if (filter === 'videos') {
+    renderVideosView()
+    return
+  }
+  els.videos.hidden = true
+  els.results.hidden = false
+
   const query = els.q.value.trim()
   const words = query.toLowerCase().split(/\s+/).filter(Boolean)
 
@@ -241,24 +251,23 @@ function renderMeta(): void {
     <span>${esc(t().source)} ${sources}</span>`
 }
 
-function renderVideos(): void {
-  const vids = dict?.officialVideos ?? []
-  if (!vids.length) {
-    els.videos.hidden = true
-    els.videos.innerHTML = ''
-    return
-  }
+/** Render the videos view (only shown under the 영상 tab; never in search). */
+function renderVideosView(): void {
+  els.results.hidden = true
   els.videos.hidden = false
-  els.videos.innerHTML = `<h2>📺 ${esc(t().officialVideos)}</h2>
-    <div class="video-row">${vids
-      .map(
-        (v) =>
-          `<a class="vid" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">
-            <img loading="lazy" src="https://i.ytimg.com/vi/${esc(v.videoId)}/mqdefault.jpg" alt="" />
-            <div class="vt">${esc(v.title)}</div>
-          </a>`,
-      )
-      .join('')}</div>`
+  const vids = dict?.officialVideos ?? []
+  els.count.innerHTML = `<b>${vids.length}</b>`
+  els.videos.innerHTML = vids.length
+    ? `<div class="video-row">${vids
+        .map(
+          (v) =>
+            `<a class="vid" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">
+              <img loading="lazy" src="https://i.ytimg.com/vi/${esc(v.videoId)}/mqdefault.jpg" alt="" />
+              <div class="vt">${esc(v.title)}</div>
+            </a>`,
+        )
+        .join('')}</div>`
+    : `<p class="empty">${esc(t().empty)}</p>`
 }
 
 /** Apply all language-dependent static text and re-render. */
@@ -267,15 +276,20 @@ function applyLang(): void {
   els.tagline.textContent = t().tagline
   els.q.placeholder = t().search
 
-  // The NEW tab only appears when new entries exist; reset away from it if empty.
+  // NEW and 영상 tabs only appear when they have content; reset away if empty.
   const newCount = all.filter(isNew).length
+  const videoCount = dict?.officialVideos?.length ?? 0
   if (filter === 'new' && newCount === 0) filter = 'all'
+  if (filter === 'videos' && videoCount === 0) filter = 'all'
 
   for (const tab of els.tabs) {
     const key = (tab.dataset.filter as Filter) ?? 'all'
     if (key === 'new') {
       tab.textContent = `${t().newBadge} (${newCount})`
       tab.hidden = newCount === 0
+    } else if (key === 'videos') {
+      tab.textContent = t().videos
+      tab.hidden = videoCount === 0
     } else if (key === 'all') {
       tab.textContent = t().all
     } else {
@@ -288,7 +302,6 @@ function applyLang(): void {
   }
   els.footer.innerHTML = `${esc(t().footerLead)} <a href="${COMMANDS_DOC}" target="_blank" rel="noopener noreferrer">${esc(t().footerSource)}</a>.<br />${esc(t().footerDaily)}`
   renderMeta()
-  renderVideos()
   update()
 }
 

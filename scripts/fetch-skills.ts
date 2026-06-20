@@ -28,6 +28,8 @@ function makeSkill(name: string, description: string): Entry {
     descriptionKo: '',
     aliases: [],
     searchText: toSearchText(description),
+    firstSeen: '',
+    minVersion: '',
   }
 }
 

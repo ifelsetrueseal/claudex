@@ -3,6 +3,7 @@ import type { Entry } from '@claudex/core'
 import {
   cleanDescription,
   extractAliases,
+  extractMinVersion,
   fetchText,
   parseTableRows,
   toSearchText,
@@ -35,6 +36,8 @@ export async function fetchCommands(): Promise<Entry[]> {
       descriptionKo: '',
       aliases: extractAliases(description),
       searchText: toSearchText(description),
+      firstSeen: '',
+      minVersion: extractMinVersion(row.description),
     })
   }
 

@@ -18,11 +18,20 @@ export interface Entry {
   aliases: string[]
   /** Plain text (markdown/links stripped) used for searching. */
   searchText: string
+  /** Date (YYYY-MM-DD) this entry first appeared in our index. Drives the NEW
+   *  badge. Carried forward across syncs; set to the run date when first seen. */
+  firstSeen: string
+  /** Claude Code version this entry was introduced in (e.g. "2.1.169"), parsed
+   *  from a leading `min-version` marker in the docs. Empty when not stated. */
+  minVersion: string
 }
 
 export interface Dictionary {
   /** ISO timestamp of when the index was built. */
   fetchedAt: string
+  /** Date (YYYY-MM-DD) firstSeen tracking began. Entries with firstSeen newer
+   *  than this are genuinely new (the initial batch all equals this date). */
+  baselineAt: string
   /** Source document URLs the entries were collected from. */
   sources: string[]
   /** Number of entries. */

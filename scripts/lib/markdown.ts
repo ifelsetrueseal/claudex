@@ -37,6 +37,17 @@ export function stripMdxComments(s: string): string {
   return s.replace(/\{\/\*[\s\S]*?\*\/\}/g, '')
 }
 
+/**
+ * Extract the version a command was introduced in, from a LEADING min-version
+ * marker (e.g. a cell starting with the 2.1.169 marker). Markers that appear
+ * mid-description mark a specific argument/feature, not the command itself, so
+ * only the leading one is treated as the command's introduction version.
+ */
+export function extractMinVersion(rawDescription: string): string {
+  const m = /^\s*\{\/\*\s*min-version:\s*([0-9.]+)\s*\*\/\}/.exec(rawDescription)
+  return m ? m[1] : ''
+}
+
 /** Turn root-relative doc links (`](/en/foo)`) into absolute URLs. */
 export function absolutizeLinks(md: string): string {
   return md.replace(/\]\(\/(?!\/)/g, `](${DOCS_BASE}/`)

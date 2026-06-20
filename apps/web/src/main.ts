@@ -1,12 +1,13 @@
 import { search } from '@claudex/core'
 import type { Dictionary, Entry, EntryType } from '@claudex/core'
 
-type Filter = 'all' | EntryType
+type Filter = 'all' | EntryType | 'new'
 type Lang = 'en' | 'ko'
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/entries.json`
 const COMMANDS_DOC = 'https://code.claude.com/docs/en/commands'
 const LANG_KEY = 'claudex-lang'
+const NEW_WINDOW_DAYS = 21 // how long an entry keeps its NEW badge after first seen
 
 const I18N = {
   en: {
@@ -21,6 +22,7 @@ const I18N = {
     updated: (d: string) => `updated ${d}`,
     source: 'source:',
     aliases: 'aliases:',
+    newBadge: 'NEW',
     loadError: 'Failed to load data. Did you run <code>pnpm sync</code> first?',
     footerLead: 'claudex is an unofficial tool. Data from',
     footerSource: 'Anthropic official docs',
@@ -38,6 +40,7 @@ const I18N = {
     updated: (d: string) => `업데이트 ${d}`,
     source: '출처:',
     aliases: '별칭:',
+    newBadge: '신규',
     loadError: '데이터를 불러오지 못했습니다. <code>pnpm sync</code> 를 먼저 실행했나요?',
     footerLead: 'claudex는 비공식 도구입니다. 데이터 출처는',
     footerSource: 'Anthropic 공식 문서',
@@ -150,20 +153,31 @@ function renderDesc(md: string, words: string[]): string {
   return out
 }
 
+/** New = first seen after tracking began, and still within the badge window. */
+function isNew(entry: Entry): boolean {
+  if (!dict?.baselineAt || !entry.firstSeen) return false
+  if (entry.firstSeen <= dict.baselineAt) return false
+  const ageDays = (Date.now() - Date.parse(entry.firstSeen)) / 86_400_000
+  return ageDays <= NEW_WINDOW_DAYS
+}
+
 function renderEntry(entry: Entry, words: string[]): string {
+  const fresh = isNew(entry)
   const badge =
     entry.type === 'skill'
       ? '<span class="badge skill">SKILL</span>'
       : '<span class="badge cmd">CMD</span>'
+  const newBadge = fresh ? `<span class="badge new">${esc(t().newBadge)}</span>` : ''
+  const ver = entry.minVersion ? `<span class="ver">v${esc(entry.minVersion)}</span>` : ''
   // Show Korean description when selected and available; fall back to English.
   const desc = lang === 'ko' && entry.descriptionKo ? entry.descriptionKo : entry.description
   const aliases = entry.aliases.length
     ? `<div class="aliases">${esc(t().aliases)} ${entry.aliases.map((a) => `<code>${esc(a)}</code>`).join(' ')}</div>`
     : ''
-  return `<article class="entry ${entry.type}">
+  return `<article class="entry ${entry.type}${fresh ? ' is-new' : ''}">
     <div class="entry-head">
       <span class="name">${renderName(entry.name, words)}${renderArgs(entry.args)}</span>
-      ${badge}
+      ${newBadge}${badge}${ver}
     </div>
     ${desc ? `<p class="desc">${renderDesc(desc, words)}</p>` : ''}
     ${aliases}
@@ -179,7 +193,8 @@ function update(): void {
   const words = query.toLowerCase().split(/\s+/).filter(Boolean)
 
   let scored = search(all, query).map((r) => r.entry)
-  if (filter !== 'all') scored = scored.filter((e) => e.type === filter)
+  if (filter === 'new') scored = scored.filter(isNew)
+  else if (filter !== 'all') scored = scored.filter((e) => e.type === filter)
 
   els.count.innerHTML = `<b>${scored.length}</b> / ${all.length}`
   els.results.innerHTML = scored.length
@@ -215,9 +230,22 @@ function applyLang(): void {
   document.documentElement.lang = lang
   els.tagline.textContent = t().tagline
   els.q.placeholder = t().search
+
+  // The NEW tab only appears when new entries exist; reset away from it if empty.
+  const newCount = all.filter(isNew).length
+  if (filter === 'new' && newCount === 0) filter = 'all'
+
   for (const tab of els.tabs) {
     const key = (tab.dataset.filter as Filter) ?? 'all'
-    tab.textContent = key === 'all' ? t().all : t()[key]
+    if (key === 'new') {
+      tab.textContent = `${t().newBadge} (${newCount})`
+      tab.hidden = newCount === 0
+    } else if (key === 'all') {
+      tab.textContent = t().all
+    } else {
+      tab.textContent = t()[key]
+    }
+    tab.setAttribute('aria-selected', String(key === filter))
   }
   for (const b of els.langs) {
     b.setAttribute('aria-pressed', String(b.dataset.lang === lang))

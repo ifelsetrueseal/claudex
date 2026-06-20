@@ -224,6 +224,17 @@
         border-color: var(--accent);
         font-weight: 600;
       }
+      /* NEW filter tab: stands out, shown only when new entries exist. */
+      .tab-new {
+        color: var(--accent);
+        border-color: rgba(217, 119, 87, 0.5);
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+      .tab-new[aria-selected="true"] {
+        color: var(--bg);
+        background: var(--accent);
+      }
       .tab:focus-visible {
         outline: 2px solid var(--opt);
         outline-offset: 2px;
@@ -256,6 +267,12 @@
       }
       .entry.command {
         border-left-color: var(--accent);
+      }
+      /* Newly added entries get a stronger, glowing accent. */
+      .entry.is-new {
+        border-color: var(--accent);
+        border-left-color: var(--accent);
+        box-shadow: 0 0 0 1px rgba(217, 119, 87, 0.25), 0 0 18px -6px rgba(217, 119, 87, 0.5);
       }
 
       .entry-head {
@@ -294,6 +311,18 @@
         color: var(--muted);
         background: var(--panel-2);
         border: 1px solid var(--border);
+      }
+      .badge.new {
+        color: var(--bg);
+        background: var(--accent);
+      }
+      .ver {
+        font-size: 11px;
+        color: var(--faint);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 1px 6px;
+        white-space: nowrap;
       }
 
       .desc {
@@ -383,7 +412,7 @@
           <h1 class="title"><span class="slash">/</span>claudex<span class="cursor" aria-hidden="true"></span></h1>
           <div class="lang" role="group" aria-label="Language">
             <button data-lang="en" aria-pressed="true">EN</button>
-            <button data-lang="ko" aria-pressed="false">한국어</button>
+            <button data-lang="ko" aria-pressed="false">KO</button>
           </div>
         </div>
         <p class="tagline" id="tagline"></p>
@@ -405,6 +434,7 @@
         </label>
         <div class="tabs" role="tablist" aria-label="필터">
           <button class="tab" role="tab" data-filter="all" aria-selected="true">전체</button>
+          <button class="tab tab-new" role="tab" data-filter="new" aria-selected="false" hidden>NEW</button>
           <button class="tab" role="tab" data-filter="command" aria-selected="false">명령어</button>
           <button class="tab" role="tab" data-filter="skill" aria-selected="false">스킬</button>
           <span class="count" id="count"></span>

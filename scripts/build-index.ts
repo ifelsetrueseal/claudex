@@ -112,6 +112,17 @@ async function main(): Promise<void> {
     : null
   const prevByName = new Map<string, Entry>((prev?.entries ?? []).map((e) => [e.name, e]))
 
+  // Track when each entry first appeared. The baseline is the date tracking
+  // began; on the first run every entry shares it (so nothing is flagged "new").
+  const today = new Date().toISOString().slice(0, 10)
+  const baselineAt = prev?.baselineAt ?? today
+  let newCount = 0
+  for (const e of entries) {
+    e.firstSeen = prevByName.get(e.name)?.firstSeen || today
+    if (e.firstSeen > baselineAt) newCount++
+  }
+  console.log(`firstSeen: baseline ${baselineAt}, ${newCount} entries newer than baseline`)
+
   // Fill descriptionKo (incremental, cache-aware) before diffing.
   await applyTranslations(entries, prevByName)
 
@@ -133,6 +144,7 @@ async function main(): Promise<void> {
 
   const dict: Dictionary = {
     fetchedAt,
+    baselineAt,
     sources: [COMMANDS_URL, SKILLS_URL],
     count: entries.length,
     entries,

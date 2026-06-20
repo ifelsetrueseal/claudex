@@ -2,8 +2,9 @@ name: sync
 
 on:
   schedule:
-    # Daily at 00:00 UTC (09:00 KST)
-    - cron: "0 0 * * *"
+    # Twice weekly — Mon & Thu at 00:00 UTC (09:00 KST). The docs' command/skill
+    # set changes only a handful of times a month, so this is plenty fresh.
+    - cron: "0 0 * * 1,4"
   workflow_dispatch:
 
 permissions:

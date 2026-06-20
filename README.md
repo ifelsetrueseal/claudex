@@ -6,6 +6,12 @@
 · 📦 [GitHub 저장소](https://github.com/ifelsetrueseal/claudex)
 · 📄 [개발 스펙](docs/SPEC.md)
 
+🖥️ **데스크탑 앱 설치 (macOS):**
+
+```bash
+curl -fsSL https://github.com/ifelsetrueseal/claudex/releases/latest/download/install.sh | bash
+```
+
 Claude Code의 빌트인 슬래시 명령어와 번들 스킬을 공식 문서에서 **매일 자동 수집**해
 정적 웹앱으로 검색·열람하게 해주는 도구입니다. Pokédex처럼 항목을 자동 등록·색인하는 컨셉.
 사용자는 Claude Code 설치 없이 웹페이지에서 검색만 하면 됩니다.

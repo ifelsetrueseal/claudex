@@ -25,8 +25,12 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Collect + build index
+      - name: Collect + build index (+ translate changed descriptions)
         run: pnpm sync
+        env:
+          # Optional: set this repo secret to auto-translate EN→KO via DeepL Free.
+          # If unset, sync still works and Korean descriptions stay as-is.
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
 
       - name: Commit if changed
         run: |

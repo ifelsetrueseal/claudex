@@ -4,3 +4,8 @@ dist/
 .DS_Store
 *.log
 *.tsbuildinfo
+
+# Secrets — never commit (DeepL key etc.)
+.env
+.env.*
+.deepl.env

@@ -66,11 +66,46 @@
         padding: 40px 20px 80px;
       }
 
+      .head-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+      }
       header .title {
         font-size: 28px;
         font-weight: 700;
         letter-spacing: -0.01em;
         margin: 0;
+      }
+      .lang {
+        display: flex;
+        gap: 4px;
+        flex-shrink: 0;
+      }
+      .lang button {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-family: inherit;
+        font-size: 12px;
+        padding: 4px 9px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .lang button:hover {
+        color: var(--text);
+        border-color: var(--faint);
+      }
+      .lang button[aria-pressed="true"] {
+        color: var(--bg);
+        background: var(--accent);
+        border-color: var(--accent);
+        font-weight: 600;
+      }
+      .lang button:focus-visible {
+        outline: 2px solid var(--opt);
+        outline-offset: 2px;
       }
       .title .slash {
         color: var(--accent);
@@ -344,10 +379,14 @@
   <body>
     <div class="wrap">
       <header>
-        <h1 class="title"><span class="slash">/</span>claudex<span class="cursor" aria-hidden="true"></span></h1>
-        <p class="tagline">
-          Claude Code 빌트인 명령어와 번들 스킬 도감 · updated daily
-        </p>
+        <div class="head-row">
+          <h1 class="title"><span class="slash">/</span>claudex<span class="cursor" aria-hidden="true"></span></h1>
+          <div class="lang" role="group" aria-label="Language">
+            <button data-lang="en" aria-pressed="true">EN</button>
+            <button data-lang="ko" aria-pressed="false">한국어</button>
+          </div>
+        </div>
+        <p class="tagline" id="tagline"></p>
         <div class="meta" id="meta"></div>
       </header>
 
@@ -376,12 +415,7 @@
         <p class="status">불러오는 중…</p>
       </main>
 
-      <footer>
-        claudex는 비공식 도구입니다. 데이터 출처는
-        <a href="https://code.claude.com/docs/en/commands" target="_blank" rel="noopener noreferrer">Anthropic 공식 문서</a>.
-        <br />
-        매일 자동 수집되어 색인됩니다.
-      </footer>
+      <footer id="footer"></footer>
     </div>
 
     <script type="module" src="/src/main.ts"></script>

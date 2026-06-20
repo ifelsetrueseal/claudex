@@ -99,7 +99,8 @@ export interface Entry {
   name: string             // 슬래시 포함, 예: "/clear"
   args: string             // 인자 표기 원본, 예: "<path>", "[model|off]", ""
   hasRequiredArg: boolean  // <...> 가 하나라도 있으면 true
-  description: string      // 마크다운 (상대링크는 절대경로화)
+  description: string      // 마크다운 (상대링크는 절대경로화). 영어 원문
+  descriptionKo: string    // description의 한국어 번역 (없으면 ""). 링크/코드 보존
   aliases: string[]        // 예: ["/reset", "/new"]
   searchText: string       // 마크다운/링크 제거한 순수 검색 텍스트
 }
@@ -155,6 +156,16 @@ export interface Dictionary {
 ### 5.5 무결성 가드
 - `commands.length < 30` 또는 `skills.length < 3` 이면 에러로 종료(문서 구조 변경 감지).
 - 이전 `entries.json` 과 `entries` 배열만 비교(`fetchedAt` 제외)해 변경 여부를 로그로 출력.
+- 변경이 없으면 이전 `fetchedAt` 을 유지(byte-identical write)해 CI에서 빈 커밋이 생기지 않게 함.
+
+### 5.6 설명 번역 (EN→KO, DeepL Free)
+- `scripts/lib/translate.ts` 가 DeepL Free(`api-free.deepl.com`)로 설명을 번역.
+- **마크다운 보존**: 텍스트를 escape 후 인라인 코드와 링크 URL을 `<x>…</x>` 로 감싸고
+  `tag_handling=xml&ignore_tags=x` 로 보냄 → 링크 텍스트만 번역되고 URL·코드는 그대로.
+- **증분 + 캐시**: 영어 `description` 이 직전과 동일하면 이전 `descriptionKo` 재사용(API 호출 0).
+  바뀐/새 항목만 번역 → 월 사용량이 무료 한도(50만 자) 안에서 사실상 0에 수렴.
+- **키 선택적**: `DEEPL_API_KEY` 없으면 번역 건너뜀(기존 KO 유지), 수집은 정상.
+- 번역이 있으면 그 평문을 `searchText` 에 덧붙여 **한국어 검색**도 매칭되게 함.
 
 ---
 
@@ -213,12 +224,17 @@ zzzznope      => (없음)
 3. 링크는 **`http(s)` 만** 앵커로 렌더링, 그 외 스킴은 텍스트로 표시.
 4. `target="_blank"` 에는 `rel="noopener noreferrer"`.
 
-### 7.3 디자인
+### 7.3 다국어 (i18n)
+- 우상단 **EN / 한국어** 토글. 기본값은 브라우저 언어 감지, 선택은 `localStorage('claudex-lang')` 저장.
+- UI 문자열은 `I18N` 테이블(en/ko)로 즉시 전환.
+- 설명은 `lang==='ko' && descriptionKo` 면 한국어, 아니면 영어 원문(폴백).
+
+### 7.4 디자인
 - 터미널/CLI 도감 컨셉. 모노스페이스, 다크 배경(`#0d0e11`), 슬래시(`/`)에 테라코타(`#d97757`) 액센트,
   깜빡이는 커서, 아주 약한 스캔라인. `prefers-reduced-motion` 에서 애니메이션 정지.
 - 카피: "N entries registered", "updated daily".
 
-### 7.4 빌드 / 경로
+### 7.5 빌드 / 경로
 - Vite, `base: './'` → GitHub Pages 프로젝트 경로(`/<repo>/`) 하위에서도 동작.
 - 데이터 경로는 `${import.meta.env.BASE_URL}data/entries.json`.
 

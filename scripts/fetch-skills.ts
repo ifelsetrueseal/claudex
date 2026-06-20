@@ -25,6 +25,7 @@ function makeSkill(name: string, description: string): Entry {
     args: '',
     hasRequiredArg: false,
     description,
+    descriptionKo: '',
     aliases: [],
     searchText: toSearchText(description),
   }

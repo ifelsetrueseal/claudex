@@ -71,6 +71,30 @@ pnpm build:web  # web 만 빌드
 pnpm typecheck  # 전체 타입체크
 ```
 
+## 다국어 (English / 한국어)
+
+웹앱 우상단에서 **EN / 한국어** 토글로 언어를 바꿀 수 있습니다 (브라우저 언어 자동 감지 +
+`localStorage` 저장). UI 텍스트는 즉시 전환되고, 명령어 설명은 한국어 번역이 있으면 그걸,
+없으면 영어 원문을 보여줍니다.
+
+### 설명 자동 번역 (DeepL Free, 선택)
+
+`build-index` 는 `DEEPL_API_KEY` 가 설정돼 있으면 **바뀐 설명만 EN→KO 번역**(증분 + 캐시)해
+`entries.json` 의 `descriptionKo` 에 저장합니다. 마크다운 링크/인라인 코드는 번역하지 않고 보존합니다.
+
+- 키가 없으면 번역은 건너뛰고(기존 한국어 유지), 나머지 수집은 정상 동작합니다.
+- 증분이라 첫 1회(약 2.3만 자) 이후엔 문서가 바뀐 며칠만 소량 번역 → 무료 한도(월 50만 자) 안에서 사실상 0.
+
+**로컬에서 한 번에 채우기:**
+```bash
+DEEPL_API_KEY=xxxxxxxx:fx pnpm sync   # entries.json 의 descriptionKo 채워짐 → 커밋
+```
+
+**GitHub Actions 자동화:** 저장소 Settings → Secrets and variables → Actions 에
+`DEEPL_API_KEY` 시크릿을 추가하면 `sync` 워크플로가 자동 번역합니다.
+
+> [DeepL Free API 키](https://www.deepl.com/pro-api) 는 무료로 발급할 수 있습니다 (키 끝이 `:fx`).
+
 ## GitHub Pages 배포
 
 `apps/web` 의 정적 빌드 결과(`apps/web/dist`)를 서빙하면 됩니다.

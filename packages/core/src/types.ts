@@ -9,8 +9,11 @@ export interface Entry {
   args: string
   /** True when args contains at least one required `<...>` placeholder. */
   hasRequiredArg: boolean
-  /** Description in markdown (relative links absolutized). */
+  /** Description in markdown (relative links absolutized). English (source). */
   description: string
+  /** Korean translation of `description` (markdown; links/code preserved).
+   *  Empty string when not yet translated. */
+  descriptionKo: string
   /** Aliases, e.g. ["/reset", "/new"]. */
   aliases: string[]
   /** Plain text (markdown/links stripped) used for searching. */

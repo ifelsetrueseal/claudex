@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url'
 import type { Dictionary, Entry } from '@claudex/core'
 import { COMMANDS_URL, fetchCommands } from './fetch-commands'
 import { SKILLS_URL, fetchSkills } from './fetch-skills'
+import { toSearchText } from './lib/markdown'
+import { translateBatch } from './lib/translate'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const CORE_PATH = resolve(__dirname, '../packages/core/data/entries.json')
@@ -48,6 +50,46 @@ function writeJson(path: string, dict: Dictionary): void {
   writeFileSync(path, JSON.stringify(dict, null, 2) + '\n')
 }
 
+/**
+ * Populate `descriptionKo` (EN→KO) incrementally:
+ * - Reuse a prior translation whenever the English description is unchanged
+ *   (cache hit → no API call). Only changed/new descriptions are translated,
+ *   so monthly DeepL usage stays far inside the free tier.
+ * - Translation runs only when DEEPL_API_KEY is set; otherwise prior Korean is
+ *   preserved and new entries stay empty (UI falls back to English).
+ * - When Korean exists, its plain text is appended to `searchText` so Korean
+ *   queries match too.
+ */
+async function applyTranslations(entries: Entry[], prevByName: Map<string, Entry>): Promise<void> {
+  const apiKey = process.env.DEEPL_API_KEY
+  const pending: Entry[] = []
+
+  for (const e of entries) {
+    const prev = prevByName.get(e.name)
+    if (prev && prev.description === e.description && prev.descriptionKo) {
+      e.descriptionKo = prev.descriptionKo // cache hit
+    } else {
+      e.descriptionKo = prev?.descriptionKo ?? '' // tentative; translated below if key present
+      pending.push(e)
+    }
+  }
+
+  if (pending.length === 0) {
+    console.log('translations: all cached (0 to translate)')
+  } else if (!apiKey) {
+    console.log(`translations: DEEPL_API_KEY not set — skipping ${pending.length} entries (kept prior KO)`)
+  } else {
+    console.log(`translations: translating ${pending.length} changed/new descriptions via DeepL…`)
+    const translated = await translateBatch(pending.map((e) => e.description), apiKey)
+    pending.forEach((e, i) => (e.descriptionKo = translated[i]))
+  }
+
+  // Make Korean text searchable too (searchText is regenerated EN-only upstream).
+  for (const e of entries) {
+    if (e.descriptionKo) e.searchText = `${e.searchText} ${toSearchText(e.descriptionKo)}`.trim()
+  }
+}
+
 async function main(): Promise<void> {
   const [commands, skills] = await Promise.all([fetchCommands(), fetchSkills()])
   console.log(`fetched ${commands.length} commands, ${skills.length} skills`)
@@ -64,17 +106,33 @@ async function main(): Promise<void> {
   const skillCount = entries.filter((e) => e.type === 'skill').length
   console.log(`merged into ${entries.length} entries (${skillCount} marked as skill)`)
 
-  // Report changes (entries only, ignoring fetchedAt) for a stable diff log.
-  if (existsSync(CORE_PATH)) {
-    const prev = JSON.parse(readFileSync(CORE_PATH, 'utf8')) as Dictionary
+  // Load the previous index once: reused for the translation cache AND the diff.
+  const prev: Dictionary | null = existsSync(CORE_PATH)
+    ? (JSON.parse(readFileSync(CORE_PATH, 'utf8')) as Dictionary)
+    : null
+  const prevByName = new Map<string, Entry>((prev?.entries ?? []).map((e) => [e.name, e]))
+
+  // Fill descriptionKo (incremental, cache-aware) before diffing.
+  await applyTranslations(entries, prevByName)
+
+  // Compare against the previous index (entries only, ignoring fetchedAt).
+  // When nothing changed, keep the previous fetchedAt so the written file is
+  // byte-identical — that way the daily/weekly CI run produces no empty commit.
+  let fetchedAt = new Date().toISOString()
+  if (prev) {
     const changed = JSON.stringify(prev.entries) !== JSON.stringify(entries)
-    console.log(changed ? 'entries CHANGED since last sync' : 'no entry changes since last sync')
+    if (changed) {
+      console.log('entries CHANGED since last sync')
+    } else {
+      console.log('no entry changes since last sync — preserving fetchedAt (no-op write)')
+      fetchedAt = prev.fetchedAt
+    }
   } else {
     console.log('no previous index — creating fresh')
   }
 
   const dict: Dictionary = {
-    fetchedAt: new Date().toISOString(),
+    fetchedAt,
     sources: [COMMANDS_URL, SKILLS_URL],
     count: entries.length,
     entries,

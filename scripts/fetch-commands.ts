@@ -32,6 +32,7 @@ export async function fetchCommands(): Promise<Entry[]> {
       args,
       hasRequiredArg: /<[^>]+>/.test(args),
       description,
+      descriptionKo: '',
       aliases: extractAliases(description),
       searchText: toSearchText(description),
     })

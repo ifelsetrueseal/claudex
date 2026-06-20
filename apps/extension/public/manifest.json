@@ -5,7 +5,17 @@
   "description": "Claude Code 빌트인 슬래시 명령어와 번들 스킬을 빠르게 검색하는 도감 (비공식).",
   "action": {
     "default_popup": "index.html",
-    "default_title": "claudex"
+    "default_title": "claudex",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   },
   "permissions": ["storage"],
   "host_permissions": ["https://raw.githubusercontent.com/*"]

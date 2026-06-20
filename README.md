@@ -2,14 +2,16 @@
 
 **Claude Code 슬래시 명령어 & 번들 스킬 도감 (dex).**
 
+🌐 **[웹에서 바로 쓰기 → ifelsetrueseal.github.io/claudex](https://ifelsetrueseal.github.io/claudex/)**
+· 📦 [GitHub 저장소](https://github.com/ifelsetrueseal/claudex)
+· 📄 [개발 스펙](docs/SPEC.md)
+
 Claude Code의 빌트인 슬래시 명령어와 번들 스킬을 공식 문서에서 **매일 자동 수집**해
 정적 웹앱으로 검색·열람하게 해주는 도구입니다. Pokédex처럼 항목을 자동 등록·색인하는 컨셉.
 사용자는 Claude Code 설치 없이 웹페이지에서 검색만 하면 됩니다.
 
 > 비공식 도구입니다. 데이터 출처는 [Anthropic 공식 문서](https://code.claude.com/docs/en/commands)이며,
 > 수집은 전부 GitHub Actions에서 일어나고 사용자에게는 인증·API 키·비용이 전혀 없습니다.
-
-📄 설계·구현 상세는 **[개발 스펙 문서 (docs/SPEC.md)](docs/SPEC.md)** 참고.
 
 ## 구조 (모노레포)
 

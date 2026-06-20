@@ -38,6 +38,7 @@ export async function fetchCommands(): Promise<Entry[]> {
       searchText: toSearchText(description),
       firstSeen: '',
       minVersion: extractMinVersion(row.description),
+      resources: [],
     })
   }
 

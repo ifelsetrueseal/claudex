@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-20T04:17:11.026Z",
+  "fetchedAt": "2026-06-20T04:38:44.568Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -17,7 +17,8 @@
       "aliases": [],
       "searchText": "Add a working directory for file access during the current session. Most .claude/ configuration is not discovered from the added directory. You can later resume the session from the added directory with --continue or --resume 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -29,7 +30,8 @@
       "aliases": [],
       "searchText": "Enable or disable the advisor tool, which consults a second model for guidance at key moments during a task. Accepts opus, sonnet, fable (v2.1.170+), or a full model ID. Without an argument, opens a picker. Requires Claude Code v2.1.98 or later 작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 어드바이저 도구를 활성화하거나 비활성화합니다. opus, sonnet, fable (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.98"
+      "minVersion": "2.1.98",
+      "resources": []
     },
     {
       "type": "command",
@@ -41,7 +43,8 @@
       "aliases": [],
       "searchText": "Manage agent configurations 에이전트 구성 관리",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -53,7 +56,8 @@
       "aliases": [],
       "searchText": "Spawn a Claude Code on the web session that watches the current branch's PR and pushes fixes when CI fails or reviewers leave comments. Detects the open PR from your checked-out branch with gh pr view; to watch a different PR, check out its branch first. By default the cloud session is told to fix every CI failure and review comment; pass a prompt to give it different instructions, for example /autofix-pr only fix lint and type errors. Requires the gh CLI and access to Claude Code on the web 현재 브랜치의 PR을 모니터링하고, CI가 실패하거나 검토자가 댓글을 남길 때 수정 사항을 푸시하는 Claude Code on the web 세션을 생성합니다. gh pr view 명령어를 통해 체크아웃한 브랜치의 오픈된 PR을 감지합니다. 다른 PR을 모니터링하려면 먼저 해당 PR의 브랜치를 체크아웃하세요. 기본적으로 클라우드 세션은 모든 CI 실패 및 리뷰 코멘트를 수정하도록 설정되어 있습니다. 다른 지시를 내려야 할 경우 프롬프트를 전달하세요(예: /autofix-pr only fix lint and type errors). gh CLI와 Claude Code on the web에 대한 액세스 권한이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -67,7 +71,8 @@
       ],
       "searchText": "Detach the current session to run as a background agent and free this terminal. Pass a prompt to send one more instruction before detaching. Monitor the session with claude agents. Alias: /bg 현재 세션을 백그라운드 에이전트로 분리하여 실행하고 이 터미널을 해제합니다. 분리하기 전에 한 번 더 명령을 입력할 수 있도록 프롬프트를 전달합니다. claude agents을 통해 세션을 모니터링합니다. 별칭: /bg",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -79,7 +84,8 @@
       "aliases": [],
       "searchText": "Skill. Orchestrate large-scale changes across a codebase in parallel. Researches the codebase, decomposes the work into 5 to 30 independent units, and presents a plan. Once approved, spawns one background subagent per unit in an isolated git worktree. Each subagent implements its unit, runs tests, and opens a pull request. Requires a git repository. Example: /batch migrate src/ from Solid to React 스킬. 코드베이스 전반에 걸친 대규모 변경 사항을 병렬로 조율합니다. 코드베이스를 분석하여 작업을 5~30개의 독립적인 단위로 분해하고, 실행 계획을 제시합니다. 승인되면, 격리된 git 워크트리 내에서 단위당 하나의 백그라운드 서브에이전트를 생성합니다. 각 서브에이전트는 해당 단위를 구현하고, 테스트를 실행한 후, 풀 리퀘스트를 생성합니다. git 저장소가 필요합니다. 예시: /batch migrate src/ from Solid to React",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -91,7 +97,8 @@
       "aliases": [],
       "searchText": "Create a branch of the current conversation at this point, so you can try a different direction without losing the conversation as it stands. Switches you into the branch and preserves the original, which you can return to with /resume. To hand a side task to a background subagent instead of switching into a copy yourself, use /fork 이 시점에서 현재 대화의 분기를 생성하면, 기존 대화 내용을 잃지 않고 다른 방향으로 시도해 볼 수 있습니다. 이 명령을 실행하면 해당 분기로 전환되며 원본 대화는 그대로 유지되므로, `/resume을 사용하여 원본 대화로 돌아갈 수 있습니다. 직접 복사본으로 전환하는 대신 부차적인 작업을 백그라운드 하위 에이전트에게 맡기려면 /fork`을 사용하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -103,7 +110,8 @@
       "aliases": [],
       "searchText": "Ask a quick side question without adding to the conversation 대화에 내용을 추가하지 않고 간단한 부수적인 질문을 해보세요",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -115,7 +123,8 @@
       "aliases": [],
       "searchText": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's CLAUDE.md is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so --resume and --continue find it from there. Prompts you to trust the directory if you haven't worked in it before. To grant access to an extra directory without moving the session, use /add-dir. Restrict or disable /cd targets with Cd permission rules. Requires Claude Code v2.1.169 or later; earlier versions report Unknown command: /cd 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.169"
+      "minVersion": "2.1.169",
+      "resources": []
     },
     {
       "type": "command",
@@ -127,7 +136,8 @@
       "aliases": [],
       "searchText": "Configure Claude in Chrome settings Chrome용 Claude 설정 구성하기",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -139,7 +149,8 @@
       "aliases": [],
       "searchText": "Skill. Load Claude API reference material for your project's language (Python, TypeScript, Java, Go, Ruby, C, PHP, or cURL) and Managed Agents reference. Covers tool use, streaming, batches, structured outputs, and common pitfalls. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. Run /claude-api migrate to upgrade existing Claude API code to a newer model: Claude asks which files to scan and which model to target, then updates model IDs, thinking configuration, and other parameters that changed between versions. Run /claude-api managed-agents-onboard for an interactive walkthrough that creates a new Managed Agent from scratch Skill. 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 anthropic 또는 @anthropic-ai/sdk를 임포트하면 자동으로 활성화됩니다. /claude-api migrate를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. /claude-api managed-agents-onboard를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -154,7 +165,8 @@
       ],
       "searchText": "Start a new conversation with empty context. The previous conversation stays available in /resume. Pass a name to label the previous conversation in the /resume picker. To free up context while continuing the same conversation, use /compact instead. Aliases: /reset, /new 컨텍스트가 비어 있는 상태에서 새로운 대화를 시작합니다. 이전 대화는 /resume에서 계속 확인할 수 있습니다. /resume 선택기에서 이전 대화에 이름을 지정하려면 이름을 전달하세요. 동일한 대화를 계속하면서 컨텍스트를 비우려면 대신 /compact를 사용하세요. 별칭: /reset, /new",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -166,7 +178,14 @@
       "aliases": [],
       "searchText": "Skill. Review the current diff for correctness bugs and for reuse, simplification, and efficiency cleanups. Pass --fix to apply findings to your working tree, --comment to post them as inline GitHub PR comments, or ultra to run a deep cloud review. From v2.1.154, /simplify runs a separate cleanup-only review that applies fixes without hunting for bugs. See Review a diff locally for effort levels and targeting Skill. 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. --fix를 실행하여 발견된 내용을 작업 트리에 적용하거나, --comment를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, ultra를 실행하여 심층적인 클라우드 검토를 수행할 수 있습니다. v2.1.154부터는 /simplify를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 로컬에서 diff 검토하기를 참조하십시오.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": [
+        {
+          "type": "youtube",
+          "title": "Claude Code code review — videos",
+          "url": "https://www.youtube.com/results?search_query=claude+code+code+review"
+        }
+      ]
     },
     {
       "type": "command",
@@ -178,7 +197,8 @@
       "aliases": [],
       "searchText": "Set the prompt bar color for the current session. Available colors: red, blue, green, yellow, purple, orange, pink, cyan. Use default to reset, or run with no argument to pick a random color. When Remote Control is connected, the color syncs to claude.ai/code 현재 세션의 프롬프트 바 색상을 설정합니다. 사용 가능한 색상: red, blue, green, yellow, purple, orange, pink, cyan. default을 사용하여 재설정하거나, 인수를 지정하지 않고 실행하면 무작위 색상이 선택됩니다. 원격 제어가 연결된 경우, 색상이 claude.ai/code와 동기화됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -190,7 +210,14 @@
       "aliases": [],
       "searchText": "Free up context by summarizing the conversation so far. Optionally pass focus instructions for the summary. See how compaction handles rules, skills, and memory files 지금까지의 대화를 요약하여 맥락을 정리하세요. 선택적으로 요약에 대한 집중 지침을 전달할 수도 있습니다. 압축 기능이 규칙, 스킬 및 메모리 파일을 어떻게 처리하는지를 참조하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": [
+        {
+          "type": "youtube",
+          "title": "Claude Code context & compact — videos",
+          "url": "https://www.youtube.com/results?search_query=claude+code+compact+context"
+        }
+      ]
     },
     {
       "type": "command",
@@ -204,7 +231,8 @@
       ],
       "searchText": "Open the Settings interface to adjust theme, model, output style, and other preferences. From v2.1.181, pass one or more key=value pairs to set a setting directly without opening the interface, for example /config thinking=false. From v2.1.182, named shorthand keys are also accepted, such as /config theme=dark or /config model=sonnet. The key=value form also works in non-interactive mode (-p) and from Remote Control. Run /config --help to list every settable key with its options. Alias: /settings 설정 인터페이스를 열어 테마, 모델, 출력 스타일 및 기타 기본 설정을 조정할 수 있습니다. v2.1.181부터는 하나 이상의 key=value 쌍을 전달하여 인터페이스를 열지 않고도 설정을 직접 지정할 수 있습니다(예: /config thinking=false). v2.1.182부터는 /config theme=dark 또는 /config model=sonnet와 같은 명명된 약어 키도 지원됩니다. key=value 형식은 비대화형 모드(-p) 및 원격 제어에서도 작동합니다. /config --help를 실행하면 설정 가능한 모든 키와 해당 옵션을 확인할 수 있습니다. 별칭: /settings",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -216,7 +244,8 @@
       "aliases": [],
       "searchText": "Visualize current context usage as a colored grid. Shows optimization suggestions for context-heavy tools, memory bloat, and capacity warnings. In fullscreen mode the per-item breakdown is collapsed to keep the grid visible. Pass all to expand it 현재 컨텍스트 사용 현황을 색상별 격자 형태로 시각화합니다. 컨텍스트 사용량이 많은 도구, 메모리 과다 사용, 용량 경고에 대한 최적화 제안을 표시합니다. 전체 화면 모드에서는 격자가 계속 보이도록 항목별 세부 정보가 접혀 있습니다. all를 전달하면 세부 정보를 펼 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -228,7 +257,8 @@
       "aliases": [],
       "searchText": "Copy the last assistant response to clipboard. Pass a number N to copy the Nth-latest response: /copy 2 copies the second-to-last. When code blocks are present, shows an interactive picker to select individual blocks or the full response. Press w in the picker to write the selection to a file instead of the clipboard, which is useful over SSH 마지막 어시스턴트 응답을 클립보드에 복사합니다. 숫자N를 전달하면 N번째로 최근의 응답을 복사할 수 있습니다. 예를 들어, `/copy 2는 두 번째로 최근의 응답을 복사합니다. 코드 블록이 포함된 경우, 개별 블록이나 전체 응답을 선택할 수 있는 대화형 선택기가 표시됩니다. 선택기에서 w`를 누르면 선택한 내용을 클립보드 대신 파일에 저장할 수 있으며, 이는 SSH를 통해 작업할 때 유용합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -240,7 +270,8 @@
       "aliases": [],
       "searchText": "Alias for /usage /usage의 별칭",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -252,7 +283,8 @@
       "aliases": [],
       "searchText": "Skill. Enable debug logging for the current session and troubleshoot issues by reading the session debug log. Debug logging is off by default unless you started with claude --debug, so running /debug mid-session starts capturing logs from that point forward. Optionally describe the issue to focus the analysis Skill. 현재 세션에 대한 디버그 로깅을 활성화하고, 세션 디버그 로그를 확인하여 문제를 해결하세요. claude --debug 명령어로 시작하지 않은 경우 디버그 로깅은 기본적으로 비활성화되어 있으므로, 세션 도중에 /debug 명령어를 실행하면 그 시점부터 로그가 기록되기 시작합니다. 필요에 따라 문제 내용을 설명해 주시면 분석에 도움이 됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -264,7 +296,8 @@
       "aliases": [],
       "searchText": "Workflow. Fan out web searches on a question, fetch and cross-check sources, and synthesize a cited report 워크플로우. 특정 질문에 대해 웹 검색 결과를 광범위하게 수집하고, 출처를 찾아 교차 확인한 뒤, 인용된 보고서를 종합한다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -278,7 +311,8 @@
       ],
       "searchText": "Continue the current session in the Claude Code Desktop app. Requires macOS or Windows and a Claude subscription. Alias: /app Claude Code Desktop 앱에서 현재 세션을 계속합니다. macOS 또는 Windows 환경과 Claude 구독이 필요합니다. 별칭: /app",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -290,7 +324,8 @@
       "aliases": [],
       "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -302,7 +337,8 @@
       "aliases": [],
       "searchText": "Diagnose and verify your Claude Code installation and settings. Results show with status icons. Press f to have Claude fix any reported issues Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. f을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -314,7 +350,8 @@
       "aliases": [],
       "searchText": "Set the model effort level. Accepts low, medium, high, xhigh, max, or ultracode; available levels depend on the model, and max and ultracode are session-only. ultracode is a Claude Code setting that combines xhigh reasoning with automatic workflow orchestration. auto resets to the model default. Without an argument, opens an interactive slider; use left and right arrows to pick a level and Enter to apply. Takes effect immediately without waiting for the current response to finish 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -328,7 +365,8 @@
       ],
       "searchText": "Exit the CLI. In an attached background session, this detaches and the session keeps running. Alias: /quit CLI를 종료합니다. 연결된 백그라운드 세션의 경우, 이 명령을 실행하면 연결이 해제되지만 세션은 계속 실행됩니다. 별칭: /quit",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -340,7 +378,8 @@
       "aliases": [],
       "searchText": "Export the current conversation as plain text. With a filename, writes directly to that file. Without, opens a dialog to copy to clipboard or save to a file 현재 대화를 일반 텍스트로 내보냅니다. 파일 이름을 지정하면 해당 파일에 직접 저장하고, 지정하지 않으면 클립보드에 복사하거나 파일에 저장할 수 있는 대화 상자가 열립니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -352,7 +391,8 @@
       "aliases": [],
       "searchText": "Toggle fast mode on or off 빠른 모드를 켜거나 끕니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -367,7 +407,8 @@
       ],
       "searchText": "Submit feedback, report a bug, or share your conversation. Aliases: /bug, /share 의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: /bug, /share",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -379,7 +420,8 @@
       "aliases": [],
       "searchText": "Skill. Scan your transcripts for common read-only Bash and MCP tool calls, then add a prioritized allowlist to project .claude/settings.json to reduce permission prompts Skill. 트랜스크립트를 분석하여 흔히 사용되는 읽기 전용 Bash 및 MCP 도구 호출을 찾아낸 다음, 프로젝트 .claude/settings.json에 우선순위가 지정된 허용 목록을 추가하여 권한 요청 창이 표시되는 횟수를 줄이세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -391,7 +433,8 @@
       "aliases": [],
       "searchText": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The selection persists across sessions; set viewMode in settings to override it. Only available in fullscreen rendering 포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 viewMode를 설정하여 이를 재정의할 수 있습니다. 전체 화면 렌더링 모드에서만 사용할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -403,7 +446,8 @@
       "aliases": [],
       "searchText": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the directive while you keep going. Its result returns to your conversation when it finishes. To switch into a copy of the conversation yourself, use /branch. Before v2.1.161, /fork is an alias for /branch 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.161"
+      "minVersion": "2.1.161",
+      "resources": []
     },
     {
       "type": "command",
@@ -415,7 +459,8 @@
       "aliases": [],
       "searchText": "Set a goal: Claude keeps working across turns until the condition is met. With no argument, shows the current or most recently achieved goal. clear, stop, off, reset, none, or cancel removes an active goal early 목표를 설정합니다: Claude는 조건이 충족될 때까지 턴이 바뀔 때마다 계속 작업을 수행합니다. 인수를 지정하지 않으면 현재 목표 또는 가장 최근에 달성한 목표를 표시합니다. clear, stop, off, reset, none 또는 cancel을 사용하면 활성 목표를 조기에 제거할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -427,7 +472,8 @@
       "aliases": [],
       "searchText": "Write a JavaScript heap snapshot and a memory breakdown to ~/Desktop, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. See troubleshooting 메모리 사용량이 높은 문제를 진단하기 위해 JavaScript 힙 스냅샷과 메모리 내역을 ~/Desktop 또는 Linux의 데스크톱 폴더가 없는 홈 디렉터리에 저장하십시오. 문제 해결을 참조하십시오.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -439,7 +485,8 @@
       "aliases": [],
       "searchText": "Show help and available commands 도움말 및 사용 가능한 명령어 표시",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -451,7 +498,8 @@
       "aliases": [],
       "searchText": "View hook configurations for tool events 도구 이벤트에 대한 hook 구성 보기",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -463,7 +511,8 @@
       "aliases": [],
       "searchText": "Manage IDE integrations and show status IDE 연동 관리 및 상태 표시",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -475,7 +524,8 @@
       "aliases": [],
       "searchText": "Initialize project with a CLAUDE.md guide. Set CLAUDECODENEWINIT=1 for an interactive flow that also walks through skills, hooks, and personal memory files CLAUDE.md 가이드를 따라 프로젝트를 초기화하세요. CLAUDECODENEWINIT=1를 설정하면 스킬, 후크, 개인 메모리 파일 등을 단계별로 안내하는 대화형 흐름을 확인할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -487,7 +537,8 @@
       "aliases": [],
       "searchText": "Generate a report analyzing your Claude Code sessions, including project areas, interaction patterns, and friction points 프로젝트 영역, 상호작용 패턴, 문제점 등을 포함하여 Claude Code 세션을 분석한 보고서를 생성합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -499,7 +550,8 @@
       "aliases": [],
       "searchText": "Set up the Claude GitHub Actions app for a repository. Walks you through selecting a repo and configuring the integration 리포지토리에 Claude GitHub Actions 앱을 설정하세요. 리포지토리를 선택하고 연동 설정을 완료하는 과정을 단계별로 안내해 줍니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -511,7 +563,8 @@
       "aliases": [],
       "searchText": "Install the Claude Slack app. Opens a browser to complete the OAuth flow Claude Slack 앱을 설치하세요. OAuth 절차를 완료하기 위해 브라우저가 열립니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -523,7 +576,8 @@
       "aliases": [],
       "searchText": "Open your keyboard shortcuts file 키보드 단축키 파일을 열어보세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -535,7 +589,8 @@
       "aliases": [],
       "searchText": "Sign in to your Anthropic account Anthropic 계정에 로그인하세요",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -547,7 +602,8 @@
       "aliases": [],
       "searchText": "Sign out from your Anthropic account Anthropic 계정에서 로그아웃하세요",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -561,7 +617,8 @@
       ],
       "searchText": "Skill. Run a prompt repeatedly while the session stays open. Omit the interval and Claude self-paces between iterations. Omit the prompt and, where available, Claude runs an autonomous maintenance check or the prompt in .claude/loop.md. Example: /loop 5m check if the deploy finished. See Run prompts on a schedule. Alias: /proactive 스킬. 세션이 열려 있는 동안 프롬프트를 반복적으로 실행합니다. 간격을 생략하면 Claude가 반복 간격을 스스로 조절합니다. 프롬프트를 생략하면, 사용 가능한 경우, Claude가 자율 유지 관리 점검을 수행하거나 .claude/loop.md에 있는 프롬프트를 실행합니다. 예시: /loop 5m check if the deploy finished. 일정에 따라 프롬프트 실행을 참조하세요. 별칭: /proactive",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -573,7 +630,8 @@
       "aliases": [],
       "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, pass reconnect <server to reconnect one disconnected server, or pass enable/disable with a server name or all to change connection state without opening the dialog MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -585,7 +643,8 @@
       "aliases": [],
       "searchText": "Edit CLAUDE.md memory files, enable or disable auto-memory, and view auto-memory entries CLAUDE.md 메모리 파일을 편집하고, 자동 메모리 기능을 활성화하거나 비활성화하며, 자동 메모리 항목을 확인합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -600,7 +659,8 @@
       ],
       "searchText": "Show QR code to download the Claude mobile app. Aliases: /ios, /android Claude 모바일 앱을 다운로드하려면 QR 코드를 보여주세요. 별칭: /ios, /android",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -612,7 +672,8 @@
       "aliases": [],
       "searchText": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to adjust effort level. With no argument, opens a picker; press s on a row to switch for the current session only. The picker asks for confirmation when the conversation has prior output, since the next response re-reads the full history without cached context. Once confirmed, the change applies without waiting for the current response to finish AI 모델을 변경하고 새 세션의 기본값으로 저장하세요. 해당 기능을 지원하는 모델의 경우, 좌/우 화살표 키를 사용하여 노력 수준 조정을 할 수 있습니다. 인수를 지정하지 않으면 선택기가 열리며, 행에서 s를 누르면 현재 세션에 한해 모델이 변경됩니다. 대화 기록에 이전 응답이 있는 경우, 다음 응답은 캐시된 컨텍스트 없이 전체 기록을 다시 읽게 되므로 선택기에서 확인을 요청합니다. 확인을 누르면 현재 응답이 완료될 때까지 기다리지 않고 변경 사항이 적용됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -624,7 +685,8 @@
       "aliases": [],
       "searchText": "Share a free week of Claude Code with friends. Only visible if your account is eligible 친구들과 ‘클로드 코드’의 무료 1주 이용권을 공유하세요. 해당 혜택은 계정이 자격 요건을 충족하는 경우에만 표시됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -638,7 +700,8 @@
       ],
       "searchText": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review recent auto mode denials. Alias: /allowed-tools 도구 권한에 대한 허용, 확인 요청 및 거부 규칙을 관리합니다. 대화형 대화 상자가 열리면 범위별로 규칙을 확인하고, 규칙을 추가하거나 제거하며, 작업 디렉터리를 관리하고, 최근 자동 모드 거부 내역을 검토할 수 있습니다. 별칭: /allowed-tools",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -650,7 +713,14 @@
       "aliases": [],
       "searchText": "Enter plan mode directly from the prompt. Pass an optional description to enter plan mode and immediately start with that task, for example /plan fix the auth bug 프롬프트에서 바로 계획 모드로 진입합니다. 선택 사항인 설명을 전달하여 계획 모드로 진입하고 해당 작업으로 즉시 시작할 수 있습니다. 예를 들어, `/plan fix the auth bug`",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": [
+        {
+          "type": "youtube",
+          "title": "Claude Code plan mode — videos",
+          "url": "https://www.youtube.com/results?search_query=claude+code+plan+mode"
+        }
+      ]
     },
     {
       "type": "command",
@@ -662,7 +732,8 @@
       "aliases": [],
       "searchText": "Manage Claude Code plugins. Run with no argument to open the plugin menu, or pass a subcommand such as list, install, enable, or disable to act directly Claude Code 플러그인을 관리합니다. 인수를 지정하지 않고 실행하면 플러그인 메뉴가 열리고, list, install, enable, disable와 같은 하위 명령을 전달하면 해당 기능을 직접 실행할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -674,7 +745,8 @@
       "aliases": [],
       "searchText": "Discover Claude Code features through quick interactive lessons with animated demos 애니메이션 데모가 포함된 간단한 대화형 강의를 통해 클로드 코드의 기능을 알아보세요",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -686,7 +758,8 @@
       "aliases": [],
       "searchText": "Removed in v2.1.91. Ask Claude directly to view pull request comments instead. On earlier versions, fetches and displays comments from a GitHub pull request; automatically detects the PR for the current branch, or pass a PR URL or number. Requires the gh CLI v2.1.91에서 제거되었습니다. 대신 클로드(Claude)에게 직접 요청하여 풀 리퀘스트 댓글을 확인하세요. 이전 버전에서는 GitHub 풀 리퀘스트의 댓글을 가져와 표시했으며, 현재 브랜치의 PR을 자동으로 감지하거나 PR URL 또는 번호를 직접 입력할 수 있었습니다. gh CLI가 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -698,7 +771,8 @@
       "aliases": [],
       "searchText": "View and update your privacy settings. Only available for Pro and Max plan subscribers 개인정보 설정을 확인하고 수정하세요. Pro 및 Max 요금제 가입자만 이용 가능합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -710,7 +784,8 @@
       "aliases": [],
       "searchText": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Bedrock, Vertex, or Foundry 브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -722,7 +797,8 @@
       "aliases": [],
       "searchText": "Generate a one-line summary of the current session on demand. See Session recap for the automatic recap that appears after you've been away 필요할 때 현재 세션에 대한 한 줄 요약문을 생성합니다. 자리를 비운 후 표시되는 자동 요약 내용은 세션 요약을 참조하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -734,7 +810,8 @@
       "aliases": [],
       "searchText": "View the changelog in an interactive version picker. Select a specific version to see its release notes, or choose to show all versions 대화형 버전 선택기에서 변경 내역을 확인하세요. 특정 버전을 선택하여 해당 릴리스 노트를 확인하거나, 모든 버전을 표시하도록 선택할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -746,7 +823,8 @@
       "aliases": [],
       "searchText": "Reload all active plugins to apply pending changes without restarting. Reports counts for each reloaded component and flags any load errors. When the reload would change which MCP tools are loaded and invalidate the prompt cache, the command warns and skips unless you pass --force 재시작 없이 보류 중인 변경 사항을 적용하기 위해 모든 활성화된 플러그인을 다시 불러옵니다. 다시 불러온 각 구성 요소의 수를 보고하고, 로딩 오류가 발생하면 이를 표시합니다. 다시 불러오기 작업으로 인해 로드되는 MCP 도구가 변경되어 프롬프트 캐시가 무효화될 경우, 이 명령어는 경고를 표시하고, --force를 전달하지 않는 한 해당 작업을 건너뜁니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -758,7 +836,8 @@
       "aliases": [],
       "searchText": "Re-scan skill and command directories so skills added or changed on disk during the session become available without restarting. Reports how many skills are available and how many were added or removed. Added in v2.1.152 skill 및 명령어 디렉터리를 다시 스캔하여, 세션 중에 디스크에 추가되거나 변경된 스킬을 재시작 없이 사용할 수 있도록 합니다. 사용 가능한 스킬의 수와 추가되거나 제거된 스킬의 수를 보고합니다. v2.1.152에 추가됨",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.152"
+      "minVersion": "2.1.152",
+      "resources": []
     },
     {
       "type": "command",
@@ -772,7 +851,8 @@
       ],
       "searchText": "Make this session available for remote control from claude.ai. Alias: /rc 이 세션을 claude.ai에서 원격 제어할 수 있도록 설정하세요. 별칭: /rc",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -784,7 +864,8 @@
       "aliases": [],
       "searchText": "Choose the default environment for cloud agents 클라우드 에이전트의 기본 환경을 선택하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -796,7 +877,8 @@
       "aliases": [],
       "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -810,7 +892,8 @@
       ],
       "searchText": "Resume a conversation by ID or name, or open the session picker. As of v2.1.144, background sessions appear in the picker marked with bg. Alias: /continue ID나 이름으로 대화를 다시 시작하거나 세션 선택기를 열 수 있습니다. v2.1.144부터 백그라운드 세션이 선택기에 bg로 표시되어 나타납니다. 별칭: /continue",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -822,7 +905,8 @@
       "aliases": [],
       "searchText": "Review a pull request locally in your current session. For a deeper cloud-based review, see /code-review ultra 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -837,7 +921,8 @@
       ],
       "searchText": "Rewind the conversation and/or code to a previous point, or summarize from a selected message. See checkpointing. Aliases: /checkpoint, /undo 대화와/또는 코드를 이전 시점으로 되돌리거나, 선택한 메시지를 바탕으로 요약할 수 있습니다. 체크포인트를 참조하세요. 별칭: /checkpoint, /undo",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -849,7 +934,8 @@
       "aliases": [],
       "searchText": "Skill. Launch and drive your project's app to see a change working in the running app, not just in tests. See Run and verify your app. Requires Claude Code v2.1.145 or later Skill. 프로젝트의 앱을 실행하고 직접 조작하여, 테스트 환경뿐만 아니라 실행 중인 앱에서도 변경 사항이 적용되는지 확인해 보세요. 앱 실행 및 확인하기를 참조하세요. Claude Code v2.1.145 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -861,7 +947,8 @@
       "aliases": [],
       "searchText": "Skill. Teach /run and /verify how to build, launch, and drive your project's app from a clean environment by writing a per-project skill. Requires Claude Code v2.1.145 or later 스킬. 프로젝트별 스킬을 작성하여, /run 및 /verify 사용자들이 깨끗한 환경에서 프로젝트 앱을 빌드하고, 실행하며, 구동하는 방법을 알려주세요. Claude Code v2.1.145 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -873,7 +960,8 @@
       "aliases": [],
       "searchText": "Toggle sandbox mode. Available on supported platforms only 샌드박스 모드를 켜거나 끕니다. 지원되는 플랫폼에서만 사용할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -887,7 +975,8 @@
       ],
       "searchText": "Create, update, list, or run routines, which execute on Anthropic-managed cloud infrastructure. Claude walks you through the setup conversationally. Alias: /routines Anthropic에서 관리하는 클라우드 인프라에서 실행되는 루틴을 생성, 업데이트, 열람하거나 실행할 수 있습니다. Claude가 대화 형식으로 설정 과정을 안내해 드립니다. 별칭: /routines",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -899,7 +988,8 @@
       "aliases": [],
       "searchText": "Adjust mouse wheel scroll speed interactively, with a ruler you can scroll while the dialog is open to preview the change. Available in fullscreen rendering only and not in the JetBrains IDE terminal 마우스 휠의 스크롤 속도를 대화형으로 조정할 수 있으며, 눈금자를 사용하여 대화 상자가 열려 있는 동안 스크롤을 통해 변경 사항을 미리 확인할 수 있습니다. 이 기능은 전체 화면 렌더링에서만 사용할 수 있으며, JetBrains IDE 터미널에서는 사용할 수 없습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -911,7 +1001,8 @@
       "aliases": [],
       "searchText": "Analyze pending changes on the current branch for security vulnerabilities. Reviews the git diff and identifies risks like injection, auth issues, and data exposure 현재 브랜치의 미적용 변경 사항에 대해 보안 취약점을 분석합니다. git diff를 검토하여 인젝션, 인증 문제, 데이터 유출과 같은 위험 요소를 파악합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -923,7 +1014,8 @@
       "aliases": [],
       "searchText": "Configure Amazon Bedrock authentication, region, and model pins through an interactive wizard. Only visible when CLAUDECODEUSEBEDROCK=1 is set. First-time Bedrock users can also access this wizard from the login screen 대화형 마법사를 통해 Amazon Bedrock 인증, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 CLAUDECODEUSEBEDROCK=1가 설정된 경우에만 표시됩니다. Bedrock을 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -935,7 +1027,8 @@
       "aliases": [],
       "searchText": "Configure Google Vertex AI authentication, project, region, and model pins through an interactive wizard. Only visible when CLAUDECODEUSEVERTEX=1 is set. First-time Vertex AI users can also access this wizard from the login screen 대화형 마법사를 통해 Google Vertex AI 인증, 프로젝트, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 CLAUDECODEUSEVERTEX=1가 설정된 경우에만 표시됩니다. Vertex AI를 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -947,7 +1040,8 @@
       "aliases": [],
       "searchText": "Skill. Review the changed code for cleanup opportunities and apply the fixes. Four review agents run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change sits at the right level of abstraction. From v2.1.154, the review does not look for correctness bugs. Use /code-review to find bugs. On earlier versions /simplify is equivalent to /code-review --fix. Pass a path or PR reference to review a specific target Skill. 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 담당자가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 /code-review를 사용하십시오. 이전 버전에서는 /simplify가 /code-review --fix와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.154"
+      "minVersion": "2.1.154",
+      "resources": []
     },
     {
       "type": "command",
@@ -959,7 +1053,8 @@
       "aliases": [],
       "searchText": "List available skills. Press t to sort by token count. Press Space to hide a skill from Claude or the / menu, then Enter to save 사용 가능한 스킬 목록입니다. t를 누르면 토큰 수순으로 정렬됩니다. Space를 누르면 클로드나 ‘/’ 메뉴에서 해당 스킬을 숨길 수 있으며, Enter를 누르면 변경 사항을 저장할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -971,7 +1066,8 @@
       "aliases": [],
       "searchText": "Alias for /usage. Opens on the Stats tab /usage의 별칭입니다. ‘통계’ 탭에서 열립니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -983,7 +1079,8 @@
       "aliases": [],
       "searchText": "Open the Settings interface (Status tab) showing version, model, account, and connectivity. Works while Claude is responding, without waiting for the current response to finish 버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -995,7 +1092,8 @@
       "aliases": [],
       "searchText": "Configure Claude Code's status line. Describe what you want, or run without arguments to auto-configure from your shell prompt Claude Code의 상태 줄을 구성하세요. 원하는 내용을 입력하거나, 인수를 지정하지 않고 실행하면 셸 프롬프트에서 자동으로 구성됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1007,7 +1105,8 @@
       "aliases": [],
       "searchText": "Order Claude Code stickers 클로드 코드 스티커 주문하기",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1019,7 +1118,8 @@
       "aliases": [],
       "searchText": "Stop the current background session. Only available while attached to a background session; the transcript and any worktree are kept. To detach without stopping, use /exit or press ← 현재 백그라운드 세션을 중지합니다. 백그라운드 세션에 연결되어 있는 동안에만 사용할 수 있으며, 대화 기록과 작업 트리는 유지됩니다. 중지하지 않고 연결을 해제하려면 /exit를 사용하거나 ←를 누르세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1031,7 +1131,8 @@
       "aliases": [],
       "searchText": "View and manage everything running in the background. Also available as /bashes 백그라운드에서 실행 중인 모든 항목을 확인하고 관리하세요. /bashes에서도 이용 가능합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1043,7 +1144,8 @@
       "aliases": [],
       "searchText": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days and produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Pro, Max, Team, and Enterprise plans, also returns a share link teammates can open directly in Claude Code Claude Code 사용 내역을 바탕으로 팀원 온보딩 가이드를 생성하세요. Claude는 지난 30일간의 세션, 명령어 및 MCP 서버 사용 내역을 분석하여, 팀원이 첫 메시지로 붙여넣기만 하면 빠르게 설정을 완료할 수 있는 마크다운 가이드를 생성합니다. Pro, Max, Team 및 Enterprise 요금제를 이용하는 claude.ai 구독자의 경우, 팀원이 Claude Code에서 직접 열 수 있는 공유 링크도 함께 제공됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1055,7 +1157,8 @@
       "aliases": [],
       "searchText": "Pull a Claude Code on the web session into this terminal: opens a picker, then fetches the branch and conversation. Also available as /tp. Requires a claude.ai subscription 이 터미널에서 웹상의 Claude Code 세션을 불러오세요: 선택기가 열리고, 해당 브랜치와 대화가 불러옵니다. /tp에서도 이용 가능합니다. claude.ai 구독이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1067,7 +1170,8 @@
       "aliases": [],
       "searchText": "Configure terminal keybindings for Shift+Enter and other shortcuts. Only visible in terminals that need it, like VS Code, Cursor, Devin Desktop, Alacritty, or Zed Shift+Enter 및 기타 단축키에 대한 터미널 키 바인딩을 구성합니다. VS Code, Cursor, Devin Desktop, Alacritty, Zed 등 해당 기능이 필요한 터미널에서만 표시됩니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1079,7 +1183,8 @@
       "aliases": [],
       "searchText": "Change the color theme. Includes an auto option that matches your terminal's light or dark background, light and dark variants, colorblind-accessible (daltonized) themes, ANSI themes that use your terminal's color palette, and any custom themes from ~/.claude/themes/ or plugins. Select New custom theme… to create one 색상 테마를 변경하세요. 터미널의 밝은 또는 어두운 배경에 맞춰주는 ‘auto’ 옵션, 밝은 버전과 어두운 버전, 색맹 사용자용(달턴화) 테마, 터미널의 색상 팔레트를 사용하는 ANSI 테마, 그리고 ~/.claude/themes/ 또는 플러그인에서 제공하는 사용자 정의 테마 등이 포함되어 있습니다. 새 사용자 정의 테마…를 선택하여 테마를 직접 만들 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1091,7 +1196,8 @@
       "aliases": [],
       "searchText": "Set the terminal UI renderer and relaunch into it with your conversation intact. fullscreen enables the flicker-free alt-screen renderer. With no argument, prints the active renderer 터미널 UI 렌더러를 설정하고, 대화 내역을 그대로 유지한 채 해당 렌더러로 다시 실행합니다. `fullscreen` 명령어는 깜빡임 없는 대체 화면 렌더러를 활성화합니다. 인수를 지정하지 않으면 현재 활성화된 렌더러를 표시합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1103,7 +1209,8 @@
       "aliases": [],
       "searchText": "Draft a plan in an ultraplan session, review it in your browser, then execute remotely or send it back to your terminal ultraplan 세션에서 계획을 작성하고, 브라우저에서 검토한 다음, 원격으로 실행하거나 터미널로 다시 전송하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1115,7 +1222,8 @@
       "aliases": [],
       "searchText": "Run a deep, multi-agent code review in a cloud sandbox with ultrareview. The preferred invocation is now /code-review ultra, and /ultrareview remains as an alias. Includes 3 free runs on Pro and Max, then requires usage credits ultrareview를 사용하여 클라우드 샌드박스에서 심층적인 다중 에이전트 코드 검토를 실행해 보세요. 이제 권장 호출 방식은 /code-review ultra이며, /ultrareview는 별칭으로 유지됩니다. Pro 및 Max 요금제에서는 3회의 무료 실행이 제공되며, 그 이후에는 사용 크레딧이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1127,7 +1235,8 @@
       "aliases": [],
       "searchText": "Open the upgrade page to switch to a higher plan tier 업그레이드 페이지를 열어 더 높은 요금제로 변경하세요",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1139,7 +1248,8 @@
       "aliases": [],
       "searchText": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Team, or Enterprise plan, includes a breakdown of usage by skill, subagent, plugin, and MCP server. See the cost tracking guide for details. /cost and /stats are aliases 세션 비용, 요금제 사용 한도 및 활동 통계를 표시합니다. Pro, Max, Team 또는 Enterprise 요금제를 사용하는 경우, 스킬, 서브에이전트, 플러그인 및 MCP 서버별 사용 내역이 포함됩니다. 자세한 내용은 비용 추적 가이드를 참조하세요. /cost 및 /stats는 별칭입니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1151,7 +1261,8 @@
       "aliases": [],
       "searchText": "Configure usage credits to keep working when you hit a limit. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "skill",
@@ -1163,7 +1274,8 @@
       "aliases": [],
       "searchText": "Skill. Confirm a code change does what it should by building your project's app, running it, and observing the result, rather than relying on tests or type checks. See Run and verify your app. Requires Claude Code v2.1.145 or later Skill. 테스트나 타입 검사에만 의존하지 말고, 프로젝트의 앱을 빌드하고 실행한 뒤 결과를 확인하여 코드 변경 사항이 의도한 대로 작동하는지 확인하세요. 앱 실행 및 확인하기를 참조하세요. Claude Code v2.1.145 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1175,7 +1287,8 @@
       "aliases": [],
       "searchText": "Removed in v2.1.92. To toggle between Vim and Normal editing modes, use /config → Editor mode v2.1.92에서 제거되었습니다. Vim 편집 모드와 일반 편집 모드를 전환하려면 ‘/config’ → ‘Editor mode’를 사용하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1187,7 +1300,8 @@
       "aliases": [],
       "searchText": "Toggle voice dictation, or enable it in a specific mode. Requires a Claude.ai account 음성 입력 기능을 켜거나 끄거나, 특정 모드에서 이 기능을 활성화할 수 있습니다. Claude.ai 계정이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1199,7 +1313,8 @@
       "aliases": [],
       "searchText": "Connect your GitHub account to Claude Code on the web using your local gh CLI credentials. /schedule prompts for this automatically if GitHub isn't connected 로컬 gh CLI 자격 증명을 사용하여 GitHub 계정을 Claude Code on the web에 연결하세요. GitHub가 연결되어 있지 않으면 /schedule에서 자동으로 이를 요청합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     },
     {
       "type": "command",
@@ -1211,7 +1326,8 @@
       "aliases": [],
       "searchText": "Open the workflow progress view to watch, pause, resume, or save running and completed workflows 워크플로우 진행 상황 보기를 열어 실행 중이거나 완료된 워크플로우를 확인, 일시 중지, 재개 또는 저장할 수 있습니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": ""
+      "minVersion": "",
+      "resources": []
     }
   ]
 }

@@ -1,5 +1,12 @@
 export type EntryType = 'command' | 'skill'
 
+/** A curated external link for an entry (video, doc, blog post). */
+export interface Resource {
+  type: 'youtube' | 'docs' | 'blog' | 'link'
+  title: string
+  url: string
+}
+
 export interface Entry {
   /** 'command' (built-in slash command) or 'skill' (bundled skill). */
   type: EntryType
@@ -24,6 +31,8 @@ export interface Entry {
   /** Claude Code version this entry was introduced in (e.g. "2.1.169"), parsed
    *  from a leading `min-version` marker in the docs. Empty when not stated. */
   minVersion: string
+  /** Curated external links (videos, etc.), merged from data/resources.json. */
+  resources: Resource[]
 }
 
 export interface Dictionary {

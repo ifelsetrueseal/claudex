@@ -1,0 +1,24 @@
+{
+  "_comment": "Curated external links per command/skill, keyed by name. Merged into entries.json by build-index. Add specific video URLs here. The seeded entries below use YouTube *search* links as starting points — replace with specific videos when you find good ones.",
+  "/plan": [
+    {
+      "type": "youtube",
+      "title": "Claude Code plan mode — videos",
+      "url": "https://www.youtube.com/results?search_query=claude+code+plan+mode"
+    }
+  ],
+  "/code-review": [
+    {
+      "type": "youtube",
+      "title": "Claude Code code review — videos",
+      "url": "https://www.youtube.com/results?search_query=claude+code+code+review"
+    }
+  ],
+  "/compact": [
+    {
+      "type": "youtube",
+      "title": "Claude Code context & compact — videos",
+      "url": "https://www.youtube.com/results?search_query=claude+code+compact+context"
+    }
+  ]
+}

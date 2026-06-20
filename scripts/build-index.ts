@@ -2,7 +2,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import type { Dictionary, Entry } from '@claudex/core'
+import type { Dictionary, Entry, Resource } from '@claudex/core'
 import { COMMANDS_URL, fetchCommands } from './fetch-commands'
 import { SKILLS_URL, fetchSkills } from './fetch-skills'
 import { toSearchText } from './lib/markdown'
@@ -11,6 +11,7 @@ import { translateBatch } from './lib/translate'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const CORE_PATH = resolve(__dirname, '../packages/core/data/entries.json')
 const WEB_PATH = resolve(__dirname, '../apps/web/public/data/entries.json')
+const RESOURCES_PATH = resolve(__dirname, '../packages/core/data/resources.json')
 
 const PLACEHOLDER = 'Bundled skill'
 
@@ -48,6 +49,18 @@ function merge(commands: Entry[], skills: Entry[]): Entry[] {
 function writeJson(path: string, dict: Dictionary): void {
   mkdirSync(dirname(path), { recursive: true })
   writeFileSync(path, JSON.stringify(dict, null, 2) + '\n')
+}
+
+/** Load curated links keyed by entry name (keys starting with "_" are notes). */
+function loadResources(): Record<string, Resource[]> {
+  if (!existsSync(RESOURCES_PATH)) return {}
+  const raw = JSON.parse(readFileSync(RESOURCES_PATH, 'utf8')) as Record<string, unknown>
+  const map: Record<string, Resource[]> = {}
+  for (const [name, val] of Object.entries(raw)) {
+    if (name.startsWith('_') || !Array.isArray(val)) continue
+    map[name] = val as Resource[]
+  }
+  return map
 }
 
 /**
@@ -122,6 +135,15 @@ async function main(): Promise<void> {
     if (e.firstSeen > baselineAt) newCount++
   }
   console.log(`firstSeen: baseline ${baselineAt}, ${newCount} entries newer than baseline`)
+
+  // Attach curated links from resources.json (keyed by entry name).
+  const resourceMap = loadResources()
+  let resourceCount = 0
+  for (const e of entries) {
+    e.resources = resourceMap[e.name] ?? []
+    if (e.resources.length) resourceCount++
+  }
+  console.log(`resources: attached to ${resourceCount} entries`)
 
   // Fill descriptionKo (incremental, cache-aware) before diffing.
   await applyTranslations(entries, prevByName)

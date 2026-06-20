@@ -30,6 +30,7 @@ function makeSkill(name: string, description: string): Entry {
     searchText: toSearchText(description),
     firstSeen: '',
     minVersion: '',
+    resources: [],
   }
 }
 

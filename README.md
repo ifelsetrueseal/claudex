@@ -95,6 +95,28 @@ DEEPL_API_KEY=xxxxxxxx:fx pnpm sync   # entries.json 의 descriptionKo 채워짐
 
 > [DeepL Free API 키](https://www.deepl.com/pro-api) 는 무료로 발급할 수 있습니다 (키 끝이 `:fx`).
 
+## 리소스 큐레이션 (영상·링크)
+
+각 명령어·스킬 카드에 **▶ 영상이나 🔗 링크**를 붙일 수 있습니다. 데이터는
+`packages/core/data/resources.json` 에서 **이름(name)별로 수동 큐레이션**합니다:
+
+```jsonc
+{
+  "/plan": [
+    { "type": "youtube", "title": "보여줄 텍스트", "url": "https://youtu.be/..." }
+  ]
+}
+```
+
+- `type`: `youtube`(▶) | `docs` | `blog` | `link`(🔗)
+- `build-index` 가 이걸 읽어 `entries.json` 의 각 항목 `resources` 에 병합합니다.
+- 링크가 있는 항목만 카드에 표시됩니다 (없으면 안 보임).
+- `_` 로 시작하는 키는 메모로 취급되어 무시됩니다.
+- 안전: 웹은 `http(s)` URL만 렌더링합니다.
+
+> 처음엔 인기 명령어 몇 개에 YouTube **검색** 링크를 시드로 넣어뒀습니다 — 좋은 영상을
+> 찾으면 구체적인 영상 URL로 교체하세요. (품질 > 커버리지)
+
 ## GitHub Pages 배포
 
 `apps/web` 의 정적 빌드 결과(`apps/web/dist`)를 서빙하면 됩니다.

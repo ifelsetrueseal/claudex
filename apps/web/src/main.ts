@@ -176,6 +176,15 @@ function renderEntry(entry: Entry, words: string[]): string {
   const aliases = entry.aliases.length
     ? `<div class="aliases">${esc(t().aliases)} ${entry.aliases.map((a) => `<code>${esc(a)}</code>`).join(' ')}</div>`
     : ''
+  const links = (entry.resources ?? []).filter((r) => /^https?:\/\//i.test(r.url))
+  const resources = links.length
+    ? `<div class="resources">${links
+        .map(
+          (r) =>
+            `<a class="res" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${r.type === 'youtube' ? '▶' : '🔗'} ${esc(r.title)}</a>`,
+        )
+        .join('')}</div>`
+    : ''
   return `<article class="entry ${entry.type}${fresh ? ' is-new' : ''}">
     <div class="entry-head">
       <span class="name">${renderName(entry.name, words)}${renderArgs(entry.args)}</span>
@@ -184,6 +193,7 @@ function renderEntry(entry: Entry, words: string[]): string {
     </div>
     ${desc ? `<p class="desc">${renderDesc(desc, words)}</p>` : ''}
     ${aliases}
+    ${resources}
   </article>`
 }
 

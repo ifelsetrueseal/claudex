@@ -167,6 +167,20 @@ pnpm --filter @claudex/extension build      # → apps/extension/dist
 `apps/desktop` 은 **웹 빌드(`apps/web/dist`)를 프론트엔드로 그대로 재사용**하는 Tauri v2 래퍼입니다.
 같은 `packages/core` 검색 + 번들된 데이터로 **오프라인 네이티브 앱**(`.app`/`.dmg`)이 됩니다.
 
+### 설치 (macOS, 사용자)
+
+**한 줄 설치:**
+
+```bash
+curl -fsSL https://github.com/ifelsetrueseal/claudex/releases/latest/download/install.sh | bash
+```
+
+최신 릴리스의 `.dmg` 를 받아 `claudex.app` 을 설치하고, Gatekeeper quarantine 을 제거해 경고 없이 실행되게 합니다(앱은 미서명).
+
+또는 **수동**: [Releases](https://github.com/ifelsetrueseal/claudex/releases) 에서 `.dmg` 다운로드 → claudex 를 응용프로그램에 드래그 → 첫 실행 시 **우클릭 → 열기**.
+
+### 직접 빌드 (개발/메인테이너)
+
 요구사항: **Rust** (`rustup`) + Xcode Command Line Tools (macOS).
 
 ```bash
@@ -176,6 +190,14 @@ pnpm --filter @claudex/desktop app:dev
 # 배포 빌드 → .app + .dmg
 pnpm --filter @claudex/desktop app:build
 # 결과: apps/desktop/src-tauri/target/release/bundle/{macos,dmg}/
+```
+
+### 릴리스 만들기
+
+버전 태그를 push 하면 `release` 워크플로가 **유니버설(.dmg) 자동 빌드 → GitHub Release 생성 → `install.sh` 첨부**합니다(퍼블릭 레포라 macOS 러너도 무료):
+
+```bash
+git tag v0.1.0 && git push origin v0.1.0
 ```
 
 - 아이콘은 루트 로고에서 생성됨(`tauri icon`). 창 기본 980×720.

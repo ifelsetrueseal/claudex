@@ -117,6 +117,15 @@ DEEPL_API_KEY=xxxxxxxx:fx pnpm sync   # entries.json 의 descriptionKo 채워짐
 > 처음엔 인기 명령어 몇 개에 YouTube **검색** 링크를 시드로 넣어뒀습니다 — 좋은 영상을
 > 찾으면 구체적인 영상 URL로 교체하세요. (품질 > 커버리지)
 
+## 공식 영상 (자동 수집)
+
+빌드 시 Anthropic 공식 유튜브 채널(`@claude`, `@anthropic-ai`)의 **RSS 피드**에서
+Claude Code 관련 영상을 자동 수집해 페이지 하단 **"📺 공식 영상"** 섹션에 표시합니다.
+
+- 무료 (RSS, API 키 불필요), 빌드 때 가져와 `entries.json` 의 `officialVideos` 에 정적 저장
+- 제목 기준으로 Claude Code 관련만 필터 (`scripts/lib/videos.ts` 의 정규식)
+- 네트워크 실패 시 직전 결과 유지 (graceful)
+
 ## GitHub Pages 배포
 
 `apps/web` 의 정적 빌드 결과(`apps/web/dist`)를 서빙하면 됩니다.

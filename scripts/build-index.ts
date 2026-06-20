@@ -7,6 +7,7 @@ import { COMMANDS_URL, fetchCommands } from './fetch-commands'
 import { SKILLS_URL, fetchSkills } from './fetch-skills'
 import { toSearchText } from './lib/markdown'
 import { translateBatch } from './lib/translate'
+import { fetchOfficialVideos } from './lib/videos'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const CORE_PATH = resolve(__dirname, '../packages/core/data/entries.json')
@@ -148,12 +149,20 @@ async function main(): Promise<void> {
   // Fill descriptionKo (incremental, cache-aware) before diffing.
   await applyTranslations(entries, prevByName)
 
+  // Pull official Claude Code videos (RSS, no key). Keep previous on failure.
+  let officialVideos = prev?.officialVideos ?? []
+  const fetchedVideos = await fetchOfficialVideos(8)
+  if (fetchedVideos.length) officialVideos = fetchedVideos
+  console.log(`official videos: ${officialVideos.length}`)
+
   // Compare against the previous index (entries only, ignoring fetchedAt).
   // When nothing changed, keep the previous fetchedAt so the written file is
   // byte-identical — that way the daily/weekly CI run produces no empty commit.
   let fetchedAt = new Date().toISOString()
   if (prev) {
-    const changed = JSON.stringify(prev.entries) !== JSON.stringify(entries)
+    const changed =
+      JSON.stringify(prev.entries) !== JSON.stringify(entries) ||
+      JSON.stringify(prev.officialVideos) !== JSON.stringify(officialVideos)
     if (changed) {
       console.log('entries CHANGED since last sync')
     } else {
@@ -170,6 +179,7 @@ async function main(): Promise<void> {
     sources: [COMMANDS_URL, SKILLS_URL],
     count: entries.length,
     entries,
+    officialVideos,
   }
 
   writeJson(CORE_PATH, dict)

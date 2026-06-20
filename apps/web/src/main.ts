@@ -24,6 +24,7 @@ const I18N = {
     aliases: 'aliases:',
     newBadge: 'NEW',
     copy: 'Copy command',
+    officialVideos: 'Official Claude Code videos',
     loadError: 'Failed to load data. Did you run <code>pnpm sync</code> first?',
     footerLead: 'claudex is an unofficial tool. Data from',
     footerSource: 'Anthropic official docs',
@@ -43,6 +44,7 @@ const I18N = {
     aliases: '별칭:',
     newBadge: '신규',
     copy: '명령어 복사',
+    officialVideos: '공식 Claude Code 영상',
     loadError: '데이터를 불러오지 못했습니다. <code>pnpm sync</code> 를 먼저 실행했나요?',
     footerLead: 'claudex는 비공식 도구입니다. 데이터 출처는',
     footerSource: 'Anthropic 공식 문서',
@@ -57,6 +59,7 @@ const els = {
   meta: document.getElementById('meta') as HTMLElement,
   tagline: document.getElementById('tagline') as HTMLElement,
   footer: document.getElementById('footer') as HTMLElement,
+  videos: document.getElementById('videos') as HTMLElement,
   tabs: Array.from(document.querySelectorAll<HTMLButtonElement>('.tab')),
   langs: Array.from(document.querySelectorAll<HTMLButtonElement>('.lang button')),
 }
@@ -238,6 +241,26 @@ function renderMeta(): void {
     <span>${esc(t().source)} ${sources}</span>`
 }
 
+function renderVideos(): void {
+  const vids = dict?.officialVideos ?? []
+  if (!vids.length) {
+    els.videos.hidden = true
+    els.videos.innerHTML = ''
+    return
+  }
+  els.videos.hidden = false
+  els.videos.innerHTML = `<h2>📺 ${esc(t().officialVideos)}</h2>
+    <div class="video-row">${vids
+      .map(
+        (v) =>
+          `<a class="vid" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://i.ytimg.com/vi/${esc(v.videoId)}/mqdefault.jpg" alt="" />
+            <div class="vt">${esc(v.title)}</div>
+          </a>`,
+      )
+      .join('')}</div>`
+}
+
 /** Apply all language-dependent static text and re-render. */
 function applyLang(): void {
   document.documentElement.lang = lang
@@ -265,6 +288,7 @@ function applyLang(): void {
   }
   els.footer.innerHTML = `${esc(t().footerLead)} <a href="${COMMANDS_DOC}" target="_blank" rel="noopener noreferrer">${esc(t().footerSource)}</a>.<br />${esc(t().footerDaily)}`
   renderMeta()
+  renderVideos()
   update()
 }
 

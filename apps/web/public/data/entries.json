@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-20T04:38:44.568Z",
+  "fetchedAt": "2026-06-20T04:50:37.508Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -1328,6 +1328,32 @@
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
+    }
+  ],
+  "officialVideos": [
+    {
+      "videoId": "m7TJqx8CYG8",
+      "title": "Artifacts in Claude Code: share your work as it happens",
+      "url": "https://www.youtube.com/watch?v=m7TJqx8CYG8",
+      "published": "2026-06-18T18:12:10+00:00"
+    },
+    {
+      "videoId": "5kTDt9ewTwE",
+      "title": "Enterprise-managed auth for MCP connectors",
+      "url": "https://www.youtube.com/watch?v=5kTDt9ewTwE",
+      "published": "2026-06-18T16:54:52+00:00"
+    },
+    {
+      "videoId": "Hth_tLaC2j8",
+      "title": "Reflecting on a year of Claude Code",
+      "url": "https://www.youtube.com/watch?v=Hth_tLaC2j8",
+      "published": "2026-06-08T16:31:07+00:00"
+    },
+    {
+      "videoId": "UAmKyyZ-b9E",
+      "title": "Introducing Cowork: Claude Code for the rest of your work",
+      "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
+      "published": "2026-01-12T20:02:22+00:00"
     }
   ]
 }

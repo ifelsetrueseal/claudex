@@ -35,6 +35,14 @@ export interface Entry {
   resources: Resource[]
 }
 
+/** An official Claude Code video pulled from Anthropic's YouTube feeds. */
+export interface OfficialVideo {
+  videoId: string
+  title: string
+  url: string
+  published: string
+}
+
 export interface Dictionary {
   /** ISO timestamp of when the index was built. */
   fetchedAt: string
@@ -46,4 +54,6 @@ export interface Dictionary {
   /** Number of entries. */
   count: number
   entries: Entry[]
+  /** Recent official Claude Code videos (auto-collected from YouTube RSS). */
+  officialVideos: OfficialVideo[]
 }

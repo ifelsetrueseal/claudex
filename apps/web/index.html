@@ -432,7 +432,19 @@
         gap: 12px;
         overflow-x: auto;
         padding-bottom: 6px;
-        scrollbar-width: thin;
+        cursor: grab;
+        user-select: none;
+        scrollbar-width: none; /* Firefox: hide scrollbar */
+        -ms-overflow-style: none; /* old Edge */
+      }
+      .video-row::-webkit-scrollbar {
+        display: none; /* Chrome/Safari: hide scrollbar */
+      }
+      .videos.dragging .video-row {
+        cursor: grabbing;
+      }
+      .vid img {
+        -webkit-user-drag: none;
       }
       .vid {
         flex: 0 0 200px;

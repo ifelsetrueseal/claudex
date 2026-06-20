@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "claudex — Claude Code 명령어·스킬 도감",
+  "version": "0.1.0",
+  "description": "Claude Code 빌트인 슬래시 명령어와 번들 스킬을 빠르게 검색하는 도감 (비공식).",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "claudex"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://raw.githubusercontent.com/*"]
+}

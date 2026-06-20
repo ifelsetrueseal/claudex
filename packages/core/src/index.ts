@@ -1,3 +1,5 @@
 export type { Entry, EntryType, Dictionary, Resource, OfficialVideo } from './types'
 export { search } from './search'
 export type { SearchResult } from './search'
+export { loadDictionary } from './load'
+export type { LoadDictionaryOptions } from './load'

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>claudex</title>
+    <style>
+      :root {
+        --bg: #0d0e11;
+        --panel: #14161b;
+        --panel-2: #191c22;
+        --border: #262a33;
+        --text: #d7dae0;
+        --muted: #8a90a0;
+        --faint: #5c6270;
+        --accent: #d97757;
+        --skill: #34d3c0;
+        --req: #e3b341;
+        --opt: #5db2ff;
+        --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        width: 400px;
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 14px;
+      }
+      .top {
+        padding: 12px 12px 8px;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+      .titlebar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+      .brand {
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .brand .slash {
+        color: var(--accent);
+      }
+      .lang {
+        margin-left: auto;
+        display: flex;
+        gap: 3px;
+      }
+      .lang button {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font: inherit;
+        font-size: 11px;
+        padding: 2px 7px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .lang button[aria-pressed="true"] {
+        color: var(--bg);
+        background: var(--accent);
+        border-color: var(--accent);
+        font-weight: 600;
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        padding: 0 10px;
+      }
+      .search:focus-within {
+        border-color: var(--accent);
+      }
+      .search .p {
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .search input {
+        flex: 1;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        color: var(--text);
+        font: inherit;
+        padding: 9px 0;
+      }
+      .search input::placeholder {
+        color: var(--faint);
+      }
+      .tabs {
+        display: flex;
+        gap: 6px;
+        margin-top: 8px;
+        align-items: center;
+      }
+      .tab {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font: inherit;
+        font-size: 12px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .tab[aria-selected="true"] {
+        color: var(--bg);
+        background: var(--accent);
+        border-color: var(--accent);
+        font-weight: 600;
+      }
+      .tab-new {
+        color: var(--accent);
+        border-color: rgba(217, 119, 87, 0.5);
+      }
+      .count {
+        margin-left: auto;
+        color: var(--faint);
+        font-size: 11.5px;
+      }
+      .count b {
+        color: var(--text);
+      }
+      .list {
+        flex: 1;
+        overflow-y: auto;
+        padding: 8px 12px 12px;
+      }
+      .entry {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: 7px;
+        padding: 9px 11px;
+        margin-bottom: 8px;
+      }
+      .entry.skill {
+        border-left-color: var(--skill);
+      }
+      .entry.is-new {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 1px rgba(217, 119, 87, 0.25);
+      }
+      .head {
+        display: flex;
+        align-items: baseline;
+        gap: 7px;
+        flex-wrap: wrap;
+      }
+      .name {
+        font-weight: 600;
+        word-break: break-word;
+      }
+      .name .slash {
+        color: var(--accent);
+      }
+      .arg-req {
+        color: var(--req);
+      }
+      .arg-opt {
+        color: var(--opt);
+      }
+      .badge {
+        font-size: 9.5px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 1px 6px;
+        border-radius: 4px;
+      }
+      .badge.skill {
+        color: var(--bg);
+        background: var(--skill);
+      }
+      .badge.cmd {
+        color: var(--muted);
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+      }
+      .badge.new {
+        color: var(--bg);
+        background: var(--accent);
+      }
+      .ver {
+        font-size: 10px;
+        color: var(--faint);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 0 5px;
+      }
+      .copy {
+        margin-left: auto;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--faint);
+        font: inherit;
+        font-size: 12px;
+        line-height: 1;
+        padding: 3px 7px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .copy:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .copy.ok {
+        color: var(--skill);
+        border-color: var(--skill);
+      }
+      .desc {
+        color: var(--muted);
+        font-size: 12.5px;
+        margin: 6px 0 0;
+      }
+      .desc code {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 0 3px;
+        font-size: 11.5px;
+        color: var(--text);
+      }
+      .desc a {
+        color: var(--opt);
+        text-decoration: underline dotted;
+      }
+      .aliases {
+        margin-top: 6px;
+        font-size: 11px;
+        color: var(--faint);
+      }
+      .aliases code {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 0 4px;
+      }
+      mark {
+        background: rgba(217, 119, 87, 0.28);
+        color: inherit;
+        border-radius: 2px;
+      }
+      .empty {
+        color: var(--faint);
+        text-align: center;
+        padding: 40px 0;
+      }
+      .foot {
+        flex-shrink: 0;
+        border-top: 1px solid var(--border);
+        padding: 7px 12px;
+        font-size: 11px;
+        color: var(--faint);
+        display: flex;
+        gap: 10px;
+      }
+      .foot a {
+        color: var(--faint);
+        text-decoration: underline dotted;
+        margin-left: auto;
+      }
+      .foot a:hover {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="titlebar">
+        <span class="brand"><span class="slash">/</span>claudex</span>
+        <div class="lang" role="group" aria-label="Language">
+          <button data-lang="en" aria-pressed="true">EN</button>
+          <button data-lang="ko" aria-pressed="false">KO</button>
+        </div>
+      </div>
+      <label class="search">
+        <span class="p" aria-hidden="true">&gt;</span>
+        <input id="q" type="search" autocomplete="off" spellcheck="false" autofocus />
+      </label>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" data-filter="all" aria-selected="true">전체</button>
+        <button class="tab tab-new" role="tab" data-filter="new" aria-selected="false" hidden>NEW</button>
+        <button class="tab" role="tab" data-filter="command" aria-selected="false">명령어</button>
+        <button class="tab" role="tab" data-filter="skill" aria-selected="false">스킬</button>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+
+    <main class="list" id="list" aria-live="polite"></main>
+
+    <div class="foot">
+      <span id="meta"></span>
+      <a id="site" href="https://ifelsetrueseal.github.io/claudex/" target="_blank" rel="noopener noreferrer">전체 보기 ↗</a>
+    </div>
+
+    <script type="module" src="/src/popup.ts"></script>
+  </body>
+</html>

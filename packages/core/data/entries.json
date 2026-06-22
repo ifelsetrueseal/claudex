@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-20T05:12:00.678Z",
+  "fetchedAt": "2026-06-22T02:39:50.191Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -1332,6 +1332,12 @@
   ],
   "officialVideos": [
     {
+      "videoId": "tYOI-WoLS_o",
+      "title": "Delegate and schedule tasks in Claude Cowork",
+      "url": "https://www.youtube.com/watch?v=tYOI-WoLS_o",
+      "published": "2026-06-21T13:00:25+00:00"
+    },
+    {
       "videoId": "m7TJqx8CYG8",
       "title": "Artifacts in Claude Code: share your work as it happens",
       "url": "https://www.youtube.com/watch?v=m7TJqx8CYG8",
@@ -1414,12 +1420,6 @@
       "title": "Reflecting on a year of Claude Code",
       "url": "https://www.youtube.com/watch?v=Hth_tLaC2j8",
       "published": "2026-06-08T16:31:07+00:00"
-    },
-    {
-      "videoId": "n4ZxEznNaIY",
-      "title": "How Anthropic uses Claude in GTM Engineering",
-      "url": "https://www.youtube.com/watch?v=n4ZxEznNaIY",
-      "published": "2026-06-05T17:32:49+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

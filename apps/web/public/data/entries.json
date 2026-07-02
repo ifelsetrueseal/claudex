@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-06-25T02:08:00.488Z",
+  "fetchedAt": "2026-07-02T02:06:44.260Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 98,
+  "count": 100,
   "entries": [
     {
       "type": "command",
@@ -296,6 +296,32 @@
       "aliases": [],
       "searchText": "Workflow. Fan out web searches on a question, fetch and cross-check sources, and synthesize a cited report 워크플로우. 특정 질문에 대해 웹 검색 결과를 광범위하게 수집하고, 출처를 찾아 교차 확인한 뒤, 인용된 보고서를 종합한다.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/design-login",
+      "args": "",
+      "hasRequiredArg": false,
+      "description": "Authorize design-system access for `/design-sync` with your claude.ai account",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Authorize design-system access for /design-sync with your claude.ai account",
+      "firstSeen": "2026-07-02",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/design-sync",
+      "args": "[hint]",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Convert your repo's React design system and upload it to [Claude Design](https://claude.ai/design), so designs it produces use your real components. Optionally name the design system, for example `/design-sync Acme DS`. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API; on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry the underlying tool can't reach claude.ai, so the command is unavailable",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Convert your repo's React design system and upload it to Claude Design, so designs it produces use your real components. Optionally name the design system, for example /design-sync Acme DS. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API; on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry the underlying tool can't reach claude.ai, so the command is unavailable",
+      "firstSeen": "2026-07-02",
       "minVersion": "",
       "resources": []
     },
@@ -1331,96 +1357,6 @@
     }
   ],
   "officialVideos": [
-    {
-      "videoId": "VojDzHaciKQ",
-      "title": "Tag Claude in, right where you already work",
-      "url": "https://www.youtube.com/watch?v=VojDzHaciKQ",
-      "published": "2026-06-23T17:09:00+00:00"
-    },
-    {
-      "videoId": "tYOI-WoLS_o",
-      "title": "Delegate and schedule tasks in Claude Cowork",
-      "url": "https://www.youtube.com/watch?v=tYOI-WoLS_o",
-      "published": "2026-06-21T13:00:25+00:00"
-    },
-    {
-      "videoId": "m7TJqx8CYG8",
-      "title": "Artifacts in Claude Code: share your work as it happens",
-      "url": "https://www.youtube.com/watch?v=m7TJqx8CYG8",
-      "published": "2026-06-18T18:12:10+00:00"
-    },
-    {
-      "videoId": "5kTDt9ewTwE",
-      "title": "Enterprise-managed auth for MCP connectors",
-      "url": "https://www.youtube.com/watch?v=5kTDt9ewTwE",
-      "published": "2026-06-18T16:54:52+00:00"
-    },
-    {
-      "videoId": "H3XQeGNia8o",
-      "title": "The Briefing: Financial Services",
-      "url": "https://www.youtube.com/watch?v=H3XQeGNia8o",
-      "published": "2026-06-16T20:42:02+00:00"
-    },
-    {
-      "videoId": "tRsQsTMvPNg",
-      "title": "Claude FM 🎵 music for thinking and building",
-      "url": "https://www.youtube.com/watch?v=tRsQsTMvPNg",
-      "published": "2026-06-12T18:12:55+00:00"
-    },
-    {
-      "videoId": "2GbJl_-3bMs",
-      "title": "Claude FM 🎵 music for thinking and building",
-      "url": "https://www.youtube.com/watch?v=2GbJl_-3bMs",
-      "published": "2026-06-12T18:12:02+00:00"
-    },
-    {
-      "videoId": "N4efO8viXXo",
-      "title": "Code with Claude Tokyo 2026: Opening Keynote",
-      "url": "https://www.youtube.com/watch?v=N4efO8viXXo",
-      "published": "2026-06-12T01:13:08+00:00"
-    },
-    {
-      "videoId": "8NVZMRyCrn4",
-      "title": "The Problem Solvers | Michael Truell at Cursor",
-      "url": "https://www.youtube.com/watch?v=8NVZMRyCrn4",
-      "published": "2026-06-10T16:00:31+00:00"
-    },
-    {
-      "videoId": "Ty_50J84fMY",
-      "title": "Claude Fable 5 beats Pokémon FireRed only using vision",
-      "url": "https://www.youtube.com/watch?v=Ty_50J84fMY",
-      "published": "2026-06-09T20:31:49+00:00"
-    },
-    {
-      "videoId": "6YPqoARpYuQ",
-      "title": "Claude Fable 5 plays Factorio",
-      "url": "https://www.youtube.com/watch?v=6YPqoARpYuQ",
-      "published": "2026-06-09T17:18:28+00:00"
-    },
-    {
-      "videoId": "5f5JYLZHdhw",
-      "title": "Claude Fable 5 simulates the solar system and predicts a solar eclipse",
-      "url": "https://www.youtube.com/watch?v=5f5JYLZHdhw",
-      "published": "2026-06-09T17:18:25+00:00"
-    },
-    {
-      "videoId": "xmP7bhigCWE",
-      "title": "Claude Fable 5 sets a fluid simulation to Beethoven",
-      "url": "https://www.youtube.com/watch?v=xmP7bhigCWE",
-      "published": "2026-06-09T17:18:23+00:00"
-    },
-    {
-      "videoId": "tpjJeH1pPws",
-      "title": "Claude Fable 5 designs a 3D-printable model in a Claude-built CAD editor",
-      "url": "https://www.youtube.com/watch?v=tpjJeH1pPws",
-      "published": "2026-06-09T17:18:20+00:00"
-    },
-    {
-      "videoId": "LrZHnKS_L6k",
-      "title": "Working Like a Lawyer with Claude",
-      "url": "https://www.youtube.com/watch?v=LrZHnKS_L6k",
-      "published": "2026-06-08T20:55:45+00:00"
-    },
     {
       "videoId": "UAmKyyZ-b9E",
       "title": "Introducing Cowork: Claude Code for the rest of your work",

@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-07-02T02:06:44.260Z",
+  "fetchedAt": "2026-07-06T02:03:04.700Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 100,
+  "count": 101,
   "entries": [
     {
       "type": "command",
@@ -38,12 +38,12 @@
       "name": "/agents",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Manage [agent](https://code.claude.com/docs/en/sub-agents) configurations",
+      "description": "As of v2.1.198, running `/agents` prints a reminder to ask Claude to create or manage [subagents](https://code.claude.com/docs/en/sub-agents), or to edit `.claude/agents/` or `~/.claude/agents/` directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations",
       "descriptionKo": "[에이전트](https://code.claude.com/docs/en/sub-agents) 구성 관리",
       "aliases": [],
-      "searchText": "Manage agent configurations 에이전트 구성 관리",
+      "searchText": "As of v2.1.198, running /agents prints a reminder to ask Claude to create or manage subagents, or to edit .claude/agents/ or ~/.claude/agents/ directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations 에이전트 구성 관리",
       "firstSeen": "2026-06-20",
-      "minVersion": "",
+      "minVersion": "2.1.198",
       "resources": []
     },
     {
@@ -274,6 +274,19 @@
       "resources": []
     },
     {
+      "type": "command",
+      "name": "/dataviz",
+      "args": "[request]",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Design guidance for charts, graphs, and dashboards. Claude picks the chart form for the data, assigns color by role, validates the palette for colorblind safety and contrast with a bundled script, and applies mark, interaction, and accessibility rules. Uses a brand-neutral placeholder palette that you replace with your own. Requires Claude Code v2.1.198 or later",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Design guidance for charts, graphs, and dashboards. Claude picks the chart form for the data, assigns color by role, validates the palette for colorblind safety and contrast with a bundled script, and applies mark, interaction, and accessibility rules. Uses a brand-neutral placeholder palette that you replace with your own. Requires Claude Code v2.1.198 or later",
+      "firstSeen": "2026-07-06",
+      "minVersion": "",
+      "resources": []
+    },
+    {
       "type": "skill",
       "name": "/debug",
       "args": "[description]",
@@ -345,10 +358,10 @@
       "name": "/diff",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files",
+      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal",
       "descriptionKo": "커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "aliases": [],
-      "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
+      "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -454,10 +467,10 @@
       "name": "/focus",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The selection persists across sessions; set [`viewMode`](https://code.claude.com/docs/en/settings#available-settings) in settings to override it. Only available in [fullscreen rendering](https://code.claude.com/docs/en/fullscreen)",
+      "description": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. As of v2.1.198, the tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set [`viewMode`](https://code.claude.com/docs/en/settings#available-settings) in settings to override it. Only available in [fullscreen rendering](https://code.claude.com/docs/en/fullscreen)",
       "descriptionKo": "포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 [`viewMode`](https://code.claude.com/docs/en/settings#available-settings)를 설정하여 이를 재정의할 수 있습니다. [전체 화면 렌더링](https://code.claude.com/docs/en/fullscreen) 모드에서만 사용할 수 있습니다.",
       "aliases": [],
-      "searchText": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The selection persists across sessions; set viewMode in settings to override it. Only available in fullscreen rendering 포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 viewMode를 설정하여 이를 재정의할 수 있습니다. 전체 화면 렌더링 모드에서만 사용할 수 있습니다.",
+      "searchText": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. As of v2.1.198, the tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set viewMode in settings to override it. Only available in fullscreen rendering 포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 viewMode를 설정하여 이를 재정의할 수 있습니다. 전체 화면 렌더링 모드에서만 사용할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -805,10 +818,10 @@
       "name": "/radio",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Bedrock, Vertex, or Foundry",
+      "description": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry",
       "descriptionKo": "브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
       "aliases": [],
-      "searchText": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Bedrock, Vertex, or Foundry 브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
+      "searchText": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry 브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -955,10 +968,10 @@
       "name": "/run",
       "args": "",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Launch and drive your project's app to see a change working in the running app, not just in tests. See [Run and verify your app](https://code.claude.com/docs/en/skills#run-and-verify-your-app). Requires Claude Code v2.1.145 or later",
+      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Launch and drive your project's app to see a change working, not only passing tests. See [Run and verify your app](https://code.claude.com/docs/en/skills#run-and-verify-your-app). Requires Claude Code v2.1.145 or later",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 프로젝트의 앱을 실행하고 직접 조작하여, 테스트 환경뿐만 아니라 실행 중인 앱에서도 변경 사항이 적용되는지 확인해 보세요. [앱 실행 및 확인하기](https://code.claude.com/docs/en/skills#run-and-verify-your-app)를 참조하세요. Claude Code v2.1.145 이상이 필요합니다.",
       "aliases": [],
-      "searchText": "Skill. Launch and drive your project's app to see a change working in the running app, not just in tests. See Run and verify your app. Requires Claude Code v2.1.145 or later Skill. 프로젝트의 앱을 실행하고 직접 조작하여, 테스트 환경뿐만 아니라 실행 중인 앱에서도 변경 사항이 적용되는지 확인해 보세요. 앱 실행 및 확인하기를 참조하세요. Claude Code v2.1.145 이상이 필요합니다.",
+      "searchText": "Skill. Launch and drive your project's app to see a change working, not only passing tests. See Run and verify your app. Requires Claude Code v2.1.145 or later Skill. 프로젝트의 앱을 실행하고 직접 조작하여, 테스트 환경뿐만 아니라 실행 중인 앱에서도 변경 사항이 적용되는지 확인해 보세요. 앱 실행 및 확인하기를 참조하세요. Claude Code v2.1.145 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1035,10 +1048,10 @@
       "name": "/setup-bedrock",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Configure [Amazon Bedrock](https://code.claude.com/docs/en/amazon-bedrock) authentication, region, and model pins through an interactive wizard. Only visible when `CLAUDE_CODE_USE_BEDROCK=1` is set. First-time Bedrock users can also access this wizard from the login screen",
+      "description": "Configure [Amazon Bedrock](https://code.claude.com/docs/en/amazon-bedrock) authentication, region, and model pins through an interactive wizard. Only visible when `CLAUDE_CODE_USE_BEDROCK=1` is set. First-time Amazon Bedrock users can also access this wizard from the login screen",
       "descriptionKo": "대화형 마법사를 통해 [Amazon Bedrock](https://code.claude.com/docs/en/amazon-bedrock) 인증, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 `CLAUDE_CODE_USE_BEDROCK=1`가 설정된 경우에만 표시됩니다. Bedrock을 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
       "aliases": [],
-      "searchText": "Configure Amazon Bedrock authentication, region, and model pins through an interactive wizard. Only visible when CLAUDECODEUSEBEDROCK=1 is set. First-time Bedrock users can also access this wizard from the login screen 대화형 마법사를 통해 Amazon Bedrock 인증, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 CLAUDECODEUSEBEDROCK=1가 설정된 경우에만 표시됩니다. Bedrock을 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
+      "searchText": "Configure Amazon Bedrock authentication, region, and model pins through an interactive wizard. Only visible when CLAUDECODEUSEBEDROCK=1 is set. First-time Amazon Bedrock users can also access this wizard from the login screen 대화형 마법사를 통해 Amazon Bedrock 인증, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 CLAUDECODEUSEBEDROCK=1가 설정된 경우에만 표시됩니다. Bedrock을 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1048,10 +1061,10 @@
       "name": "/setup-vertex",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Configure [Google Vertex AI](https://code.claude.com/docs/en/google-vertex-ai) authentication, project, region, and model pins through an interactive wizard. Only visible when `CLAUDE_CODE_USE_VERTEX=1` is set. First-time Vertex AI users can also access this wizard from the login screen",
+      "description": "Configure [Google Cloud's Agent Platform](https://code.claude.com/docs/en/google-vertex-ai) authentication, project, region, and model pins through an interactive wizard. Only visible when `CLAUDE_CODE_USE_VERTEX=1` is set. First-time Google Cloud's Agent Platform users can also access this wizard from the login screen",
       "descriptionKo": "대화형 마법사를 통해 [Google Vertex AI](https://code.claude.com/docs/en/google-vertex-ai) 인증, 프로젝트, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 `CLAUDE_CODE_USE_VERTEX=1`가 설정된 경우에만 표시됩니다. Vertex AI를 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
       "aliases": [],
-      "searchText": "Configure Google Vertex AI authentication, project, region, and model pins through an interactive wizard. Only visible when CLAUDECODEUSEVERTEX=1 is set. First-time Vertex AI users can also access this wizard from the login screen 대화형 마법사를 통해 Google Vertex AI 인증, 프로젝트, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 CLAUDECODEUSEVERTEX=1가 설정된 경우에만 표시됩니다. Vertex AI를 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
+      "searchText": "Configure Google Cloud's Agent Platform authentication, project, region, and model pins through an interactive wizard. Only visible when CLAUDECODEUSEVERTEX=1 is set. First-time Google Cloud's Agent Platform users can also access this wizard from the login screen 대화형 마법사를 통해 Google Vertex AI 인증, 프로젝트, 리전 및 모델 핀을 구성할 수 있습니다. 이 옵션은 CLAUDECODEUSEVERTEX=1가 설정된 경우에만 표시됩니다. Vertex AI를 처음 사용하는 사용자는 로그인 화면에서도 이 마법사에 접근할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1061,10 +1074,10 @@
       "name": "/simplify",
       "args": "[target]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Review the changed code for cleanup opportunities and apply the fixes. Four review [agents](https://code.claude.com/docs/en/sub-agents) run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change sits at the right level of abstraction. From v2.1.154, the review does not look for correctness bugs. Use `/code-review` to find bugs. On earlier versions `/simplify` is equivalent to `/code-review --fix`. Pass a path or PR reference to review a specific target",
+      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Review the changed code for cleanup opportunities and apply the fixes. Four review [agents](https://code.claude.com/docs/en/sub-agents) run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change is at the right level of abstraction. From v2.1.154, the review doesn't look for correctness bugs. Use `/code-review` to find bugs. On earlier versions, `/simplify` is equivalent to `/code-review --fix`. Pass a path or PR reference to review a specific target",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 [담당자](https://code.claude.com/docs/en/sub-agents)가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 `/code-review`를 사용하십시오. 이전 버전에서는 `/simplify`가 `/code-review --fix`와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
       "aliases": [],
-      "searchText": "Skill. Review the changed code for cleanup opportunities and apply the fixes. Four review agents run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change sits at the right level of abstraction. From v2.1.154, the review does not look for correctness bugs. Use /code-review to find bugs. On earlier versions /simplify is equivalent to /code-review --fix. Pass a path or PR reference to review a specific target Skill. 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 담당자가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 /code-review를 사용하십시오. 이전 버전에서는 /simplify가 /code-review --fix와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
+      "searchText": "Skill. Review the changed code for cleanup opportunities and apply the fixes. Four review agents run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change is at the right level of abstraction. From v2.1.154, the review doesn't look for correctness bugs. Use /code-review to find bugs. On earlier versions, /simplify is equivalent to /code-review --fix. Pass a path or PR reference to review a specific target Skill. 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 담당자가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 /code-review를 사용하십시오. 이전 버전에서는 /simplify가 /code-review --fix와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
       "firstSeen": "2026-06-20",
       "minVersion": "2.1.154",
       "resources": []
@@ -1074,10 +1087,10 @@
       "name": "/skills",
       "args": "",
       "hasRequiredArg": false,
-      "description": "List available [skills](https://code.claude.com/docs/en/skills). Press `t` to sort by token count. Press `Space` to [hide a skill from Claude or the `/` menu](https://code.claude.com/docs/en/skills#override-skill-visibility-from-settings), then `Enter` to save",
+      "description": "List available [skills](https://code.claude.com/docs/en/skills). As of v2.1.121, type to filter the list by name. Press `t` to sort by token count. Press `Space` to [cycle a skill's visibility to Claude and the `/` menu](https://code.claude.com/docs/en/skills#override-skill-visibility-from-settings), then `Enter` to save",
       "descriptionKo": "사용 가능한 [스킬](https://code.claude.com/docs/en/skills) 목록입니다. `t`를 누르면 토큰 수순으로 정렬됩니다. `Space`를 누르면 [클로드나 ‘`/`’ 메뉴에서 해당 스킬을 숨길 수 있으며](https://code.claude.com/docs/en/skills#override-skill-visibility-from-settings), `Enter`를 누르면 변경 사항을 저장할 수 있습니다.",
       "aliases": [],
-      "searchText": "List available skills. Press t to sort by token count. Press Space to hide a skill from Claude or the / menu, then Enter to save 사용 가능한 스킬 목록입니다. t를 누르면 토큰 수순으로 정렬됩니다. Space를 누르면 클로드나 ‘/’ 메뉴에서 해당 스킬을 숨길 수 있으며, Enter를 누르면 변경 사항을 저장할 수 있습니다.",
+      "searchText": "List available skills. As of v2.1.121, type to filter the list by name. Press t to sort by token count. Press Space to cycle a skill's visibility to Claude and the / menu, then Enter to save 사용 가능한 스킬 목록입니다. t를 누르면 토큰 수순으로 정렬됩니다. Space를 누르면 클로드나 ‘/’ 메뉴에서 해당 스킬을 숨길 수 있으며, Enter를 누르면 변경 사항을 저장할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1100,10 +1113,10 @@
       "name": "/status",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open the Settings interface (Status tab) showing version, model, account, and connectivity. Works while Claude is responding, without waiting for the current response to finish",
+      "description": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. Works while Claude is responding",
       "descriptionKo": "버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
       "aliases": [],
-      "searchText": "Open the Settings interface (Status tab) showing version, model, account, and connectivity. Works while Claude is responding, without waiting for the current response to finish 버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
+      "searchText": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. Works while Claude is responding 버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1357,6 +1370,96 @@
     }
   ],
   "officialVideos": [
+    {
+      "videoId": "YovuEy7ufhE",
+      "title": "How Squidsoup makes art installations with Claude",
+      "url": "https://www.youtube.com/watch?v=YovuEy7ufhE",
+      "published": "2026-07-03T13:00:28+00:00"
+    },
+    {
+      "videoId": "MhfnicQVkgY",
+      "title": "The future of work with @Claude",
+      "url": "https://www.youtube.com/watch?v=MhfnicQVkgY",
+      "published": "2026-07-02T16:59:37+00:00"
+    },
+    {
+      "videoId": "idtMsa_1yNk",
+      "title": "Introducing Claude Science (now in beta)",
+      "url": "https://www.youtube.com/watch?v=idtMsa_1yNk",
+      "published": "2026-06-30T17:05:42+00:00"
+    },
+    {
+      "videoId": "9DHZLw5653E",
+      "title": "How Spotify runs agents across 20M+ lines of code, with Niklas Gustavsson",
+      "url": "https://www.youtube.com/watch?v=9DHZLw5653E",
+      "published": "2026-06-29T16:05:17+00:00"
+    },
+    {
+      "videoId": "VojDzHaciKQ",
+      "title": "Tag Claude in, right where you already work",
+      "url": "https://www.youtube.com/watch?v=VojDzHaciKQ",
+      "published": "2026-06-23T17:09:00+00:00"
+    },
+    {
+      "videoId": "tYOI-WoLS_o",
+      "title": "Delegate and schedule tasks in Claude Cowork",
+      "url": "https://www.youtube.com/watch?v=tYOI-WoLS_o",
+      "published": "2026-06-21T13:00:25+00:00"
+    },
+    {
+      "videoId": "m7TJqx8CYG8",
+      "title": "Artifacts in Claude Code: share your work as it happens",
+      "url": "https://www.youtube.com/watch?v=m7TJqx8CYG8",
+      "published": "2026-06-18T18:12:10+00:00"
+    },
+    {
+      "videoId": "5kTDt9ewTwE",
+      "title": "Enterprise-managed auth for MCP connectors",
+      "url": "https://www.youtube.com/watch?v=5kTDt9ewTwE",
+      "published": "2026-06-18T16:54:52+00:00"
+    },
+    {
+      "videoId": "H3XQeGNia8o",
+      "title": "The Briefing: Financial Services",
+      "url": "https://www.youtube.com/watch?v=H3XQeGNia8o",
+      "published": "2026-06-16T20:42:02+00:00"
+    },
+    {
+      "videoId": "tRsQsTMvPNg",
+      "title": "Claude FM 🎵 music for thinking and building",
+      "url": "https://www.youtube.com/watch?v=tRsQsTMvPNg",
+      "published": "2026-06-12T18:12:55+00:00"
+    },
+    {
+      "videoId": "2GbJl_-3bMs",
+      "title": "Claude FM 🎵 music for thinking and building",
+      "url": "https://www.youtube.com/watch?v=2GbJl_-3bMs",
+      "published": "2026-06-12T18:12:02+00:00"
+    },
+    {
+      "videoId": "N4efO8viXXo",
+      "title": "Code with Claude Tokyo 2026: Opening Keynote",
+      "url": "https://www.youtube.com/watch?v=N4efO8viXXo",
+      "published": "2026-06-12T01:13:08+00:00"
+    },
+    {
+      "videoId": "8NVZMRyCrn4",
+      "title": "The Problem Solvers | Michael Truell at Cursor",
+      "url": "https://www.youtube.com/watch?v=8NVZMRyCrn4",
+      "published": "2026-06-10T16:00:31+00:00"
+    },
+    {
+      "videoId": "Ty_50J84fMY",
+      "title": "Claude Fable 5 beats Pokémon FireRed only using vision",
+      "url": "https://www.youtube.com/watch?v=Ty_50J84fMY",
+      "published": "2026-06-09T20:31:49+00:00"
+    },
+    {
+      "videoId": "6YPqoARpYuQ",
+      "title": "Claude Fable 5 plays Factorio",
+      "url": "https://www.youtube.com/watch?v=6YPqoARpYuQ",
+      "published": "2026-06-09T17:18:28+00:00"
+    },
     {
       "videoId": "UAmKyyZ-b9E",
       "title": "Introducing Cowork: Claude Code for the rest of your work",

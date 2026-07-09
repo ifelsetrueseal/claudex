@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-06T02:03:04.700Z",
+  "fetchedAt": "2026-07-09T01:50:22.109Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -939,12 +939,12 @@
       "name": "/review",
       "args": "[PR]",
       "hasRequiredArg": false,
-      "description": "Review a GitHub pull request by number, using the same review engine as `/code-review`. With no arguments, lists open PRs to pick from. For a cloud-based review, see [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview)",
+      "description": "Run a fast single-pass, read-only review of a GitHub pull request by number. With no argument, lists open PRs to pick from; text after the PR number becomes additional review instructions. From v2.1.186 through v2.1.201, `/review` instead ran the same multi-agent engine as `/code-review medium`. For a multi-agent review at a chosen effort level, use [`/code-review <level> <pr#>`](https://code.claude.com/docs/en/code-review#review-a-diff-locally); for a cloud-based review, see [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview)",
       "descriptionKo": "현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview)을 참조하세요.",
       "aliases": [],
-      "searchText": "Review a GitHub pull request by number, using the same review engine as /code-review. With no arguments, lists open PRs to pick from. For a cloud-based review, see /code-review ultra 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
+      "searchText": "Run a fast single-pass, read-only review of a GitHub pull request by number. With no argument, lists open PRs to pick from; text after the PR number becomes additional review instructions. From v2.1.186 through v2.1.201, /review instead ran the same multi-agent engine as /code-review medium. For a multi-agent review at a chosen effort level, use /code-review <level <pr; for a cloud-based review, see /code-review ultra 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": "",
+      "minVersion": "2.1.202",
       "resources": []
     },
     {
@@ -1371,6 +1371,54 @@
   ],
   "officialVideos": [
     {
+      "videoId": "r7b_EsFgeyM",
+      "title": "Making New York City miniature with Claude",
+      "url": "https://www.youtube.com/watch?v=r7b_EsFgeyM",
+      "published": "2026-07-08T19:00:11+00:00"
+    },
+    {
+      "videoId": "bGCL-Ahb1Z8",
+      "title": "Working at the Frontier: Thomson Reuters",
+      "url": "https://www.youtube.com/watch?v=bGCL-Ahb1Z8",
+      "published": "2026-07-08T16:55:45+00:00"
+    },
+    {
+      "videoId": "JdqNda9JeaU",
+      "title": "Photographing the stars with Claude",
+      "url": "https://www.youtube.com/watch?v=JdqNda9JeaU",
+      "published": "2026-07-07T20:30:48+00:00"
+    },
+    {
+      "videoId": "CuzipWWYvFo",
+      "title": "Regenerative beekeeping with Claude",
+      "url": "https://www.youtube.com/watch?v=CuzipWWYvFo",
+      "published": "2026-07-07T19:00:35+00:00"
+    },
+    {
+      "videoId": "XNbc2HhL7J4",
+      "title": "Claude Cowork: coming to mobile and web",
+      "url": "https://www.youtube.com/watch?v=XNbc2HhL7J4",
+      "published": "2026-07-07T16:01:39+00:00"
+    },
+    {
+      "videoId": "hyqLNX3VExQ",
+      "title": "DoorDash gave every employee Claude Code",
+      "url": "https://www.youtube.com/watch?v=hyqLNX3VExQ",
+      "published": "2026-07-07T16:00:10+00:00"
+    },
+    {
+      "videoId": "8--srKGAaMQ",
+      "title": "Photographing the stars with Claude",
+      "url": "https://www.youtube.com/watch?v=8--srKGAaMQ",
+      "published": "2026-07-06T19:14:25+00:00"
+    },
+    {
+      "videoId": "fQ3BuPPfovk",
+      "title": "Claude Fable 5: working at the frontier",
+      "url": "https://www.youtube.com/watch?v=fQ3BuPPfovk",
+      "published": "2026-07-06T17:01:51+00:00"
+    },
+    {
       "videoId": "YovuEy7ufhE",
       "title": "How Squidsoup makes art installations with Claude",
       "url": "https://www.youtube.com/watch?v=YovuEy7ufhE",
@@ -1411,54 +1459,6 @@
       "title": "Artifacts in Claude Code: share your work as it happens",
       "url": "https://www.youtube.com/watch?v=m7TJqx8CYG8",
       "published": "2026-06-18T18:12:10+00:00"
-    },
-    {
-      "videoId": "5kTDt9ewTwE",
-      "title": "Enterprise-managed auth for MCP connectors",
-      "url": "https://www.youtube.com/watch?v=5kTDt9ewTwE",
-      "published": "2026-06-18T16:54:52+00:00"
-    },
-    {
-      "videoId": "H3XQeGNia8o",
-      "title": "The Briefing: Financial Services",
-      "url": "https://www.youtube.com/watch?v=H3XQeGNia8o",
-      "published": "2026-06-16T20:42:02+00:00"
-    },
-    {
-      "videoId": "tRsQsTMvPNg",
-      "title": "Claude FM 🎵 music for thinking and building",
-      "url": "https://www.youtube.com/watch?v=tRsQsTMvPNg",
-      "published": "2026-06-12T18:12:55+00:00"
-    },
-    {
-      "videoId": "2GbJl_-3bMs",
-      "title": "Claude FM 🎵 music for thinking and building",
-      "url": "https://www.youtube.com/watch?v=2GbJl_-3bMs",
-      "published": "2026-06-12T18:12:02+00:00"
-    },
-    {
-      "videoId": "N4efO8viXXo",
-      "title": "Code with Claude Tokyo 2026: Opening Keynote",
-      "url": "https://www.youtube.com/watch?v=N4efO8viXXo",
-      "published": "2026-06-12T01:13:08+00:00"
-    },
-    {
-      "videoId": "8NVZMRyCrn4",
-      "title": "The Problem Solvers | Michael Truell at Cursor",
-      "url": "https://www.youtube.com/watch?v=8NVZMRyCrn4",
-      "published": "2026-06-10T16:00:31+00:00"
-    },
-    {
-      "videoId": "Ty_50J84fMY",
-      "title": "Claude Fable 5 beats Pokémon FireRed only using vision",
-      "url": "https://www.youtube.com/watch?v=Ty_50J84fMY",
-      "published": "2026-06-09T20:31:49+00:00"
-    },
-    {
-      "videoId": "6YPqoARpYuQ",
-      "title": "Claude Fable 5 plays Factorio",
-      "url": "https://www.youtube.com/watch?v=6YPqoARpYuQ",
-      "published": "2026-06-09T17:18:28+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

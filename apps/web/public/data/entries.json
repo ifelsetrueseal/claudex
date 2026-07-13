@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-09T01:50:22.109Z",
+  "fetchedAt": "2026-07-13T01:30:21.064Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -192,10 +192,10 @@
       "name": "/color",
       "args": "[color|default]",
       "hasRequiredArg": false,
-      "description": "Set the prompt bar color for the current session. Available colors: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan`. Use `default` to reset, or run with no argument to pick a random color. When [Remote Control](https://code.claude.com/docs/en/remote-control) is connected, the color syncs to claude.ai/code",
+      "description": "Set the prompt bar color for the current session. Available colors: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan`. Use `default` to reset, or run with no argument to pick a random color. When [Remote Control](https://code.claude.com/docs/en/remote-control) is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later",
       "descriptionKo": "현재 세션의 프롬프트 바 색상을 설정합니다. 사용 가능한 색상: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan`. `default`을 사용하여 재설정하거나, 인수를 지정하지 않고 실행하면 무작위 색상이 선택됩니다. [원격 제어](https://code.claude.com/docs/en/remote-control)가 연결된 경우, 색상이 claude.ai/code와 동기화됩니다.",
       "aliases": [],
-      "searchText": "Set the prompt bar color for the current session. Available colors: red, blue, green, yellow, purple, orange, pink, cyan. Use default to reset, or run with no argument to pick a random color. When Remote Control is connected, the color syncs to claude.ai/code 현재 세션의 프롬프트 바 색상을 설정합니다. 사용 가능한 색상: red, blue, green, yellow, purple, orange, pink, cyan. default을 사용하여 재설정하거나, 인수를 지정하지 않고 실행하면 무작위 색상이 선택됩니다. 원격 제어가 연결된 경우, 색상이 claude.ai/code와 동기화됩니다.",
+      "searchText": "Set the prompt bar color for the current session. Available colors: red, blue, green, yellow, purple, orange, pink, cyan. Use default to reset, or run with no argument to pick a random color. When Remote Control is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later 현재 세션의 프롬프트 바 색상을 설정합니다. 사용 가능한 색상: red, blue, green, yellow, purple, orange, pink, cyan. default을 사용하여 재설정하거나, 인수를 지정하지 않고 실행하면 무작위 색상이 선택됩니다. 원격 제어가 연결된 경우, 색상이 claude.ai/code와 동기화됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -367,14 +367,17 @@
       "resources": []
     },
     {
-      "type": "command",
+      "type": "skill",
       "name": "/doctor",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Diagnose and verify your Claude Code installation and settings. Results show with status icons. Press `f` to have Claude fix any reported issues",
+      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, `PATH` problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, deduplicates local `CLAUDE.md` files against checked-in ones, migrates always-loaded guidance into [skills](https://code.claude.com/docs/en/skills) and nested `CLAUDE.md` files that load on demand, flags slow [hooks](https://code.claude.com/docs/en/hooks), and checks for a newer version. Also offers to make [auto mode](https://code.claude.com/docs/en/permissions#permission-modes) your default and to [pre-approve](https://code.claude.com/docs/en/permissions) frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, `claude doctor` prints read-only installation diagnostics without starting a session. Alias: `/checkup`. Before v2.1.205, `/doctor` opened a read-only diagnostics screen and pressing `f` sent the report to Claude",
       "descriptionKo": "Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. `f`을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
-      "aliases": [],
-      "searchText": "Diagnose and verify your Claude Code installation and settings. Results show with status icons. Press f to have Claude fix any reported issues Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. f을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
+      "aliases": [
+        "/checkup",
+        "/doctor"
+      ],
+      "searchText": "Skill. Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, PATH problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, deduplicates local CLAUDE.md files against checked-in ones, migrates always-loaded guidance into skills and nested CLAUDE.md files that load on demand, flags slow hooks, and checks for a newer version. Also offers to make auto mode your default and to pre-approve frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, claude doctor prints read-only installation diagnostics without starting a session. Alias: /checkup. Before v2.1.205, /doctor opened a read-only diagnostics screen and pressing f sent the report to Claude Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. f을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -384,10 +387,10 @@
       "name": "/effort",
       "args": "[level|auto]",
       "hasRequiredArg": false,
-      "description": "Set the model [effort level](https://code.claude.com/docs/en/model-config#adjust-effort-level). Accepts `low`, `medium`, `high`, `xhigh`, `max`, or `ultracode`; available levels depend on the model, and `max` and `ultracode` are session-only. `ultracode` is a Claude Code setting that combines `xhigh` reasoning with automatic [workflow](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) orchestration. `auto` resets to the model default. Without an argument, opens an interactive slider; use left and right arrows to pick a level and `Enter` to apply. Takes effect immediately without waiting for the current response to finish",
+      "description": "Set the model [effort level](https://code.claude.com/docs/en/model-config#adjust-effort-level). Accepts `low`, `medium`, `high`, `xhigh`, `max`, or `ultracode`; available levels depend on the model, and `max` and `ultracode` are session-only. `ultracode` is a Claude Code setting that combines `xhigh` reasoning with automatic [workflow](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) orchestration. `auto` resets to the model default. Without an argument, opens an interactive slider; use left and right arrows to pick a level and `Enter` to apply. Takes effect immediately without waiting for the current response to finish. Also available in non-interactive mode (`-p`) with a level argument, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later. On Fable 5, Opus 4.8, and Opus 4.7, a non-interactive `/effort` reports `Not applied` while the [model-default effort hold](https://code.claude.com/docs/en/model-config#adjust-effort-level) is in force, so pass `--effort` at launch instead",
       "descriptionKo": "모델의 [노력 수준](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 설정합니다. `low`, `medium`, `high`, `xhigh`, `max` 또는 `ultracode`을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, `max` 및 `ultracode`은 세션 단위로만 적용됩니다. `ultracode`은 `xhigh` 추론과 자동 [워크플로우](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) 조정을 결합한 Claude Code 설정입니다. `auto`은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, `Enter`를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "aliases": [],
-      "searchText": "Set the model effort level. Accepts low, medium, high, xhigh, max, or ultracode; available levels depend on the model, and max and ultracode are session-only. ultracode is a Claude Code setting that combines xhigh reasoning with automatic workflow orchestration. auto resets to the model default. Without an argument, opens an interactive slider; use left and right arrows to pick a level and Enter to apply. Takes effect immediately without waiting for the current response to finish 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
+      "searchText": "Set the model effort level. Accepts low, medium, high, xhigh, max, or ultracode; available levels depend on the model, and max and ultracode are session-only. ultracode is a Claude Code setting that combines xhigh reasoning with automatic workflow orchestration. auto resets to the model default. Without an argument, opens an interactive slider; use left and right arrows to pick a level and Enter to apply. Takes effect immediately without waiting for the current response to finish. Also available in non-interactive mode (-p) with a level argument, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later. On Fable 5, Opus 4.8, and Opus 4.7, a non-interactive /effort reports Not applied while the model-default effort hold is in force, so pass --effort at launch instead 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -425,10 +428,10 @@
       "name": "/fast",
       "args": "[on|off]",
       "hasRequiredArg": false,
-      "description": "Toggle [fast mode](https://code.claude.com/docs/en/fast-mode) on or off",
+      "description": "Toggle [fast mode](https://code.claude.com/docs/en/fast-mode) on or off. In non-interactive mode (`-p`), `/fast` works only in a session launched with fast mode in its [`--settings`](https://code.claude.com/docs/en/cli-reference#cli-flags) value, for example `claude -p --settings '{\"fastMode\": true}'`; the toggle then applies to the current session only and isn't saved as your default, and in any other non-interactive session the command reports that fast mode isn't available. Requires Claude Code v2.1.205 or later",
       "descriptionKo": "[빠른 모드](https://code.claude.com/docs/en/fast-mode)를 켜거나 끕니다.",
       "aliases": [],
-      "searchText": "Toggle fast mode on or off 빠른 모드를 켜거나 끕니다.",
+      "searchText": "Toggle fast mode on or off. In non-interactive mode (-p), /fast works only in a session launched with fast mode in its --settings value, for example claude -p --settings '{\"fastMode\": true}'; the toggle then applies to the current session only and isn't saved as your default, and in any other non-interactive session the command reports that fast mode isn't available. Requires Claude Code v2.1.205 or later 빠른 모드를 켜거나 끕니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -664,10 +667,10 @@
       "name": "/mcp",
       "args": "[reconnect <server>|enable|disable [<server>|all]]",
       "hasRequiredArg": true,
-      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, pass `reconnect <server>` to reconnect one disconnected server, or pass `enable`/`disable` with a server name or `all` to change connection state without opening the dialog",
+      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, pass `reconnect <server>` to reconnect one disconnected server, or pass `enable`/`disable` with a server name or `all` to change connection state without opening the dialog. Also available in non-interactive mode (`-p`), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later",
       "descriptionKo": "MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, `reconnect <server>`을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, `enable` / `disable`에 서버 이름을 지정하거나 `all`을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "aliases": [],
-      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, pass reconnect <server to reconnect one disconnected server, or pass enable/disable with a server name or all to change connection state without opening the dialog MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
+      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, pass reconnect <server to reconnect one disconnected server, or pass enable/disable with a server name or all to change connection state without opening the dialog. Also available in non-interactive mode (-p), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -706,10 +709,10 @@
       "name": "/model",
       "args": "[model]",
       "hasRequiredArg": false,
-      "description": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to [adjust effort level](https://code.claude.com/docs/en/model-config#adjust-effort-level). With no argument, opens a picker; press `s` on a row to switch for the current session only. The picker asks for confirmation when the conversation has prior output, since the next response re-reads the full history without cached context. Once confirmed, the change applies without waiting for the current response to finish",
+      "description": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to [adjust effort level](https://code.claude.com/docs/en/model-config#adjust-effort-level). With no argument, opens a picker; press `s` on a row to switch for the current session only. The picker asks for confirmation when the conversation has prior output, since the next response re-reads the full history without cached context. Once confirmed, the change applies without waiting for the current response to finish. Also available in non-interactive mode (`-p`) with a model argument instead of the picker, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later",
       "descriptionKo": "AI 모델을 변경하고 새 세션의 기본값으로 저장하세요. 해당 기능을 지원하는 모델의 경우, 좌/우 화살표 키를 사용하여 [노력 수준 조정](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 할 수 있습니다. 인수를 지정하지 않으면 선택기가 열리며, 행에서 `s`를 누르면 현재 세션에 한해 모델이 변경됩니다. 대화 기록에 이전 응답이 있는 경우, 다음 응답은 캐시된 컨텍스트 없이 전체 기록을 다시 읽게 되므로 선택기에서 확인을 요청합니다. 확인을 누르면 현재 응답이 완료될 때까지 기다리지 않고 변경 사항이 적용됩니다.",
       "aliases": [],
-      "searchText": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to adjust effort level. With no argument, opens a picker; press s on a row to switch for the current session only. The picker asks for confirmation when the conversation has prior output, since the next response re-reads the full history without cached context. Once confirmed, the change applies without waiting for the current response to finish AI 모델을 변경하고 새 세션의 기본값으로 저장하세요. 해당 기능을 지원하는 모델의 경우, 좌/우 화살표 키를 사용하여 노력 수준 조정을 할 수 있습니다. 인수를 지정하지 않으면 선택기가 열리며, 행에서 s를 누르면 현재 세션에 한해 모델이 변경됩니다. 대화 기록에 이전 응답이 있는 경우, 다음 응답은 캐시된 컨텍스트 없이 전체 기록을 다시 읽게 되므로 선택기에서 확인을 요청합니다. 확인을 누르면 현재 응답이 완료될 때까지 기다리지 않고 변경 사항이 적용됩니다.",
+      "searchText": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to adjust effort level. With no argument, opens a picker; press s on a row to switch for the current session only. The picker asks for confirmation when the conversation has prior output, since the next response re-reads the full history without cached context. Once confirmed, the change applies without waiting for the current response to finish. Also available in non-interactive mode (-p) with a model argument instead of the picker, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later AI 모델을 변경하고 새 세션의 기본값으로 저장하세요. 해당 기능을 지원하는 모델의 경우, 좌/우 화살표 키를 사용하여 노력 수준 조정을 할 수 있습니다. 인수를 지정하지 않으면 선택기가 열리며, 행에서 s를 누르면 현재 세션에 한해 모델이 변경됩니다. 대화 기록에 이전 응답이 있는 경우, 다음 응답은 캐시된 컨텍스트 없이 전체 기록을 다시 읽게 되므로 선택기에서 확인을 요청합니다. 확인을 누르면 현재 응답이 완료될 때까지 기다리지 않고 변경 사항이 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -911,10 +914,10 @@
       "name": "/rename",
       "args": "[name]",
       "hasRequiredArg": false,
-      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history",
+      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later",
       "descriptionKo": "현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "aliases": [],
-      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
+      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1295,10 +1298,10 @@
       "name": "/usage-credits",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Configure usage credits to keep working when you hit a limit. Previously `/extra-usage`",
+      "description": "Configure usage credits to keep working when you hit a limit. Opens the usage-credits billing page in your browser. When no browser can open, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously `/extra-usage`",
       "descriptionKo": "한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: `/extra-usage`",
       "aliases": [],
-      "searchText": "Configure usage credits to keep working when you hit a limit. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
+      "searchText": "Configure usage credits to keep working when you hit a limit. Opens the usage-credits billing page in your browser. When no browser can open, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1371,6 +1374,24 @@
   ],
   "officialVideos": [
     {
+      "videoId": "ksfm6jeTg3Q",
+      "title": "Building the future of agentic infrastructure",
+      "url": "https://www.youtube.com/watch?v=ksfm6jeTg3Q",
+      "published": "2026-07-10T17:41:00+00:00"
+    },
+    {
+      "videoId": "iCdbe0SZt0A",
+      "title": "There’s hope in hard questions",
+      "url": "https://www.youtube.com/watch?v=iCdbe0SZt0A",
+      "published": "2026-07-09T17:35:13+00:00"
+    },
+    {
+      "videoId": "jVbGX7zJHi8",
+      "title": "There’s hope in hard questions",
+      "url": "https://www.youtube.com/watch?v=jVbGX7zJHi8",
+      "published": "2026-07-09T15:18:46+00:00"
+    },
+    {
       "videoId": "r7b_EsFgeyM",
       "title": "Making New York City miniature with Claude",
       "url": "https://www.youtube.com/watch?v=r7b_EsFgeyM",
@@ -1441,24 +1462,6 @@
       "title": "How Spotify runs agents across 20M+ lines of code, with Niklas Gustavsson",
       "url": "https://www.youtube.com/watch?v=9DHZLw5653E",
       "published": "2026-06-29T16:05:17+00:00"
-    },
-    {
-      "videoId": "VojDzHaciKQ",
-      "title": "Tag Claude in, right where you already work",
-      "url": "https://www.youtube.com/watch?v=VojDzHaciKQ",
-      "published": "2026-06-23T17:09:00+00:00"
-    },
-    {
-      "videoId": "tYOI-WoLS_o",
-      "title": "Delegate and schedule tasks in Claude Cowork",
-      "url": "https://www.youtube.com/watch?v=tYOI-WoLS_o",
-      "published": "2026-06-21T13:00:25+00:00"
-    },
-    {
-      "videoId": "m7TJqx8CYG8",
-      "title": "Artifacts in Claude Code: share your work as it happens",
-      "url": "https://www.youtube.com/watch?v=m7TJqx8CYG8",
-      "published": "2026-06-18T18:12:10+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

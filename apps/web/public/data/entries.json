@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-13T01:30:21.064Z",
+  "fetchedAt": "2026-07-16T01:26:31.757Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -12,10 +12,10 @@
       "name": "/add-dir",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Add a working directory for file access during the current session. Most `.claude/` configuration is [not discovered](https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration) from the added directory. You can later resume the session from the added directory with `--continue` or `--resume`",
+      "description": "Add a working directory for file access during the current session. Typing a partial path shows matching directory suggestions; press `Tab` to accept one. Most `.claude/` configuration is [not discovered](https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration) from the added directory. You can later resume the session from the added directory with `--continue` or `--resume`",
       "descriptionKo": "현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 `.claude/` 구성 정보는 추가된 디렉터리에서 [탐지되지 않습니다](https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration). 나중에 `--continue` 또는 `--resume`을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "aliases": [],
-      "searchText": "Add a working directory for file access during the current session. Most .claude/ configuration is not discovered from the added directory. You can later resume the session from the added directory with --continue or --resume 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
+      "searchText": "Add a working directory for file access during the current session. Typing a partial path shows matching directory suggestions; press Tab to accept one. Most .claude/ configuration is not discovered from the added directory. You can later resume the session from the added directory with --continue or --resume 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -25,12 +25,12 @@
       "name": "/advisor",
       "args": "[model|off]",
       "hasRequiredArg": false,
-      "description": "Enable or disable the [advisor tool](https://code.claude.com/docs/en/advisor), which consults a second model for guidance at key moments during a task. Accepts `opus`, `sonnet`, `fable` (v2.1.170+), or a full model ID. Without an argument, opens a picker. Requires Claude Code v2.1.98 or later",
+      "description": "Enable or disable the [advisor tool](https://code.claude.com/docs/en/advisor), which consults a second model for guidance at key moments during a task. Accepts `opus`, `sonnet`, `fable` (v2.1.170+), or a full model ID. Without an argument, opens a picker",
       "descriptionKo": "작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 [어드바이저 도구](https://code.claude.com/docs/en/advisor)를 활성화하거나 비활성화합니다. `opus`, `sonnet`, `fable` (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
       "aliases": [],
-      "searchText": "Enable or disable the advisor tool, which consults a second model for guidance at key moments during a task. Accepts opus, sonnet, fable (v2.1.170+), or a full model ID. Without an argument, opens a picker. Requires Claude Code v2.1.98 or later 작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 어드바이저 도구를 활성화하거나 비활성화합니다. opus, sonnet, fable (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
+      "searchText": "Enable or disable the advisor tool, which consults a second model for guidance at key moments during a task. Accepts opus, sonnet, fable (v2.1.170+), or a full model ID. Without an argument, opens a picker 작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 어드바이저 도구를 활성화하거나 비활성화합니다. opus, sonnet, fable (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.98",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -118,10 +118,10 @@
       "name": "/cd",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's [`CLAUDE.md`](https://code.claude.com/docs/en/memory) is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so `--resume` and `--continue` find it from there. Prompts you to trust the directory if you haven't worked in it before. To grant access to an extra directory without moving the session, use `/add-dir`. Restrict or disable `/cd` targets with [`Cd` permission rules](https://code.claude.com/docs/en/permissions#cd). Requires Claude Code v2.1.169 or later; earlier versions report `Unknown command: /cd`",
+      "description": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's [`CLAUDE.md`](https://code.claude.com/docs/en/memory) is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so `--resume` and `--continue` find it from there. Prompts you to trust the directory if you haven't worked in it before. Typing a partial path shows matching directory suggestions; press `Tab` to accept one. The suggestions require Claude Code v2.1.206 or later. To grant access to an extra directory without moving the session, use `/add-dir`. Restrict or disable `/cd` targets with [`Cd` permission rules](https://code.claude.com/docs/en/permissions#cd). Requires Claude Code v2.1.169 or later; earlier versions report `Unknown command: /cd`",
       "descriptionKo": "이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 [`CLAUDE.md`](https://code.claude.com/docs/en/memory)가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, `--resume` 및 `--continue`에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 `/add-dir`를 사용하십시오. [`Cd` 권한 규칙](https://code.claude.com/docs/en/permissions#cd)을 사용하여 `/cd` 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 `Unknown command: /cd` 오류가 발생합니다.",
       "aliases": [],
-      "searchText": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's CLAUDE.md is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so --resume and --continue find it from there. Prompts you to trust the directory if you haven't worked in it before. To grant access to an extra directory without moving the session, use /add-dir. Restrict or disable /cd targets with Cd permission rules. Requires Claude Code v2.1.169 or later; earlier versions report Unknown command: /cd 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
+      "searchText": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's CLAUDE.md is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so --resume and --continue find it from there. Prompts you to trust the directory if you haven't worked in it before. Typing a partial path shows matching directory suggestions; press Tab to accept one. The suggestions require Claude Code v2.1.206 or later. To grant access to an extra directory without moving the session, use /add-dir. Restrict or disable /cd targets with Cd permission rules. Requires Claude Code v2.1.169 or later; earlier versions report Unknown command: /cd 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "2.1.169",
       "resources": []
@@ -157,13 +157,13 @@
       "name": "/clear",
       "args": "[name]",
       "hasRequiredArg": false,
-      "description": "Start a new conversation with empty context. The previous conversation stays available in `/resume`. Pass a name to label the previous conversation in the `/resume` picker. To free up context while continuing the same conversation, use `/compact` instead. Aliases: `/reset`, `/new`",
+      "description": "Start a new conversation with empty context. Pass a name to label the previous conversation in the `/resume` picker. To free up context while continuing the same conversation, use `/compact` instead. Resume the previous conversation with `/resume`, or, in the same Claude Code process, restore it from [the rewind menu's previous-session entry](https://code.claude.com/docs/en/checkpointing#rewind-past-a-cleared-conversation). Aliases: `/reset`, `/new`",
       "descriptionKo": "컨텍스트가 비어 있는 상태에서 새로운 대화를 시작합니다. 이전 대화는 `/resume`에서 계속 확인할 수 있습니다. `/resume` 선택기에서 이전 대화에 이름을 지정하려면 이름을 전달하세요. 동일한 대화를 계속하면서 컨텍스트를 비우려면 대신 `/compact`를 사용하세요. 별칭: `/reset`, `/new`",
       "aliases": [
         "/reset",
         "/new"
       ],
-      "searchText": "Start a new conversation with empty context. The previous conversation stays available in /resume. Pass a name to label the previous conversation in the /resume picker. To free up context while continuing the same conversation, use /compact instead. Aliases: /reset, /new 컨텍스트가 비어 있는 상태에서 새로운 대화를 시작합니다. 이전 대화는 /resume에서 계속 확인할 수 있습니다. /resume 선택기에서 이전 대화에 이름을 지정하려면 이름을 전달하세요. 동일한 대화를 계속하면서 컨텍스트를 비우려면 대신 /compact를 사용하세요. 별칭: /reset, /new",
+      "searchText": "Start a new conversation with empty context. Pass a name to label the previous conversation in the /resume picker. To free up context while continuing the same conversation, use /compact instead. Resume the previous conversation with /resume, or, in the same Claude Code process, restore it from the rewind menu's previous-session entry. Aliases: /reset, /new 컨텍스트가 비어 있는 상태에서 새로운 대화를 시작합니다. 이전 대화는 /resume에서 계속 확인할 수 있습니다. /resume 선택기에서 이전 대화에 이름을 지정하려면 이름을 전달하세요. 동일한 대화를 계속하면서 컨텍스트를 비우려면 대신 /compact를 사용하세요. 별칭: /reset, /new",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -330,10 +330,10 @@
       "name": "/design-sync",
       "args": "[hint]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Convert your repo's React design system and upload it to [Claude Design](https://claude.ai/design), so designs it produces use your real components. Optionally name the design system, for example `/design-sync Acme DS`. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API; on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry the underlying tool can't reach claude.ai, so the command is unavailable",
+      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Convert your repo's React design system and upload it to [Claude Design](https://claude.ai/design), so designs it produces use your real components. Optionally name the design system, for example `/design-sync Acme DS`. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API; on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS the underlying tool can't reach claude.ai, so the command is unavailable",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Skill. Convert your repo's React design system and upload it to Claude Design, so designs it produces use your real components. Optionally name the design system, for example /design-sync Acme DS. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API; on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry the underlying tool can't reach claude.ai, so the command is unavailable",
+      "searchText": "Skill. Convert your repo's React design system and upload it to Claude Design, so designs it produces use your real components. Optionally name the design system, for example /design-sync Acme DS. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API; on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS the underlying tool can't reach claude.ai, so the command is unavailable",
       "firstSeen": "2026-07-02",
       "minVersion": "",
       "resources": []
@@ -358,10 +358,10 @@
       "name": "/diff",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal",
+      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal",
       "descriptionKo": "커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "aliases": [],
-      "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
+      "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -371,13 +371,12 @@
       "name": "/doctor",
       "args": "",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, `PATH` problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, deduplicates local `CLAUDE.md` files against checked-in ones, migrates always-loaded guidance into [skills](https://code.claude.com/docs/en/skills) and nested `CLAUDE.md` files that load on demand, flags slow [hooks](https://code.claude.com/docs/en/hooks), and checks for a newer version. Also offers to make [auto mode](https://code.claude.com/docs/en/permissions#permission-modes) your default and to [pre-approve](https://code.claude.com/docs/en/permissions) frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, `claude doctor` prints read-only installation diagnostics without starting a session. Alias: `/checkup`. Before v2.1.205, `/doctor` opened a read-only diagnostics screen and pressing `f` sent the report to Claude",
+      "description": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, `PATH` problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow [hooks](https://code.claude.com/docs/en/hooks), and checks for a newer version on your release channel. Deduplicates local `CLAUDE.md` files against checked-in ones, trims checked-in [`CLAUDE.md`](https://code.claude.com/docs/en/memory) files by cutting content Claude could derive from the codebase, and migrates the always-loaded guidance that remains into [skills](https://code.claude.com/docs/en/skills) and nested `CLAUDE.md` files that load on demand. The trim cuts sections such as directory layouts, dependency lists, and architecture overviews, and keeps pitfalls, rationale, and conventions that differ from tool defaults. Also offers to make [auto mode](https://code.claude.com/docs/en/permissions#permission-modes) your default and to [pre-approve](https://code.claude.com/docs/en/permissions) frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, `claude doctor` prints read-only installation diagnostics without starting a session. Alias: `/checkup`. The `CLAUDE.md` trim check requires Claude Code v2.1.206 or later. Before v2.1.206, the version check compared Homebrew installs against the `autoUpdatesChannel` setting rather than the [installed cask's channel](https://code.claude.com/docs/en/setup#configure-release-channel). Before v2.1.205, `/doctor` opened a read-only diagnostics screen and pressing `f` sent the report to Claude",
       "descriptionKo": "Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. `f`을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
       "aliases": [
-        "/checkup",
-        "/doctor"
+        "/checkup"
       ],
-      "searchText": "Skill. Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, PATH problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, deduplicates local CLAUDE.md files against checked-in ones, migrates always-loaded guidance into skills and nested CLAUDE.md files that load on demand, flags slow hooks, and checks for a newer version. Also offers to make auto mode your default and to pre-approve frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, claude doctor prints read-only installation diagnostics without starting a session. Alias: /checkup. Before v2.1.205, /doctor opened a read-only diagnostics screen and pressing f sent the report to Claude Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. f을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
+      "searchText": "Skill. Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, PATH problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow hooks, and checks for a newer version on your release channel. Deduplicates local CLAUDE.md files against checked-in ones, trims checked-in CLAUDE.md files by cutting content Claude could derive from the codebase, and migrates the always-loaded guidance that remains into skills and nested CLAUDE.md files that load on demand. The trim cuts sections such as directory layouts, dependency lists, and architecture overviews, and keeps pitfalls, rationale, and conventions that differ from tool defaults. Also offers to make auto mode your default and to pre-approve frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, claude doctor prints read-only installation diagnostics without starting a session. Alias: /checkup. The CLAUDE.md trim check requires Claude Code v2.1.206 or later. Before v2.1.206, the version check compared Homebrew installs against the autoUpdatesChannel setting rather than the installed cask's channel. Before v2.1.205, /doctor opened a read-only diagnostics screen and pressing f sent the report to Claude Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. f을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -441,13 +440,13 @@
       "name": "/feedback",
       "args": "[report]",
       "hasRequiredArg": false,
-      "description": "Submit feedback, report a bug, or share your conversation. Aliases: `/bug`, `/share`",
+      "description": "Submit feedback, report a bug, or share your conversation. Sending to Anthropic requires [authentication](https://code.claude.com/docs/en/authentication). Aliases: `/bug`, `/share`",
       "descriptionKo": "의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: `/bug`, `/share`",
       "aliases": [
         "/bug",
         "/share"
       ],
-      "searchText": "Submit feedback, report a bug, or share your conversation. Aliases: /bug, /share 의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: /bug, /share",
+      "searchText": "Submit feedback, report a bug, or share your conversation. Sending to Anthropic requires authentication. Aliases: /bug, /share 의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: /bug, /share",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -821,10 +820,10 @@
       "name": "/radio",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry",
+      "description": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS",
       "descriptionKo": "브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
       "aliases": [],
-      "searchText": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry 브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
+      "searchText": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS 브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -847,10 +846,10 @@
       "name": "/release-notes",
       "args": "",
       "hasRequiredArg": false,
-      "description": "View the changelog in an interactive version picker. Select a specific version to see its release notes, or choose to show all versions",
+      "description": "View the changelog in an interactive version picker. Select a specific version to see its release notes, or choose to show all versions. The notes appear in your transcript without entering the conversation Claude sees. Before v2.1.208, the viewed notes entered the conversation, including the entire changelog when showing all versions",
       "descriptionKo": "대화형 버전 선택기에서 변경 내역을 확인하세요. 특정 버전을 선택하여 해당 릴리스 노트를 확인하거나, 모든 버전을 표시하도록 선택할 수 있습니다.",
       "aliases": [],
-      "searchText": "View the changelog in an interactive version picker. Select a specific version to see its release notes, or choose to show all versions 대화형 버전 선택기에서 변경 내역을 확인하세요. 특정 버전을 선택하여 해당 릴리스 노트를 확인하거나, 모든 버전을 표시하도록 선택할 수 있습니다.",
+      "searchText": "View the changelog in an interactive version picker. Select a specific version to see its release notes, or choose to show all versions. The notes appear in your transcript without entering the conversation Claude sees. Before v2.1.208, the viewed notes entered the conversation, including the entire changelog when showing all versions 대화형 버전 선택기에서 변경 내역을 확인하세요. 특정 버전을 선택하여 해당 릴리스 노트를 확인하거나, 모든 버전을 표시하도록 선택할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -886,12 +885,12 @@
       "name": "/remote-control",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Make this session available for [remote control](https://code.claude.com/docs/en/remote-control) from claude.ai. Alias: `/rc`",
+      "description": "Make this session available for [Remote Control](https://code.claude.com/docs/en/remote-control) from claude.ai. Running it while signed out prints that Remote Control requires a claude.ai subscription and tells you how to sign in; before v2.1.206 it reported `Unknown command: /remote-control`. Alias: `/rc`",
       "descriptionKo": "이 세션을 claude.ai에서 [원격 제어](https://code.claude.com/docs/en/remote-control)할 수 있도록 설정하세요. 별칭: `/rc`",
       "aliases": [
         "/rc"
       ],
-      "searchText": "Make this session available for remote control from claude.ai. Alias: /rc 이 세션을 claude.ai에서 원격 제어할 수 있도록 설정하세요. 별칭: /rc",
+      "searchText": "Make this session available for Remote Control from claude.ai. Running it while signed out prints that Remote Control requires a claude.ai subscription and tells you how to sign in; before v2.1.206 it reported Unknown command: /remote-control. Alias: /rc 이 세션을 claude.ai에서 원격 제어할 수 있도록 설정하세요. 별칭: /rc",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -927,12 +926,12 @@
       "name": "/resume",
       "args": "[session]",
       "hasRequiredArg": false,
-      "description": "Resume a conversation by ID or name, or open the session picker. As of v2.1.144, [background sessions](https://code.claude.com/docs/en/agent-view) appear in the picker marked with `bg`. Alias: `/continue`",
+      "description": "Resume a conversation by ID or name, or open the session picker. As of v2.1.144, [background sessions](https://code.claude.com/docs/en/agent-view) appear in the picker marked with `bg`; one that is still running can't be resumed here, so attach to it from `claude agents` or stop it there first. Alias: `/continue`",
       "descriptionKo": "ID나 이름으로 대화를 다시 시작하거나 세션 선택기를 열 수 있습니다. v2.1.144부터 [백그라운드 세션](https://code.claude.com/docs/en/agent-view)이 선택기에 `bg`로 표시되어 나타납니다. 별칭: `/continue`",
       "aliases": [
         "/continue"
       ],
-      "searchText": "Resume a conversation by ID or name, or open the session picker. As of v2.1.144, background sessions appear in the picker marked with bg. Alias: /continue ID나 이름으로 대화를 다시 시작하거나 세션 선택기를 열 수 있습니다. v2.1.144부터 백그라운드 세션이 선택기에 bg로 표시되어 나타납니다. 별칭: /continue",
+      "searchText": "Resume a conversation by ID or name, or open the session picker. As of v2.1.144, background sessions appear in the picker marked with bg; one that is still running can't be resumed here, so attach to it from claude agents or stop it there first. Alias: /continue ID나 이름으로 대화를 다시 시작하거나 세션 선택기를 열 수 있습니다. v2.1.144부터 백그라운드 세션이 선택기에 bg로 표시되어 나타납니다. 별칭: /continue",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1168,10 +1167,10 @@
       "name": "/tasks",
       "args": "",
       "hasRequiredArg": false,
-      "description": "View and manage everything running in the background. Also available as `/bashes`",
+      "description": "View and manage background work in the current session, including subagents that have finished. Also available as `/bashes`",
       "descriptionKo": "백그라운드에서 실행 중인 모든 항목을 확인하고 관리하세요. `/bashes`에서도 이용 가능합니다.",
       "aliases": [],
-      "searchText": "View and manage everything running in the background. Also available as /bashes 백그라운드에서 실행 중인 모든 항목을 확인하고 관리하세요. /bashes에서도 이용 가능합니다.",
+      "searchText": "View and manage background work in the current session, including subagents that have finished. Also available as /bashes 백그라운드에서 실행 중인 모든 항목을 확인하고 관리하세요. /bashes에서도 이용 가능합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1272,10 +1271,10 @@
       "name": "/upgrade",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open the upgrade page to switch to a higher plan tier",
+      "description": "Open the upgrade page in your browser to switch to a higher plan tier. When the browser fails to open, the command shows a sign-in prompt without printing the URL",
       "descriptionKo": "업그레이드 페이지를 열어 더 높은 요금제로 변경하세요",
       "aliases": [],
-      "searchText": "Open the upgrade page to switch to a higher plan tier 업그레이드 페이지를 열어 더 높은 요금제로 변경하세요",
+      "searchText": "Open the upgrade page in your browser to switch to a higher plan tier. When the browser fails to open, the command shows a sign-in prompt without printing the URL 업그레이드 페이지를 열어 더 높은 요금제로 변경하세요",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1298,10 +1297,10 @@
       "name": "/usage-credits",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Configure usage credits to keep working when you hit a limit. Opens the usage-credits billing page in your browser. When no browser can open, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously `/extra-usage`",
+      "description": "Configure usage credits to keep working when you hit a limit. On Pro and Max plans, opens an [in-CLI dialog](https://code.claude.com/docs/en/costs#set-a-spend-limit-on-pro-and-max) to buy usage credits, set a monthly spend limit, and configure auto-reload; on Claude Code versions before v2.1.207 and on other plans, opens the usage-credits billing page in your browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously `/extra-usage`",
       "descriptionKo": "한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: `/extra-usage`",
       "aliases": [],
-      "searchText": "Configure usage credits to keep working when you hit a limit. Opens the usage-credits billing page in your browser. When no browser can open, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
+      "searchText": "Configure usage credits to keep working when you hit a limit. On Pro and Max plans, opens an in-CLI dialog to buy usage credits, set a monthly spend limit, and configure auto-reload; on Claude Code versions before v2.1.207 and on other plans, opens the usage-credits billing page in your browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1374,6 +1373,30 @@
   ],
   "officialVideos": [
     {
+      "videoId": "255IGB63nTY",
+      "title": "Build data-driven lesson plans with Claude for Teachers",
+      "url": "https://www.youtube.com/watch?v=255IGB63nTY",
+      "published": "2026-07-15T15:08:04+00:00"
+    },
+    {
+      "videoId": "YCSeSVHNj7k",
+      "title": "Regenerative beekeeping with Claude",
+      "url": "https://www.youtube.com/watch?v=YCSeSVHNj7k",
+      "published": "2026-07-14T16:00:29+00:00"
+    },
+    {
+      "videoId": "V-OOEC5RNaQ",
+      "title": "Plan smarter with Claude for Teachers",
+      "url": "https://www.youtube.com/watch?v=V-OOEC5RNaQ",
+      "published": "2026-07-14T14:55:14+00:00"
+    },
+    {
+      "videoId": "cd3PsBoGYkc",
+      "title": "The Briefing: AI for Science",
+      "url": "https://www.youtube.com/watch?v=cd3PsBoGYkc",
+      "published": "2026-07-13T16:02:50+00:00"
+    },
+    {
       "videoId": "ksfm6jeTg3Q",
       "title": "Building the future of agentic infrastructure",
       "url": "https://www.youtube.com/watch?v=ksfm6jeTg3Q",
@@ -1438,30 +1461,6 @@
       "title": "Claude Fable 5: working at the frontier",
       "url": "https://www.youtube.com/watch?v=fQ3BuPPfovk",
       "published": "2026-07-06T17:01:51+00:00"
-    },
-    {
-      "videoId": "YovuEy7ufhE",
-      "title": "How Squidsoup makes art installations with Claude",
-      "url": "https://www.youtube.com/watch?v=YovuEy7ufhE",
-      "published": "2026-07-03T13:00:28+00:00"
-    },
-    {
-      "videoId": "MhfnicQVkgY",
-      "title": "The future of work with @Claude",
-      "url": "https://www.youtube.com/watch?v=MhfnicQVkgY",
-      "published": "2026-07-02T16:59:37+00:00"
-    },
-    {
-      "videoId": "idtMsa_1yNk",
-      "title": "Introducing Claude Science (now in beta)",
-      "url": "https://www.youtube.com/watch?v=idtMsa_1yNk",
-      "published": "2026-06-30T17:05:42+00:00"
-    },
-    {
-      "videoId": "9DHZLw5653E",
-      "title": "How Spotify runs agents across 20M+ lines of code, with Niklas Gustavsson",
-      "url": "https://www.youtube.com/watch?v=9DHZLw5653E",
-      "published": "2026-06-29T16:05:17+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

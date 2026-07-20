@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-07-16T01:26:31.757Z",
+  "fetchedAt": "2026-07-20T03:04:41.304Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 101,
+  "count": 103,
   "entries": [
     {
       "type": "command",
@@ -25,10 +25,10 @@
       "name": "/advisor",
       "args": "[model|off]",
       "hasRequiredArg": false,
-      "description": "Enable or disable the [advisor tool](https://code.claude.com/docs/en/advisor), which consults a second model for guidance at key moments during a task. Accepts `opus`, `sonnet`, `fable` (v2.1.170+), or a full model ID. Without an argument, opens a picker",
+      "description": "Enable or disable the [advisor tool](https://code.claude.com/docs/en/advisor), which consults a second model for guidance at key moments during a task. Accepts `opus`, `sonnet`, or a full model ID. Claude Code [doesn't offer Fable 5 as the advisor](https://code.claude.com/docs/en/advisor#enable-the-advisor) and rejects `/advisor fable`. Without an argument, opens a picker",
       "descriptionKo": "작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 [어드바이저 도구](https://code.claude.com/docs/en/advisor)를 활성화하거나 비활성화합니다. `opus`, `sonnet`, `fable` (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
       "aliases": [],
-      "searchText": "Enable or disable the advisor tool, which consults a second model for guidance at key moments during a task. Accepts opus, sonnet, fable (v2.1.170+), or a full model ID. Without an argument, opens a picker 작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 어드바이저 도구를 활성화하거나 비활성화합니다. opus, sonnet, fable (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
+      "searchText": "Enable or disable the advisor tool, which consults a second model for guidance at key moments during a task. Accepts opus, sonnet, or a full model ID. Claude Code doesn't offer Fable 5 as the advisor and rejects /advisor fable. Without an argument, opens a picker 작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 어드바이저 도구를 활성화하거나 비활성화합니다. opus, sonnet, fable (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -64,12 +64,12 @@
       "name": "/background",
       "args": "[prompt]",
       "hasRequiredArg": false,
-      "description": "Detach the current session to run as a [background agent](https://code.claude.com/docs/en/agent-view) and free this terminal. Pass a prompt to send one more instruction before detaching. Monitor the session with `claude agents`. Alias: `/bg`",
+      "description": "Detach the current session to run as a [background agent](https://code.claude.com/docs/en/agent-view) and free this terminal. Pass a prompt to send one more instruction before detaching. Monitor the session with `claude agents`. To copy the conversation into a new background session while this one keeps running, use `/fork`. Alias: `/bg`",
       "descriptionKo": "현재 세션을 [백그라운드 에이전트](https://code.claude.com/docs/en/agent-view)로 분리하여 실행하고 이 터미널을 해제합니다. 분리하기 전에 한 번 더 명령을 입력할 수 있도록 프롬프트를 전달합니다. `claude agents`을 통해 세션을 모니터링합니다. 별칭: `/bg`",
       "aliases": [
         "/bg"
       ],
-      "searchText": "Detach the current session to run as a background agent and free this terminal. Pass a prompt to send one more instruction before detaching. Monitor the session with claude agents. Alias: /bg 현재 세션을 백그라운드 에이전트로 분리하여 실행하고 이 터미널을 해제합니다. 분리하기 전에 한 번 더 명령을 입력할 수 있도록 프롬프트를 전달합니다. claude agents을 통해 세션을 모니터링합니다. 별칭: /bg",
+      "searchText": "Detach the current session to run as a background agent and free this terminal. Pass a prompt to send one more instruction before detaching. Monitor the session with claude agents. To copy the conversation into a new background session while this one keeps running, use /fork. Alias: /bg 현재 세션을 백그라운드 에이전트로 분리하여 실행하고 이 터미널을 해제합니다. 분리하기 전에 한 번 더 명령을 입력할 수 있도록 프롬프트를 전달합니다. claude agents을 통해 세션을 모니터링합니다. 별칭: /bg",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -92,10 +92,10 @@
       "name": "/branch",
       "args": "[name]",
       "hasRequiredArg": false,
-      "description": "Create a branch of the current conversation at this point, so you can try a different direction without losing the conversation as it stands. Switches you into the branch and preserves the original, which you can return to with `/resume`. To hand a side task to a background subagent instead of switching into a copy yourself, use `/fork`",
+      "description": "Create a branch of the current conversation at this point, so you can try a different direction without losing the conversation as it stands. Switches you into the branch and preserves the original, which you can return to with `/resume`. To run a copy as a separate [background session](https://code.claude.com/docs/en/agent-view) instead of switching into it, use `/fork`; to hand a side task to a [subagent](https://code.claude.com/docs/en/sub-agents) that reports back into this conversation, use `/subtask`",
       "descriptionKo": "이 시점에서 현재 대화의 분기를 생성하면, 기존 대화 내용을 잃지 않고 다른 방향으로 시도해 볼 수 있습니다. 이 명령을 실행하면 해당 분기로 전환되며 원본 대화는 그대로 유지되므로, ``/resume``을 사용하여 원본 대화로 돌아갈 수 있습니다. 직접 복사본으로 전환하는 대신 부차적인 작업을 백그라운드 하위 에이전트에게 맡기려면 ``/fork``을 사용하세요.",
       "aliases": [],
-      "searchText": "Create a branch of the current conversation at this point, so you can try a different direction without losing the conversation as it stands. Switches you into the branch and preserves the original, which you can return to with /resume. To hand a side task to a background subagent instead of switching into a copy yourself, use /fork 이 시점에서 현재 대화의 분기를 생성하면, 기존 대화 내용을 잃지 않고 다른 방향으로 시도해 볼 수 있습니다. 이 명령을 실행하면 해당 분기로 전환되며 원본 대화는 그대로 유지되므로, `/resume을 사용하여 원본 대화로 돌아갈 수 있습니다. 직접 복사본으로 전환하는 대신 부차적인 작업을 백그라운드 하위 에이전트에게 맡기려면 /fork`을 사용하세요.",
+      "searchText": "Create a branch of the current conversation at this point, so you can try a different direction without losing the conversation as it stands. Switches you into the branch and preserves the original, which you can return to with /resume. To run a copy as a separate background session instead of switching into it, use /fork; to hand a side task to a subagent that reports back into this conversation, use /subtask 이 시점에서 현재 대화의 분기를 생성하면, 기존 대화 내용을 잃지 않고 다른 방향으로 시도해 볼 수 있습니다. 이 명령을 실행하면 해당 분기로 전환되며 원본 대화는 그대로 유지되므로, `/resume을 사용하여 원본 대화로 돌아갈 수 있습니다. 직접 복사본으로 전환하는 대신 부차적인 작업을 백그라운드 하위 에이전트에게 맡기려면 /fork`을 사용하세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -103,14 +103,30 @@
     {
       "type": "command",
       "name": "/btw",
-      "args": "<question>",
-      "hasRequiredArg": true,
-      "description": "Ask a quick [side question](https://code.claude.com/docs/en/interactive-mode#side-questions-with-%2Fbtw) without adding to the conversation",
+      "args": "[question]",
+      "hasRequiredArg": false,
+      "description": "Ask a quick [side question](https://code.claude.com/docs/en/interactive-mode#side-questions-with-%2Fbtw) without adding to the conversation. Without a question, reopens the overlay on your most recent side question from this session so you can browse earlier answers; with no side questions yet, it asks for one. Before v2.1.212, `/btw` required a question",
       "descriptionKo": "대화에 내용을 추가하지 않고 간단한 [부수적인 질문](https://code.claude.com/docs/en/interactive-mode#side-questions-with-%2Fbtw)을 해보세요",
       "aliases": [],
-      "searchText": "Ask a quick side question without adding to the conversation 대화에 내용을 추가하지 않고 간단한 부수적인 질문을 해보세요",
+      "searchText": "Ask a quick side question without adding to the conversation. Without a question, reopens the overlay on your most recent side question from this session so you can browse earlier answers; with no side questions yet, it asks for one. Before v2.1.212, /btw required a question 대화에 내용을 추가하지 않고 간단한 부수적인 질문을 해보세요",
       "firstSeen": "2026-06-20",
       "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/bug",
+      "args": "[report]",
+      "hasRequiredArg": false,
+      "description": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a [local archive under `~/.claude/feedback-bundles/`](https://code.claude.com/docs/en/data-usage#telemetry-services) that you forward yourself. Alias: `/share`. Before v2.1.212, `/bug` and `/share` were aliases of `/feedback`",
+      "descriptionKo": "",
+      "aliases": [
+        "/share",
+        "/bug"
+      ],
+      "searchText": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a local archive under ~/.claude/feedback-bundles/ that you forward yourself. Alias: /share. Before v2.1.212, /bug and /share were aliases of /feedback",
+      "firstSeen": "2026-07-20",
+      "minVersion": "2.1.212",
       "resources": []
     },
     {
@@ -224,12 +240,12 @@
       "name": "/config",
       "args": "[key=value ...]",
       "hasRequiredArg": false,
-      "description": "Open the [Settings](https://code.claude.com/docs/en/settings) interface to adjust theme, model, [output style](https://code.claude.com/docs/en/output-styles), and other preferences. From v2.1.181, pass one or more `key=value` pairs to set a setting directly without opening the interface, for example `/config thinking=false`. From v2.1.182, named shorthand keys are also accepted, such as `/config theme=dark` or `/config model=sonnet`. The `key=value` form also works in non-interactive mode (`-p`) and from [Remote Control](https://code.claude.com/docs/en/remote-control). Run `/config --help` to list every settable key with its options. Alias: `/settings`",
+      "description": "Open the [Settings](https://code.claude.com/docs/en/settings) interface to adjust theme, model, [output style](https://code.claude.com/docs/en/output-styles), and other preferences. From v2.1.181, pass one or more `key=value` pairs to set a setting directly without opening the interface, for example `/config thinking=false`. From v2.1.182, named shorthand keys are also accepted, such as `/config theme=dark` or `/config model=sonnet`. The `key=value` form also works in non-interactive mode (`-p`) and from the Claude mobile app via [Remote Control](https://code.claude.com/docs/en/remote-control). Run `/config --help` to list every settable key with its options. Alias: `/settings`",
       "descriptionKo": "[설정](https://code.claude.com/docs/en/settings) 인터페이스를 열어 테마, 모델, [출력 스타일](https://code.claude.com/docs/en/output-styles) 및 기타 기본 설정을 조정할 수 있습니다. v2.1.181부터는 하나 이상의 `key=value` 쌍을 전달하여 인터페이스를 열지 않고도 설정을 직접 지정할 수 있습니다(예: `/config thinking=false`). v2.1.182부터는 `/config theme=dark` 또는 `/config model=sonnet`와 같은 명명된 약어 키도 지원됩니다. `key=value` 형식은 비대화형 모드(`-p`) 및 [원격 제어](https://code.claude.com/docs/en/remote-control)에서도 작동합니다. `/config --help`를 실행하면 설정 가능한 모든 키와 해당 옵션을 확인할 수 있습니다. 별칭: `/settings`",
       "aliases": [
         "/settings"
       ],
-      "searchText": "Open the Settings interface to adjust theme, model, output style, and other preferences. From v2.1.181, pass one or more key=value pairs to set a setting directly without opening the interface, for example /config thinking=false. From v2.1.182, named shorthand keys are also accepted, such as /config theme=dark or /config model=sonnet. The key=value form also works in non-interactive mode (-p) and from Remote Control. Run /config --help to list every settable key with its options. Alias: /settings 설정 인터페이스를 열어 테마, 모델, 출력 스타일 및 기타 기본 설정을 조정할 수 있습니다. v2.1.181부터는 하나 이상의 key=value 쌍을 전달하여 인터페이스를 열지 않고도 설정을 직접 지정할 수 있습니다(예: /config thinking=false). v2.1.182부터는 /config theme=dark 또는 /config model=sonnet와 같은 명명된 약어 키도 지원됩니다. key=value 형식은 비대화형 모드(-p) 및 원격 제어에서도 작동합니다. /config --help를 실행하면 설정 가능한 모든 키와 해당 옵션을 확인할 수 있습니다. 별칭: /settings",
+      "searchText": "Open the Settings interface to adjust theme, model, output style, and other preferences. From v2.1.181, pass one or more key=value pairs to set a setting directly without opening the interface, for example /config thinking=false. From v2.1.182, named shorthand keys are also accepted, such as /config theme=dark or /config model=sonnet. The key=value form also works in non-interactive mode (-p) and from the Claude mobile app via Remote Control. Run /config --help to list every settable key with its options. Alias: /settings 설정 인터페이스를 열어 테마, 모델, 출력 스타일 및 기타 기본 설정을 조정할 수 있습니다. v2.1.181부터는 하나 이상의 key=value 쌍을 전달하여 인터페이스를 열지 않고도 설정을 직접 지정할 수 있습니다(예: /config thinking=false). v2.1.182부터는 /config theme=dark 또는 /config model=sonnet와 같은 명명된 약어 키도 지원됩니다. key=value 형식은 비대화형 모드(-p) 및 원격 제어에서도 작동합니다. /config --help를 실행하면 설정 가능한 모든 키와 해당 옵션을 확인할 수 있습니다. 별칭: /settings",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -440,13 +456,10 @@
       "name": "/feedback",
       "args": "[report]",
       "hasRequiredArg": false,
-      "description": "Submit feedback, report a bug, or share your conversation. Sending to Anthropic requires [authentication](https://code.claude.com/docs/en/authentication). Aliases: `/bug`, `/share`",
+      "description": "Send product feedback about Claude Code. Opens the same dialog as [`/bug`](#all-commands) with the same consent step and sending rules",
       "descriptionKo": "의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: `/bug`, `/share`",
-      "aliases": [
-        "/bug",
-        "/share"
-      ],
-      "searchText": "Submit feedback, report a bug, or share your conversation. Sending to Anthropic requires authentication. Aliases: /bug, /share 의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: /bug, /share",
+      "aliases": [],
+      "searchText": "Send product feedback about Claude Code. Opens the same dialog as /bug with the same consent step and sending rules 의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: /bug, /share",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -480,14 +493,14 @@
     {
       "type": "command",
       "name": "/fork",
-      "args": "<directive>",
-      "hasRequiredArg": true,
-      "description": "Spawn a [forked subagent](https://code.claude.com/docs/en/sub-agents#fork-the-current-conversation): a background subagent that inherits the full conversation and works on the directive while you keep going. Its result returns to your conversation when it finishes. To switch into a copy of the conversation yourself, use `/branch`. Before v2.1.161, `/fork` is an alias for `/branch`",
+      "args": "[prompt]",
+      "hasRequiredArg": false,
+      "description": "Copy the current conversation into a new [background session](https://code.claude.com/docs/en/agent-view#from-inside-a-session) and keep working here. The copy starts with everything in this conversation up to now and runs as its own row in [agent view](https://code.claude.com/docs/en/agent-view); the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. To hand a side task to a subagent whose result comes back into this conversation, use `/subtask`. To switch into a copy yourself, use `/branch`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 `/fork` starts a [forked subagent](https://code.claude.com/docs/en/sub-agents#fork-the-current-conversation) instead, and before v2.1.161 it is an alias for `/branch` unless forked subagents were enabled, by setting [`CLAUDE_CODE_FORK_SUBAGENT`](https://code.claude.com/docs/en/env-vars) to `1` from v2.1.117 or by a server-side rollout. When [agent view is turned off](https://code.claude.com/docs/en/agent-view#turn-off-agent-view), `/fork` keeps the forked-subagent behavior",
       "descriptionKo": "[포크된 서브에이전트](https://code.claude.com/docs/en/sub-agents#fork-the-current-conversation)를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 `/branch`를 사용하세요. v2.1.161 이전 버전에서는 `/fork`가 `/branch`의 별칭입니다.",
       "aliases": [],
-      "searchText": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the directive while you keep going. Its result returns to your conversation when it finishes. To switch into a copy of the conversation yourself, use /branch. Before v2.1.161, /fork is an alias for /branch 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
+      "searchText": "Copy the current conversation into a new background session and keep working here. The copy starts with everything in this conversation up to now and runs as its own row in agent view; the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. To hand a side task to a subagent whose result comes back into this conversation, use /subtask. To switch into a copy yourself, use /branch. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 /fork starts a forked subagent instead, and before v2.1.161 it is an alias for /branch unless forked subagents were enabled, by setting CLAUDECODEFORKSUBAGENT to 1 from v2.1.117 or by a server-side rollout. When agent view is turned off, /fork keeps the forked-subagent behavior 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.161",
+      "minVersion": "2.1.212",
       "resources": []
     },
     {
@@ -508,10 +521,10 @@
       "name": "/heapdump",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Write a JavaScript heap snapshot and a memory breakdown to `~/Desktop`, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. See [troubleshooting](https://code.claude.com/docs/en/troubleshooting#high-cpu-or-memory-usage)",
+      "description": "Write a JavaScript heap snapshot and a memory breakdown to `~/Desktop`, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. The `.heapsnapshot` file contains your full conversation and credentials, so don't share it. See [troubleshooting](https://code.claude.com/docs/en/troubleshooting#high-cpu-or-memory-usage)",
       "descriptionKo": "메모리 사용량이 높은 문제를 진단하기 위해 JavaScript 힙 스냅샷과 메모리 내역을 `~/Desktop` 또는 Linux의 데스크톱 폴더가 없는 홈 디렉터리에 저장하십시오. [문제 해결](https://code.claude.com/docs/en/troubleshooting#high-cpu-or-memory-usage)을 참조하십시오.",
       "aliases": [],
-      "searchText": "Write a JavaScript heap snapshot and a memory breakdown to ~/Desktop, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. See troubleshooting 메모리 사용량이 높은 문제를 진단하기 위해 JavaScript 힙 스냅샷과 메모리 내역을 ~/Desktop 또는 Linux의 데스크톱 폴더가 없는 홈 디렉터리에 저장하십시오. 문제 해결을 참조하십시오.",
+      "searchText": "Write a JavaScript heap snapshot and a memory breakdown to ~/Desktop, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. The .heapsnapshot file contains your full conversation and credentials, so don't share it. See troubleshooting 메모리 사용량이 높은 문제를 진단하기 위해 JavaScript 힙 스냅샷과 메모리 내역을 ~/Desktop 또는 Linux의 데스크톱 폴더가 없는 홈 디렉터리에 저장하십시오. 문제 해결을 참조하십시오.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1111,7 +1124,7 @@
       "resources": []
     },
     {
-      "type": "command",
+      "type": "skill",
       "name": "/status",
       "args": "",
       "hasRequiredArg": false,
@@ -1160,6 +1173,19 @@
       "searchText": "Stop the current background session. Only available while attached to a background session; the transcript and any worktree are kept. To detach without stopping, use /exit or press ← 현재 백그라운드 세션을 중지합니다. 백그라운드 세션에 연결되어 있는 동안에만 사용할 수 있으며, 대화 기록과 작업 트리는 유지됩니다. 중지하지 않고 연결을 해제하려면 /exit를 사용하거나 ←를 누르세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/subtask",
+      "args": "<task>",
+      "hasRequiredArg": true,
+      "description": "Spawn a [forked subagent](https://code.claude.com/docs/en/sub-agents#fork-the-current-conversation): a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use `/fork`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 this command is `/fork`. When [agent view is turned off](https://code.claude.com/docs/en/agent-view#turn-off-agent-view), `/subtask` isn't available and `/fork` keeps the forked-subagent behavior",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use /fork. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 this command is /fork. When agent view is turned off, /subtask isn't available and /fork keeps the forked-subagent behavior",
+      "firstSeen": "2026-07-20",
+      "minVersion": "2.1.212",
       "resources": []
     },
     {
@@ -1256,12 +1282,12 @@
     {
       "type": "command",
       "name": "/ultrareview",
-      "args": "[PR]",
+      "args": "[PR or branch]",
       "hasRequiredArg": false,
-      "description": "Run a deep, multi-agent code review in a cloud sandbox with [ultrareview](https://code.claude.com/docs/en/ultrareview). The preferred invocation is now `/code-review ultra`, and `/ultrareview` remains as an alias. Includes 3 free runs on Pro and Max, then requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)",
+      "description": "Run a deep, multi-agent code review in a cloud sandbox with [ultrareview](https://code.claude.com/docs/en/ultrareview). Pass a PR reference to review that pull request, or a branch name to change the comparison base. The preferred invocation is now `/code-review ultra`, and `/ultrareview` remains as an alias. Includes 3 free runs on Pro and Max, then requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)",
       "descriptionKo": "[ultrareview](https://code.claude.com/docs/en/ultrareview)를 사용하여 클라우드 샌드박스에서 심층적인 다중 에이전트 코드 검토를 실행해 보세요. 이제 권장 호출 방식은 `/code-review ultra`이며, `/ultrareview`는 별칭으로 유지됩니다. Pro 및 Max 요금제에서는 3회의 무료 실행이 제공되며, 그 이후에는 [사용 크레딧](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)이 필요합니다.",
       "aliases": [],
-      "searchText": "Run a deep, multi-agent code review in a cloud sandbox with ultrareview. The preferred invocation is now /code-review ultra, and /ultrareview remains as an alias. Includes 3 free runs on Pro and Max, then requires usage credits ultrareview를 사용하여 클라우드 샌드박스에서 심층적인 다중 에이전트 코드 검토를 실행해 보세요. 이제 권장 호출 방식은 /code-review ultra이며, /ultrareview는 별칭으로 유지됩니다. Pro 및 Max 요금제에서는 3회의 무료 실행이 제공되며, 그 이후에는 사용 크레딧이 필요합니다.",
+      "searchText": "Run a deep, multi-agent code review in a cloud sandbox with ultrareview. Pass a PR reference to review that pull request, or a branch name to change the comparison base. The preferred invocation is now /code-review ultra, and /ultrareview remains as an alias. Includes 3 free runs on Pro and Max, then requires usage credits ultrareview를 사용하여 클라우드 샌드박스에서 심층적인 다중 에이전트 코드 검토를 실행해 보세요. 이제 권장 호출 방식은 /code-review ultra이며, /ultrareview는 별칭으로 유지됩니다. Pro 및 Max 요금제에서는 3회의 무료 실행이 제공되며, 그 이후에는 사용 크레딧이 필요합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1297,10 +1323,10 @@
       "name": "/usage-credits",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Configure usage credits to keep working when you hit a limit. On Pro and Max plans, opens an [in-CLI dialog](https://code.claude.com/docs/en/costs#set-a-spend-limit-on-pro-and-max) to buy usage credits, set a monthly spend limit, and configure auto-reload; on Claude Code versions before v2.1.207 and on other plans, opens the usage-credits billing page in your browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously `/extra-usage`",
+      "description": "Configure usage credits, or request them from your admin, when you hit a limit. On Pro and Max plans, opens an [in-CLI dialog](https://code.claude.com/docs/en/costs#set-a-spend-limit-on-pro-and-max) to buy usage credits, set a monthly spend limit, and configure auto-reload; on Claude Code versions before v2.1.207 and on other plans, opens the usage-credits billing page in your browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI, after confirming in a dialog that the request notifies their admins. Before v2.1.211, Claude Code sent the request without a confirmation step. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously `/extra-usage`",
       "descriptionKo": "한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: `/extra-usage`",
       "aliases": [],
-      "searchText": "Configure usage credits to keep working when you hit a limit. On Pro and Max plans, opens an in-CLI dialog to buy usage credits, set a monthly spend limit, and configure auto-reload; on Claude Code versions before v2.1.207 and on other plans, opens the usage-credits billing page in your browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
+      "searchText": "Configure usage credits, or request them from your admin, when you hit a limit. On Pro and Max plans, opens an in-CLI dialog to buy usage credits, set a monthly spend limit, and configure auto-reload; on Claude Code versions before v2.1.207 and on other plans, opens the usage-credits billing page in your browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI, after confirming in a dialog that the request notifies their admins. Before v2.1.211, Claude Code sent the request without a confirmation step. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1372,6 +1398,12 @@
     }
   ],
   "officialVideos": [
+    {
+      "videoId": "ub8jjpVDLIQ",
+      "title": "Making New York City miniature with Claude",
+      "url": "https://www.youtube.com/watch?v=ub8jjpVDLIQ",
+      "published": "2026-07-16T20:56:54+00:00"
+    },
     {
       "videoId": "255IGB63nTY",
       "title": "Build data-driven lesson plans with Claude for Teachers",
@@ -1455,12 +1487,6 @@
       "title": "Photographing the stars with Claude",
       "url": "https://www.youtube.com/watch?v=8--srKGAaMQ",
       "published": "2026-07-06T19:14:25+00:00"
-    },
-    {
-      "videoId": "fQ3BuPPfovk",
-      "title": "Claude Fable 5: working at the frontier",
-      "url": "https://www.youtube.com/watch?v=fQ3BuPPfovk",
-      "published": "2026-07-06T17:01:51+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

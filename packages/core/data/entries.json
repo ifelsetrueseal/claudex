@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-23T01:45:30.592Z",
+  "fetchedAt": "2026-07-27T01:50:56.809Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -402,10 +402,10 @@
       "name": "/effort",
       "args": "[level|auto]",
       "hasRequiredArg": false,
-      "description": "Set the model [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level). Accepts `low`, `medium`, `high`, `xhigh`, `max`, or `ultracode`; available levels depend on the model, and `max` and `ultracode` are session-only. `ultracode` is a Claude Code setting that combines `xhigh` reasoning with automatic [workflow](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode) orchestration. `auto` resets to the model default. Without an argument, opens an interactive slider; use left and right arrows to pick a level and `Enter` to apply. Takes effect immediately without waiting for the current response to finish. Also available in non-interactive mode (`-p`) with a level argument, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later. On Fable 5, Opus 4.8, and Opus 4.7, a non-interactive `/effort` reports `Not applied` while the [model-default effort hold](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level) is in force, so pass `--effort` at launch instead",
+      "description": "Set the model [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level). Accepts `low`, `medium`, `high`, `xhigh`, `max`, or [`ultracode`](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode); available levels depend on the model, and `max` and `ultracode` are session-only. `auto` resets to the model default. Without an argument, opens an interactive slider. Takes effect immediately without waiting for the current response to finish. Also available in non-interactive mode (`-p`) with a level argument, where it applies to the current session only; requires Claude Code v2.1.205 or later. While the [model-default effort hold](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level) is in force, a non-interactive `/effort` reports `Not applied`, so pass `--effort` at launch instead",
       "descriptionKo": "모델의 [노력 수준](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 설정합니다. `low`, `medium`, `high`, `xhigh`, `max` 또는 `ultracode`을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, `max` 및 `ultracode`은 세션 단위로만 적용됩니다. `ultracode`은 `xhigh` 추론과 자동 [워크플로우](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) 조정을 결합한 Claude Code 설정입니다. `auto`은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, `Enter`를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "aliases": [],
-      "searchText": "Set the model effort level. Accepts low, medium, high, xhigh, max, or ultracode; available levels depend on the model, and max and ultracode are session-only. ultracode is a Claude Code setting that combines xhigh reasoning with automatic workflow orchestration. auto resets to the model default. Without an argument, opens an interactive slider; use left and right arrows to pick a level and Enter to apply. Takes effect immediately without waiting for the current response to finish. Also available in non-interactive mode (-p) with a level argument, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later. On Fable 5, Opus 4.8, and Opus 4.7, a non-interactive /effort reports Not applied while the model-default effort hold is in force, so pass --effort at launch instead 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
+      "searchText": "Set the model effort level. Accepts low, medium, high, xhigh, max, or ultracode; available levels depend on the model, and max and ultracode are session-only. auto resets to the model default. Without an argument, opens an interactive slider. Takes effect immediately without waiting for the current response to finish. Also available in non-interactive mode (-p) with a level argument, where it applies to the current session only; requires Claude Code v2.1.205 or later. While the model-default effort hold is in force, a non-interactive /effort reports Not applied, so pass --effort at launch instead 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1399,6 +1399,18 @@
   ],
   "officialVideos": [
     {
+      "videoId": "Ua_5vH_n8j4",
+      "title": "What do AI models actually know?",
+      "url": "https://www.youtube.com/watch?v=Ua_5vH_n8j4",
+      "published": "2026-07-24T15:38:23+00:00"
+    },
+    {
+      "videoId": "RlQ4xpDnoaw",
+      "title": "Why does AI hallucinate?",
+      "url": "https://www.youtube.com/watch?v=RlQ4xpDnoaw",
+      "published": "2026-07-23T15:42:15+00:00"
+    },
+    {
       "videoId": "ni4SXBnah2I",
       "title": "How does AI get its character?",
       "url": "https://www.youtube.com/watch?v=ni4SXBnah2I",
@@ -1475,18 +1487,6 @@
       "title": "Photographing the stars with Claude",
       "url": "https://www.youtube.com/watch?v=JdqNda9JeaU",
       "published": "2026-07-07T20:30:48+00:00"
-    },
-    {
-      "videoId": "CuzipWWYvFo",
-      "title": "Regenerative beekeeping with Claude",
-      "url": "https://www.youtube.com/watch?v=CuzipWWYvFo",
-      "published": "2026-07-07T19:00:35+00:00"
-    },
-    {
-      "videoId": "XNbc2HhL7J4",
-      "title": "Claude Cowork: coming to mobile and web",
-      "url": "https://www.youtube.com/watch?v=XNbc2HhL7J4",
-      "published": "2026-07-07T16:01:39+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

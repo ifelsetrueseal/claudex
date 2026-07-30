@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-27T01:50:56.809Z",
+  "fetchedAt": "2026-07-30T01:18:38.692Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -359,12 +359,12 @@
       "name": "/desktop",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Continue the current session in the Claude Code Desktop app. Requires macOS or Windows and a Claude subscription. Alias: `/app`",
+      "description": "Continue the current session in the Claude Code Desktop app. Requires macOS or x64 Windows and a Claude subscription. Alias: `/app`",
       "descriptionKo": "Claude Code Desktop 앱에서 현재 세션을 계속합니다. macOS 또는 Windows 환경과 Claude 구독이 필요합니다. 별칭: `/app`",
       "aliases": [
         "/app"
       ],
-      "searchText": "Continue the current session in the Claude Code Desktop app. Requires macOS or Windows and a Claude subscription. Alias: /app Claude Code Desktop 앱에서 현재 세션을 계속합니다. macOS 또는 Windows 환경과 Claude 구독이 필요합니다. 별칭: /app",
+      "searchText": "Continue the current session in the Claude Code Desktop app. Requires macOS or x64 Windows and a Claude subscription. Alias: /app Claude Code Desktop 앱에서 현재 세션을 계속합니다. macOS 또는 Windows 환경과 Claude 구독이 필요합니다. 별칭: /app",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -913,7 +913,7 @@
       "name": "/remote-env",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Choose the default environment for [cloud agents](https://code.claude.com/docs/docs/en/claude-code-on-the-web#configure-your-environment)",
+      "description": "Choose the default environment for [cloud agents](https://code.claude.com/docs/docs/en/cloud-environments#select-an-environment-from-the-cli)",
       "descriptionKo": "[클라우드 에이전트](https://code.claude.com/docs/en/claude-code-on-the-web#configure-your-environment)의 기본 환경을 선택하세요.",
       "aliases": [],
       "searchText": "Choose the default environment for cloud agents 클라우드 에이전트의 기본 환경을 선택하세요.",
@@ -1050,10 +1050,10 @@
       "name": "/security-review",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Analyze pending changes on the current branch for security vulnerabilities. Reviews the git diff and identifies risks like injection, auth issues, and data exposure",
+      "description": "Analyze the changes on your current branch for security vulnerabilities. Reviews the diff between your branch and origin's default branch, identifying risks like injection, auth issues, and data exposure. Needs an `origin` remote; if the review fails with an `ambiguous argument` error, see the [error reference](https://code.claude.com/docs/docs/en/errors#security-review-fails-without-origin-head)",
       "descriptionKo": "현재 브랜치의 미적용 변경 사항에 대해 보안 취약점을 분석합니다. git diff를 검토하여 인젝션, 인증 문제, 데이터 유출과 같은 위험 요소를 파악합니다.",
       "aliases": [],
-      "searchText": "Analyze pending changes on the current branch for security vulnerabilities. Reviews the git diff and identifies risks like injection, auth issues, and data exposure 현재 브랜치의 미적용 변경 사항에 대해 보안 취약점을 분석합니다. git diff를 검토하여 인젝션, 인증 문제, 데이터 유출과 같은 위험 요소를 파악합니다.",
+      "searchText": "Analyze the changes on your current branch for security vulnerabilities. Reviews the diff between your branch and origin's default branch, identifying risks like injection, auth issues, and data exposure. Needs an origin remote; if the review fails with an ambiguous argument error, see the error reference 현재 브랜치의 미적용 변경 사항에 대해 보안 취약점을 분석합니다. git diff를 검토하여 인젝션, 인증 문제, 데이터 유출과 같은 위험 요소를 파악합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []

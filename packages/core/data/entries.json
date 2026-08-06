@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-07-30T01:18:38.692Z",
+  "fetchedAt": "2026-08-06T01:23:57.087Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 103,
+  "count": 104,
   "entries": [
     {
       "type": "command",
@@ -43,7 +43,20 @@
       "aliases": [],
       "searchText": "As of v2.1.198, running /agents prints a reminder to ask Claude to create or manage subagents, or to edit .claude/agents/ or ~/.claude/agents/ directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations 에이전트 구성 관리",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.198",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/autocompact",
+      "args": "[auto|<tokens>]",
+      "hasRequiredArg": true,
+      "description": "Set the auto-compact window: how full the context window gets before Claude Code compacts automatically. Pass a size such as `500k`, or `auto` to return to the window tuned for your model. Claude Code saves the value to user settings and applies it to the current session. See [Set the auto-compact window](https://code.claude.com/docs/docs/en/context-window#set-the-auto-compact-window) for accepted values and what overrides it. Without an argument, opens a dialog that shows the current window. Requires Claude Code v2.1.221 or later",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Set the auto-compact window: how full the context window gets before Claude Code compacts automatically. Pass a size such as 500k, or auto to return to the window tuned for your model. Claude Code saves the value to user settings and applies it to the current session. See Set the auto-compact window for accepted values and what overrides it. Without an argument, opens a dialog that shows the current window. Requires Claude Code v2.1.221 or later",
+      "firstSeen": "2026-08-06",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -126,7 +139,7 @@
       ],
       "searchText": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a local archive under ~/.claude/feedback-bundles/ that you forward yourself. Alias: /share. Before v2.1.212, /bug and /share were aliases of /feedback",
       "firstSeen": "2026-07-20",
-      "minVersion": "2.1.212",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -139,7 +152,7 @@
       "aliases": [],
       "searchText": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's CLAUDE.md is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so --resume and --continue find it from there. Prompts you to trust the directory if you haven't worked in it before. Typing a partial path shows matching directory suggestions; press Tab to accept one. The suggestions require Claude Code v2.1.206 or later. To grant access to an extra directory without moving the session, use /add-dir. Restrict or disable /cd targets with Cd permission rules. Requires Claude Code v2.1.169 or later; earlier versions report Unknown command: /cd 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.169",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -158,12 +171,12 @@
     {
       "type": "skill",
       "name": "/claude-api",
-      "args": "[migrate|managed-agents-onboard]",
+      "args": "[migrate|managed-agents-onboard|prompt-audit]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load Claude API reference material for your project's language (Python, TypeScript, Java, Go, Ruby, C#, PHP, or cURL) and Managed Agents reference. Covers tool use, streaming, batches, structured outputs, and common pitfalls. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. Run `/claude-api migrate` to upgrade existing Claude API code to a newer model: Claude asks which files to scan and which model to target, then updates model IDs, thinking configuration, and other parameters that changed between versions. Run `/claude-api managed-agents-onboard` for an interactive walkthrough that creates a new Managed Agent from scratch",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load [Claude API](https://platform.claude.com/docs/en/api/overview) and Managed Agents reference material for your project's language. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. Run `migrate` to upgrade existing Claude API code to a newer model, `managed-agents-onboard` for a walkthrough that creates a new Managed Agent, or `prompt-audit` to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. The `prompt-audit` subcommand requires Claude Code v2.1.221 or later",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C#, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 `anthropic` 또는 `@anthropic-ai/sdk`를 임포트하면 자동으로 활성화됩니다. `/claude-api migrate`를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. `/claude-api managed-agents-onboard`를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
       "aliases": [],
-      "searchText": "Skill. Load Claude API reference material for your project's language (Python, TypeScript, Java, Go, Ruby, C, PHP, or cURL) and Managed Agents reference. Covers tool use, streaming, batches, structured outputs, and common pitfalls. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. Run /claude-api migrate to upgrade existing Claude API code to a newer model: Claude asks which files to scan and which model to target, then updates model IDs, thinking configuration, and other parameters that changed between versions. Run /claude-api managed-agents-onboard for an interactive walkthrough that creates a new Managed Agent from scratch Skill. 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 anthropic 또는 @anthropic-ai/sdk를 임포트하면 자동으로 활성화됩니다. /claude-api migrate를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. /claude-api managed-agents-onboard를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
+      "searchText": "Skill. Load Claude API and Managed Agents reference material for your project's language. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. Run migrate to upgrade existing Claude API code to a newer model, managed-agents-onboard for a walkthrough that creates a new Managed Agent, or prompt-audit to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. The prompt-audit subcommand requires Claude Code v2.1.221 or later Skill. 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 anthropic 또는 @anthropic-ai/sdk를 임포트하면 자동으로 활성화됩니다. /claude-api migrate를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. /claude-api managed-agents-onboard를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -374,10 +387,10 @@
       "name": "/diff",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal",
+      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. Claude Code computes these diffs from raw git blob content, so diff drivers and `textconv` filters configured in `.gitattributes` or git config don't apply. Before v2.1.222, workspace-configured drivers and filters could rewrite the viewer's output. The open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal; the auto-refresh requires Claude Code v2.1.198 or later",
       "descriptionKo": "커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "aliases": [],
-      "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. As of v2.1.198, the open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
+      "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. Claude Code computes these diffs from raw git blob content, so diff drivers and textconv filters configured in .gitattributes or git config don't apply. Before v2.1.222, workspace-configured drivers and filters could rewrite the viewer's output. The open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal; the auto-refresh requires Claude Code v2.1.198 or later 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -482,10 +495,10 @@
       "name": "/focus",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. As of v2.1.198, the tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set [`viewMode`](https://code.claude.com/docs/docs/en/settings#available-settings) in settings to override it. Only available in [fullscreen rendering](https://code.claude.com/docs/docs/en/fullscreen)",
+      "description": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. As of v2.1.198, the tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set [`viewMode`](https://code.claude.com/docs/docs/en/settings#available-settings) in settings to override it. Only available in [fullscreen rendering](https://code.claude.com/docs/docs/en/fullscreen). The [VS Code extension](https://code.claude.com/docs/docs/en/vs-code#use-the-prompt-box) offers its own Focus view as a command-menu toggle, stored as an extension setting, independent of `viewMode`",
       "descriptionKo": "포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 [`viewMode`](https://code.claude.com/docs/en/settings#available-settings)를 설정하여 이를 재정의할 수 있습니다. [전체 화면 렌더링](https://code.claude.com/docs/en/fullscreen) 모드에서만 사용할 수 있습니다.",
       "aliases": [],
-      "searchText": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. As of v2.1.198, the tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set viewMode in settings to override it. Only available in fullscreen rendering 포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 viewMode를 설정하여 이를 재정의할 수 있습니다. 전체 화면 렌더링 모드에서만 사용할 수 있습니다.",
+      "searchText": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. As of v2.1.198, the tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set viewMode in settings to override it. Only available in fullscreen rendering. The VS Code extension offers its own Focus view as a command-menu toggle, stored as an extension setting, independent of viewMode 포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 viewMode를 설정하여 이를 재정의할 수 있습니다. 전체 화면 렌더링 모드에서만 사용할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -495,12 +508,12 @@
       "name": "/fork",
       "args": "[prompt]",
       "hasRequiredArg": false,
-      "description": "Copy the current conversation into a new [background session](https://code.claude.com/docs/docs/en/agent-view#from-inside-a-session) and keep working here. The copy starts with everything in this conversation up to now and runs as its own row in [agent view](https://code.claude.com/docs/docs/en/agent-view); the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. To hand a side task to a subagent whose result comes back into this conversation, use `/subtask`. To switch into a copy yourself, use `/branch`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 `/fork` starts a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation) instead, and before v2.1.161 it is an alias for `/branch` unless forked subagents were enabled, by setting [`CLAUDE_CODE_FORK_SUBAGENT`](https://code.claude.com/docs/docs/en/env-vars) to `1` from v2.1.117 or by a server-side rollout. When [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/fork` keeps the forked-subagent behavior",
+      "description": "[Copy the current conversation](https://code.claude.com/docs/docs/en/agent-view#copy-the-session-with-/fork) into a new background session and keep working here; the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy [edits in place](https://code.claude.com/docs/docs/en/agent-view#how-file-edits-are-isolated), Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use `/subtask`; to switch into a copy yourself, use `/branch`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/fork` starts a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation) instead",
       "descriptionKo": "[포크된 서브에이전트](https://code.claude.com/docs/en/sub-agents#fork-the-current-conversation)를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 `/branch`를 사용하세요. v2.1.161 이전 버전에서는 `/fork`가 `/branch`의 별칭입니다.",
       "aliases": [],
-      "searchText": "Copy the current conversation into a new background session and keep working here. The copy starts with everything in this conversation up to now and runs as its own row in agent view; the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. To hand a side task to a subagent whose result comes back into this conversation, use /subtask. To switch into a copy yourself, use /branch. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 /fork starts a forked subagent instead, and before v2.1.161 it is an alias for /branch unless forked subagents were enabled, by setting CLAUDECODEFORKSUBAGENT to 1 from v2.1.117 or by a server-side rollout. When agent view is turned off, /fork keeps the forked-subagent behavior 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
+      "searchText": "Copy the current conversation into a new background session and keep working here; the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy edits in place, Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use /subtask; to switch into a copy yourself, use /branch. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever agent view is turned off, /fork starts a forked subagent instead 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.212",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -521,10 +534,10 @@
       "name": "/heapdump",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Write a JavaScript heap snapshot and a memory breakdown to `~/Desktop`, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. The `.heapsnapshot` file contains your full conversation and credentials, so don't share it. See [troubleshooting](https://code.claude.com/docs/docs/en/troubleshooting#high-cpu-or-memory-usage)",
+      "description": "Write a JavaScript heap snapshot and a memory breakdown to `~/Desktop`, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. Attach only the `-diagnostics.json` file when reporting a memory issue; the `.heapsnapshot` contains your full conversation and credentials, so don't share it. Doesn't appear in the command menu; type it in full. See [what to do with the output](https://code.claude.com/docs/docs/en/troubleshooting#high-cpu-or-memory-usage)",
       "descriptionKo": "메모리 사용량이 높은 문제를 진단하기 위해 JavaScript 힙 스냅샷과 메모리 내역을 `~/Desktop` 또는 Linux의 데스크톱 폴더가 없는 홈 디렉터리에 저장하십시오. [문제 해결](https://code.claude.com/docs/en/troubleshooting#high-cpu-or-memory-usage)을 참조하십시오.",
       "aliases": [],
-      "searchText": "Write a JavaScript heap snapshot and a memory breakdown to ~/Desktop, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. The .heapsnapshot file contains your full conversation and credentials, so don't share it. See troubleshooting 메모리 사용량이 높은 문제를 진단하기 위해 JavaScript 힙 스냅샷과 메모리 내역을 ~/Desktop 또는 Linux의 데스크톱 폴더가 없는 홈 디렉터리에 저장하십시오. 문제 해결을 참조하십시오.",
+      "searchText": "Write a JavaScript heap snapshot and a memory breakdown to ~/Desktop, or your home directory on Linux without a Desktop folder, for diagnosing high memory usage. Attach only the -diagnostics.json file when reporting a memory issue; the .heapsnapshot contains your full conversation and credentials, so don't share it. Doesn't appear in the command menu; type it in full. See what to do with the output 메모리 사용량이 높은 문제를 진단하기 위해 JavaScript 힙 스냅샷과 메모리 내역을 ~/Desktop 또는 Linux의 데스크톱 폴더가 없는 홈 디렉터리에 저장하십시오. 문제 해결을 참조하십시오.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -781,10 +794,10 @@
       "name": "/plugin",
       "args": "[subcommand]",
       "hasRequiredArg": false,
-      "description": "Manage Claude Code [plugins](https://code.claude.com/docs/docs/en/plugins). Run with no argument to open the plugin menu, or pass a subcommand such as `list`, `install`, `enable`, or `disable` to act directly",
+      "description": "Manage Claude Code [plugins](https://code.claude.com/docs/docs/en/plugins). Run with no argument to open the plugin menu, or pass a subcommand such as `list`, `install`, `enable`, or `disable` to act directly. Claude Code can activate a plugin during the install; the [install summary](https://code.claude.com/docs/docs/en/discover-plugins#install-plugins) tells you whether it did or whether to run `/reload-plugins`",
       "descriptionKo": "Claude Code [플러그인](https://code.claude.com/docs/en/plugins)을 관리합니다. 인수를 지정하지 않고 실행하면 플러그인 메뉴가 열리고, `list`, `install`, `enable`, `disable`와 같은 하위 명령을 전달하면 해당 기능을 직접 실행할 수 있습니다.",
       "aliases": [],
-      "searchText": "Manage Claude Code plugins. Run with no argument to open the plugin menu, or pass a subcommand such as list, install, enable, or disable to act directly Claude Code 플러그인을 관리합니다. 인수를 지정하지 않고 실행하면 플러그인 메뉴가 열리고, list, install, enable, disable와 같은 하위 명령을 전달하면 해당 기능을 직접 실행할 수 있습니다.",
+      "searchText": "Manage Claude Code plugins. Run with no argument to open the plugin menu, or pass a subcommand such as list, install, enable, or disable to act directly. Claude Code can activate a plugin during the install; the install summary tells you whether it did or whether to run /reload-plugins Claude Code 플러그인을 관리합니다. 인수를 지정하지 않고 실행하면 플러그인 메뉴가 열리고, list, install, enable, disable와 같은 하위 명령을 전달하면 해당 기능을 직접 실행할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -890,7 +903,7 @@
       "aliases": [],
       "searchText": "Re-scan skill and command directories so skills added or changed on disk during the session become available without restarting. Reports how many skills are available and how many were added or removed. Added in v2.1.152 skill 및 명령어 디렉터리를 다시 스캔하여, 세션 중에 디스크에 추가되거나 변경된 스킬을 재시작 없이 사용할 수 있도록 합니다. 사용 가능한 스킬의 수와 추가되거나 제거된 스킬의 수를 보고합니다. v2.1.152에 추가됨",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.152",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -926,10 +939,10 @@
       "name": "/rename",
       "args": "[name]",
       "hasRequiredArg": false,
-      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later",
+      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows `That name is empty once invisible characters are removed. Usage: /rename <name>`. The character replacement and length cap require Claude Code v2.1.221 or later",
       "descriptionKo": "현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "aliases": [],
-      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
+      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows That name is empty once invisible characters are removed. Usage: /rename <name. The character replacement and length cap require Claude Code v2.1.221 or later 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -959,7 +972,7 @@
       "aliases": [],
       "searchText": "Run a fast single-pass, read-only review of a GitHub pull request by number. With no argument, lists open PRs to pick from; text after the PR number becomes additional review instructions. From v2.1.186 through v2.1.201, /review instead ran the same multi-agent engine as /code-review medium. For a multi-agent review at a chosen effort level, use /code-review <level <pr; for a cloud-based review, see /code-review ultra 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.202",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -1094,7 +1107,7 @@
       "aliases": [],
       "searchText": "Skill. Review the changed code for cleanup opportunities and apply the fixes. Four review agents run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change is at the right level of abstraction. From v2.1.154, the review doesn't look for correctness bugs. Use /code-review to find bugs. On earlier versions, /simplify is equivalent to /code-review --fix. Pass a path or PR reference to review a specific target Skill. 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 담당자가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 /code-review를 사용하십시오. 이전 버전에서는 /simplify가 /code-review --fix와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
       "firstSeen": "2026-06-20",
-      "minVersion": "2.1.154",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -1128,10 +1141,10 @@
       "name": "/status",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. Works while Claude is responding",
+      "description": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A `Session kind` row reads `background job · attached` or `background job · unattended` in a [background session](https://code.claude.com/docs/docs/en/agent-view), depending on whether a terminal is attached, and `interactive` in any other session. Before v2.1.221, `/status` didn't show this row. Works while Claude is responding",
       "descriptionKo": "버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
       "aliases": [],
-      "searchText": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. Works while Claude is responding 버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
+      "searchText": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A Session kind row reads background job · attached or background job · unattended in a background session, depending on whether a terminal is attached, and interactive in any other session. Before v2.1.221, /status didn't show this row. Works while Claude is responding 버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1185,7 +1198,7 @@
       "aliases": [],
       "searchText": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use /fork. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 this command is /fork. When agent view is turned off, /subtask isn't available and /fork keeps the forked-subagent behavior",
       "firstSeen": "2026-07-20",
-      "minVersion": "2.1.212",
+      "minVersion": "",
       "resources": []
     },
     {
@@ -1271,10 +1284,10 @@
       "name": "/ultraplan",
       "args": "<prompt>",
       "hasRequiredArg": true,
-      "description": "Draft a plan in an [ultraplan](https://code.claude.com/docs/docs/en/ultraplan) session, review it in your browser, then execute remotely or send it back to your terminal",
+      "description": "Removed. Use [plan mode](https://code.claude.com/docs/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) instead. Previously sent a planning task to a [Claude Code on the web](https://code.claude.com/docs/docs/en/claude-code-on-the-web) session for review in your browser",
       "descriptionKo": "[ultraplan](https://code.claude.com/docs/en/ultraplan) 세션에서 계획을 작성하고, 브라우저에서 검토한 다음, 원격으로 실행하거나 터미널로 다시 전송하세요.",
       "aliases": [],
-      "searchText": "Draft a plan in an ultraplan session, review it in your browser, then execute remotely or send it back to your terminal ultraplan 세션에서 계획을 작성하고, 브라우저에서 검토한 다음, 원격으로 실행하거나 터미널로 다시 전송하세요.",
+      "searchText": "Removed. Use plan mode instead. Previously sent a planning task to a Claude Code on the web session for review in your browser ultraplan 세션에서 계획을 작성하고, 브라우저에서 검토한 다음, 원격으로 실행하거나 터미널로 다시 전송하세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1399,6 +1412,24 @@
   ],
   "officialVideos": [
     {
+      "videoId": "j1Vk6Y-23CY",
+      "title": "What happens when you talk to AI?",
+      "url": "https://www.youtube.com/watch?v=j1Vk6Y-23CY",
+      "published": "2026-08-05T17:22:05+00:00"
+    },
+    {
+      "videoId": "b8SV4U6fEIc",
+      "title": "How auto mode works with Claude Code",
+      "url": "https://www.youtube.com/watch?v=b8SV4U6fEIc",
+      "published": "2026-08-04T15:55:29+00:00"
+    },
+    {
+      "videoId": "jrfB3VY-wDo",
+      "title": "Record A Skill With Claude",
+      "url": "https://www.youtube.com/watch?v=jrfB3VY-wDo",
+      "published": "2026-08-03T18:18:31+00:00"
+    },
+    {
       "videoId": "Ua_5vH_n8j4",
       "title": "What do AI models actually know?",
       "url": "https://www.youtube.com/watch?v=Ua_5vH_n8j4",
@@ -1469,24 +1500,6 @@
       "title": "There’s hope in hard questions",
       "url": "https://www.youtube.com/watch?v=jVbGX7zJHi8",
       "published": "2026-07-09T15:18:46+00:00"
-    },
-    {
-      "videoId": "r7b_EsFgeyM",
-      "title": "Making New York City miniature with Claude",
-      "url": "https://www.youtube.com/watch?v=r7b_EsFgeyM",
-      "published": "2026-07-08T19:00:11+00:00"
-    },
-    {
-      "videoId": "bGCL-Ahb1Z8",
-      "title": "Working at the Frontier: Thomson Reuters",
-      "url": "https://www.youtube.com/watch?v=bGCL-Ahb1Z8",
-      "published": "2026-07-08T16:55:45+00:00"
-    },
-    {
-      "videoId": "JdqNda9JeaU",
-      "title": "Photographing the stars with Claude",
-      "url": "https://www.youtube.com/watch?v=JdqNda9JeaU",
-      "published": "2026-07-07T20:30:48+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

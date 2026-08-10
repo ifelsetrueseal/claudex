@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-08-06T01:23:57.087Z",
+  "fetchedAt": "2026-08-10T00:52:42.065Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 104,
+  "count": 106,
   "entries": [
     {
       "type": "command",
@@ -147,10 +147,10 @@
       "name": "/cd",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's [`CLAUDE.md`](https://code.claude.com/docs/docs/en/memory) is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so `--resume` and `--continue` find it from there. Prompts you to trust the directory if you haven't worked in it before. Typing a partial path shows matching directory suggestions; press `Tab` to accept one. The suggestions require Claude Code v2.1.206 or later. To grant access to an extra directory without moving the session, use `/add-dir`. Restrict or disable `/cd` targets with [`Cd` permission rules](https://code.claude.com/docs/docs/en/permissions#cd). Requires Claude Code v2.1.169 or later; earlier versions report `Unknown command: /cd`",
+      "description": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's [`CLAUDE.md`](https://code.claude.com/docs/docs/en/memory) is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so `--resume` and `--continue` find it from there. `claude --resume <session-id>` also [finds the moved session from any other directory](https://code.claude.com/docs/docs/en/sessions#resume-a-session); this requires Claude Code v2.1.223 or later. Prompts you to trust the directory if you haven't worked in it before. Typing a partial path shows matching directory suggestions; press `Tab` to accept one. The suggestions require Claude Code v2.1.206 or later. To grant access to an extra directory without moving the session, use `/add-dir`. Restrict or disable `/cd` targets with [`Cd` permission rules](https://code.claude.com/docs/docs/en/permissions#cd). Requires Claude Code v2.1.169 or later; earlier versions report `Unknown command: /cd`",
       "descriptionKo": "이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 [`CLAUDE.md`](https://code.claude.com/docs/en/memory)가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, `--resume` 및 `--continue`에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 `/add-dir`를 사용하십시오. [`Cd` 권한 규칙](https://code.claude.com/docs/en/permissions#cd)을 사용하여 `/cd` 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 `Unknown command: /cd` 오류가 발생합니다.",
       "aliases": [],
-      "searchText": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's CLAUDE.md is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so --resume and --continue find it from there. Prompts you to trust the directory if you haven't worked in it before. Typing a partial path shows matching directory suggestions; press Tab to accept one. The suggestions require Claude Code v2.1.206 or later. To grant access to an extra directory without moving the session, use /add-dir. Restrict or disable /cd targets with Cd permission rules. Requires Claude Code v2.1.169 or later; earlier versions report Unknown command: /cd 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
+      "searchText": "Move this session to a new working directory. The conversation's prompt cache is preserved: the new directory's CLAUDE.md is appended as a message instead of rebuilding the system prompt. The session is relocated to the new directory's project storage, so --resume and --continue find it from there. claude --resume <session-id also finds the moved session from any other directory; this requires Claude Code v2.1.223 or later. Prompts you to trust the directory if you haven't worked in it before. Typing a partial path shows matching directory suggestions; press Tab to accept one. The suggestions require Claude Code v2.1.206 or later. To grant access to an extra directory without moving the session, use /add-dir. Restrict or disable /cd targets with Cd permission rules. Requires Claude Code v2.1.169 or later; earlier versions report Unknown command: /cd 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -200,12 +200,14 @@
     {
       "type": "skill",
       "name": "/code-review",
-      "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [target]",
+      "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [pr#|branch|path]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Review the current diff for correctness bugs and cleanup opportunities. Pass `--fix` to apply findings, `--comment` to post them as inline GitHub PR comments, or `ultra` to run a deep [cloud review](https://code.claude.com/docs/docs/en/ultrareview). See [Review a diff locally](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally) for effort levels, targeting, and how it relates to `/simplify`",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Review the current diff, or a PR number, branch, or path you pass, for correctness bugs and cleanup opportunities. Pass `--fix` to apply findings, `--comment` to post them as inline GitHub PR comments, or `ultra` to run a deep [cloud review](https://code.claude.com/docs/docs/en/ultrareview). With no level given, the review reuses the last `low` through `max` level you typed. A local review runs as a [subagent](https://code.claude.com/docs/docs/en/sub-agents), in the background in interactive sessions, so it doesn't fill your conversation; before v2.1.218, it ran inside your conversation. See [Review a diff locally](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally) for the exact effort rules, targeting, and how it relates to `/simplify`. Alias: `/review`",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. `--fix`를 실행하여 발견된 내용을 작업 트리에 적용하거나, `--comment`를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, `ultra`를 실행하여 심층적인 [클라우드 검토](https://code.claude.com/docs/en/ultrareview)를 수행할 수 있습니다. v2.1.154부터는 `/simplify`를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 [로컬에서 diff 검토하기](https://code.claude.com/docs/en/code-review#review-a-diff-locally)를 참조하십시오.",
-      "aliases": [],
-      "searchText": "Skill. Review the current diff for correctness bugs and cleanup opportunities. Pass --fix to apply findings, --comment to post them as inline GitHub PR comments, or ultra to run a deep cloud review. See Review a diff locally for effort levels, targeting, and how it relates to /simplify Skill. 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. --fix를 실행하여 발견된 내용을 작업 트리에 적용하거나, --comment를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, ultra를 실행하여 심층적인 클라우드 검토를 수행할 수 있습니다. v2.1.154부터는 /simplify를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 로컬에서 diff 검토하기를 참조하십시오.",
+      "aliases": [
+        "/review"
+      ],
+      "searchText": "Skill. Review the current diff, or a PR number, branch, or path you pass, for correctness bugs and cleanup opportunities. Pass --fix to apply findings, --comment to post them as inline GitHub PR comments, or ultra to run a deep cloud review. With no level given, the review reuses the last low through max level you typed. A local review runs as a subagent, in the background in interactive sessions, so it doesn't fill your conversation; before v2.1.218, it ran inside your conversation. See Review a diff locally for the exact effort rules, targeting, and how it relates to /simplify. Alias: /review Skill. 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. --fix를 실행하여 발견된 내용을 작업 트리에 적용하거나, --comment를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, ultra를 실행하여 심층적인 클라우드 검토를 수행할 수 있습니다. v2.1.154부터는 /simplify를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 로컬에서 diff 검토하기를 참조하십시오.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": [
@@ -508,10 +510,10 @@
       "name": "/fork",
       "args": "[prompt]",
       "hasRequiredArg": false,
-      "description": "[Copy the current conversation](https://code.claude.com/docs/docs/en/agent-view#copy-the-session-with-/fork) into a new background session and keep working here; the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy [edits in place](https://code.claude.com/docs/docs/en/agent-view#how-file-edits-are-isolated), Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use `/subtask`; to switch into a copy yourself, use `/branch`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/fork` starts a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation) instead",
+      "description": "[Copy the current conversation](https://code.claude.com/docs/docs/en/agent-view#copy-the-session-with-%2Ffork) into a new background session and keep working here. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy [edits in place](https://code.claude.com/docs/docs/en/agent-view#how-file-edits-are-isolated), Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use `/subtask`; to switch into a copy yourself, use `/branch`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/fork` starts a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation) instead",
       "descriptionKo": "[포크된 서브에이전트](https://code.claude.com/docs/en/sub-agents#fork-the-current-conversation)를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 `/branch`를 사용하세요. v2.1.161 이전 버전에서는 `/fork`가 `/branch`의 별칭입니다.",
       "aliases": [],
-      "searchText": "Copy the current conversation into a new background session and keep working here; the two sessions are independent from that point on. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy edits in place, Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use /subtask; to switch into a copy yourself, use /branch. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever agent view is turned off, /fork starts a forked subagent instead 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
+      "searchText": "Copy the current conversation into a new background session and keep working here. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy edits in place, Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use /subtask; to switch into a copy yourself, use /branch. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever agent view is turned off, /fork starts a forked subagent instead 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -583,13 +585,26 @@
     },
     {
       "type": "command",
+      "name": "/import",
+      "args": "[codex|gemini] [--dry-run] [--yes]",
+      "hasRequiredArg": false,
+      "description": "Bring configuration from other coding agents on your machine, currently OpenAI Codex and Google Gemini CLI, into Claude Code, including instruction files, MCP servers, commands, subagents, and skills. In [non-interactive mode](https://code.claude.com/docs/docs/en/headless) with `-p`, `/import` lists what it found and gives you the command that confirms the import. Add `--dry-run` to preview without writing anything, or `--yes` to skip the interactive picker. Requires Claude Code v2.1.213 or later",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Bring configuration from other coding agents on your machine, currently OpenAI Codex and Google Gemini CLI, into Claude Code, including instruction files, MCP servers, commands, subagents, and skills. In non-interactive mode with -p, /import lists what it found and gives you the command that confirms the import. Add --dry-run to preview without writing anything, or --yes to skip the interactive picker. Requires Claude Code v2.1.213 or later",
+      "firstSeen": "2026-08-10",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
       "name": "/init",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Initialize project with a `CLAUDE.md` guide. Set `CLAUDE_CODE_NEW_INIT=1` for an interactive flow that also walks through skills, hooks, and personal memory files",
+      "description": "Initialize project with a `CLAUDE.md` guide. Set `CLAUDE_CODE_NEW_INIT=1` for an interactive flow that also walks through skills, hooks, and personal memory files. If `/init` finds configuration from a coding agent that `/import` supports, it offers to carry it over with `/import`",
       "descriptionKo": "`CLAUDE.md` 가이드를 따라 프로젝트를 초기화하세요. `CLAUDE_CODE_NEW_INIT=1`를 설정하면 스킬, 후크, 개인 메모리 파일 등을 단계별로 안내하는 대화형 흐름을 확인할 수 있습니다.",
       "aliases": [],
-      "searchText": "Initialize project with a CLAUDE.md guide. Set CLAUDECODENEWINIT=1 for an interactive flow that also walks through skills, hooks, and personal memory files CLAUDE.md 가이드를 따라 프로젝트를 초기화하세요. CLAUDECODENEWINIT=1를 설정하면 스킬, 후크, 개인 메모리 파일 등을 단계별로 안내하는 대화형 흐름을 확인할 수 있습니다.",
+      "searchText": "Initialize project with a CLAUDE.md guide. Set CLAUDECODENEWINIT=1 for an interactive flow that also walks through skills, hooks, and personal memory files. If /init finds configuration from a coding agent that /import supports, it offers to carry it over with /import CLAUDE.md 가이드를 따라 프로젝트를 초기화하세요. CLAUDECODENEWINIT=1를 설정하면 스킬, 후크, 개인 메모리 파일 등을 단계별로 안내하는 대화형 흐름을 확인할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -643,6 +658,19 @@
       "aliases": [],
       "searchText": "Open your keyboard shortcuts file 키보드 단축키 파일을 열어보세요.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/list-agents",
+      "args": "",
+      "hasRequiredArg": false,
+      "description": "List the subagents and other Claude Code sessions Claude can message, with the name to use for each; [agent team](https://code.claude.com/docs/docs/en/agent-teams) teammates aren't listed, since Claude reaches them through the team's roster. See [cross-session messaging](https://code.claude.com/docs/docs/en/cross-session-messaging). Also available as `/peers`. Requires Claude Code v2.1.224 or later; earlier versions report `Unknown command: /list-agents`. Available only in sessions where [cross-session messaging is enabled](https://code.claude.com/docs/docs/en/cross-session-messaging#availability)",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "List the subagents and other Claude Code sessions Claude can message, with the name to use for each; agent team teammates aren't listed, since Claude reaches them through the team's roster. See cross-session messaging. Also available as /peers. Requires Claude Code v2.1.224 or later; earlier versions report Unknown command: /list-agents. Available only in sessions where cross-session messaging is enabled",
+      "firstSeen": "2026-08-10",
       "minVersion": "",
       "resources": []
     },
@@ -965,12 +993,12 @@
     {
       "type": "command",
       "name": "/review",
-      "args": "[PR]",
+      "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [pr#|branch|path]",
       "hasRequiredArg": false,
-      "description": "Run a fast single-pass, read-only review of a GitHub pull request by number. With no argument, lists open PRs to pick from; text after the PR number becomes additional review instructions. From v2.1.186 through v2.1.201, `/review` instead ran the same multi-agent engine as `/code-review medium`. For a multi-agent review at a chosen effort level, use [`/code-review <level> <pr#>`](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally); for a cloud-based review, see [`/code-review ultra`](https://code.claude.com/docs/docs/en/ultrareview)",
+      "description": "Alias of [`/code-review`](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally): reviews the current diff, or a PR number, branch, or path you pass, such as `/review 1234`, and takes the same effort levels and flags. With no level given, the review reuses the last `low` through `max` level you typed; see [Review a diff locally](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally) for the exact rules. For a deep cloud review, use [`/code-review ultra`](https://code.claude.com/docs/docs/en/ultrareview). Before v2.1.223, `/review` was a separate command that ran a single-pass, read-only review of a GitHub pull request by number, listing open PRs to pick from when run with no argument; from v2.1.186 through v2.1.201, it ran the same multi-agent engine as `/code-review medium`",
       "descriptionKo": "현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview)을 참조하세요.",
       "aliases": [],
-      "searchText": "Run a fast single-pass, read-only review of a GitHub pull request by number. With no argument, lists open PRs to pick from; text after the PR number becomes additional review instructions. From v2.1.186 through v2.1.201, /review instead ran the same multi-agent engine as /code-review medium. For a multi-agent review at a chosen effort level, use /code-review <level <pr; for a cloud-based review, see /code-review ultra 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
+      "searchText": "Alias of /code-review: reviews the current diff, or a PR number, branch, or path you pass, such as /review 1234, and takes the same effort levels and flags. With no level given, the review reuses the last low through max level you typed; see Review a diff locally for the exact rules. For a deep cloud review, use /code-review ultra. Before v2.1.223, /review was a separate command that ran a single-pass, read-only review of a GitHub pull request by number, listing open PRs to pick from when run with no argument; from v2.1.186 through v2.1.201, it ran the same multi-agent engine as /code-review medium 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1035,12 +1063,12 @@
       "name": "/schedule",
       "args": "[description]",
       "hasRequiredArg": false,
-      "description": "Create, update, list, or run [routines](https://code.claude.com/docs/docs/en/routines), which execute on Anthropic-managed cloud infrastructure. Claude walks you through the setup conversationally. Alias: `/routines`",
+      "description": "Create, update, list, or run [routines](https://code.claude.com/docs/docs/en/routines), which execute in the cloud. Claude walks you through the setup conversationally. Alias: `/routines`",
       "descriptionKo": "Anthropic에서 관리하는 클라우드 인프라에서 실행되는 [루틴](https://code.claude.com/docs/en/routines)을 생성, 업데이트, 열람하거나 실행할 수 있습니다. Claude가 대화 형식으로 설정 과정을 안내해 드립니다. 별칭: `/routines`",
       "aliases": [
         "/routines"
       ],
-      "searchText": "Create, update, list, or run routines, which execute on Anthropic-managed cloud infrastructure. Claude walks you through the setup conversationally. Alias: /routines Anthropic에서 관리하는 클라우드 인프라에서 실행되는 루틴을 생성, 업데이트, 열람하거나 실행할 수 있습니다. Claude가 대화 형식으로 설정 과정을 안내해 드립니다. 별칭: /routines",
+      "searchText": "Create, update, list, or run routines, which execute in the cloud. Claude walks you through the setup conversationally. Alias: /routines Anthropic에서 관리하는 클라우드 인프라에서 실행되는 루틴을 생성, 업데이트, 열람하거나 실행할 수 있습니다. Claude가 대화 형식으로 설정 과정을 안내해 드립니다. 별칭: /routines",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1115,10 +1143,10 @@
       "name": "/skills",
       "args": "",
       "hasRequiredArg": false,
-      "description": "List available [skills](https://code.claude.com/docs/docs/en/skills). As of v2.1.121, type to filter the list by name. Press `t` to sort by token count. Press `Space` to [cycle a skill's visibility to Claude and the `/` menu](https://code.claude.com/docs/docs/en/skills#override-skill-visibility-from-settings), then `Enter` to save",
+      "description": "List available [skills](https://code.claude.com/docs/docs/en/skills). Type to filter the list by name. Press `t` to sort by token count. Press `Space` to [cycle a skill's visibility to Claude and the `/` menu](https://code.claude.com/docs/docs/en/skills#override-skill-visibility-from-settings), then `Enter` to save",
       "descriptionKo": "사용 가능한 [스킬](https://code.claude.com/docs/en/skills) 목록입니다. `t`를 누르면 토큰 수순으로 정렬됩니다. `Space`를 누르면 [클로드나 ‘`/`’ 메뉴에서 해당 스킬을 숨길 수 있으며](https://code.claude.com/docs/en/skills#override-skill-visibility-from-settings), `Enter`를 누르면 변경 사항을 저장할 수 있습니다.",
       "aliases": [],
-      "searchText": "List available skills. As of v2.1.121, type to filter the list by name. Press t to sort by token count. Press Space to cycle a skill's visibility to Claude and the / menu, then Enter to save 사용 가능한 스킬 목록입니다. t를 누르면 토큰 수순으로 정렬됩니다. Space를 누르면 클로드나 ‘/’ 메뉴에서 해당 스킬을 숨길 수 있으며, Enter를 누르면 변경 사항을 저장할 수 있습니다.",
+      "searchText": "List available skills. Type to filter the list by name. Press t to sort by token count. Press Space to cycle a skill's visibility to Claude and the / menu, then Enter to save 사용 가능한 스킬 목록입니다. t를 누르면 토큰 수순으로 정렬됩니다. Space를 누르면 클로드나 ‘/’ 메뉴에서 해당 스킬을 숨길 수 있으며, Enter를 누르면 변경 사항을 저장할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1412,6 +1440,18 @@
   ],
   "officialVideos": [
     {
+      "videoId": "RyjROxHLi_g",
+      "title": "What happens when you talk to AI?",
+      "url": "https://www.youtube.com/watch?v=RyjROxHLi_g",
+      "published": "2026-08-08T14:00:10+00:00"
+    },
+    {
+      "videoId": "i4odXOmgMLw",
+      "title": "How Ramp engineers work with AI agents at every step",
+      "url": "https://www.youtube.com/watch?v=i4odXOmgMLw",
+      "published": "2026-08-06T17:46:21+00:00"
+    },
+    {
       "videoId": "j1Vk6Y-23CY",
       "title": "What happens when you talk to AI?",
       "url": "https://www.youtube.com/watch?v=j1Vk6Y-23CY",
@@ -1488,18 +1528,6 @@
       "title": "Building the future of agentic infrastructure",
       "url": "https://www.youtube.com/watch?v=ksfm6jeTg3Q",
       "published": "2026-07-10T17:41:00+00:00"
-    },
-    {
-      "videoId": "iCdbe0SZt0A",
-      "title": "There’s hope in hard questions",
-      "url": "https://www.youtube.com/watch?v=iCdbe0SZt0A",
-      "published": "2026-07-09T17:35:13+00:00"
-    },
-    {
-      "videoId": "jVbGX7zJHi8",
-      "title": "There’s hope in hard questions",
-      "url": "https://www.youtube.com/watch?v=jVbGX7zJHi8",
-      "published": "2026-07-09T15:18:46+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

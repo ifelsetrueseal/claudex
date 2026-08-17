@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-13T00:59:42.642Z",
+  "fetchedAt": "2026-08-17T00:34:36.774Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -131,13 +131,13 @@
       "name": "/bug",
       "args": "[report]",
       "hasRequiredArg": false,
-      "description": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a [local archive under `~/.claude/feedback-bundles/`](https://code.claude.com/docs/docs/en/data-usage#telemetry-services) that you forward yourself. Alias: `/share`. Before v2.1.212, `/bug` and `/share` were aliases of `/feedback`",
+      "description": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a [local archive under `~/.claude/feedback-bundles/`](https://code.claude.com/docs/docs/en/data-usage#telemetry-services) that you forward yourself. In the [VS Code extension](https://code.claude.com/docs/docs/en/vs-code#use-the-prompt-box), `/bug` opens the extension's own feedback dialog instead; requires Claude Code v2.1.229 or later. Alias: `/share`. Before v2.1.212, `/bug` and `/share` were aliases of `/feedback`",
       "descriptionKo": "",
       "aliases": [
         "/share",
         "/bug"
       ],
-      "searchText": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a local archive under ~/.claude/feedback-bundles/ that you forward yourself. Alias: /share. Before v2.1.212, /bug and /share were aliases of /feedback",
+      "searchText": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a local archive under ~/.claude/feedback-bundles/ that you forward yourself. In the VS Code extension, /bug opens the extension's own feedback dialog instead; requires Claude Code v2.1.229 or later. Alias: /share. Before v2.1.212, /bug and /share were aliases of /feedback",
       "firstSeen": "2026-07-20",
       "minVersion": "",
       "resources": []
@@ -458,10 +458,10 @@
       "name": "/fast",
       "args": "[on|off]",
       "hasRequiredArg": false,
-      "description": "Toggle [fast mode](https://code.claude.com/docs/docs/en/fast-mode) on or off. In non-interactive mode (`-p`), `/fast` works only in a session launched with fast mode in its [`--settings`](https://code.claude.com/docs/docs/en/cli-reference#cli-flags) value, for example `claude -p --settings '{\"fastMode\": true}'`; the toggle then applies to the current session only and isn't saved as your default, and in any other non-interactive session the command reports that fast mode isn't available. Requires Claude Code v2.1.205 or later",
+      "description": "Toggle [fast mode](https://code.claude.com/docs/docs/en/fast-mode) on or off. Availability in non-interactive mode with `-p` is limited; see [Toggle fast mode](https://code.claude.com/docs/docs/en/fast-mode#toggle-fast-mode). Requires Claude Code v2.1.205 or later",
       "descriptionKo": "[빠른 모드](https://code.claude.com/docs/en/fast-mode)를 켜거나 끕니다.",
       "aliases": [],
-      "searchText": "Toggle fast mode on or off. In non-interactive mode (-p), /fast works only in a session launched with fast mode in its --settings value, for example claude -p --settings '{\"fastMode\": true}'; the toggle then applies to the current session only and isn't saved as your default, and in any other non-interactive session the command reports that fast mode isn't available. Requires Claude Code v2.1.205 or later 빠른 모드를 켜거나 끕니다.",
+      "searchText": "Toggle fast mode on or off. Availability in non-interactive mode with -p is limited; see Toggle fast mode. Requires Claude Code v2.1.205 or later 빠른 모드를 켜거나 끕니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -523,10 +523,10 @@
       "name": "/goal",
       "args": "[condition|clear]",
       "hasRequiredArg": false,
-      "description": "Set a [goal](https://code.claude.com/docs/docs/en/goal): Claude keeps working across turns until the condition is met. With no argument, shows the current or most recently achieved goal. `clear`, `stop`, `off`, `reset`, `none`, or `cancel` removes an active goal early",
+      "description": "Set a [goal](https://code.claude.com/docs/docs/en/goal): Claude keeps working across turns until the condition is met or judged impossible. With no argument, shows the current or most recently achieved goal. `clear`, `stop`, `off`, `reset`, `none`, or `cancel` removes an active goal early",
       "descriptionKo": "[목표](https://code.claude.com/docs/en/goal)를 설정합니다: Claude는 조건이 충족될 때까지 턴이 바뀔 때마다 계속 작업을 수행합니다. 인수를 지정하지 않으면 현재 목표 또는 가장 최근에 달성한 목표를 표시합니다. `clear`, `stop`, `off`, `reset`, `none` 또는 `cancel`을 사용하면 활성 목표를 조기에 제거할 수 있습니다.",
       "aliases": [],
-      "searchText": "Set a goal: Claude keeps working across turns until the condition is met. With no argument, shows the current or most recently achieved goal. clear, stop, off, reset, none, or cancel removes an active goal early 목표를 설정합니다: Claude는 조건이 충족될 때까지 턴이 바뀔 때마다 계속 작업을 수행합니다. 인수를 지정하지 않으면 현재 목표 또는 가장 최근에 달성한 목표를 표시합니다. clear, stop, off, reset, none 또는 cancel을 사용하면 활성 목표를 조기에 제거할 수 있습니다.",
+      "searchText": "Set a goal: Claude keeps working across turns until the condition is met or judged impossible. With no argument, shows the current or most recently achieved goal. clear, stop, off, reset, none, or cancel removes an active goal early 목표를 설정합니다: Claude는 조건이 충족될 때까지 턴이 바뀔 때마다 계속 작업을 수행합니다. 인수를 지정하지 않으면 현재 목표 또는 가장 최근에 달성한 목표를 표시합니다. clear, stop, off, reset, none 또는 cancel을 사용하면 활성 목표를 조기에 제거할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -705,7 +705,7 @@
       "name": "/loop",
       "args": "[interval] [prompt]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a prompt repeatedly while the session stays open. Omit the interval and, [where available](https://code.claude.com/docs/docs/en/scheduled-tasks#let-claude-choose-the-interval), Claude self-paces between iterations. Omit the prompt and, [where available](https://code.claude.com/docs/docs/en/scheduled-tasks#run-the-built-in-maintenance-prompt), Claude runs an autonomous maintenance check or the prompt in `.claude/loop.md`. Example: `/loop 5m check if the deploy finished`. See [Run prompts on a schedule](https://code.claude.com/docs/docs/en/scheduled-tasks). Alias: `/proactive`",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a prompt repeatedly while the session stays open. Omit the interval and, [where available](https://code.claude.com/docs/docs/en/scheduled-tasks#let-claude-choose-the-interval), Claude self-paces between iterations. Omit the prompt and, [where available](https://code.claude.com/docs/docs/en/scheduled-tasks#let-claude-choose-the-interval), Claude runs an autonomous maintenance check or the prompt in `.claude/loop.md`. Example: `/loop 5m check if the deploy finished`. See [Run prompts on a schedule](https://code.claude.com/docs/docs/en/scheduled-tasks). Alias: `/proactive`",
       "descriptionKo": "**[스킬](https://code.claude.com/docs/en/skills#bundled-skills).** 세션이 열려 있는 동안 프롬프트를 반복적으로 실행합니다. 간격을 생략하면 Claude가 반복 간격을 스스로 조절합니다. 프롬프트를 생략하면, [사용 가능한 경우](https://code.claude.com/docs/en/scheduled-tasks#run-the-built-in-maintenance-prompt), Claude가 자율 유지 관리 점검을 수행하거나 `.claude/loop.md`에 있는 프롬프트를 실행합니다. 예시: `/loop 5m check if the deploy finished`. [일정에 따라 프롬프트 실행](https://code.claude.com/docs/en/scheduled-tasks)을 참조하세요. 별칭: `/proactive`",
       "aliases": [
         "/proactive"
@@ -967,10 +967,10 @@
       "name": "/rename",
       "args": "[name]",
       "hasRequiredArg": false,
-      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows `That name is empty once invisible characters are removed. Usage: /rename <name>`. The character replacement and length cap require Claude Code v2.1.221 or later",
+      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows `That name is empty once invisible characters are removed. Usage: /rename <name>`. The character replacement and length cap require Claude Code v2.1.221 or later. If another live session on this machine already uses a name you pass, Claude Code applies [a variant of it](https://code.claude.com/docs/docs/en/sessions#name-your-sessions) instead",
       "descriptionKo": "현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "aliases": [],
-      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows That name is empty once invisible characters are removed. Usage: /rename <name. The character replacement and length cap require Claude Code v2.1.221 or later 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
+      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows That name is empty once invisible characters are removed. Usage: /rename <name. The character replacement and length cap require Claude Code v2.1.221 or later. If another live session on this machine already uses a name you pass, Claude Code applies a variant of it instead 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1440,6 +1440,18 @@
   ],
   "officialVideos": [
     {
+      "videoId": "V12aLcjX23Q",
+      "title": "What does AI actually know about you?",
+      "url": "https://www.youtube.com/watch?v=V12aLcjX23Q",
+      "published": "2026-08-14T15:14:39+00:00"
+    },
+    {
+      "videoId": "ANDl5Tkru7g",
+      "title": "What does AI actually know about you?",
+      "url": "https://www.youtube.com/watch?v=ANDl5Tkru7g",
+      "published": "2026-08-13T17:00:01+00:00"
+    },
+    {
       "videoId": "C-5wF6tkQ2Q",
       "title": "Claude Cowork is now your Chrome side panel",
       "url": "https://www.youtube.com/watch?v=C-5wF6tkQ2Q",
@@ -1516,18 +1528,6 @@
       "title": "What is sycophancy?",
       "url": "https://www.youtube.com/watch?v=0KCTELWXYPw",
       "published": "2026-07-21T18:19:29+00:00"
-    },
-    {
-      "videoId": "ub8jjpVDLIQ",
-      "title": "Making New York City miniature with Claude",
-      "url": "https://www.youtube.com/watch?v=ub8jjpVDLIQ",
-      "published": "2026-07-16T20:56:54+00:00"
-    },
-    {
-      "videoId": "255IGB63nTY",
-      "title": "Build data-driven lesson plans with Claude for Teachers",
-      "url": "https://www.youtube.com/watch?v=255IGB63nTY",
-      "published": "2026-07-15T15:08:04+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

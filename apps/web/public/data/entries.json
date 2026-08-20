@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T00:34:36.774Z",
+  "fetchedAt": "2026-08-20T00:34:26.762Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -12,10 +12,10 @@
       "name": "/add-dir",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press `Tab` to accept one. Most `.claude/` configuration is [not discovered](https://code.claude.com/docs/docs/en/permissions#additional-directories-grant-file-access-not-configuration) from the added directory. A successful add runs your [`DirectoryAdded` hooks](https://code.claude.com/docs/docs/en/hooks#directoryadded)",
+      "description": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press `Tab` to accept one. Most `.claude/` configuration is [not discovered](https://code.claude.com/docs/docs/en/permissions#additional-directories-grant-file-access-not-configuration) from the added directory. A successful add runs your [`DirectoryAdded` hooks](https://code.claude.com/docs/docs/en/hooks#directoryadded). When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished",
       "descriptionKo": "현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 `.claude/` 구성 정보는 추가된 디렉터리에서 [탐지되지 않습니다](https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration). 나중에 `--continue` 또는 `--resume`을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "aliases": [],
-      "searchText": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration is not discovered from the added directory. A successful add runs your DirectoryAdded hooks 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
+      "searchText": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration is not discovered from the added directory. A successful add runs your DirectoryAdded hooks. When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -131,13 +131,13 @@
       "name": "/bug",
       "args": "[report]",
       "hasRequiredArg": false,
-      "description": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a [local archive under `~/.claude/feedback-bundles/`](https://code.claude.com/docs/docs/en/data-usage#telemetry-services) that you forward yourself. In the [VS Code extension](https://code.claude.com/docs/docs/en/vs-code#use-the-prompt-box), `/bug` opens the extension's own feedback dialog instead; requires Claude Code v2.1.229 or later. Alias: `/share`. Before v2.1.212, `/bug` and `/share` were aliases of `/feedback`",
+      "description": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a [local archive under `~/.claude/feedback-bundles/`](https://code.claude.com/docs/docs/en/data-usage#telemetry-services) that you forward yourself. In the [VS Code extension](https://code.claude.com/docs/docs/en/vs-code#use-the-prompt-box), `/bug` opens the extension's own feedback dialog instead; requires Claude Code v2.1.229 or later. When you run it while Claude is responding, Claude Code opens the dialog immediately. Before v2.1.232, Claude Code queued the command until the turn finished. Alias: `/share`. Before v2.1.212, `/bug` and `/share` were aliases of `/feedback`",
       "descriptionKo": "",
       "aliases": [
         "/share",
         "/bug"
       ],
-      "searchText": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a local archive under ~/.claude/feedback-bundles/ that you forward yourself. In the VS Code extension, /bug opens the extension's own feedback dialog instead; requires Claude Code v2.1.229 or later. Alias: /share. Before v2.1.212, /bug and /share were aliases of /feedback",
+      "searchText": "Report a bug or share your conversation. You choose how much session history to include and confirm on a consent screen before anything is sent. When you're signed in to Anthropic on a first-party connection, the report goes to Anthropic; on a third-party provider, or without Anthropic credentials, Claude Code writes the report to a local archive under ~/.claude/feedback-bundles/ that you forward yourself. In the VS Code extension, /bug opens the extension's own feedback dialog instead; requires Claude Code v2.1.229 or later. When you run it while Claude is responding, Claude Code opens the dialog immediately. Before v2.1.232, Claude Code queued the command until the turn finished. Alias: /share. Before v2.1.212, /bug and /share were aliases of /feedback",
       "firstSeen": "2026-07-20",
       "minVersion": "",
       "resources": []
@@ -471,10 +471,10 @@
       "name": "/feedback",
       "args": "[report]",
       "hasRequiredArg": false,
-      "description": "Send product feedback about Claude Code. Opens the same dialog as [`/bug`](#all-commands) with the same consent step and sending rules",
+      "description": "Send product feedback about Claude Code. Opens the same dialog as [`/bug`](#all-commands), with the same consent step, sending rules, and mid-turn behavior",
       "descriptionKo": "의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: `/bug`, `/share`",
       "aliases": [],
-      "searchText": "Send product feedback about Claude Code. Opens the same dialog as /bug with the same consent step and sending rules 의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: /bug, /share",
+      "searchText": "Send product feedback about Claude Code. Opens the same dialog as /bug, with the same consent step, sending rules, and mid-turn behavior 의견을 보내거나, 버그를 신고하거나, 대화 내용을 공유해 주세요. 별칭: /bug, /share",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -523,10 +523,10 @@
       "name": "/goal",
       "args": "[condition|clear]",
       "hasRequiredArg": false,
-      "description": "Set a [goal](https://code.claude.com/docs/docs/en/goal): Claude keeps working across turns until the condition is met or judged impossible. With no argument, shows the current or most recently achieved goal. `clear`, `stop`, `off`, `reset`, `none`, or `cancel` removes an active goal early",
+      "description": "Set a [goal](https://code.claude.com/docs/docs/en/goal): Claude keeps working across turns until the condition is met or the goal [clears for another reason](https://code.claude.com/docs/docs/en/goal#how-evaluation-works). With no argument, shows the current or most recently achieved goal. `clear`, `stop`, `off`, `reset`, `none`, or `cancel` removes an active goal early",
       "descriptionKo": "[목표](https://code.claude.com/docs/en/goal)를 설정합니다: Claude는 조건이 충족될 때까지 턴이 바뀔 때마다 계속 작업을 수행합니다. 인수를 지정하지 않으면 현재 목표 또는 가장 최근에 달성한 목표를 표시합니다. `clear`, `stop`, `off`, `reset`, `none` 또는 `cancel`을 사용하면 활성 목표를 조기에 제거할 수 있습니다.",
       "aliases": [],
-      "searchText": "Set a goal: Claude keeps working across turns until the condition is met or judged impossible. With no argument, shows the current or most recently achieved goal. clear, stop, off, reset, none, or cancel removes an active goal early 목표를 설정합니다: Claude는 조건이 충족될 때까지 턴이 바뀔 때마다 계속 작업을 수행합니다. 인수를 지정하지 않으면 현재 목표 또는 가장 최근에 달성한 목표를 표시합니다. clear, stop, off, reset, none 또는 cancel을 사용하면 활성 목표를 조기에 제거할 수 있습니다.",
+      "searchText": "Set a goal: Claude keeps working across turns until the condition is met or the goal clears for another reason. With no argument, shows the current or most recently achieved goal. clear, stop, off, reset, none, or cancel removes an active goal early 목표를 설정합니다: Claude는 조건이 충족될 때까지 턴이 바뀔 때마다 계속 작업을 수행합니다. 인수를 지정하지 않으면 현재 목표 또는 가장 최근에 달성한 목표를 표시합니다. clear, stop, off, reset, none 또는 cancel을 사용하면 활성 목표를 조기에 제거할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -788,12 +788,12 @@
       "name": "/permissions",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review [recent auto mode denials](https://code.claude.com/docs/docs/en/auto-mode-config#review-denials). Alias: `/allowed-tools`",
+      "description": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review [recent auto mode denials](https://code.claude.com/docs/docs/en/auto-mode-config#review-denials). When you run it while Claude is responding, Claude Code opens the dialog immediately and applies your changes starting with Claude's next tool call in the same turn. Before v2.1.234, Claude Code queued the command until the turn finished. Alias: `/allowed-tools`",
       "descriptionKo": "도구 권한에 대한 허용, 확인 요청 및 거부 규칙을 관리합니다. 대화형 대화 상자가 열리면 범위별로 규칙을 확인하고, 규칙을 추가하거나 제거하며, 작업 디렉터리를 관리하고, [최근 자동 모드 거부 내역](https://code.claude.com/docs/en/auto-mode-config#review-denials)을 검토할 수 있습니다. 별칭: `/allowed-tools`",
       "aliases": [
         "/allowed-tools"
       ],
-      "searchText": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review recent auto mode denials. Alias: /allowed-tools 도구 권한에 대한 허용, 확인 요청 및 거부 규칙을 관리합니다. 대화형 대화 상자가 열리면 범위별로 규칙을 확인하고, 규칙을 추가하거나 제거하며, 작업 디렉터리를 관리하고, 최근 자동 모드 거부 내역을 검토할 수 있습니다. 별칭: /allowed-tools",
+      "searchText": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review recent auto mode denials. When you run it while Claude is responding, Claude Code opens the dialog immediately and applies your changes starting with Claude's next tool call in the same turn. Before v2.1.234, Claude Code queued the command until the turn finished. Alias: /allowed-tools 도구 권한에 대한 허용, 확인 요청 및 거부 규칙을 관리합니다. 대화형 대화 상자가 열리면 범위별로 규칙을 확인하고, 규칙을 추가하거나 제거하며, 작업 디렉터리를 관리하고, 최근 자동 모드 거부 내역을 검토할 수 있습니다. 별칭: /allowed-tools",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1440,6 +1440,12 @@
   ],
   "officialVideos": [
     {
+      "videoId": "dgNQhaxVals",
+      "title": "How to choose the right Claude model for any task",
+      "url": "https://www.youtube.com/watch?v=dgNQhaxVals",
+      "published": "2026-08-19T16:16:09+00:00"
+    },
+    {
       "videoId": "V12aLcjX23Q",
       "title": "What does AI actually know about you?",
       "url": "https://www.youtube.com/watch?v=V12aLcjX23Q",
@@ -1522,12 +1528,6 @@
       "title": "How does AI get its character?",
       "url": "https://www.youtube.com/watch?v=ni4SXBnah2I",
       "published": "2026-07-22T17:05:46+00:00"
-    },
-    {
-      "videoId": "0KCTELWXYPw",
-      "title": "What is sycophancy?",
-      "url": "https://www.youtube.com/watch?v=0KCTELWXYPw",
-      "published": "2026-07-21T18:19:29+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

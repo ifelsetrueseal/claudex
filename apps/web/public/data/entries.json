@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-08-27T05:33:51.866Z",
+  "fetchedAt": "2026-08-31T02:07:36.507Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 109,
+  "count": 110,
   "entries": [
     {
       "type": "command",
@@ -173,10 +173,10 @@
       "name": "/cd",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Move this session to a new working directory, keeping the conversation and its prompt cache. Type a partial path to see matching directory suggestions; press `Tab` to accept one. The suggestions require Claude Code v2.1.206 or later. Claude Code prompts you to [trust the workspace](https://code.claude.com/docs/docs/en/permissions#project-allow-rules-and-workspace-trust) if you haven't worked in it before, and `--resume` [finds the moved session](https://code.claude.com/docs/docs/en/sessions#resume-a-session) afterward. To grant access to an extra directory without moving the session, use `/add-dir`. Restrict or disable `/cd` targets with [`Cd` permission rules](https://code.claude.com/docs/docs/en/permissions#cd). Requires Claude Code v2.1.169 or later",
+      "description": "Move this session to a new working directory, keeping the conversation. Type a partial path to see matching directory suggestions; press `Tab` to accept one. The suggestions require Claude Code v2.1.206 or later. For what Claude Code applies from the new directory as soon as you move, and how `/cd` differs from `/add-dir`, see [Move the session to another directory](https://code.claude.com/docs/docs/en/permissions#move-the-session-to-another-directory). Requires Claude Code v2.1.169 or later",
       "descriptionKo": "이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 [`CLAUDE.md`](https://code.claude.com/docs/en/memory)가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, `--resume` 및 `--continue`에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 `/add-dir`를 사용하십시오. [`Cd` 권한 규칙](https://code.claude.com/docs/en/permissions#cd)을 사용하여 `/cd` 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 `Unknown command: /cd` 오류가 발생합니다.",
       "aliases": [],
-      "searchText": "Move this session to a new working directory, keeping the conversation and its prompt cache. Type a partial path to see matching directory suggestions; press Tab to accept one. The suggestions require Claude Code v2.1.206 or later. Claude Code prompts you to trust the workspace if you haven't worked in it before, and --resume finds the moved session afterward. To grant access to an extra directory without moving the session, use /add-dir. Restrict or disable /cd targets with Cd permission rules. Requires Claude Code v2.1.169 or later 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
+      "searchText": "Move this session to a new working directory, keeping the conversation. Type a partial path to see matching directory suggestions; press Tab to accept one. The suggestions require Claude Code v2.1.206 or later. For what Claude Code applies from the new directory as soon as you move, and how /cd differs from /add-dir, see Move the session to another directory. Requires Claude Code v2.1.169 or later 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -197,12 +197,12 @@
     {
       "type": "skill",
       "name": "/claude-api",
-      "args": "[migrate|upgrade|managed-agents-onboard|prompt-audit]",
+      "args": "[migrate|upgrade|managed-agents-onboard|prompt-audit|cost-optimize]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load [Claude API](https://platform.claude.com/docs/en/api/overview) and Managed Agents reference material for your project's language. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. Run `migrate` to update existing Claude API code to a newer model; `upgrade` to move your project's Anthropic SDK dependency across a major version, currently the Python `anthropic` package from 0.x to 1.x; `managed-agents-onboard` for a walkthrough that creates a new Managed Agent; or `prompt-audit` to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. The `prompt-audit` subcommand requires Claude Code v2.1.221 or later, and `upgrade` requires v2.1.236 or later",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load [Claude API](https://platform.claude.com/docs/en/api/overview) and [Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview) reference material for your project's language. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. Run `migrate` to update existing Claude API code to a newer model. Run `upgrade` to move your project's Anthropic SDK dependency across a major version, currently the Python `anthropic` package from 0.x to 1.x. Run `managed-agents-onboard` for a walkthrough that creates a new Managed Agent. Run `prompt-audit` to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. Run `cost-optimize` to profile where your project's Claude API spend goes and propose savings from options such as prompt caching, trimming unneeded input and output tokens, batch processing, effort, and model choice, one change at a time. The `prompt-audit` subcommand requires Claude Code v2.1.221 or later, `upgrade` requires v2.1.236 or later, and `cost-optimize` requires v2.1.247 or later",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C#, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 `anthropic` 또는 `@anthropic-ai/sdk`를 임포트하면 자동으로 활성화됩니다. `/claude-api migrate`를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. `/claude-api managed-agents-onboard`를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
       "aliases": [],
-      "searchText": "Skill. Load Claude API and Managed Agents reference material for your project's language. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. Run migrate to update existing Claude API code to a newer model; upgrade to move your project's Anthropic SDK dependency across a major version, currently the Python anthropic package from 0.x to 1.x; managed-agents-onboard for a walkthrough that creates a new Managed Agent; or prompt-audit to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. The prompt-audit subcommand requires Claude Code v2.1.221 or later, and upgrade requires v2.1.236 or later Skill. 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 anthropic 또는 @anthropic-ai/sdk를 임포트하면 자동으로 활성화됩니다. /claude-api migrate를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. /claude-api managed-agents-onboard를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
+      "searchText": "Skill. Load Claude API and Managed Agents reference material for your project's language. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. Run migrate to update existing Claude API code to a newer model. Run upgrade to move your project's Anthropic SDK dependency across a major version, currently the Python anthropic package from 0.x to 1.x. Run managed-agents-onboard for a walkthrough that creates a new Managed Agent. Run prompt-audit to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. Run cost-optimize to profile where your project's Claude API spend goes and propose savings from options such as prompt caching, trimming unneeded input and output tokens, batch processing, effort, and model choice, one change at a time. The prompt-audit subcommand requires Claude Code v2.1.221 or later, upgrade requires v2.1.236 or later, and cost-optimize requires v2.1.247 or later Skill. 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 anthropic 또는 @anthropic-ai/sdk를 임포트하면 자동으로 활성화됩니다. /claude-api migrate를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. /claude-api managed-agents-onboard를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -443,10 +443,10 @@
       "name": "/effort",
       "args": "[level|auto|status]",
       "hasRequiredArg": false,
-      "description": "Set the [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level): `low` to `xhigh`, `max`, [`ultracode`](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode), or `auto`; `status` prints it. `max` and `ultracode` are session-only; the [`ultracode`](https://code.claude.com/docs/docs/en/settings-reference#ultracode) key persists. Works in `-p` outside the [effort hold](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level)",
+      "description": "Set the [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level): `low` to `xhigh`, `max`, [`ultracode`](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode), or `auto`; `status` prints it. `max` and `ultracode` are session-only; the [`ultracode`](https://code.claude.com/docs/docs/en/settings-reference#ultracode) key persists. Run it while Claude is responding and, once you confirm the [cache warning](https://code.claude.com/docs/docs/en/prompt-caching#changing-effort-level), if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching), such as on a [third-party provider](https://code.claude.com/docs/docs/en/third-party-integrations). Works in `-p` outside the [effort hold](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level)",
       "descriptionKo": "모델의 [노력 수준](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 설정합니다. `low`, `medium`, `high`, `xhigh`, `max` 또는 `ultracode`을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, `max` 및 `ultracode`은 세션 단위로만 적용됩니다. `ultracode`은 `xhigh` 추론과 자동 [워크플로우](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) 조정을 결합한 Claude Code 설정입니다. `auto`은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, `Enter`를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "aliases": [],
-      "searchText": "Set the effort level: low to xhigh, max, ultracode, or auto; status prints it. max and ultracode are session-only; the ultracode key persists. Works in -p outside the effort hold 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
+      "searchText": "Set the effort level: low to xhigh, max, ultracode, or auto; status prints it. max and ultracode are session-only; the ultracode key persists. Run it while Claude is responding and, once you confirm the cache warning, if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags, such as on a third-party provider. Works in -p outside the effort hold 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -484,10 +484,10 @@
       "name": "/fast",
       "args": "[on|off]",
       "hasRequiredArg": false,
-      "description": "Toggle [fast mode](https://code.claude.com/docs/docs/en/fast-mode) on or off. Availability in non-interactive mode with `-p` is limited; see [Toggle fast mode](https://code.claude.com/docs/docs/en/fast-mode#toggle-fast-mode). Requires Claude Code v2.1.205 or later",
+      "description": "Toggle [fast mode](https://code.claude.com/docs/docs/en/fast-mode) on or off. Run it while Claude is responding and Claude Code toggles fast mode without waiting for the turn to end, though the running turn finishes at its original speed. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching). Availability in non-interactive mode with `-p` is limited; see [Toggle fast mode](https://code.claude.com/docs/docs/en/fast-mode#toggle-fast-mode). Requires Claude Code v2.1.205 or later",
       "descriptionKo": "[빠른 모드](https://code.claude.com/docs/en/fast-mode)를 켜거나 끕니다.",
       "aliases": [],
-      "searchText": "Toggle fast mode on or off. Availability in non-interactive mode with -p is limited; see Toggle fast mode. Requires Claude Code v2.1.205 or later 빠른 모드를 켜거나 끕니다.",
+      "searchText": "Toggle fast mode on or off. Run it while Claude is responding and Claude Code toggles fast mode without waiting for the turn to end, though the running turn finishes at its original speed. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags. Availability in non-interactive mode with -p is limited; see Toggle fast mode. Requires Claude Code v2.1.205 or later 빠른 모드를 켜거나 끕니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -731,12 +731,12 @@
       "name": "/loop",
       "args": "[interval] [prompt]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a prompt repeatedly while the session stays open. Omit the interval and, [where available](https://code.claude.com/docs/docs/en/scheduled-tasks#let-claude-choose-the-interval), Claude self-paces between iterations. Omit the prompt and, [where available](https://code.claude.com/docs/docs/en/scheduled-tasks#let-claude-choose-the-interval), Claude runs an autonomous maintenance check or the prompt in `.claude/loop.md`. Example: `/loop 5m check if the deploy finished`. See [Run prompts on a schedule](https://code.claude.com/docs/docs/en/scheduled-tasks). Alias: `/proactive`",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a prompt repeatedly while the session stays open. Omit the interval and Claude [self-paces between iterations](https://code.claude.com/docs/docs/en/scheduled-tasks#let-claude-choose-the-interval). Omit the prompt and Claude runs the [built-in maintenance prompt](https://code.claude.com/docs/docs/en/scheduled-tasks#run-the-built-in-maintenance-prompt) or your [`loop.md`](https://code.claude.com/docs/docs/en/scheduled-tasks#customize-the-default-prompt-with-loop-md). Example: `/loop 5m check if the deploy finished`. See [Run prompts on a schedule](https://code.claude.com/docs/docs/en/scheduled-tasks). Alias: `/proactive`",
       "descriptionKo": "**[스킬](https://code.claude.com/docs/en/skills#bundled-skills).** 세션이 열려 있는 동안 프롬프트를 반복적으로 실행합니다. 간격을 생략하면 Claude가 반복 간격을 스스로 조절합니다. 프롬프트를 생략하면, [사용 가능한 경우](https://code.claude.com/docs/en/scheduled-tasks#run-the-built-in-maintenance-prompt), Claude가 자율 유지 관리 점검을 수행하거나 `.claude/loop.md`에 있는 프롬프트를 실행합니다. 예시: `/loop 5m check if the deploy finished`. [일정에 따라 프롬프트 실행](https://code.claude.com/docs/en/scheduled-tasks)을 참조하세요. 별칭: `/proactive`",
       "aliases": [
         "/proactive"
       ],
-      "searchText": "Skill. Run a prompt repeatedly while the session stays open. Omit the interval and, where available, Claude self-paces between iterations. Omit the prompt and, where available, Claude runs an autonomous maintenance check or the prompt in .claude/loop.md. Example: /loop 5m check if the deploy finished. See Run prompts on a schedule. Alias: /proactive 스킬. 세션이 열려 있는 동안 프롬프트를 반복적으로 실행합니다. 간격을 생략하면 Claude가 반복 간격을 스스로 조절합니다. 프롬프트를 생략하면, 사용 가능한 경우, Claude가 자율 유지 관리 점검을 수행하거나 .claude/loop.md에 있는 프롬프트를 실행합니다. 예시: /loop 5m check if the deploy finished. 일정에 따라 프롬프트 실행을 참조하세요. 별칭: /proactive",
+      "searchText": "Skill. Run a prompt repeatedly while the session stays open. Omit the interval and Claude self-paces between iterations. Omit the prompt and Claude runs the built-in maintenance prompt or your loop.md. Example: /loop 5m check if the deploy finished. See Run prompts on a schedule. Alias: /proactive 스킬. 세션이 열려 있는 동안 프롬프트를 반복적으로 실행합니다. 간격을 생략하면 Claude가 반복 간격을 스스로 조절합니다. 프롬프트를 생략하면, 사용 가능한 경우, Claude가 자율 유지 관리 점검을 수행하거나 .claude/loop.md에 있는 프롬프트를 실행합니다. 예시: /loop 5m check if the deploy finished. 일정에 따라 프롬프트 실행을 참조하세요. 별칭: /proactive",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -788,10 +788,10 @@
       "name": "/model",
       "args": "[model]",
       "hasRequiredArg": false,
-      "description": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to [adjust effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level). With no argument, opens a picker; press `s` on a row to switch for the current session only. See [when Claude Code asks you to confirm the switch](https://code.claude.com/docs/docs/en/prompt-caching#switching-models). Once confirmed, the change applies without waiting for the current response to finish. Also available in non-interactive mode (`-p`) with a model argument instead of the picker, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later",
+      "description": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to [adjust effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level). With no argument, opens a picker; press `s` on a row to switch for the current session only. See [when Claude Code asks you to confirm the switch](https://code.claude.com/docs/docs/en/prompt-caching#switching-models). Once you confirm the switch, if Claude Code asks, Claude Code applies the change without waiting for the current response to finish. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching), such as on a [third-party provider](https://code.claude.com/docs/docs/en/third-party-integrations). Also available in non-interactive mode (`-p`) with a model argument instead of the picker, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later",
       "descriptionKo": "AI 모델을 변경하고 새 세션의 기본값으로 저장하세요. 해당 기능을 지원하는 모델의 경우, 좌/우 화살표 키를 사용하여 [노력 수준 조정](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 할 수 있습니다. 인수를 지정하지 않으면 선택기가 열리며, 행에서 `s`를 누르면 현재 세션에 한해 모델이 변경됩니다. 대화 기록에 이전 응답이 있는 경우, 다음 응답은 캐시된 컨텍스트 없이 전체 기록을 다시 읽게 되므로 선택기에서 확인을 요청합니다. 확인을 누르면 현재 응답이 완료될 때까지 기다리지 않고 변경 사항이 적용됩니다.",
       "aliases": [],
-      "searchText": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to adjust effort level. With no argument, opens a picker; press s on a row to switch for the current session only. See when Claude Code asks you to confirm the switch. Once confirmed, the change applies without waiting for the current response to finish. Also available in non-interactive mode (-p) with a model argument instead of the picker, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later AI 모델을 변경하고 새 세션의 기본값으로 저장하세요. 해당 기능을 지원하는 모델의 경우, 좌/우 화살표 키를 사용하여 노력 수준 조정을 할 수 있습니다. 인수를 지정하지 않으면 선택기가 열리며, 행에서 s를 누르면 현재 세션에 한해 모델이 변경됩니다. 대화 기록에 이전 응답이 있는 경우, 다음 응답은 캐시된 컨텍스트 없이 전체 기록을 다시 읽게 되므로 선택기에서 확인을 요청합니다. 확인을 누르면 현재 응답이 완료될 때까지 기다리지 않고 변경 사항이 적용됩니다.",
+      "searchText": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to adjust effort level. With no argument, opens a picker; press s on a row to switch for the current session only. See when Claude Code asks you to confirm the switch. Once you confirm the switch, if Claude Code asks, Claude Code applies the change without waiting for the current response to finish. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags, such as on a third-party provider. Also available in non-interactive mode (-p) with a model argument instead of the picker, where it applies to the current session only and isn't saved as your default; requires Claude Code v2.1.205 or later AI 모델을 변경하고 새 세션의 기본값으로 저장하세요. 해당 기능을 지원하는 모델의 경우, 좌/우 화살표 키를 사용하여 노력 수준 조정을 할 수 있습니다. 인수를 지정하지 않으면 선택기가 열리며, 행에서 s를 누르면 현재 세션에 한해 모델이 변경됩니다. 대화 기록에 이전 응답이 있는 경우, 다음 응답은 캐시된 컨텍스트 없이 전체 기록을 다시 읽게 되므로 선택기에서 확인을 요청합니다. 확인을 누르면 현재 응답이 완료될 때까지 기다리지 않고 변경 사항이 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -900,10 +900,10 @@
       "name": "/radio",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS",
+      "description": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available",
       "descriptionKo": "브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
       "aliases": [],
-      "searchText": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS 브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
+      "searchText": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available 브라우저에서 Claude FM 로파이 라디오를 실행하세요. 브라우저를 사용할 수 없는 경우 스트림 URL을 출력합니다. Bedrock, Vertex, Foundry에서는 사용할 수 없습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -965,10 +965,10 @@
       "name": "/reload-skills",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Re-scan [skill](https://code.claude.com/docs/docs/en/skills) and command directories so skills added or changed on disk during the session become available without restarting. Reports how many skills are available and how many were added or removed. Added in v2.1.152",
+      "description": "Re-scan [skill](https://code.claude.com/docs/docs/en/skills) and command directories so skills added or changed on disk during the session become available without restarting. Reports how many skills are available and how many were added or removed",
       "descriptionKo": "[skill](https://code.claude.com/docs/en/skills) 및 명령어 디렉터리를 다시 스캔하여, 세션 중에 디스크에 추가되거나 변경된 스킬을 재시작 없이 사용할 수 있도록 합니다. 사용 가능한 스킬의 수와 추가되거나 제거된 스킬의 수를 보고합니다. v2.1.152에 추가됨",
       "aliases": [],
-      "searchText": "Re-scan skill and command directories so skills added or changed on disk during the session become available without restarting. Reports how many skills are available and how many were added or removed. Added in v2.1.152 skill 및 명령어 디렉터리를 다시 스캔하여, 세션 중에 디스크에 추가되거나 변경된 스킬을 재시작 없이 사용할 수 있도록 합니다. 사용 가능한 스킬의 수와 추가되거나 제거된 스킬의 수를 보고합니다. v2.1.152에 추가됨",
+      "searchText": "Re-scan skill and command directories so skills added or changed on disk during the session become available without restarting. Reports how many skills are available and how many were added or removed skill 및 명령어 디렉터리를 다시 스캔하여, 세션 중에 디스크에 추가되거나 변경된 스킬을 재시작 없이 사용할 수 있도록 합니다. 사용 가능한 스킬의 수와 추가되거나 제거된 스킬의 수를 보고합니다. v2.1.152에 추가됨",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1169,10 +1169,10 @@
       "name": "/simplify",
       "args": "[target]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Review the changed code for cleanup opportunities and apply the fixes. Four review [agents](https://code.claude.com/docs/docs/en/sub-agents) run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change is at the right level of abstraction. From v2.1.154, the review doesn't look for correctness bugs. Use `/code-review` to find bugs. On earlier versions, `/simplify` is equivalent to `/code-review --fix`. Pass a path or PR reference to review a specific target",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Review the changed code for cleanup opportunities and apply the fixes. Four review [agents](https://code.claude.com/docs/docs/en/sub-agents) run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change is at the right level of abstraction. The review doesn't look for correctness bugs. Use `/code-review` to find bugs. Pass a path or PR reference to review a specific target",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 [담당자](https://code.claude.com/docs/en/sub-agents)가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 `/code-review`를 사용하십시오. 이전 버전에서는 `/simplify`가 `/code-review --fix`와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
       "aliases": [],
-      "searchText": "Skill. Review the changed code for cleanup opportunities and apply the fixes. Four review agents run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change is at the right level of abstraction. From v2.1.154, the review doesn't look for correctness bugs. Use /code-review to find bugs. On earlier versions, /simplify is equivalent to /code-review --fix. Pass a path or PR reference to review a specific target Skill. 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 담당자가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 /code-review를 사용하십시오. 이전 버전에서는 /simplify가 /code-review --fix와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
+      "searchText": "Skill. Review the changed code for cleanup opportunities and apply the fixes. Four review agents run in parallel, covering reuse of existing helpers, simplification, efficiency, and whether the change is at the right level of abstraction. The review doesn't look for correctness bugs. Use /code-review to find bugs. Pass a path or PR reference to review a specific target Skill. 변경된 코드를 검토하여 정리할 부분을 찾아 수정 사항을 적용합니다. 네 명의 검토 담당자가 병렬로 작업을 수행하며, 기존 헬퍼의 재사용, 코드 단순화, 효율성, 그리고 변경 사항이 적절한 추상화 수준에 있는지 여부를 점검합니다. v2.1.154부터는 검토 과정에서 정확성 관련 버그를 확인하지 않습니다. 버그를 찾으려면 /code-review를 사용하십시오. 이전 버전에서는 /simplify가 /code-review --fix와 동일하게 작동합니다. 특정 대상을 검토하려면 경로 또는 PR 참조를 전달하십시오.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1312,10 +1312,10 @@
       "name": "/terminal-setup",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Configure terminal keybindings for Shift+Enter and other shortcuts. Only visible in terminals that need it, like VS Code, Cursor, Devin Desktop, Alacritty, or Zed",
+      "description": "[Install a Shift+Enter keybinding for newlines](https://code.claude.com/docs/docs/en/terminal-config#enter-multiline-prompts) in VS Code, Cursor, Devin Desktop, Alacritty, or Zed. In Apple Terminal, [enable Option+Enter for newlines and turn off the audible bell](https://code.claude.com/docs/docs/en/terminal-config#enable-option-key-shortcuts-on-macos) instead. In iTerm2, [turn on clipboard access so that `/copy` works](https://code.claude.com/docs/docs/en/terminal-config#enable-option-key-shortcuts-on-macos)",
       "descriptionKo": "Shift+Enter 및 기타 단축키에 대한 터미널 키 바인딩을 구성합니다. VS Code, Cursor, Devin Desktop, Alacritty, Zed 등 해당 기능이 필요한 터미널에서만 표시됩니다.",
       "aliases": [],
-      "searchText": "Configure terminal keybindings for Shift+Enter and other shortcuts. Only visible in terminals that need it, like VS Code, Cursor, Devin Desktop, Alacritty, or Zed Shift+Enter 및 기타 단축키에 대한 터미널 키 바인딩을 구성합니다. VS Code, Cursor, Devin Desktop, Alacritty, Zed 등 해당 기능이 필요한 터미널에서만 표시됩니다.",
+      "searchText": "Install a Shift+Enter keybinding for newlines in VS Code, Cursor, Devin Desktop, Alacritty, or Zed. In Apple Terminal, enable Option+Enter for newlines and turn off the audible bell instead. In iTerm2, turn on clipboard access so that /copy works Shift+Enter 및 기타 단축키에 대한 터미널 키 바인딩을 구성합니다. VS Code, Cursor, Devin Desktop, Alacritty, Zed 등 해당 기능이 필요한 터미널에서만 표시됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1455,11 +1455,24 @@
       "name": "/web-setup",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Connect your GitHub account to [Claude Code on the web](https://code.claude.com/docs/docs/en/web-quickstart#connect-from-your-terminal) using your local `gh` CLI credentials. `/schedule` prompts for this automatically if GitHub isn't connected",
+      "description": "Connect your GitHub account to [Claude Code on the web](https://code.claude.com/docs/docs/en/web-quickstart#connect-from-your-terminal) using your local `gh` CLI credentials",
       "descriptionKo": "로컬 `gh` CLI 자격 증명을 사용하여 GitHub 계정을 [Claude Code on the web](https://code.claude.com/docs/en/web-quickstart#connect-from-your-terminal)에 연결하세요. GitHub가 연결되어 있지 않으면 `/schedule`에서 자동으로 이를 요청합니다.",
       "aliases": [],
-      "searchText": "Connect your GitHub account to Claude Code on the web using your local gh CLI credentials. /schedule prompts for this automatically if GitHub isn't connected 로컬 gh CLI 자격 증명을 사용하여 GitHub 계정을 Claude Code on the web에 연결하세요. GitHub가 연결되어 있지 않으면 /schedule에서 자동으로 이를 요청합니다.",
+      "searchText": "Connect your GitHub account to Claude Code on the web using your local gh CLI credentials 로컬 gh CLI 자격 증명을 사용하여 GitHub 계정을 Claude Code on the web에 연결하세요. GitHub가 연결되어 있지 않으면 /schedule에서 자동으로 이를 요청합니다.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "skill",
+      "name": "/workflow-authoring",
+      "args": "",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load the reference for writing [dynamic workflow](https://code.claude.com/docs/docs/en/workflows) scripts: the script API, resume behavior, quality patterns, and worked examples. Claude normally loads it on its own before writing a script; run it yourself before [editing a saved script by hand](https://code.claude.com/docs/docs/en/workflows#edit-a-saved-script). Available when dynamic workflows are enabled, and requires Claude Code v2.1.248 or later",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Load the reference for writing dynamic workflow scripts: the script API, resume behavior, quality patterns, and worked examples. Claude normally loads it on its own before writing a script; run it yourself before editing a saved script by hand. Available when dynamic workflows are enabled, and requires Claude Code v2.1.248 or later",
+      "firstSeen": "2026-08-31",
       "minVersion": "",
       "resources": []
     },
@@ -1478,6 +1491,12 @@
     }
   ],
   "officialVideos": [
+    {
+      "videoId": "x80HVKbZrno",
+      "title": "Claude for Word: Turn a draft into a finished document",
+      "url": "https://www.youtube.com/watch?v=x80HVKbZrno",
+      "published": "2026-08-26T00:33:10+00:00"
+    },
     {
       "videoId": "dgNQhaxVals",
       "title": "How to choose the right Claude model for any task",
@@ -1561,12 +1580,6 @@
       "title": "Why does AI hallucinate?",
       "url": "https://www.youtube.com/watch?v=RlQ4xpDnoaw",
       "published": "2026-07-23T15:42:15+00:00"
-    },
-    {
-      "videoId": "ni4SXBnah2I",
-      "title": "How does AI get its character?",
-      "url": "https://www.youtube.com/watch?v=ni4SXBnah2I",
-      "published": "2026-07-22T17:05:46+00:00"
     },
     {
       "videoId": "UAmKyyZ-b9E",

@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-08-31T02:07:36.507Z",
+  "fetchedAt": "2026-09-03T01:54:33.904Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 110,
+  "count": 111,
   "entries": [
     {
       "type": "command",
@@ -25,10 +25,10 @@
       "name": "/advisor",
       "args": "[model|off]",
       "hasRequiredArg": false,
-      "description": "Enable or disable the [advisor tool](https://code.claude.com/docs/docs/en/advisor), which consults a second model for guidance at key moments during a task. Accepts `fable`, `opus`, `sonnet`, or a full model ID. `fable` requires [Fable 5 access](https://code.claude.com/docs/docs/en/advisor#choose-an-advisor-model). Without an argument, opens a picker",
+      "description": "Enable or disable the [advisor tool](https://code.claude.com/docs/docs/en/advisor), which consults a second model for guidance at key moments during a task. Accepts `fable`, `opus`, `sonnet`, or a full model ID. `fable` requires [Fable access](https://code.claude.com/docs/docs/en/advisor#choose-an-advisor-model). Without an argument, opens a picker",
       "descriptionKo": "작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 [어드바이저 도구](https://code.claude.com/docs/en/advisor)를 활성화하거나 비활성화합니다. `opus`, `sonnet`, `fable` (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
       "aliases": [],
-      "searchText": "Enable or disable the advisor tool, which consults a second model for guidance at key moments during a task. Accepts fable, opus, sonnet, or a full model ID. fable requires Fable 5 access. Without an argument, opens a picker 작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 어드바이저 도구를 활성화하거나 비활성화합니다. opus, sonnet, fable (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
+      "searchText": "Enable or disable the advisor tool, which consults a second model for guidance at key moments during a task. Accepts fable, opus, sonnet, or a full model ID. fable requires Fable access. Without an argument, opens a picker 작업 중 중요한 시점에 두 번째 모델에 조언을 구하는 어드바이저 도구를 활성화하거나 비활성화합니다. opus, sonnet, fable (v2.1.170 이상) 또는 전체 모델 ID를 입력할 수 있습니다. 인수를 지정하지 않으면 선택기가 열립니다. Claude Code v2.1.98 이상이 필요합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -366,6 +366,19 @@
       "aliases": [],
       "searchText": "Workflow. Fan out web searches on a question, fetch and cross-check sources, and synthesize a cited report 워크플로우. 특정 질문에 대해 웹 검색 결과를 광범위하게 수집하고, 출처를 찾아 교차 확인한 뒤, 인용된 보고서를 종합한다.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/design",
+      "args": "[brief]",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Draft UI mockups, screen flows, landing pages, or posters as artboards on one canvas, published as an [artifact](https://code.claude.com/docs/docs/en/artifacts#draft-a-design-canvas) that runs a research preview of Claude Design's editor, for example `/design a settings screen for a mobile banking app`. Where saving is enabled for your account, you edit the artboards on the canvas and save to publish a new version; otherwise you view the draft and export it as PNG or PDF. Requires a session where [artifacts are available](https://code.claude.com/docs/docs/en/artifacts#availability) and Claude Code v2.1.234 or later. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Draft UI mockups, screen flows, landing pages, or posters as artboards on one canvas, published as an artifact that runs a research preview of Claude Design's editor, for example /design a settings screen for a mobile banking app. Where saving is enabled for your account, you edit the artboards on the canvas and save to publish a new version; otherwise you view the draft and export it as PNG or PDF. Requires a session where artifacts are available and Claude Code v2.1.234 or later. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
+      "firstSeen": "2026-09-03",
       "minVersion": "",
       "resources": []
     },

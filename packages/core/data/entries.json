@@ -1,21 +1,21 @@
 {
-  "fetchedAt": "2026-09-03T01:54:33.904Z",
+  "fetchedAt": "2026-09-07T01:41:46.466Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 111,
+  "count": 112,
   "entries": [
     {
       "type": "command",
       "name": "/add-dir",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press `Tab` to accept one. Most `.claude/` configuration is [not discovered](https://code.claude.com/docs/docs/en/permissions#additional-directories-grant-file-access-not-configuration) from the added directory. A successful add runs your [`DirectoryAdded` hooks](https://code.claude.com/docs/docs/en/hooks#directoryadded). When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished",
+      "description": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press `Tab` to accept one. Most `.claude/` configuration [isn't discovered](https://code.claude.com/docs/docs/en/permissions#additional-directories-grant-file-access-not-configuration) from the added directory. You can't add most [network paths](https://code.claude.com/docs/docs/en/errors#working-directory-is-a-network-path), such as `\\\\server\\share`. After a successful add, your [`DirectoryAdded` hooks](https://code.claude.com/docs/docs/en/hooks#directoryadded) run. When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished",
       "descriptionKo": "현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 `.claude/` 구성 정보는 추가된 디렉터리에서 [탐지되지 않습니다](https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration). 나중에 `--continue` 또는 `--resume`을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "aliases": [],
-      "searchText": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration is not discovered from the added directory. A successful add runs your DirectoryAdded hooks. When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
+      "searchText": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration isn't discovered from the added directory. You can't add most network paths, such as \\\\server\\share. After a successful add, your DirectoryAdded hooks run. When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -428,10 +428,10 @@
       "name": "/diff",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. Claude Code computes these diffs from raw git blob content, so diff drivers and `textconv` filters configured in `.gitattributes` or git config don't apply. Before v2.1.222, workspace-configured drivers and filters could rewrite the viewer's output. The open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal; the auto-refresh requires Claude Code v2.1.198 or later",
+      "description": "Review the changes in your working tree, including the edits Claude has made so far. See [Review changes with /diff](https://code.claude.com/docs/docs/en/interactive-mode#review-changes-with-%2Fdiff)",
       "descriptionKo": "커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "aliases": [],
-      "searchText": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use left/right arrows to switch between the current git diff and individual Claude turns, and up/down to browse files. Press Enter to open the selected file's diff, scroll it with up/down or PageUp/PageDown, and press Esc to return to the file list. Claude Code computes these diffs from raw git blob content, so diff drivers and textconv filters configured in .gitattributes or git config don't apply. Before v2.1.222, workspace-configured drivers and filters could rewrite the viewer's output. The open viewer also refreshes automatically when the repository's git state changes outside the session, such as a branch switch or commit in another terminal; the auto-refresh requires Claude Code v2.1.198 or later 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
+      "searchText": "Review the changes in your working tree, including the edits Claude has made so far. See Review changes with /diff 커밋되지 않은 변경 사항과 턴별 차이점을 보여주는 대화형 차이점 뷰어를 엽니다. 왼쪽/오른쪽 화살표 키를 사용하여 현재 git diff와 개별 Claude 턴 간을 전환하고, 위/아래 화살표 키를 사용하여 파일을 탐색할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1192,6 +1192,19 @@
     },
     {
       "type": "command",
+      "name": "/skill-doctor",
+      "args": "",
+      "hasRequiredArg": false,
+      "description": "Show what each of your [skills](https://code.claude.com/docs/docs/en/skills) costs in context and how often it gets used, so you can [find skills to turn off](https://code.claude.com/docs/docs/en/skills#find-unused-skills). Requires Claude Code v2.1.252 or later and [feature-flag fetching](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching)",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Show what each of your skills costs in context and how often it gets used, so you can find skills to turn off. Requires Claude Code v2.1.252 or later and feature-flag fetching",
+      "firstSeen": "2026-09-07",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
       "name": "/skills",
       "args": "",
       "hasRequiredArg": false,
@@ -1505,6 +1518,78 @@
   ],
   "officialVideos": [
     {
+      "videoId": "S-sYlFiGFv8",
+      "title": "How the Claude Code team uses Claude Code",
+      "url": "https://www.youtube.com/watch?v=S-sYlFiGFv8",
+      "published": "2026-09-02T19:07:15+00:00"
+    },
+    {
+      "videoId": "T_wTfrmsThg",
+      "title": "Fable 5.1 is here",
+      "url": "https://www.youtube.com/watch?v=T_wTfrmsThg",
+      "published": "2026-09-02T19:03:35+00:00"
+    },
+    {
+      "videoId": "jwztQLH76is",
+      "title": "Debugging across the whole stack with Claude Fable 5.1",
+      "url": "https://www.youtube.com/watch?v=jwztQLH76is",
+      "published": "2026-09-01T18:23:30+00:00"
+    },
+    {
+      "videoId": "G3vwVsh9RtU",
+      "title": "Claude Fable 5.1 builds the ops review in Slack",
+      "url": "https://www.youtube.com/watch?v=G3vwVsh9RtU",
+      "published": "2026-09-01T18:23:27+00:00"
+    },
+    {
+      "videoId": "S9IJ1GgAAxE",
+      "title": "Claude Fable 5.1 runs the forecast overnight",
+      "url": "https://www.youtube.com/watch?v=S9IJ1GgAAxE",
+      "published": "2026-09-01T18:23:23+00:00"
+    },
+    {
+      "videoId": "NkJPtSLLDLs",
+      "title": "Claude turns flight data into \"look behind you\"",
+      "url": "https://www.youtube.com/watch?v=NkJPtSLLDLs",
+      "published": "2026-09-01T18:23:20+00:00"
+    },
+    {
+      "videoId": "KcRcbHxeoKk",
+      "title": "Claude codes turn-by-turn directions for the Moon",
+      "url": "https://www.youtube.com/watch?v=KcRcbHxeoKk",
+      "published": "2026-09-01T18:23:17+00:00"
+    },
+    {
+      "videoId": "3TJ9vWl0Ewo",
+      "title": "Claude codes a watercolor engine",
+      "url": "https://www.youtube.com/watch?v=3TJ9vWl0Ewo",
+      "published": "2026-09-01T18:23:14+00:00"
+    },
+    {
+      "videoId": "Rfhb8EzILmM",
+      "title": "Claude designs proteins that bind in the lab",
+      "url": "https://www.youtube.com/watch?v=Rfhb8EzILmM",
+      "published": "2026-09-01T18:23:11+00:00"
+    },
+    {
+      "videoId": "h3410gcCp50",
+      "title": "Claude turns calculus into combustion",
+      "url": "https://www.youtube.com/watch?v=h3410gcCp50",
+      "published": "2026-09-01T18:23:06+00:00"
+    },
+    {
+      "videoId": "PK_twqwWqp4",
+      "title": "Claude codes a sentence traveling through a brain",
+      "url": "https://www.youtube.com/watch?v=PK_twqwWqp4",
+      "published": "2026-09-01T18:23:01+00:00"
+    },
+    {
+      "videoId": "FoteuzPpx7E",
+      "title": "Building Enterprise Frontier Safeguards with our customers",
+      "url": "https://www.youtube.com/watch?v=FoteuzPpx7E",
+      "published": "2026-09-01T18:22:48+00:00"
+    },
+    {
       "videoId": "x80HVKbZrno",
       "title": "Claude for Word: Turn a draft into a finished document",
       "url": "https://www.youtube.com/watch?v=x80HVKbZrno",
@@ -1521,84 +1606,6 @@
       "title": "What does AI actually know about you?",
       "url": "https://www.youtube.com/watch?v=V12aLcjX23Q",
       "published": "2026-08-14T15:14:39+00:00"
-    },
-    {
-      "videoId": "ANDl5Tkru7g",
-      "title": "What does AI actually know about you?",
-      "url": "https://www.youtube.com/watch?v=ANDl5Tkru7g",
-      "published": "2026-08-13T17:00:01+00:00"
-    },
-    {
-      "videoId": "C-5wF6tkQ2Q",
-      "title": "Claude Cowork is now your Chrome side panel",
-      "url": "https://www.youtube.com/watch?v=C-5wF6tkQ2Q",
-      "published": "2026-08-12T20:08:12+00:00"
-    },
-    {
-      "videoId": "mYPF7KARk5Q",
-      "title": "Claude FM 🎵 music for thinking and building",
-      "url": "https://www.youtube.com/watch?v=mYPF7KARk5Q",
-      "published": "2026-08-11T19:53:37+00:00"
-    },
-    {
-      "videoId": "O0Bf2A4Z6O0",
-      "title": "Can you trust what AI tells you?",
-      "url": "https://www.youtube.com/watch?v=O0Bf2A4Z6O0",
-      "published": "2026-08-11T18:05:11+00:00"
-    },
-    {
-      "videoId": "cIMlBw2nqfA",
-      "title": "Can you trust what AI tells you?",
-      "url": "https://www.youtube.com/watch?v=cIMlBw2nqfA",
-      "published": "2026-08-11T14:23:19+00:00"
-    },
-    {
-      "videoId": "RyjROxHLi_g",
-      "title": "What happens when you talk to AI?",
-      "url": "https://www.youtube.com/watch?v=RyjROxHLi_g",
-      "published": "2026-08-08T14:00:10+00:00"
-    },
-    {
-      "videoId": "i4odXOmgMLw",
-      "title": "How Ramp engineers work with AI agents at every step",
-      "url": "https://www.youtube.com/watch?v=i4odXOmgMLw",
-      "published": "2026-08-06T17:46:21+00:00"
-    },
-    {
-      "videoId": "j1Vk6Y-23CY",
-      "title": "What happens when you talk to AI?",
-      "url": "https://www.youtube.com/watch?v=j1Vk6Y-23CY",
-      "published": "2026-08-05T17:22:05+00:00"
-    },
-    {
-      "videoId": "b8SV4U6fEIc",
-      "title": "How auto mode works with Claude Code",
-      "url": "https://www.youtube.com/watch?v=b8SV4U6fEIc",
-      "published": "2026-08-04T15:55:29+00:00"
-    },
-    {
-      "videoId": "jrfB3VY-wDo",
-      "title": "Record A Skill With Claude",
-      "url": "https://www.youtube.com/watch?v=jrfB3VY-wDo",
-      "published": "2026-08-03T18:18:31+00:00"
-    },
-    {
-      "videoId": "Ua_5vH_n8j4",
-      "title": "What do AI models actually know?",
-      "url": "https://www.youtube.com/watch?v=Ua_5vH_n8j4",
-      "published": "2026-07-24T15:38:23+00:00"
-    },
-    {
-      "videoId": "RlQ4xpDnoaw",
-      "title": "Why does AI hallucinate?",
-      "url": "https://www.youtube.com/watch?v=RlQ4xpDnoaw",
-      "published": "2026-07-23T15:42:15+00:00"
-    },
-    {
-      "videoId": "UAmKyyZ-b9E",
-      "title": "Introducing Cowork: Claude Code for the rest of your work",
-      "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-      "published": "2026-01-12T20:02:22+00:00"
     }
   ]
 }

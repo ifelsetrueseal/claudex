@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-09-21T02:09:58.860Z",
+  "fetchedAt": "2026-09-24T02:01:54.014Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 113,
+  "count": 114,
   "entries": [
     {
       "type": "command",
@@ -228,12 +228,12 @@
       "name": "/code-review",
       "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [pr#|branch|path]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Review the current diff, or a PR number, branch, or path you pass, for correctness bugs and cleanup opportunities. Pass `--fix` to apply findings, `--comment` to post them on the GitHub PR or GitLab merge request, or `ultra` to run a deep [cloud review](https://code.claude.com/docs/docs/en/ultrareview). Posting to a GitLab merge request requires Claude Code v2.1.257 or later. With `ultra` on a `github.com` PR target, pass `--post` to preselect [posting the finished findings to the PR](https://code.claude.com/docs/docs/en/ultrareview#post-findings-to-the-pull-request) in the launch dialog; `--post` requires Claude Code v2.1.227 or later. See [Review a diff locally](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally) for the effort levels, targeting, and how it relates to `/simplify`. Alias: `/review`",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Review the current diff, or a PR number, branch, or path you pass, for correctness bugs. Depending on your model and effort level, the review also covers cleanup opportunities. Pass `--fix` to apply findings, `--comment` to post them on the GitHub PR or GitLab merge request, or `ultra` to run a deep [cloud review](https://code.claude.com/docs/docs/en/ultrareview). Posting to a GitLab merge request requires Claude Code v2.1.257 or later. With `ultra` on a `github.com` PR target, pass `--post` to preselect [posting the finished findings to the PR](https://code.claude.com/docs/docs/en/ultrareview#post-findings-to-the-pull-request) in the launch dialog; `--post` requires Claude Code v2.1.227 or later. See [Review a diff locally](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally) for the effort levels, targeting, and how it relates to `/simplify`. Alias: `/review`",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. `--fix`를 실행하여 발견된 내용을 작업 트리에 적용하거나, `--comment`를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, `ultra`를 실행하여 심층적인 [클라우드 검토](https://code.claude.com/docs/en/ultrareview)를 수행할 수 있습니다. v2.1.154부터는 `/simplify`를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 [로컬에서 diff 검토하기](https://code.claude.com/docs/en/code-review#review-a-diff-locally)를 참조하십시오.",
       "aliases": [
         "/review"
       ],
-      "searchText": "Skill. Review the current diff, or a PR number, branch, or path you pass, for correctness bugs and cleanup opportunities. Pass --fix to apply findings, --comment to post them on the GitHub PR or GitLab merge request, or ultra to run a deep cloud review. Posting to a GitLab merge request requires Claude Code v2.1.257 or later. With ultra on a github.com PR target, pass --post to preselect posting the finished findings to the PR in the launch dialog; --post requires Claude Code v2.1.227 or later. See Review a diff locally for the effort levels, targeting, and how it relates to /simplify. Alias: /review Skill. 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. --fix를 실행하여 발견된 내용을 작업 트리에 적용하거나, --comment를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, ultra를 실행하여 심층적인 클라우드 검토를 수행할 수 있습니다. v2.1.154부터는 /simplify를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 로컬에서 diff 검토하기를 참조하십시오.",
+      "searchText": "Skill. Review the current diff, or a PR number, branch, or path you pass, for correctness bugs. Depending on your model and effort level, the review also covers cleanup opportunities. Pass --fix to apply findings, --comment to post them on the GitHub PR or GitLab merge request, or ultra to run a deep cloud review. Posting to a GitLab merge request requires Claude Code v2.1.257 or later. With ultra on a github.com PR target, pass --post to preselect posting the finished findings to the PR in the launch dialog; --post requires Claude Code v2.1.227 or later. See Review a diff locally for the effort levels, targeting, and how it relates to /simplify. Alias: /review Skill. 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. --fix를 실행하여 발견된 내용을 작업 트리에 적용하거나, --comment를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, ultra를 실행하여 심층적인 클라우드 검토를 수행할 수 있습니다. v2.1.154부터는 /simplify를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 로컬에서 diff 검토하기를 참조하십시오.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": [
@@ -456,10 +456,10 @@
       "name": "/effort",
       "args": "[level|auto|status]",
       "hasRequiredArg": false,
-      "description": "Set the [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level): `low` to `xhigh`, `max`, [`ultracode`](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode), or `auto`; `status` prints it. `max` and `ultracode` are session-only; the [`ultracode`](https://code.claude.com/docs/docs/en/settings-reference#ultracode) key persists. Run it while Claude is responding and, once you confirm the [cache warning](https://code.claude.com/docs/docs/en/prompt-caching#changing-effort-level), if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching), such as on a [third-party provider](https://code.claude.com/docs/docs/en/third-party-integrations). Works in `-p` outside the [effort hold](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level)",
+      "description": "Set the [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level): `low` to `xhigh`, `max`, [`ultracode`](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode), or `auto`; `status` prints it. `max` and `ultracode` are session-only; the [`ultracode`](https://code.claude.com/docs/docs/en/settings-reference#ultracode) key persists. Run it while Claude is responding and, once you confirm the [cache warning](https://code.claude.com/docs/docs/en/prompt-caching#changing-effort-level), if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching), such as on a [third-party provider](https://code.claude.com/docs/docs/en/third-party-integrations). Works in `-p`",
       "descriptionKo": "모델의 [노력 수준](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 설정합니다. `low`, `medium`, `high`, `xhigh`, `max` 또는 `ultracode`을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, `max` 및 `ultracode`은 세션 단위로만 적용됩니다. `ultracode`은 `xhigh` 추론과 자동 [워크플로우](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) 조정을 결합한 Claude Code 설정입니다. `auto`은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, `Enter`를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "aliases": [],
-      "searchText": "Set the effort level: low to xhigh, max, ultracode, or auto; status prints it. max and ultracode are session-only; the ultracode key persists. Run it while Claude is responding and, once you confirm the cache warning, if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags, such as on a third-party provider. Works in -p outside the effort hold 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
+      "searchText": "Set the effort level: low to xhigh, max, ultracode, or auto; status prints it. max and ultracode are session-only; the ultracode key persists. Run it while Claude is responding and, once you confirm the cache warning, if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags, such as on a third-party provider. Works in -p 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1403,11 +1403,24 @@
       "name": "/ultrareview",
       "args": "[PR or branch]",
       "hasRequiredArg": false,
-      "description": "Run a deep, multi-agent code review in a cloud sandbox with [ultrareview](https://code.claude.com/docs/docs/en/ultrareview). Pass a PR reference to review that pull request, or a branch name to change the comparison base. The preferred invocation is now `/code-review ultra`, and `/ultrareview` remains as an alias. Includes 3 free runs on Pro and Max, then requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)",
+      "description": "Run a deep, multi-agent code review in a cloud sandbox with [ultrareview](https://code.claude.com/docs/docs/en/ultrareview). Pass a PR reference to review that pull request, or a base branch or commit to change the comparison base. The preferred invocation is `/code-review ultra`, and `/ultrareview` is an alias. Includes 3 free runs on Pro and Max, then requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)",
       "descriptionKo": "[ultrareview](https://code.claude.com/docs/en/ultrareview)를 사용하여 클라우드 샌드박스에서 심층적인 다중 에이전트 코드 검토를 실행해 보세요. 이제 권장 호출 방식은 `/code-review ultra`이며, `/ultrareview`는 별칭으로 유지됩니다. Pro 및 Max 요금제에서는 3회의 무료 실행이 제공되며, 그 이후에는 [사용 크레딧](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)이 필요합니다.",
       "aliases": [],
-      "searchText": "Run a deep, multi-agent code review in a cloud sandbox with ultrareview. Pass a PR reference to review that pull request, or a branch name to change the comparison base. The preferred invocation is now /code-review ultra, and /ultrareview remains as an alias. Includes 3 free runs on Pro and Max, then requires usage credits ultrareview를 사용하여 클라우드 샌드박스에서 심층적인 다중 에이전트 코드 검토를 실행해 보세요. 이제 권장 호출 방식은 /code-review ultra이며, /ultrareview는 별칭으로 유지됩니다. Pro 및 Max 요금제에서는 3회의 무료 실행이 제공되며, 그 이후에는 사용 크레딧이 필요합니다.",
+      "searchText": "Run a deep, multi-agent code review in a cloud sandbox with ultrareview. Pass a PR reference to review that pull request, or a base branch or commit to change the comparison base. The preferred invocation is /code-review ultra, and /ultrareview is an alias. Includes 3 free runs on Pro and Max, then requires usage credits ultrareview를 사용하여 클라우드 샌드박스에서 심층적인 다중 에이전트 코드 검토를 실행해 보세요. 이제 권장 호출 방식은 /code-review ultra이며, /ultrareview는 별칭으로 유지됩니다. Pro 및 Max 요금제에서는 3회의 무료 실행이 제공되며, 그 이후에는 사용 크레딧이 필요합니다.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/update-config",
+      "args": "[request]",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Describe a settings change, such as allowing a command, setting an environment variable, or adding a [hook](https://code.claude.com/docs/docs/en/hooks), and Claude edits the matching [`settings.json`](https://code.claude.com/docs/docs/en/settings) file. For options such as theme and model, use `/config` instead",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Describe a settings change, such as allowing a command, setting an environment variable, or adding a hook, and Claude edits the matching settings.json file. For options such as theme and model, use /config instead",
+      "firstSeen": "2026-09-24",
       "minVersion": "",
       "resources": []
     },
@@ -1531,94 +1544,94 @@
   ],
   "officialVideos": [
     {
-      "videoId": "wcBoFbvFxmc",
-      "title": "Why Claude works better inside Slack",
-      "url": "https://www.youtube.com/watch?v=wcBoFbvFxmc",
-      "published": "2026-09-09T18:29:46+00:00"
+      "videoId": "jKRl_CSVxyI",
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "published": "2026-09-23T16:41:37+00:00"
     },
     {
-      "videoId": "hm8NzEd5io0",
-      "title": "How founders build on Claude Managed Agents",
-      "url": "https://www.youtube.com/watch?v=hm8NzEd5io0",
-      "published": "2026-09-08T20:22:10+00:00"
+      "videoId": "LCQ0_t02OHY",
+      "title": "Sometimes the whole point of a project is who it’s for",
+      "url": "https://www.youtube.com/watch?v=LCQ0_t02OHY",
+      "published": "2026-09-23T15:43:14+00:00"
     },
     {
-      "videoId": "jRPn3iG_e5g",
-      "title": "Anthropic engineers on what Claude changed for them",
-      "url": "https://www.youtube.com/watch?v=jRPn3iG_e5g",
-      "published": "2026-09-08T19:42:10+00:00"
+      "videoId": "FcK--rzZfpA",
+      "title": "Meet Claude Opus 5.5",
+      "url": "https://www.youtube.com/watch?v=FcK--rzZfpA",
+      "published": "2026-09-22T17:47:25+00:00"
     },
     {
-      "videoId": "S-sYlFiGFv8",
-      "title": "How the Claude Code team uses Claude Code",
-      "url": "https://www.youtube.com/watch?v=S-sYlFiGFv8",
-      "published": "2026-09-02T19:07:15+00:00"
+      "videoId": "1f13Bl1sYkw",
+      "title": "Introducing Claude Opus 5.5",
+      "url": "https://www.youtube.com/watch?v=1f13Bl1sYkw",
+      "published": "2026-09-22T16:32:25+00:00"
     },
     {
-      "videoId": "T_wTfrmsThg",
-      "title": "Fable 5.1 is here",
-      "url": "https://www.youtube.com/watch?v=T_wTfrmsThg",
-      "published": "2026-09-02T19:03:35+00:00"
+      "videoId": "K-pgPNFcAj4",
+      "title": "GPS, explained by Claude Opus 5.5",
+      "url": "https://www.youtube.com/watch?v=K-pgPNFcAj4",
+      "published": "2026-09-22T16:32:22+00:00"
     },
     {
-      "videoId": "jwztQLH76is",
-      "title": "Debugging across the whole stack with Claude Fable 5.1",
-      "url": "https://www.youtube.com/watch?v=jwztQLH76is",
-      "published": "2026-09-01T18:23:30+00:00"
+      "videoId": "Ov-B6K1EsaI",
+      "title": "Claude Opus 5.5 rebuilds Earthrise in 3D, down to the second",
+      "url": "https://www.youtube.com/watch?v=Ov-B6K1EsaI",
+      "published": "2026-09-22T16:32:18+00:00"
     },
     {
-      "videoId": "G3vwVsh9RtU",
-      "title": "Claude Fable 5.1 builds the ops review in Slack",
-      "url": "https://www.youtube.com/watch?v=G3vwVsh9RtU",
-      "published": "2026-09-01T18:23:27+00:00"
+      "videoId": "lCR9epzSNGc",
+      "title": "Claude Opus 5.5 builds daydreams that hold together",
+      "url": "https://www.youtube.com/watch?v=lCR9epzSNGc",
+      "published": "2026-09-22T16:32:15+00:00"
     },
     {
-      "videoId": "S9IJ1GgAAxE",
-      "title": "Claude Fable 5.1 runs the forecast overnight",
-      "url": "https://www.youtube.com/watch?v=S9IJ1GgAAxE",
-      "published": "2026-09-01T18:23:23+00:00"
+      "videoId": "uMsZ21ubIMM",
+      "title": "Claude Opus 5.5 turns graphite into gravity",
+      "url": "https://www.youtube.com/watch?v=uMsZ21ubIMM",
+      "published": "2026-09-22T16:32:04+00:00"
     },
     {
-      "videoId": "NkJPtSLLDLs",
-      "title": "Claude turns flight data into \"look behind you\"",
-      "url": "https://www.youtube.com/watch?v=NkJPtSLLDLs",
-      "published": "2026-09-01T18:23:20+00:00"
+      "videoId": "kF1BvUK5_Mc",
+      "title": "Claude Cowork and chat are now one Claude",
+      "url": "https://www.youtube.com/watch?v=kF1BvUK5_Mc",
+      "published": "2026-09-21T14:34:21+00:00"
     },
     {
-      "videoId": "KcRcbHxeoKk",
-      "title": "Claude codes turn-by-turn directions for the Moon",
-      "url": "https://www.youtube.com/watch?v=KcRcbHxeoKk",
-      "published": "2026-09-01T18:23:17+00:00"
+      "videoId": "71-8fJIGi34",
+      "title": "Which Claude model should you use?",
+      "url": "https://www.youtube.com/watch?v=71-8fJIGi34",
+      "published": "2026-09-18T16:22:53+00:00"
     },
     {
-      "videoId": "3TJ9vWl0Ewo",
-      "title": "Claude codes a watercolor engine",
-      "url": "https://www.youtube.com/watch?v=3TJ9vWl0Ewo",
-      "published": "2026-09-01T18:23:14+00:00"
+      "videoId": "5qt_aGyAsKk",
+      "title": "Projects are now a conversation with Claude",
+      "url": "https://www.youtube.com/watch?v=5qt_aGyAsKk",
+      "published": "2026-09-17T17:04:42+00:00"
     },
     {
-      "videoId": "Rfhb8EzILmM",
-      "title": "Claude designs proteins that bind in the lab",
-      "url": "https://www.youtube.com/watch?v=Rfhb8EzILmM",
-      "published": "2026-09-01T18:23:11+00:00"
+      "videoId": "To5nrYqvR44",
+      "title": "Meet Claude Slides, Claude Design and Claude Docs",
+      "url": "https://www.youtube.com/watch?v=To5nrYqvR44",
+      "published": "2026-09-16T19:12:46+00:00"
     },
     {
-      "videoId": "h3410gcCp50",
-      "title": "Claude turns calculus into combustion",
-      "url": "https://www.youtube.com/watch?v=h3410gcCp50",
-      "published": "2026-09-01T18:23:06+00:00"
+      "videoId": "qMUf-jwSpMo",
+      "title": "Claude Cowork and chat are now one Claude",
+      "url": "https://www.youtube.com/watch?v=qMUf-jwSpMo",
+      "published": "2026-09-16T16:18:12+00:00"
     },
     {
-      "videoId": "PK_twqwWqp4",
-      "title": "Claude codes a sentence traveling through a brain",
-      "url": "https://www.youtube.com/watch?v=PK_twqwWqp4",
-      "published": "2026-09-01T18:23:01+00:00"
+      "videoId": "LQkcGtkSLNQ",
+      "title": "Frontier Day | Claude for startups",
+      "url": "https://www.youtube.com/watch?v=LQkcGtkSLNQ",
+      "published": "2026-09-15T18:16:37+00:00"
     },
     {
-      "videoId": "FoteuzPpx7E",
-      "title": "Building Enterprise Frontier Safeguards with our customers",
-      "url": "https://www.youtube.com/watch?v=FoteuzPpx7E",
-      "published": "2026-09-01T18:22:48+00:00"
+      "videoId": "t6z0Ea0GwSk",
+      "title": "Salesforce in Claude",
+      "url": "https://www.youtube.com/watch?v=t6z0Ea0GwSk",
+      "published": "2026-09-15T14:47:54+00:00"
     }
   ]
 }

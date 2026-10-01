@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-09-28T02:23:48.625Z",
+  "fetchedAt": "2026-10-01T02:55:34.460Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 114,
+  "count": 118,
   "entries": [
     {
       "type": "command",
@@ -43,6 +43,32 @@
       "aliases": [],
       "searchText": "As of v2.1.198, running /agents prints a reminder to ask Claude to create or manage subagents, or to edit .claude/agents/ or ~/.claude/agents/ directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations 에이전트 구성 관리",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/artifact-capabilities",
+      "args": "",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load the reference for the runtime capabilities a published [artifact](https://code.claude.com/docs/docs/en/artifacts) can use, such as [calling your connectors](https://code.claude.com/docs/docs/en/artifacts#pull-live-data-with-mcp-connectors) or [offering a file download](https://code.claude.com/docs/docs/en/artifacts#offer-a-file-download), including which ones your account has. Claude normally loads it on its own before building a page that uses one. Available where [artifacts](https://code.claude.com/docs/docs/en/artifacts#availability) are",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Load the reference for the runtime capabilities a published artifact can use, such as calling your connectors or offering a file download, including which ones your account has. Claude normally loads it on its own before building a page that uses one. Available where artifacts are",
+      "firstSeen": "2026-10-01",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/artifact-diagramming",
+      "args": "",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load diagramming guidance for Claude to follow in [artifacts](https://code.claude.com/docs/docs/en/artifacts): when a diagram helps, what to draw, and how to write inline SVG that stays legible in light and dark themes. Requires Claude Code v2.1.221 or later",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Load diagramming guidance for Claude to follow in artifacts: when a diagram helps, what to draw, and how to write inline SVG that stays legible in light and dark themes. Requires Claude Code v2.1.221 or later",
+      "firstSeen": "2026-10-01",
       "minVersion": "",
       "resources": []
     },
@@ -197,13 +223,26 @@
     {
       "type": "skill",
       "name": "/claude-api",
-      "args": "[migrate|upgrade|managed-agents-onboard|prompt-audit|cost-optimize|build-eval|hillclimb]",
+      "args": "[migrate|upgrade|managed-agents-onboard|prompt-audit|cost-optimize|build-eval|hillclimb|preserved-thinking-migration]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load [Claude API](https://platform.claude.com/docs/en/api/overview) and [Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview) reference material for your project's language. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. Run `migrate` to update existing Claude API code to a newer model. Run `upgrade` to move your project's Anthropic SDK dependency across a major version, currently the Python `anthropic` package from 0.x to 1.x. Run `managed-agents-onboard` for a walkthrough that creates a new Managed Agent. Run `prompt-audit` to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. Run `cost-optimize` to profile where your project's Claude API spend goes and propose savings from options such as prompt caching, trimming unneeded input and output tokens, batch processing, effort, and model choice, one change at a time. Run `build-eval` to build an eval set for your Claude-powered app, and `hillclimb` to iteratively improve the app against an existing eval. The `prompt-audit` subcommand requires Claude Code v2.1.221 or later, `upgrade` requires v2.1.236 or later, `cost-optimize` requires v2.1.247 or later, and `build-eval` and `hillclimb` require v2.1.259 or later",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load [Claude API](https://platform.claude.com/docs/en/api/overview) and [Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview) reference material for your project's language. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. For what each subcommand does and the version it requires, see [Work on Claude API projects](https://code.claude.com/docs/docs/en/skills#work-on-claude-api-projects)",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C#, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 `anthropic` 또는 `@anthropic-ai/sdk`를 임포트하면 자동으로 활성화됩니다. `/claude-api migrate`를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. `/claude-api managed-agents-onboard`를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
       "aliases": [],
-      "searchText": "Skill. Load Claude API and Managed Agents reference material for your project's language. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. Run migrate to update existing Claude API code to a newer model. Run upgrade to move your project's Anthropic SDK dependency across a major version, currently the Python anthropic package from 0.x to 1.x. Run managed-agents-onboard for a walkthrough that creates a new Managed Agent. Run prompt-audit to flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff. Run cost-optimize to profile where your project's Claude API spend goes and propose savings from options such as prompt caching, trimming unneeded input and output tokens, batch processing, effort, and model choice, one change at a time. Run build-eval to build an eval set for your Claude-powered app, and hillclimb to iteratively improve the app against an existing eval. The prompt-audit subcommand requires Claude Code v2.1.221 or later, upgrade requires v2.1.236 or later, cost-optimize requires v2.1.247 or later, and build-eval and hillclimb require v2.1.259 or later Skill. 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 anthropic 또는 @anthropic-ai/sdk를 임포트하면 자동으로 활성화됩니다. /claude-api migrate를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. /claude-api managed-agents-onboard를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
+      "searchText": "Skill. Load Claude API and Managed Agents reference material for your project's language. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. For what each subcommand does and the version it requires, see Work on Claude API projects Skill. 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 anthropic 또는 @anthropic-ai/sdk를 임포트하면 자동으로 활성화됩니다. /claude-api migrate를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. /claude-api managed-agents-onboard를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/claude-in-chrome",
+      "args": "[task]",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Have Claude carry out a task in your browser, such as testing a page, filling a form, or reading console logs, through [Claude in Chrome](https://code.claude.com/docs/docs/en/chrome). Available when Chrome integration is enabled for the session, for example with `claude --chrome`, or when Claude Code can offer to [install the extension](https://code.claude.com/docs/docs/en/chrome#install-the-extension-when-claude-asks)",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Have Claude carry out a task in your browser, such as testing a page, filling a form, or reading console logs, through Claude in Chrome. Available when Chrome integration is enabled for the session, for example with claude --chrome, or when Claude Code can offer to install the extension",
+      "firstSeen": "2026-10-01",
       "minVersion": "",
       "resources": []
     },
@@ -374,10 +413,10 @@
       "name": "/design",
       "args": "[brief]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Draft UI mockups, screen flows, landing pages, or posters as artboards on one canvas, published as a Design [artifact](https://code.claude.com/docs/docs/en/artifacts#draft-a-design-canvas), for example `/design a settings screen for a mobile banking app`. You edit the artboards in a desktop browser, and your edits save automatically. You can export each artboard as PNG or PDF. Requires a session where [artifacts are available](https://code.claude.com/docs/docs/en/artifacts#availability) and Claude Code v2.1.265 or later. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Draft UI mockups, screen flows, landing pages, or posters as artboards on one canvas, published as a Claude Design [artifact](https://code.claude.com/docs/docs/en/artifacts#draft-a-design-canvas), for example `/design a settings screen for a mobile banking app`. You edit the artboards in a desktop browser, and your edits save automatically. You can export each artboard as PNG or PDF. Requires Claude Code v2.1.265 or later, a session where [artifacts are available](https://code.claude.com/docs/docs/en/artifacts#availability), and an account where the [Design template is available](https://code.claude.com/docs/docs/en/artifacts#start-from-a-slides-design-or-docs-template); if your organization has turned that template off, `/design` doesn't draft designs. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Skill. Draft UI mockups, screen flows, landing pages, or posters as artboards on one canvas, published as a Design artifact, for example /design a settings screen for a mobile banking app. You edit the artboards in a desktop browser, and your edits save automatically. You can export each artboard as PNG or PDF. Requires a session where artifacts are available and Claude Code v2.1.265 or later. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
+      "searchText": "Skill. Draft UI mockups, screen flows, landing pages, or posters as artboards on one canvas, published as a Claude Design artifact, for example /design a settings screen for a mobile banking app. You edit the artboards in a desktop browser, and your edits save automatically. You can export each artboard as PNG or PDF. Requires Claude Code v2.1.265 or later, a session where artifacts are available, and an account where the Design template is available; if your organization has turned that template off, /design doesn't draft designs. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
       "firstSeen": "2026-09-03",
       "minVersion": "",
       "resources": []
@@ -441,7 +480,7 @@
       "name": "/doctor",
       "args": "[prompt-audit [path]]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, `PATH` problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow [hooks](https://code.claude.com/docs/docs/en/hooks), and checks for a newer version on your [release channel](https://code.claude.com/docs/docs/en/setup#configure-release-channel). Deduplicates local `CLAUDE.md` files against checked-in ones, trims checked-in [`CLAUDE.md`](https://code.claude.com/docs/docs/en/memory#my-claude-md-is-too-large) files by cutting content Claude could derive from the codebase, and migrates the always-loaded guidance that remains into [skills](https://code.claude.com/docs/docs/en/skills) and nested `CLAUDE.md` files that load on demand. Also offers to make [auto mode](https://code.claude.com/docs/docs/en/permissions#permission-modes) your default and to [pre-approve](https://code.claude.com/docs/docs/en/permissions) frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, `claude doctor` prints read-only installation diagnostics without starting a session. Alias: `/checkup`. Run `/doctor prompt-audit` to have Claude [audit your `CLAUDE.md` files, skills, and other configuration](https://code.claude.com/docs/docs/en/memory#write-effective-instructions) for outdated or conflicting instructions instead of running the checkup. The `prompt-audit` subcommand requires Claude Code v2.1.283 or later. The `CLAUDE.md` trim check requires Claude Code v2.1.206 or later. Before v2.1.205, `/doctor` opened a read-only diagnostics screen and pressing `f` sent the report to Claude",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, `PATH` problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow [hooks](https://code.claude.com/docs/docs/en/hooks), and checks for a newer version on your [release channel](https://code.claude.com/docs/docs/en/setup#configure-release-channel). Deduplicates local `CLAUDE.md` files against checked-in ones, trims checked-in [`CLAUDE.md`](https://code.claude.com/docs/docs/en/memory#my-claude-md-is-too-large) files by cutting content Claude could derive from the codebase, and migrates the always-loaded guidance that remains into [skills](https://code.claude.com/docs/docs/en/skills) and nested `CLAUDE.md` files that load on demand. Also offers to make [auto mode](https://code.claude.com/docs/docs/en/permissions#permission-modes) your default and to [pre-approve](https://code.claude.com/docs/docs/en/permissions) frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, `claude doctor` prints read-only installation diagnostics without starting a session. Alias: `/checkup`. Run `/doctor prompt-audit` to have Claude [audit your `CLAUDE.md` files, skills, and other configuration](https://code.claude.com/docs/docs/en/memory#audit-your-instruction-files) for outdated or conflicting instructions instead of running the checkup. The `prompt-audit` subcommand requires Claude Code v2.1.283 or later. The `CLAUDE.md` trim check requires Claude Code v2.1.206 or later. Before v2.1.205, `/doctor` opened a read-only diagnostics screen and pressing `f` sent the report to Claude",
       "descriptionKo": "Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. `f`을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
       "aliases": [
         "/checkup",
@@ -455,12 +494,12 @@
     {
       "type": "command",
       "name": "/effort",
-      "args": "[level|auto|status]",
+      "args": "[level|auto|status|ultracode [on|off]]",
       "hasRequiredArg": false,
-      "description": "Set the [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level): `low` to `xhigh`, `max`, [`ultracode`](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode), or `auto`; `status` prints it. `max` and `ultracode` are session-only; the [`ultracode`](https://code.claude.com/docs/docs/en/settings-reference#ultracode) key persists. Run it while Claude is responding and, once you confirm the [cache warning](https://code.claude.com/docs/docs/en/prompt-caching#changing-effort-level), if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching), such as on a [third-party provider](https://code.claude.com/docs/docs/en/third-party-integrations). Works in `-p`",
+      "description": "Set the [effort level](https://code.claude.com/docs/docs/en/model-config#adjust-effort-level): `low` to `xhigh`, `max`, or `auto`; `status` prints it. `ultracode` or `ultracode on` turns [ultracode](https://code.claude.com/docs/docs/en/workflows#let-claude-decide-with-ultracode) on for the session at the current level, and `ultracode off` turns it off; the [`ultracode`](https://code.claude.com/docs/docs/en/settings-reference#ultracode) key persists. `max` is session-only. The `on` and `off` arguments and keeping the current level require Claude Code v2.1.284 or later. Before v2.1.284, `/effort ultracode` set the session to `xhigh`, and `/effort ultracode off` failed with `Invalid argument`. Run it while Claude is responding and, once you confirm the [cache warning](https://code.claude.com/docs/docs/en/prompt-caching#changing-effort-level), if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching), such as on a [third-party provider](https://code.claude.com/docs/docs/en/third-party-integrations). Works in `-p`",
       "descriptionKo": "모델의 [노력 수준](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 설정합니다. `low`, `medium`, `high`, `xhigh`, `max` 또는 `ultracode`을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, `max` 및 `ultracode`은 세션 단위로만 적용됩니다. `ultracode`은 `xhigh` 추론과 자동 [워크플로우](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) 조정을 결합한 Claude Code 설정입니다. `auto`은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, `Enter`를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "aliases": [],
-      "searchText": "Set the effort level: low to xhigh, max, ultracode, or auto; status prints it. max and ultracode are session-only; the ultracode key persists. Run it while Claude is responding and, once you confirm the cache warning, if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags, such as on a third-party provider. Works in -p 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
+      "searchText": "Set the effort level: low to xhigh, max, or auto; status prints it. ultracode or ultracode on turns ultracode on for the session at the current level, and ultracode off turns it off; the ultracode key persists. max is session-only. The on and off arguments and keeping the current level require Claude Code v2.1.284 or later. Before v2.1.284, /effort ultracode set the session to xhigh, and /effort ultracode off failed with Invalid argument. Run it while Claude is responding and, once you confirm the cache warning, if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags, such as on a third-party provider. Works in -p 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -537,10 +576,10 @@
       "name": "/focus",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set [`viewMode`](https://code.claude.com/docs/docs/en/settings-reference#viewmode) in settings to override it. Only available in [fullscreen rendering](https://code.claude.com/docs/docs/en/fullscreen). The [VS Code extension](https://code.claude.com/docs/docs/en/vs-code#use-the-prompt-box) offers its own Focus view as a command-menu toggle, stored as an extension setting, independent of `viewMode`",
+      "description": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set [`viewMode`](https://code.claude.com/docs/docs/en/settings-reference#viewmode) in settings to override it. Only available in [fullscreen rendering](https://code.claude.com/docs/docs/en/fullscreen). From a [Remote Control](https://code.claude.com/docs/docs/en/remote-control) client, run `/focus [on|off]` to turn the focus view on or off for the current session only, without changing your saved selection; this requires Claude Code v2.1.281 or later. The [VS Code extension](https://code.claude.com/docs/docs/en/vs-code#use-the-prompt-box) offers its own Focus view as a command-menu toggle, stored as an extension setting, independent of `viewMode`",
       "descriptionKo": "포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 [`viewMode`](https://code.claude.com/docs/en/settings#available-settings)를 설정하여 이를 재정의할 수 있습니다. [전체 화면 렌더링](https://code.claude.com/docs/en/fullscreen) 모드에서만 사용할 수 있습니다.",
       "aliases": [],
-      "searchText": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set viewMode in settings to override it. Only available in fullscreen rendering. The VS Code extension offers its own Focus view as a command-menu toggle, stored as an extension setting, independent of viewMode 포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 viewMode를 설정하여 이를 재정의할 수 있습니다. 전체 화면 렌더링 모드에서만 사용할 수 있습니다.",
+      "searchText": "Toggle the focus view, which shows only your last prompt, a one-line tool-call summary with edit diffstats, and the final response. The tool-call summary also counts the subagents launched in the turn and collapses completed background-task notifications into a single count. The selection persists across sessions; set viewMode in settings to override it. Only available in fullscreen rendering. From a Remote Control client, run /focus [on|off] to turn the focus view on or off for the current session only, without changing your saved selection; this requires Claude Code v2.1.281 or later. The VS Code extension offers its own Focus view as a command-menu toggle, stored as an extension setting, independent of viewMode 포커스 보기를 켜거나 끄면, 가장 최근의 프롬프트, 편집 차이 정보를 포함한 한 줄짜리 도구 호출 요약, 그리고 최종 응답만 표시됩니다. 이 설정은 세션 간에 유지되며, 설정에서 viewMode를 설정하여 이를 재정의할 수 있습니다. 전체 화면 렌더링 모드에서만 사용할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -940,10 +979,10 @@
       "name": "/rate-limit-options",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Show ways to keep working when a claude.ai usage limit blocks a request: wait and [continue automatically when the limit resets](https://code.claude.com/docs/docs/en/interactive-mode#wait-for-a-usage-limit-to-reset), add [usage credits](https://code.claude.com/docs/docs/en/costs#add-usage-credits-to-your-subscription), or upgrade your plan. Claude Code can also open this menu on its own when you hit a limit at your own terminal. See [Turn automatic continue off](https://code.claude.com/docs/docs/en/interactive-mode#turn-automatic-continue-off). Requires a claude.ai subscription. Doesn't appear in the command menu; type it in full. The wait-and-continue rows require Claude Code v2.1.234 or later",
+      "description": "Show ways to keep working when a claude.ai usage limit blocks a request: wait and [continue automatically when the limit resets](https://code.claude.com/docs/docs/en/interactive-mode#wait-for-a-usage-limit-to-reset), add [usage credits](https://code.claude.com/docs/docs/en/costs#add-usage-credits-to-your-subscription), or upgrade your plan. Claude Code can also open this menu on its own when you hit a limit at your own terminal. See [Turn automatic continue off](https://code.claude.com/docs/docs/en/interactive-mode#turn-automatic-continue-off). Requires a claude.ai subscription. The wait-and-continue rows require Claude Code v2.1.234 or later",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Show ways to keep working when a claude.ai usage limit blocks a request: wait and continue automatically when the limit resets, add usage credits, or upgrade your plan. Claude Code can also open this menu on its own when you hit a limit at your own terminal. See Turn automatic continue off. Requires a claude.ai subscription. Doesn't appear in the command menu; type it in full. The wait-and-continue rows require Claude Code v2.1.234 or later",
+      "searchText": "Show ways to keep working when a claude.ai usage limit blocks a request: wait and continue automatically when the limit resets, add usage credits, or upgrade your plan. Claude Code can also open this menu on its own when you hit a limit at your own terminal. See Turn automatic continue off. Requires a claude.ai subscription. The wait-and-continue rows require Claude Code v2.1.234 or later",
       "firstSeen": "2026-08-27",
       "minVersion": "",
       "resources": []
@@ -1046,12 +1085,12 @@
       "name": "/resume",
       "args": "[session]",
       "hasRequiredArg": false,
-      "description": "Resume a conversation by ID or name, or open the session picker. [Background sessions](https://code.claude.com/docs/docs/en/agent-view) appear in the picker marked with `bg`; one that is still running can't be resumed here, so attach to it from `claude agents` or stop it there first. Alias: `/continue`",
+      "description": "Resume a conversation by ID or name, or open the session picker. [Background sessions](https://code.claude.com/docs/docs/en/agent-view) appear in the picker marked with `bg`. Resuming one that is still running, from the picker or by ID or name, [opens that session](https://code.claude.com/docs/docs/en/sessions#resume-a-running-background-session): your current conversation moves to the background and this terminal attaches to the running one. Press `←` on an empty prompt to return to agent view, which also lists the conversation you left. Before v2.1.285, Claude Code refused and told you to open the session with `claude attach` or stop it first. Alias: `/continue`",
       "descriptionKo": "ID나 이름으로 대화를 다시 시작하거나 세션 선택기를 열 수 있습니다. v2.1.144부터 [백그라운드 세션](https://code.claude.com/docs/en/agent-view)이 선택기에 `bg`로 표시되어 나타납니다. 별칭: `/continue`",
       "aliases": [
         "/continue"
       ],
-      "searchText": "Resume a conversation by ID or name, or open the session picker. Background sessions appear in the picker marked with bg; one that is still running can't be resumed here, so attach to it from claude agents or stop it there first. Alias: /continue ID나 이름으로 대화를 다시 시작하거나 세션 선택기를 열 수 있습니다. v2.1.144부터 백그라운드 세션이 선택기에 bg로 표시되어 나타납니다. 별칭: /continue",
+      "searchText": "Resume a conversation by ID or name, or open the session picker. Background sessions appear in the picker marked with bg. Resuming one that is still running, from the picker or by ID or name, opens that session: your current conversation moves to the background and this terminal attaches to the running one. Press ← on an empty prompt to return to agent view, which also lists the conversation you left. Before v2.1.285, Claude Code refused and told you to open the session with claude attach or stop it first. Alias: /continue ID나 이름으로 대화를 다시 시작하거나 세션 선택기를 열 수 있습니다. v2.1.144부터 백그라운드 세션이 선택기에 bg로 표시되어 나타납니다. 별칭: /continue",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1227,6 +1266,19 @@
       "aliases": [],
       "searchText": "List available skills. Type to filter the list by name, description, or source. Press t to sort by token count, Space or Enter to cycle a skill's visibility to Claude and the / menu, and Esc to save and close. You can't cycle plugin skills, skills whose frontmatter sets disable-model-invocation: true, or skills with a skillOverrides entry in managed settings or the --settings flag 사용 가능한 스킬 목록입니다. t를 누르면 토큰 수순으로 정렬됩니다. Space를 누르면 클로드나 ‘/’ 메뉴에서 해당 스킬을 숨길 수 있으며, Enter를 누르면 변경 사항을 저장할 수 있습니다.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/slides",
+      "args": "[brief]",
+      "hasRequiredArg": false,
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Make a new presentation as a Claude Slides [artifact](https://code.claude.com/docs/docs/en/artifacts#make-a-slide-deck) filled from your brief, for example `/slides a quarterly review of the platform team`. Requires Claude Code v2.1.265 or later, a session where [artifacts are available](https://code.claude.com/docs/docs/en/artifacts#availability), and an account where the [Slides template is available](https://code.claude.com/docs/docs/en/artifacts#start-from-a-slides-design-or-docs-template); otherwise the command doesn't appear. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Skill. Make a new presentation as a Claude Slides artifact filled from your brief, for example /slides a quarterly review of the platform team. Requires Claude Code v2.1.265 or later, a session where artifacts are available, and an account where the Slides template is available; otherwise the command doesn't appear. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
+      "firstSeen": "2026-10-01",
       "minVersion": "",
       "resources": []
     },

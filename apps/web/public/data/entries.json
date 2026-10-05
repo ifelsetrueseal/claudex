@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-10-01T02:55:34.460Z",
+  "fetchedAt": "2026-10-05T02:51:02.942Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
     "https://code.claude.com/docs/en/skills.md"
   ],
-  "count": 118,
+  "count": 119,
   "entries": [
     {
       "type": "command",
@@ -38,10 +38,10 @@
       "name": "/agents",
       "args": "",
       "hasRequiredArg": false,
-      "description": "As of v2.1.198, running `/agents` prints a reminder to ask Claude to create or manage [subagents](https://code.claude.com/docs/docs/en/sub-agents), or to edit `.claude/agents/` or `~/.claude/agents/` directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations",
+      "description": "Print a reminder to ask Claude to create or manage [subagents](https://code.claude.com/docs/docs/en/sub-agents), or to edit `.claude/agents/` or `~/.claude/agents/` directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations",
       "descriptionKo": "[에이전트](https://code.claude.com/docs/en/sub-agents) 구성 관리",
       "aliases": [],
-      "searchText": "As of v2.1.198, running /agents prints a reminder to ask Claude to create or manage subagents, or to edit .claude/agents/ or ~/.claude/agents/ directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations 에이전트 구성 관리",
+      "searchText": "Print a reminder to ask Claude to create or manage subagents, or to edit .claude/agents/ or ~/.claude/agents/ directly. On v2.1.197 and earlier, opens an interactive interface for creating and managing subagent configurations 에이전트 구성 관리",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -265,7 +265,7 @@
     {
       "type": "skill",
       "name": "/code-review",
-      "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [pr#|branch|path]",
+      "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--max-findings n|all|default] [pr#|branch|path]",
       "hasRequiredArg": false,
       "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Review the current diff, or a PR number, branch, or path you pass, for correctness bugs. Depending on your model and effort level, the review also covers cleanup opportunities. Pass `--fix` to apply findings, `--comment` to post them on the GitHub PR or GitLab merge request, or `ultra` to run a deep [cloud review](https://code.claude.com/docs/docs/en/ultrareview). Posting to a GitLab merge request requires Claude Code v2.1.257 or later. With `ultra` on a `github.com` PR target, pass `--post` to preselect [posting the finished findings to the PR](https://code.claude.com/docs/docs/en/ultrareview#post-findings-to-the-pull-request) in the launch dialog; `--post` requires Claude Code v2.1.227 or later. See [Review a diff locally](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally) for the effort levels, targeting, and how it relates to `/simplify`. Alias: `/review`",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 현재 diff를 검토하여 오류 여부를 확인하고, 재사용, 단순화 및 효율성 개선을 위한 정리 작업을 수행합니다. `--fix`를 실행하여 발견된 내용을 작업 트리에 적용하거나, `--comment`를 실행하여 GitHub PR에 인라인 코멘트로 게시하거나, `ultra`를 실행하여 심층적인 [클라우드 검토](https://code.claude.com/docs/en/ultrareview)를 수행할 수 있습니다. v2.1.154부터는 `/simplify`를 실행하면 버그를 찾아내지 않고 수정 사항만 적용하는 별도의 정리 전용 검토가 수행됩니다. 작업량 및 대상에 대해서는 [로컬에서 diff 검토하기](https://code.claude.com/docs/en/code-review#review-a-diff-locally)를 참조하십시오.",
@@ -374,10 +374,10 @@
       "name": "/dataviz",
       "args": "[request]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Design guidance for charts, graphs, and dashboards. Claude picks the chart form for the data, assigns color by role, validates the palette for colorblind safety and contrast with a bundled script, and applies mark, interaction, and accessibility rules. Uses a brand-neutral placeholder palette that you replace with your own. Requires Claude Code v2.1.198 or later",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Design guidance for charts, graphs, and dashboards. Claude picks the chart form for the data, assigns color by role, validates the palette for colorblind safety and contrast with a bundled script, and applies mark, interaction, and accessibility rules. Uses a brand-neutral placeholder palette that you replace with your own",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Skill. Design guidance for charts, graphs, and dashboards. Claude picks the chart form for the data, assigns color by role, validates the palette for colorblind safety and contrast with a bundled script, and applies mark, interaction, and accessibility rules. Uses a brand-neutral placeholder palette that you replace with your own. Requires Claude Code v2.1.198 or later",
+      "searchText": "Skill. Design guidance for charts, graphs, and dashboards. Claude picks the chart form for the data, assigns color by role, validates the palette for colorblind safety and contrast with a bundled script, and applies mark, interaction, and accessibility rules. Uses a brand-neutral placeholder palette that you replace with your own",
       "firstSeen": "2026-07-06",
       "minVersion": "",
       "resources": []
@@ -641,10 +641,10 @@
       "name": "/hooks",
       "args": "",
       "hasRequiredArg": false,
-      "description": "View [hook](https://code.claude.com/docs/docs/en/hooks) configurations for tool events",
+      "description": "View [hook](https://code.claude.com/docs/docs/en/hooks#the-%2Fhooks-menu) configurations",
       "descriptionKo": "도구 이벤트에 대한 [hook](https://code.claude.com/docs/en/hooks) 구성 보기",
       "aliases": [],
-      "searchText": "View hook configurations for tool events 도구 이벤트에 대한 hook 구성 보기",
+      "searchText": "View hook configurations 도구 이벤트에 대한 hook 구성 보기",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -797,12 +797,12 @@
     {
       "type": "command",
       "name": "/mcp",
-      "args": "[reconnect <server>|enable|disable [<server>|all]]",
+      "args": "[reconnect (<server>|all)|enable|disable [<server>|all]]",
       "hasRequiredArg": true,
-      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, pass `reconnect <server>` to reconnect one disconnected server, or pass `enable`/`disable` with a server name or `all` to change connection state without opening the dialog. Also available in non-interactive mode (`-p`), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later",
+      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass `reconnect`, `enable`, or `disable` with a server name or `all` to change connection state without opening it. `reconnect all` [retries every server that failed or needs authentication](https://code.claude.com/docs/docs/en/mcp#retry-failed-servers-yourself). Also available in non-interactive mode (`-p`), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later",
       "descriptionKo": "MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, `reconnect <server>`을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, `enable` / `disable`에 서버 이름을 지정하거나 `all`을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "aliases": [],
-      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, pass reconnect <server to reconnect one disconnected server, or pass enable/disable with a server name or all to change connection state without opening the dialog. Also available in non-interactive mode (-p), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
+      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass reconnect, enable, or disable with a server name or all to change connection state without opening it. reconnect all retries every server that failed or needs authentication. Also available in non-interactive mode (-p), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -919,6 +919,19 @@
       "aliases": [],
       "searchText": "Manage Claude Code plugins. Run with no argument to open the plugin menu, or pass a subcommand such as list, install, enable, or disable to act directly. Claude Code can activate a plugin during the install; the install summary tells you whether it did or whether to run /reload-plugins Claude Code 플러그인을 관리합니다. 인수를 지정하지 않고 실행하면 플러그인 메뉴가 열리고, list, install, enable, disable와 같은 하위 명령을 전달하면 해당 기능을 직접 실행할 수 있습니다.",
       "firstSeen": "2026-06-20",
+      "minVersion": "",
+      "resources": []
+    },
+    {
+      "type": "command",
+      "name": "/plugin-authoring",
+      "args": "",
+      "hasRequiredArg": false,
+      "description": "Load the reference Claude works from to [write a mod](https://code.claude.com/docs/docs/en/plugins/mods/create#ask-claude-for-a-mod). Claude can load it on its own when you ask for a mod. This is a skill from a [built-in plugin](https://code.claude.com/docs/docs/en/plugins/mods/overview#mods-built-into-claude-code), which you can turn off in `/plugin`. Requires Claude Code v2.1.287 or later",
+      "descriptionKo": "",
+      "aliases": [],
+      "searchText": "Load the reference Claude works from to write a mod. Claude can load it on its own when you ask for a mod. This is a skill from a built-in plugin, which you can turn off in /plugin. Requires Claude Code v2.1.287 or later",
+      "firstSeen": "2026-10-05",
       "minVersion": "",
       "resources": []
     },
@@ -1098,7 +1111,7 @@
     {
       "type": "command",
       "name": "/review",
-      "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [pr#|branch|path]",
+      "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--max-findings n|all|default] [pr#|branch|path]",
       "hasRequiredArg": false,
       "description": "Alias of [`/code-review`](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally): reviews the current diff, or a PR number, branch, or path you pass, such as `/review 1234`, and takes the same effort levels and flags. With no level given, the review reuses the last `low` through `max` level you typed; see [Review a diff locally](https://code.claude.com/docs/docs/en/code-review#review-a-diff-locally) for the exact rules. For a deep cloud review, use [`/code-review ultra`](https://code.claude.com/docs/docs/en/ultrareview). Before v2.1.223, `/review` was a separate command that ran a single-pass, read-only review of a GitHub pull request by number, listing open PRs to pick from when run with no argument; from v2.1.186 through v2.1.201, it ran the same multi-agent engine as `/code-review medium`",
       "descriptionKo": "현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview)을 참조하세요.",
@@ -1231,7 +1244,7 @@
       "resources": []
     },
     {
-      "type": "command",
+      "type": "skill",
       "name": "/simplify",
       "args": "[target]",
       "hasRequiredArg": false,
@@ -1339,10 +1352,10 @@
       "name": "/stop",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Stop the current [background session](https://code.claude.com/docs/docs/en/agent-view). Only available while attached to a background session; the transcript and any worktree are kept. To detach without stopping, use `/exit` or press `←`",
+      "description": "Stop the [background session](https://code.claude.com/docs/docs/en/agent-view) you're attached to, or the one you send it to as a [peek reply](https://code.claude.com/docs/docs/en/agent-view#peek-and-reply); the transcript and any worktree are kept. To detach without stopping, use `/exit` or press `←`",
       "descriptionKo": "현재 [백그라운드 세션](https://code.claude.com/docs/en/agent-view)을 중지합니다. 백그라운드 세션에 연결되어 있는 동안에만 사용할 수 있으며, 대화 기록과 작업 트리는 유지됩니다. 중지하지 않고 연결을 해제하려면 `/exit`를 사용하거나 `←`를 누르세요.",
       "aliases": [],
-      "searchText": "Stop the current background session. Only available while attached to a background session; the transcript and any worktree are kept. To detach without stopping, use /exit or press ← 현재 백그라운드 세션을 중지합니다. 백그라운드 세션에 연결되어 있는 동안에만 사용할 수 있으며, 대화 기록과 작업 트리는 유지됩니다. 중지하지 않고 연결을 해제하려면 /exit를 사용하거나 ←를 누르세요.",
+      "searchText": "Stop the background session you're attached to, or the one you send it to as a peek reply; the transcript and any worktree are kept. To detach without stopping, use /exit or press ← 현재 백그라운드 세션을 중지합니다. 백그라운드 세션에 연결되어 있는 동안에만 사용할 수 있으며, 대화 기록과 작업 트리는 유지됩니다. 중지하지 않고 연결을 해제하려면 /exit를 사용하거나 ←를 누르세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []

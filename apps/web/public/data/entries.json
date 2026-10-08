@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-05T02:51:02.942Z",
+  "fetchedAt": "2026-10-08T03:24:03.963Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -480,13 +480,12 @@
       "name": "/doctor",
       "args": "[prompt-audit [path]]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, `PATH` problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow [hooks](https://code.claude.com/docs/docs/en/hooks), and checks for a newer version on your [release channel](https://code.claude.com/docs/docs/en/setup#configure-release-channel). Deduplicates local `CLAUDE.md` files against checked-in ones, trims checked-in [`CLAUDE.md`](https://code.claude.com/docs/docs/en/memory#my-claude-md-is-too-large) files by cutting content Claude could derive from the codebase, and migrates the always-loaded guidance that remains into [skills](https://code.claude.com/docs/docs/en/skills) and nested `CLAUDE.md` files that load on demand. Also offers to make [auto mode](https://code.claude.com/docs/docs/en/permissions#permission-modes) your default and to [pre-approve](https://code.claude.com/docs/docs/en/permissions) frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, `claude doctor` prints read-only installation diagnostics without starting a session. Alias: `/checkup`. Run `/doctor prompt-audit` to have Claude [audit your `CLAUDE.md` files, skills, and other configuration](https://code.claude.com/docs/docs/en/memory#audit-your-instruction-files) for outdated or conflicting instructions instead of running the checkup. The `prompt-audit` subcommand requires Claude Code v2.1.283 or later. The `CLAUDE.md` trim check requires Claude Code v2.1.206 or later. Before v2.1.205, `/doctor` opened a read-only diagnostics screen and pressing `f` sent the report to Claude",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Run a setup checkup that diagnoses installation, settings, extension, and `CLAUDE.md` problems and proposes fixes that Claude applies after you confirm. For what the checkup covers, or to audit your instructions with `prompt-audit` instead, see [Check your setup with `/doctor`](https://code.claude.com/docs/docs/en/skills#check-your-setup-with-/doctor). The `prompt-audit` subcommand requires Claude Code v2.1.283 or later. Alias: `/checkup`",
       "descriptionKo": "Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. `f`을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
       "aliases": [
-        "/checkup",
-        "/doctor"
+        "/checkup"
       ],
-      "searchText": "Skill. Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, PATH problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow hooks, and checks for a newer version on your release channel. Deduplicates local CLAUDE.md files against checked-in ones, trims checked-in CLAUDE.md files by cutting content Claude could derive from the codebase, and migrates the always-loaded guidance that remains into skills and nested CLAUDE.md files that load on demand. Also offers to make auto mode your default and to pre-approve frequently denied read-only commands. Reports findings first and asks for confirmation before changing anything. From the terminal, claude doctor prints read-only installation diagnostics without starting a session. Alias: /checkup. Run /doctor prompt-audit to have Claude audit your CLAUDE.md files, skills, and other configuration for outdated or conflicting instructions instead of running the checkup. The prompt-audit subcommand requires Claude Code v2.1.283 or later. The CLAUDE.md trim check requires Claude Code v2.1.206 or later. Before v2.1.205, /doctor opened a read-only diagnostics screen and pressing f sent the report to Claude Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. f을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
+      "searchText": "Skill. Run a setup checkup that diagnoses installation, settings, extension, and CLAUDE.md problems and proposes fixes that Claude applies after you confirm. For what the checkup covers, or to audit your instructions with prompt-audit instead, see Check your setup with /doctor. The prompt-audit subcommand requires Claude Code v2.1.283 or later. Alias: /checkup Claude Code의 설치 및 설정을 진단하고 확인하세요. 결과는 상태 아이콘으로 표시됩니다. f을 눌러 보고된 문제를 Claude가 해결하도록 하세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1196,10 +1195,10 @@
       "name": "/scroll-speed",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Adjust mouse wheel [scroll speed](https://code.claude.com/docs/docs/en/fullscreen#mouse-wheel-scrolling) interactively, with a ruler you can scroll while the dialog is open to preview the change. Available in [fullscreen rendering](https://code.claude.com/docs/docs/en/fullscreen) only and not in the JetBrains IDE terminal",
+      "description": "Adjust mouse wheel [scroll speed](https://code.claude.com/docs/docs/en/fullscreen#mouse-wheel-scrolling) interactively. Available in [fullscreen rendering](https://code.claude.com/docs/docs/en/fullscreen) only and not in the JetBrains IDE terminal",
       "descriptionKo": "마우스 휠의 [스크롤 속도](https://code.claude.com/docs/en/fullscreen#mouse-wheel-scrolling)를 대화형으로 조정할 수 있으며, 눈금자를 사용하여 대화 상자가 열려 있는 동안 스크롤을 통해 변경 사항을 미리 확인할 수 있습니다. 이 기능은 [전체 화면 렌더링](https://code.claude.com/docs/en/fullscreen)에서만 사용할 수 있으며, JetBrains IDE 터미널에서는 사용할 수 없습니다.",
       "aliases": [],
-      "searchText": "Adjust mouse wheel scroll speed interactively, with a ruler you can scroll while the dialog is open to preview the change. Available in fullscreen rendering only and not in the JetBrains IDE terminal 마우스 휠의 스크롤 속도를 대화형으로 조정할 수 있으며, 눈금자를 사용하여 대화 상자가 열려 있는 동안 스크롤을 통해 변경 사항을 미리 확인할 수 있습니다. 이 기능은 전체 화면 렌더링에서만 사용할 수 있으며, JetBrains IDE 터미널에서는 사용할 수 없습니다.",
+      "searchText": "Adjust mouse wheel scroll speed interactively. Available in fullscreen rendering only and not in the JetBrains IDE terminal 마우스 휠의 스크롤 속도를 대화형으로 조정할 수 있으며, 눈금자를 사용하여 대화 상자가 열려 있는 동안 스크롤을 통해 변경 사항을 미리 확인할 수 있습니다. 이 기능은 전체 화면 렌더링에서만 사용할 수 있으며, JetBrains IDE 터미널에서는 사용할 수 없습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-08T03:24:03.963Z",
+  "fetchedAt": "2026-10-12T03:05:41.210Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -348,10 +348,10 @@
       "name": "/copy",
       "args": "[N]",
       "hasRequiredArg": false,
-      "description": "Copy the last assistant response to clipboard. Pass a number `N` to copy the Nth-latest response: `/copy 2` copies the second-to-last. When code blocks are present, shows an interactive picker to select individual blocks or the full response. Press `w` in the picker to write the selection to a file instead of the clipboard, which is useful over SSH",
+      "description": "Copy the last assistant response to clipboard. Pass a number `N` to copy the Nth-latest response: `/copy 2` copies the second-to-last. When code blocks or blockquotes are present, shows an interactive picker to select individual blocks or the full response. Press `w` in the picker to write the selection to a file instead of the clipboard, which is useful over SSH",
       "descriptionKo": "마지막 어시스턴트 응답을 클립보드에 복사합니다. 숫자`N`를 전달하면 N번째로 최근의 응답을 복사할 수 있습니다. 예를 들어, ``/copy 2``는 두 번째로 최근의 응답을 복사합니다. 코드 블록이 포함된 경우, 개별 블록이나 전체 응답을 선택할 수 있는 대화형 선택기가 표시됩니다. 선택기에서 ``w``를 누르면 선택한 내용을 클립보드 대신 파일에 저장할 수 있으며, 이는 SSH를 통해 작업할 때 유용합니다.",
       "aliases": [],
-      "searchText": "Copy the last assistant response to clipboard. Pass a number N to copy the Nth-latest response: /copy 2 copies the second-to-last. When code blocks are present, shows an interactive picker to select individual blocks or the full response. Press w in the picker to write the selection to a file instead of the clipboard, which is useful over SSH 마지막 어시스턴트 응답을 클립보드에 복사합니다. 숫자N를 전달하면 N번째로 최근의 응답을 복사할 수 있습니다. 예를 들어, `/copy 2는 두 번째로 최근의 응답을 복사합니다. 코드 블록이 포함된 경우, 개별 블록이나 전체 응답을 선택할 수 있는 대화형 선택기가 표시됩니다. 선택기에서 w`를 누르면 선택한 내용을 클립보드 대신 파일에 저장할 수 있으며, 이는 SSH를 통해 작업할 때 유용합니다.",
+      "searchText": "Copy the last assistant response to clipboard. Pass a number N to copy the Nth-latest response: /copy 2 copies the second-to-last. When code blocks or blockquotes are present, shows an interactive picker to select individual blocks or the full response. Press w in the picker to write the selection to a file instead of the clipboard, which is useful over SSH 마지막 어시스턴트 응답을 클립보드에 복사합니다. 숫자N를 전달하면 N번째로 최근의 응답을 복사할 수 있습니다. 예를 들어, `/copy 2는 두 번째로 최근의 응답을 복사합니다. 코드 블록이 포함된 경우, 개별 블록이나 전체 응답을 선택할 수 있는 대화형 선택기가 표시됩니다. 선택기에서 w`를 누르면 선택한 내용을 클립보드 대신 파일에 저장할 수 있으며, 이는 SSH를 통해 작업할 때 유용합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -798,10 +798,10 @@
       "name": "/mcp",
       "args": "[reconnect (<server>|all)|enable|disable [<server>|all]]",
       "hasRequiredArg": true,
-      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass `reconnect`, `enable`, or `disable` with a server name or `all` to change connection state without opening it. `reconnect all` [retries every server that failed or needs authentication](https://code.claude.com/docs/docs/en/mcp#retry-failed-servers-yourself). Also available in non-interactive mode (`-p`), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later",
+      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass `reconnect`, `enable`, or `disable` with a server name or `all` to change connection state without opening it. `reconnect all` [retries every server that failed or needs authentication](https://code.claude.com/docs/docs/en/mcp#retry-failed-servers-yourself). In non-interactive mode (`-p`), running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later",
       "descriptionKo": "MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, `reconnect <server>`을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, `enable` / `disable`에 서버 이름을 지정하거나 `all`을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "aliases": [],
-      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass reconnect, enable, or disable with a server name or all to change connection state without opening it. reconnect all retries every server that failed or needs authentication. Also available in non-interactive mode (-p), where running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
+      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass reconnect, enable, or disable with a server name or all to change connection state without opening it. reconnect all retries every server that failed or needs authentication. In non-interactive mode (-p), running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1084,10 +1084,10 @@
       "name": "/rename",
       "args": "[name]",
       "hasRequiredArg": false,
-      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows `That name is empty once invisible characters are removed. Usage: /rename <name>`. The character replacement and length cap require Claude Code v2.1.221 or later. If another live session on this machine already uses a name you pass, Claude Code applies [a variant of it](https://code.claude.com/docs/docs/en/sessions#name-your-sessions) instead",
+      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows `That name is empty once invisible characters are removed. Usage: /rename <name>`. The character replacement and length cap require Claude Code v2.1.221 or later",
       "descriptionKo": "현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "aliases": [],
-      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows That name is empty once invisible characters are removed. Usage: /rename <name. The character replacement and length cap require Claude Code v2.1.221 or later. If another live session on this machine already uses a name you pass, Claude Code applies a variant of it instead 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
+      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows That name is empty once invisible characters are removed. Usage: /rename <name. The character replacement and length cap require Claude Code v2.1.221 or later 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []

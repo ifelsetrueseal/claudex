@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-12T03:05:41.210Z",
+  "fetchedAt": "2026-10-15T02:12:50.105Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -199,10 +199,10 @@
       "name": "/cd",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Move this session to a new working directory, keeping the conversation. Type a partial path to see matching directory suggestions; press `Tab` to accept one. The suggestions require Claude Code v2.1.206 or later. For what Claude Code applies from the new directory as soon as you move, and how `/cd` differs from `/add-dir`, see [Move the session to another directory](https://code.claude.com/docs/docs/en/permissions#move-the-session-to-another-directory)",
+      "description": "Move this session to a new working directory, keeping the conversation. Type a partial path to see matching directory suggestions; press `Tab` to accept one. For what Claude Code applies from the new directory as soon as you move, and how `/cd` differs from `/add-dir`, see [Move the session to another directory](https://code.claude.com/docs/docs/en/permissions#move-the-session-to-another-directory)",
       "descriptionKo": "이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 [`CLAUDE.md`](https://code.claude.com/docs/en/memory)가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, `--resume` 및 `--continue`에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 `/add-dir`를 사용하십시오. [`Cd` 권한 규칙](https://code.claude.com/docs/en/permissions#cd)을 사용하여 `/cd` 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 `Unknown command: /cd` 오류가 발생합니다.",
       "aliases": [],
-      "searchText": "Move this session to a new working directory, keeping the conversation. Type a partial path to see matching directory suggestions; press Tab to accept one. The suggestions require Claude Code v2.1.206 or later. For what Claude Code applies from the new directory as soon as you move, and how /cd differs from /add-dir, see Move the session to another directory 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
+      "searchText": "Move this session to a new working directory, keeping the conversation. Type a partial path to see matching directory suggestions; press Tab to accept one. For what Claude Code applies from the new directory as soon as you move, and how /cd differs from /add-dir, see Move the session to another directory 이 세션을 새로운 작업 디렉터리로 이동합니다. 대화 프롬프트 캐시는 유지됩니다. 즉, 시스템 프롬프트를 다시 생성하는 대신 새 디렉터리의 CLAUDE.md가 메시지로 추가됩니다. 세션은 새 디렉터리의 프로젝트 저장소로 옮겨지므로, --resume 및 --continue에서 해당 세션을 찾을 수 있습니다. 해당 디렉터리에서 작업한 적이 없다면 디렉터리를 신뢰할지 묻는 메시지가 표시됩니다. 세션을 이동하지 않고 추가 디렉터리에 대한 액세스 권한을 부여하려면 /add-dir를 사용하십시오. Cd 권한 규칙을 사용하여 /cd 대상에 대한 액세스를 제한하거나 비활성화할 수 있습니다. Claude Code v2.1.169 이상이 필요하며, 이전 버전에서는 Unknown command: /cd 오류가 발생합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -288,10 +288,10 @@
       "name": "/color",
       "args": "[color|default]",
       "hasRequiredArg": false,
-      "description": "Set the prompt bar color for the current session. Available colors: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan`. Use `default` to reset, or run with no argument to pick a random color. When [Remote Control](https://code.claude.com/docs/docs/en/remote-control) is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later",
+      "description": "Set the prompt bar color for the current session. Available colors: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan`. Use `default` to reset, or run with no argument to pick a random color. When [Remote Control](https://code.claude.com/docs/docs/en/remote-control) is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (`-p`)",
       "descriptionKo": "현재 세션의 프롬프트 바 색상을 설정합니다. 사용 가능한 색상: `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan`. `default`을 사용하여 재설정하거나, 인수를 지정하지 않고 실행하면 무작위 색상이 선택됩니다. [원격 제어](https://code.claude.com/docs/en/remote-control)가 연결된 경우, 색상이 claude.ai/code와 동기화됩니다.",
       "aliases": [],
-      "searchText": "Set the prompt bar color for the current session. Available colors: red, blue, green, yellow, purple, orange, pink, cyan. Use default to reset, or run with no argument to pick a random color. When Remote Control is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later 현재 세션의 프롬프트 바 색상을 설정합니다. 사용 가능한 색상: red, blue, green, yellow, purple, orange, pink, cyan. default을 사용하여 재설정하거나, 인수를 지정하지 않고 실행하면 무작위 색상이 선택됩니다. 원격 제어가 연결된 경우, 색상이 claude.ai/code와 동기화됩니다.",
+      "searchText": "Set the prompt bar color for the current session. Available colors: red, blue, green, yellow, purple, orange, pink, cyan. Use default to reset, or run with no argument to pick a random color. When Remote Control is connected, the color syncs to claude.ai/code. Also available in non-interactive mode (-p) 현재 세션의 프롬프트 바 색상을 설정합니다. 사용 가능한 색상: red, blue, green, yellow, purple, orange, pink, cyan. default을 사용하여 재설정하거나, 인수를 지정하지 않고 실행하면 무작위 색상이 선택됩니다. 원격 제어가 연결된 경우, 색상이 claude.ai/code와 동기화됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -536,10 +536,10 @@
       "name": "/fast",
       "args": "[on|off]",
       "hasRequiredArg": false,
-      "description": "Toggle [fast mode](https://code.claude.com/docs/docs/en/fast-mode) on or off. Run it while Claude is responding and Claude Code toggles fast mode without waiting for the turn to end, though the running turn finishes at its original speed. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching). Availability in non-interactive mode with `-p` is limited; see [Toggle fast mode](https://code.claude.com/docs/docs/en/fast-mode#toggle-fast-mode). Requires Claude Code v2.1.205 or later",
+      "description": "Toggle [fast mode](https://code.claude.com/docs/docs/en/fast-mode) on or off. Run it while Claude is responding and Claude Code toggles fast mode without waiting for the turn to end, though the running turn finishes at its original speed. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching). Availability in non-interactive mode with `-p` is limited; see [Toggle fast mode](https://code.claude.com/docs/docs/en/fast-mode#toggle-fast-mode)",
       "descriptionKo": "[빠른 모드](https://code.claude.com/docs/en/fast-mode)를 켜거나 끕니다.",
       "aliases": [],
-      "searchText": "Toggle fast mode on or off. Run it while Claude is responding and Claude Code toggles fast mode without waiting for the turn to end, though the running turn finishes at its original speed. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags. Availability in non-interactive mode with -p is limited; see Toggle fast mode. Requires Claude Code v2.1.205 or later 빠른 모드를 켜거나 끕니다.",
+      "searchText": "Toggle fast mode on or off. Run it while Claude is responding and Claude Code toggles fast mode without waiting for the turn to end, though the running turn finishes at its original speed. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags. Availability in non-interactive mode with -p is limited; see Toggle fast mode 빠른 모드를 켜거나 끕니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -798,10 +798,10 @@
       "name": "/mcp",
       "args": "[reconnect (<server>|all)|enable|disable [<server>|all]]",
       "hasRequiredArg": true,
-      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass `reconnect`, `enable`, or `disable` with a server name or `all` to change connection state without opening it. `reconnect all` [retries every server that failed or needs authentication](https://code.claude.com/docs/docs/en/mcp#retry-failed-servers-yourself). In non-interactive mode (`-p`), running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later",
+      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass `reconnect`, `enable`, or `disable` with a server name or `all` to change connection state without opening it. `reconnect all` [retries every server that failed or needs authentication](https://code.claude.com/docs/docs/en/mcp#retry-failed-servers-yourself). In non-interactive mode (`-p`), running it with no argument prints a text summary of server status instead of opening the list",
       "descriptionKo": "MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, `reconnect <server>`을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, `enable` / `disable`에 서버 이름을 지정하거나 `all`을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "aliases": [],
-      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass reconnect, enable, or disable with a server name or all to change connection state without opening it. reconnect all retries every server that failed or needs authentication. In non-interactive mode (-p), running it with no argument prints a text summary of server status instead of opening the list; requires Claude Code v2.1.205 or later MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
+      "searchText": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass reconnect, enable, or disable with a server name or all to change connection state without opening it. reconnect all retries every server that failed or needs authentication. In non-interactive mode (-p), running it with no argument prints a text summary of server status instead of opening the list MCP 서버 연결 및 OAuth 인증을 관리합니다. 인수를 지정하지 않고 실행하면 대화형 목록이 열리고, reconnect <server을 전달하면 연결이 끊긴 서버 하나를 다시 연결할 수 있으며, enable / disable에 서버 이름을 지정하거나 all을 전달하면 대화 상자를 열지 않고도 연결 상태를 변경할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1056,12 +1056,12 @@
       "name": "/remote-control",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Make this session available for [Remote Control](https://code.claude.com/docs/docs/en/remote-control) from claude.ai. Running it while signed out prints that Remote Control requires a claude.ai subscription and tells you how to sign in; before v2.1.206 it reported `Unknown command: /remote-control`. Alias: `/rc`",
+      "description": "Make this session available for [Remote Control](https://code.claude.com/docs/docs/en/remote-control) from claude.ai. Running it while signed out prints that Remote Control requires a claude.ai subscription and tells you how to sign in. Alias: `/rc`",
       "descriptionKo": "이 세션을 claude.ai에서 [원격 제어](https://code.claude.com/docs/en/remote-control)할 수 있도록 설정하세요. 별칭: `/rc`",
       "aliases": [
         "/rc"
       ],
-      "searchText": "Make this session available for Remote Control from claude.ai. Running it while signed out prints that Remote Control requires a claude.ai subscription and tells you how to sign in; before v2.1.206 it reported Unknown command: /remote-control. Alias: /rc 이 세션을 claude.ai에서 원격 제어할 수 있도록 설정하세요. 별칭: /rc",
+      "searchText": "Make this session available for Remote Control from claude.ai. Running it while signed out prints that Remote Control requires a claude.ai subscription and tells you how to sign in. Alias: /rc 이 세션을 claude.ai에서 원격 제어할 수 있도록 설정하세요. 별칭: /rc",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1084,10 +1084,10 @@
       "name": "/rename",
       "args": "[name]",
       "hasRequiredArg": false,
-      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows `That name is empty once invisible characters are removed. Usage: /rename <name>`. The character replacement and length cap require Claude Code v2.1.221 or later",
+      "description": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (`-p`). From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows `That name is empty once invisible characters are removed. Usage: /rename <name>`. The character replacement and length cap require Claude Code v2.1.221 or later",
       "descriptionKo": "현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "aliases": [],
-      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p); requires Claude Code v2.1.205 or later. From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows That name is empty once invisible characters are removed. Usage: /rename <name. The character replacement and length cap require Claude Code v2.1.221 or later 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
+      "searchText": "Rename the current session and show the name on the prompt bar. Without a name, auto-generates one from conversation history. Also available in non-interactive mode (-p). From every rename surface, including claude.ai and the desktop app, Claude Code replaces control and invisible characters in the new name with spaces and caps the name at 200 characters. If the name is empty once invisible characters are removed, Claude Code rejects it and shows That name is empty once invisible characters are removed. Usage: /rename <name. The character replacement and length cap require Claude Code v2.1.221 or later 현재 세션의 이름을 변경하고 프롬프트 표시줄에 해당 이름을 표시합니다. 이름이 지정되지 않은 경우, 대화 내역을 바탕으로 이름을 자동으로 생성합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []

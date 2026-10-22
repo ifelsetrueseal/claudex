@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-19T02:14:08.984Z",
+  "fetchedAt": "2026-10-22T02:17:48.969Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -90,10 +90,10 @@
       "name": "/auto-mode-setup",
       "args": "",
       "hasRequiredArg": false,
-      "description": "[Draft `autoMode.environment` entries](https://code.claude.com/docs/docs/en/auto-mode-config#generate-environment-entries) from your project and recent sessions, then review the draft and save it to your user settings. Requires a Pro, Max, or Team plan and Claude Code v2.1.228 or later. On native Windows, requires v2.1.233 or later",
+      "description": "[Draft `autoMode.environment` entries](https://code.claude.com/docs/docs/en/auto-mode-config#generate-environment-entries) from your project and recent sessions, then review the draft and save it to your user settings. On a Pro, Max, or Team plan, requires Claude Code v2.1.228 or later, or v2.1.233 or later on native Windows. On an Enterprise plan or with a Claude Console API key, requires v2.1.283 or later. If the command is missing, see [`/auto-mode-setup` returns \"Unknown command\"](https://code.claude.com/docs/docs/en/auto-mode-config#auto-mode-setup-returns-unknown-command)",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Draft autoMode.environment entries from your project and recent sessions, then review the draft and save it to your user settings. Requires a Pro, Max, or Team plan and Claude Code v2.1.228 or later. On native Windows, requires v2.1.233 or later",
+      "searchText": "Draft autoMode.environment entries from your project and recent sessions, then review the draft and save it to your user settings. On a Pro, Max, or Team plan, requires Claude Code v2.1.228 or later, or v2.1.233 or later on native Windows. On an Enterprise plan or with a Claude Console API key, requires v2.1.283 or later. If the command is missing, see /auto-mode-setup returns \"Unknown command\"",
       "firstSeen": "2026-08-24",
       "minVersion": "",
       "resources": []
@@ -170,10 +170,10 @@
       "name": "/btw",
       "args": "[question]",
       "hasRequiredArg": false,
-      "description": "Ask a [side question](https://code.claude.com/docs/docs/en/interactive-mode#side-questions-with-%2Fbtw) about the current session without adding to the conversation. If you run `/btw` without a question, Claude Code shows your most recent side question so you can browse earlier answers; if you haven't asked one yet, Claude Code prints a usage line. Before v2.1.212, `/btw` required a question",
+      "description": "Ask a [side question](https://code.claude.com/docs/docs/en/interactive-mode#side-questions-with-%2Fbtw) about the current session without adding to the conversation. If you run `/btw` without a question, Claude Code shows your most recent side question so you can browse earlier answers; if you haven't asked one yet, Claude Code prints a usage line",
       "descriptionKo": "대화에 내용을 추가하지 않고 간단한 [부수적인 질문](https://code.claude.com/docs/en/interactive-mode#side-questions-with-%2Fbtw)을 해보세요",
       "aliases": [],
-      "searchText": "Ask a side question about the current session without adding to the conversation. If you run /btw without a question, Claude Code shows your most recent side question so you can browse earlier answers; if you haven't asked one yet, Claude Code prints a usage line. Before v2.1.212, /btw required a question 대화에 내용을 추가하지 않고 간단한 부수적인 질문을 해보세요",
+      "searchText": "Ask a side question about the current session without adding to the conversation. If you run /btw without a question, Claude Code shows your most recent side question so you can browse earlier answers; if you haven't asked one yet, Claude Code prints a usage line 대화에 내용을 추가하지 않고 간단한 부수적인 질문을 해보세요",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -223,7 +223,7 @@
     {
       "type": "skill",
       "name": "/claude-api",
-      "args": "[migrate|upgrade|managed-agents-onboard|prompt-audit|cost-optimize|build-eval|hillclimb|preserved-thinking-migration]",
+      "args": "[migrate|upgrade|api-version|managed-agents-onboard|managed-agents-secure|prompt-audit|cost-optimize|build-eval|hillclimb|preserved-thinking-migration]",
       "hasRequiredArg": false,
       "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Load [Claude API](https://platform.claude.com/docs/en/api/overview) and [Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview) reference material for your project's language. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. For what each subcommand does and the version it requires, see [Work on Claude API projects](https://code.claude.com/docs/docs/en/skills#work-on-claude-api-projects)",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C#, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 `anthropic` 또는 `@anthropic-ai/sdk`를 임포트하면 자동으로 활성화됩니다. `/claude-api migrate`를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. `/claude-api managed-agents-onboard`를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
@@ -426,10 +426,10 @@
       "name": "/design-login",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Authorize design-system access for `/design-sync` with your claude.ai account",
+      "description": "Authorize design-system access for `/design-sync` with your claude.ai account. Sign in with `/design-login` whenever `/design-sync` or `/design consent` tells you to. This sign-in is for the standalone Claude Design site at claude.ai/design, which closes by December 14, 2026; see [Migrate from standalone Claude Design to Claude](https://support.claude.com/en/articles/17440474-migrate-from-standalone-claude-design-to-claude)",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Authorize design-system access for /design-sync with your claude.ai account",
+      "searchText": "Authorize design-system access for /design-sync with your claude.ai account. Sign in with /design-login whenever /design-sync or /design consent tells you to. This sign-in is for the standalone Claude Design site at claude.ai/design, which closes by December 14, 2026; see Migrate from standalone Claude Design to Claude",
       "firstSeen": "2026-07-02",
       "minVersion": "",
       "resources": []
@@ -439,10 +439,10 @@
       "name": "/design-sync",
       "args": "[hint]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Convert your repo's React design system and upload it to [Claude Design](https://claude.ai/design), so designs it produces use your real components. Optionally name the design system, for example `/design-sync Acme DS`. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API. It needs claude.ai, which the CLI doesn't contact on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a [Claude apps gateway](https://code.claude.com/docs/docs/en/claude-apps-gateway#availability-and-limitations), so the command is unavailable there",
+      "description": "**[Skill](https://code.claude.com/docs/docs/en/skills#bundled-skills).** Convert your repo's React design system and upload it to [Claude Design](https://claude.ai/design), so designs it produces use your real components. Optionally name the design system, for example `/design-sync Acme DS`. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API. It needs claude.ai, which the CLI doesn't contact on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a [Claude apps gateway](https://code.claude.com/docs/docs/en/claude-apps-gateway#availability-and-limitations). The command is unavailable there. This command uploads to the standalone claude.ai/design site, which closes by December 14, 2026; see [Migrate from standalone Claude Design to Claude](https://support.claude.com/en/articles/17440474-migrate-from-standalone-claude-design-to-claude)",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Skill. Convert your repo's React design system and upload it to Claude Design, so designs it produces use your real components. Optionally name the design system, for example /design-sync Acme DS. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API. It needs claude.ai, which the CLI doesn't contact on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a Claude apps gateway, so the command is unavailable there",
+      "searchText": "Skill. Convert your repo's React design system and upload it to Claude Design, so designs it produces use your real components. Optionally name the design system, for example /design-sync Acme DS. A first-time sync verifies every component and can take a few hours on a large repo. Available on the Anthropic API. It needs claude.ai, which the CLI doesn't contact on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a Claude apps gateway. The command is unavailable there. This command uploads to the standalone claude.ai/design site, which closes by December 14, 2026; see Migrate from standalone Claude Design to Claude",
       "firstSeen": "2026-07-02",
       "minVersion": "",
       "resources": []
@@ -588,10 +588,10 @@
       "name": "/fork",
       "args": "[prompt]",
       "hasRequiredArg": false,
-      "description": "[Copy the current conversation](https://code.claude.com/docs/docs/en/agent-view#copy-the-session-with-%2Ffork) into a new background session and keep working here. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy [edits in place](https://code.claude.com/docs/docs/en/agent-view#how-file-edits-are-isolated), Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use `/subtask`; to switch into a copy yourself, use `/branch`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/fork` starts a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation) instead",
+      "description": "[Copy the current conversation](https://code.claude.com/docs/docs/en/agent-view#copy-the-session-with-%2Ffork) into a new background session and keep working here. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy [edits in place](https://code.claude.com/docs/docs/en/agent-view#how-file-edits-are-isolated), Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use `/subtask`; to switch into a copy yourself, use `/branch`. When [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/fork` starts a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation) instead",
       "descriptionKo": "[포크된 서브에이전트](https://code.claude.com/docs/en/sub-agents#fork-the-current-conversation)를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 `/branch`를 사용하세요. v2.1.161 이전 버전에서는 `/fork`가 `/branch`의 별칭입니다.",
       "aliases": [],
-      "searchText": "Copy the current conversation into a new background session and keep working here. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy edits in place, Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use /subtask; to switch into a copy yourself, use /branch. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211, and whenever agent view is turned off, /fork starts a forked subagent instead 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
+      "searchText": "Copy the current conversation into a new background session and keep working here. Pass a prompt and the copy starts working on it immediately; without one it waits in agent view for its first prompt. Except when the copy edits in place, Claude Code instructs it to create a worktree of its own before making code changes; the isolation instruction requires Claude Code v2.1.221 or later. To hand a side task to a subagent whose result comes back into this conversation, use /subtask; to switch into a copy yourself, use /branch. When agent view is turned off, /fork starts a forked subagent instead 포크된 서브에이전트를 생성합니다: 전체 대화를 상속받아, 사용자가 대화를 계속 진행하는 동안 지시어를 처리하는 백그라운드 서브에이전트입니다. 처리가 완료되면 그 결과가 사용자의 대화로 반환됩니다. 대화의 복사본으로 직접 전환하려면 /branch를 사용하세요. v2.1.161 이전 버전에서는 /fork가 /branch의 별칭입니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -666,10 +666,10 @@
       "name": "/import",
       "args": "[codex|gemini|cursor] [--dry-run] [--yes]",
       "hasRequiredArg": false,
-      "description": "Bring configuration from OpenAI Codex, Google Gemini CLI, or Cursor on your machine into Claude Code, including instruction files, MCP servers, commands, subagents, and skills. In [non-interactive mode](https://code.claude.com/docs/docs/en/headless) with `-p`, `/import` lists what it found and gives you the command that confirms the import. Add `--dry-run` to preview without writing anything, or `--yes` to skip the interactive picker. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a [Claude apps gateway](https://code.claude.com/docs/docs/en/claude-apps-gateway#availability-and-limitations). Also unavailable when you turn off [feature-flag fetching](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching). Requires Claude Code v2.1.213 or later. Importing from Cursor requires v2.1.265 or later",
+      "description": "Bring configuration from OpenAI Codex, Google Gemini CLI, or Cursor on your machine into Claude Code, including instruction files, MCP servers, commands, subagents, and skills. In [non-interactive mode](https://code.claude.com/docs/docs/en/headless) with `-p`, `/import` lists what it found and gives you the command that confirms the import. Add `--dry-run` to preview without writing anything, or `--yes` to skip the interactive picker. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a [Claude apps gateway](https://code.claude.com/docs/docs/en/claude-apps-gateway#availability-and-limitations). Also unavailable when you turn off [feature-flag fetching](https://code.claude.com/docs/docs/en/env-vars#features-that-need-feature-flag-fetching). Importing from Cursor requires v2.1.265 or later",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Bring configuration from OpenAI Codex, Google Gemini CLI, or Cursor on your machine into Claude Code, including instruction files, MCP servers, commands, subagents, and skills. In non-interactive mode with -p, /import lists what it found and gives you the command that confirms the import. Add --dry-run to preview without writing anything, or --yes to skip the interactive picker. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a Claude apps gateway. Also unavailable when you turn off feature-flag fetching. Requires Claude Code v2.1.213 or later. Importing from Cursor requires v2.1.265 or later",
+      "searchText": "Bring configuration from OpenAI Codex, Google Gemini CLI, or Cursor on your machine into Claude Code, including instruction files, MCP servers, commands, subagents, and skills. In non-interactive mode with -p, /import lists what it found and gives you the command that confirms the import. Add --dry-run to preview without writing anything, or --yes to skip the interactive picker. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS, or through a Claude apps gateway. Also unavailable when you turn off feature-flag fetching. Importing from Cursor requires v2.1.265 or later",
       "firstSeen": "2026-08-10",
       "minVersion": "",
       "resources": []
@@ -1180,12 +1180,12 @@
       "name": "/schedule",
       "args": "[description]",
       "hasRequiredArg": false,
-      "description": "Create, update, list, or run [routines](https://code.claude.com/docs/docs/en/routines), which execute in the cloud. Claude walks you through the setup conversationally. You can also ask about a [routine's recent runs](https://code.claude.com/docs/docs/en/routines#manage-routines-from-the-cli). Alias: `/routines`",
+      "description": "Create, update, list, or run [cloud scheduled tasks](https://code.claude.com/docs/docs/en/routines), formerly routines. Claude walks you through the setup conversationally. You can also ask about a [scheduled task's recent runs](https://code.claude.com/docs/docs/en/routines#manage-scheduled-tasks-from-the-cli). Alias: `/routines`",
       "descriptionKo": "Anthropic에서 관리하는 클라우드 인프라에서 실행되는 [루틴](https://code.claude.com/docs/en/routines)을 생성, 업데이트, 열람하거나 실행할 수 있습니다. Claude가 대화 형식으로 설정 과정을 안내해 드립니다. 별칭: `/routines`",
       "aliases": [
         "/routines"
       ],
-      "searchText": "Create, update, list, or run routines, which execute in the cloud. Claude walks you through the setup conversationally. You can also ask about a routine's recent runs. Alias: /routines Anthropic에서 관리하는 클라우드 인프라에서 실행되는 루틴을 생성, 업데이트, 열람하거나 실행할 수 있습니다. Claude가 대화 형식으로 설정 과정을 안내해 드립니다. 별칭: /routines",
+      "searchText": "Create, update, list, or run cloud scheduled tasks, formerly routines. Claude walks you through the setup conversationally. You can also ask about a scheduled task's recent runs. Alias: /routines Anthropic에서 관리하는 클라우드 인프라에서 실행되는 루틴을 생성, 업데이트, 열람하거나 실행할 수 있습니다. Claude가 대화 형식으로 설정 과정을 안내해 드립니다. 별칭: /routines",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1364,10 +1364,10 @@
       "name": "/subtask",
       "args": "<task>",
       "hasRequiredArg": true,
-      "description": "Spawn a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation): a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use `/fork`. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 this command is `/fork`. When [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/subtask` isn't available and `/fork` keeps the forked-subagent behavior",
+      "description": "Spawn a [forked subagent](https://code.claude.com/docs/docs/en/sub-agents#fork-the-current-conversation): a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use `/fork`. When [agent view is turned off](https://code.claude.com/docs/docs/en/agent-view#turn-off-agent-view), `/subtask` isn't available and `/fork` spawns the forked subagent instead",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use /fork. Requires Claude Code v2.1.212 or later; on v2.1.161 through v2.1.211 this command is /fork. When agent view is turned off, /subtask isn't available and /fork keeps the forked-subagent behavior",
+      "searchText": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use /fork. When agent view is turned off, /subtask isn't available and /fork spawns the forked subagent instead",
       "firstSeen": "2026-07-20",
       "minVersion": "",
       "resources": []
@@ -1390,10 +1390,10 @@
       "name": "/team-onboarding",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days and produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Pro, Max, Team, and Enterprise plans, also returns a share link teammates can open directly in Claude Code",
+      "description": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days. It produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Team and Enterprise plans, also returns a share link teammates can open directly in Claude Code",
       "descriptionKo": "Claude Code 사용 내역을 바탕으로 팀원 온보딩 가이드를 생성하세요. Claude는 지난 30일간의 세션, 명령어 및 MCP 서버 사용 내역을 분석하여, 팀원이 첫 메시지로 붙여넣기만 하면 빠르게 설정을 완료할 수 있는 마크다운 가이드를 생성합니다. Pro, Max, Team 및 Enterprise 요금제를 이용하는 claude.ai 구독자의 경우, 팀원이 Claude Code에서 직접 열 수 있는 공유 링크도 함께 제공됩니다.",
       "aliases": [],
-      "searchText": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days and produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Pro, Max, Team, and Enterprise plans, also returns a share link teammates can open directly in Claude Code Claude Code 사용 내역을 바탕으로 팀원 온보딩 가이드를 생성하세요. Claude는 지난 30일간의 세션, 명령어 및 MCP 서버 사용 내역을 분석하여, 팀원이 첫 메시지로 붙여넣기만 하면 빠르게 설정을 완료할 수 있는 마크다운 가이드를 생성합니다. Pro, Max, Team 및 Enterprise 요금제를 이용하는 claude.ai 구독자의 경우, 팀원이 Claude Code에서 직접 열 수 있는 공유 링크도 함께 제공됩니다.",
+      "searchText": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days. It produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Team and Enterprise plans, also returns a share link teammates can open directly in Claude Code Claude Code 사용 내역을 바탕으로 팀원 온보딩 가이드를 생성하세요. Claude는 지난 30일간의 세션, 명령어 및 MCP 서버 사용 내역을 분석하여, 팀원이 첫 메시지로 붙여넣기만 하면 빠르게 설정을 완료할 수 있는 마크다운 가이드를 생성합니다. Pro, Max, Team 및 Enterprise 요금제를 이용하는 claude.ai 구독자의 경우, 팀원이 Claude Code에서 직접 열 수 있는 공유 링크도 함께 제공됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1503,7 +1503,7 @@
       "resources": []
     },
     {
-      "type": "command",
+      "type": "skill",
       "name": "/usage",
       "args": "",
       "hasRequiredArg": false,

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-26T02:08:57.770Z",
+  "fetchedAt": "2026-10-29T03:18:45.549Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -77,10 +77,10 @@
       "name": "/artifacts",
       "args": "",
       "hasRequiredArg": false,
-      "description": "List the [artifacts](https://code.claude.com/docs/en/artifacts.md#find-an-artifact-again) you own or that are shared with you, then attach one to the session, open it in your browser, or copy its link. Available where [artifacts](https://code.claude.com/docs/en/artifacts.md#availability) are. Requires Claude Code v2.1.208 or later; attaching with `Enter` requires v2.1.216",
+      "description": "List the [artifacts](https://code.claude.com/docs/en/artifacts.md#find-an-artifact-again) you own or that are shared with you, then attach one to the session, open it in your browser, or copy its link. Available where [artifacts](https://code.claude.com/docs/en/artifacts.md#availability) are",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "List the artifacts you own or that are shared with you, then attach one to the session, open it in your browser, or copy its link. Available where artifacts are. Requires Claude Code v2.1.208 or later; attaching with Enter requires v2.1.216",
+      "searchText": "List the artifacts you own or that are shared with you, then attach one to the session, open it in your browser, or copy its link. Available where artifacts are",
       "firstSeen": "2026-08-24",
       "minVersion": "",
       "resources": []
@@ -495,10 +495,10 @@
       "name": "/effort",
       "args": "[level|auto|status|ultracode [on|off]]",
       "hasRequiredArg": false,
-      "description": "Set the [effort level](https://code.claude.com/docs/en/model-config.md#adjust-effort-level): `low` to `xhigh`, `max`, or `auto`; `status` prints it. `ultracode` or `ultracode on` turns [ultracode](https://code.claude.com/docs/en/workflows.md#let-claude-decide-with-ultracode) on for the session at the current level, and `ultracode off` turns it off; the [`ultracode`](https://code.claude.com/docs/en/settings-reference#ultracode) key persists. `max` is session-only. The `on` and `off` arguments and keeping the current level require Claude Code v2.1.284 or later. Before v2.1.284, `/effort ultracode` set the session to `xhigh`, and `/effort ultracode off` failed with `Invalid argument`. Run it while Claude is responding and, once you confirm the [cache warning](https://code.claude.com/docs/en/prompt-caching.md#changing-effort-level), if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't [fetch feature flags](https://code.claude.com/docs/en/env-vars.md#features-that-need-feature-flag-fetching), such as on a [third-party provider](https://code.claude.com/docs/en/third-party-integrations.md). Works in `-p`",
+      "description": "Set the [effort level](https://code.claude.com/docs/en/model-config.md#adjust-effort-level): `low` to `xhigh`, `max`, or `auto`; `status` prints it. `ultracode` or `ultracode on` turns [ultracode](https://code.claude.com/docs/en/workflows.md#let-claude-decide-with-ultracode) on for the session, and `ultracode off` turns it off; the [`ultracode`](https://code.claude.com/docs/en/settings-reference#ultracode) key persists. `max` is session-only. The `on` and `off` arguments require Claude Code v2.1.284 or later. If you run `/effort` while Claude is working, see [when the new level starts](https://code.claude.com/docs/en/model-config.md#when-a-new-effort-level-starts). Works in `-p` on v2.1.205 or later",
       "descriptionKo": "모델의 [노력 수준](https://code.claude.com/docs/en/model-config#adjust-effort-level)을 설정합니다. `low`, `medium`, `high`, `xhigh`, `max` 또는 `ultracode`을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, `max` 및 `ultracode`은 세션 단위로만 적용됩니다. `ultracode`은 `xhigh` 추론과 자동 [워크플로우](https://code.claude.com/docs/en/workflows#let-claude-decide-with-ultracode) 조정을 결합한 Claude Code 설정입니다. `auto`은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, `Enter`를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "aliases": [],
-      "searchText": "Set the effort level: low to xhigh, max, or auto; status prints it. ultracode or ultracode on turns ultracode on for the session at the current level, and ultracode off turns it off; the ultracode key persists. max is session-only. The on and off arguments and keeping the current level require Claude Code v2.1.284 or later. Before v2.1.284, /effort ultracode set the session to xhigh, and /effort ultracode off failed with Invalid argument. Run it while Claude is responding and, once you confirm the cache warning, if Claude Code shows one, Claude Code applies the new level to the next request in that turn. Before v2.1.242, Claude Code decided from a feature flag it fetched from Anthropic whether to run the command mid-turn or queue it until the turn finished, and always queued it in a session that doesn't fetch feature flags, such as on a third-party provider. Works in -p 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
+      "searchText": "Set the effort level: low to xhigh, max, or auto; status prints it. ultracode or ultracode on turns ultracode on for the session, and ultracode off turns it off; the ultracode key persists. max is session-only. The on and off arguments require Claude Code v2.1.284 or later. If you run /effort while Claude is working, see when the new level starts. Works in -p on v2.1.205 or later 모델의 노력 수준을 설정합니다. low, medium, high, xhigh, max 또는 ultracode을 사용할 수 있습니다. 사용 가능한 수준은 모델에 따라 다르며, max 및 ultracode은 세션 단위로만 적용됩니다. ultracode은 xhigh 추론과 자동 워크플로우 조정을 결합한 Claude Code 설정입니다. auto은 모델의 기본값으로 재설정합니다. 인수를 지정하지 않으면 대화형 슬라이더가 열립니다. 왼쪽 및 오른쪽 화살표 키를 사용하여 수준을 선택하고, Enter를 입력하여 적용하세요. 현재 응답이 완료될 때까지 기다리지 않고 즉시 적용됩니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []

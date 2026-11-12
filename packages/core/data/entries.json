@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-05T04:02:56.877Z",
+  "fetchedAt": "2026-11-12T04:44:52.009Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -223,7 +223,7 @@
     {
       "type": "skill",
       "name": "/claude-api",
-      "args": "[migrate|upgrade|api-version|managed-agents-onboard|managed-agents-secure|prompt-audit|cost-optimize|build-eval|hillclimb|preserved-thinking-migration]",
+      "args": "[migrate|upgrade|api-version|managed-agents-onboard|managed-agents-secure|prompt-audit|cost-optimize|latency-optimize|build-eval|hillclimb|preserved-thinking-migration]",
       "hasRequiredArg": false,
       "description": "**[Skill](https://code.claude.com/docs/en/skills.md#bundled-skills).** Load [Claude API](https://platform.claude.com/docs/en/api/overview) and [Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview) reference material for your project's language. Also activates automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. For what each subcommand does and the version it requires, see [Work on Claude API projects](https://code.claude.com/docs/en/skills.md#work-on-claude-api-projects)",
       "descriptionKo": "**[Skill](https://code.claude.com/docs/en/skills#bundled-skills).** 프로젝트에서 사용하는 언어(Python, TypeScript, Java, Go, Ruby, C#, PHP 또는 cURL)에 맞는 Claude API 참조 자료와 관리형 에이전트(Managed Agents) 참조 자료를 불러옵니다. 도구 사용법, 스트리밍, 일괄 처리, 구조화된 출력 및 흔한 실수 등을 다룹니다. 또한 코드에서 `anthropic` 또는 `@anthropic-ai/sdk`를 임포트하면 자동으로 활성화됩니다. `/claude-api migrate`를 실행하여 기존 Claude API 코드를 최신 모델로 업그레이드하세요. Claude가 스캔할 파일과 적용할 모델을 묻고, 버전 간에 변경된 모델 ID, 사고 구성 및 기타 매개변수를 업데이트합니다. `/claude-api managed-agents-onboard`를 실행하면 처음부터 새로운 관리형 에이전트를 생성하는 대화형 안내를 확인할 수 있습니다.",
@@ -744,10 +744,10 @@
       "name": "/list-agents",
       "args": "",
       "hasRequiredArg": false,
-      "description": "List the subagents, [agent team](https://code.claude.com/docs/en/agent-teams.md) teammates, and other Claude Code sessions Claude can message, with the name to use for each. See [cross-session messaging](https://code.claude.com/docs/en/cross-session-messaging.md). Also available as `/peers`. Requires Claude Code v2.1.224 or later; earlier versions report `Unknown command: /list-agents`. Teammate rows and the first line showing this session's own name require v2.1.239 or later. Available only in sessions where [cross-session messaging is enabled](https://code.claude.com/docs/en/cross-session-messaging.md#availability)",
+      "description": "List the subagents, [agent team](https://code.claude.com/docs/en/agent-teams.md) teammates, and other Claude Code sessions Claude can message, with the name to use for each. See [cross-session messaging](https://code.claude.com/docs/en/cross-session-messaging.md). Also available as `/peers`. Teammate rows and the first line showing this session's own name require v2.1.239 or later. Available only in sessions where [cross-session messaging is enabled](https://code.claude.com/docs/en/cross-session-messaging.md#availability)",
       "descriptionKo": "",
       "aliases": [],
-      "searchText": "List the subagents, agent team teammates, and other Claude Code sessions Claude can message, with the name to use for each. See cross-session messaging. Also available as /peers. Requires Claude Code v2.1.224 or later; earlier versions report Unknown command: /list-agents. Teammate rows and the first line showing this session's own name require v2.1.239 or later. Available only in sessions where cross-session messaging is enabled",
+      "searchText": "List the subagents, agent team teammates, and other Claude Code sessions Claude can message, with the name to use for each. See cross-session messaging. Also available as /peers. Teammate rows and the first line showing this session's own name require v2.1.239 or later. Available only in sessions where cross-session messaging is enabled",
       "firstSeen": "2026-08-10",
       "minVersion": "",
       "resources": []
@@ -1127,10 +1127,10 @@
       "name": "/review",
       "args": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--max-findings n|all|default] [pr#|branch|path]",
       "hasRequiredArg": false,
-      "description": "Alias of [`/code-review`](https://code.claude.com/docs/en/code-review-local): reviews the current diff, or a PR number, branch, or path you pass, such as `/review 1234`, and takes the same effort levels and flags. With no level given, the review reuses the last `low` through `max` level you typed; see [Review locally with `/code-review`](https://code.claude.com/docs/en/code-review-local) for the exact rules. For a deep cloud review, use [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview). Before v2.1.223, `/review` was a separate command that ran a single-pass, read-only review of a GitHub pull request by number, listing open PRs to pick from when run with no argument; from v2.1.186 through v2.1.201, it ran the same multi-agent engine as `/code-review medium`",
+      "description": "Alias of [`/code-review`](https://code.claude.com/docs/en/code-review-local): reviews the current diff, or a PR number, branch, or path you pass, such as `/review 1234`, and takes the same effort levels and flags. With no level given, the review reuses the last `low` through `max` level you typed; see [Review locally with `/code-review`](https://code.claude.com/docs/en/code-review-local) for the exact rules. For a deep cloud review, use [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview)",
       "descriptionKo": "현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 [`/code-review ultra`](https://code.claude.com/docs/en/ultrareview)을 참조하세요.",
       "aliases": [],
-      "searchText": "Alias of /code-review: reviews the current diff, or a PR number, branch, or path you pass, such as /review 1234, and takes the same effort levels and flags. With no level given, the review reuses the last low through max level you typed; see Review locally with /code-review for the exact rules. For a deep cloud review, use /code-review ultra. Before v2.1.223, /review was a separate command that ran a single-pass, read-only review of a GitHub pull request by number, listing open PRs to pick from when run with no argument; from v2.1.186 through v2.1.201, it ran the same multi-agent engine as /code-review medium 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
+      "searchText": "Alias of /code-review: reviews the current diff, or a PR number, branch, or path you pass, such as /review 1234, and takes the same effort levels and flags. With no level given, the review reuses the last low through max level you typed; see Review locally with /code-review for the exact rules. For a deep cloud review, use /code-review ultra 현재 세션에서 로컬로 풀 리퀘스트를 검토하세요. 클라우드 기반의 심층적인 검토에 대해서는 /code-review ultra을 참조하세요.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1522,10 +1522,10 @@
       "name": "/usage",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Ultra, Team, or Enterprise plan, includes a [breakdown of what counts against your plan limits](https://code.claude.com/docs/en/costs.md#plan-usage-breakdown). `/cost` and `/stats` are aliases",
+      "description": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Ultra, Team, or Enterprise plan, includes a [breakdown of what counts against your plan limits](https://code.claude.com/docs/en/costs.md#plan-usage-breakdown). Behind a Claude apps gateway that tracks spend, shows [your spend through the gateway](https://code.claude.com/docs/en/claude-apps-gateway-spend-limits.md#usage-warnings-in-claude-code). `/cost` and `/stats` are aliases",
       "descriptionKo": "세션 비용, 요금제 사용 한도 및 활동 통계를 표시합니다. Pro, Max, Team 또는 Enterprise 요금제를 사용하는 경우, 스킬, 서브에이전트, 플러그인 및 MCP 서버별 사용 내역이 포함됩니다. 자세한 내용은 [비용 추적 가이드](https://code.claude.com/docs/en/costs#using-the-%2Fusage-command)를 참조하세요. `/cost` 및 `/stats`는 별칭입니다.",
       "aliases": [],
-      "searchText": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Ultra, Team, or Enterprise plan, includes a breakdown of what counts against your plan limits. /cost and /stats are aliases 세션 비용, 요금제 사용 한도 및 활동 통계를 표시합니다. Pro, Max, Team 또는 Enterprise 요금제를 사용하는 경우, 스킬, 서브에이전트, 플러그인 및 MCP 서버별 사용 내역이 포함됩니다. 자세한 내용은 비용 추적 가이드를 참조하세요. /cost 및 /stats는 별칭입니다.",
+      "searchText": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Ultra, Team, or Enterprise plan, includes a breakdown of what counts against your plan limits. Behind a Claude apps gateway that tracks spend, shows your spend through the gateway. /cost and /stats are aliases 세션 비용, 요금제 사용 한도 및 활동 통계를 표시합니다. Pro, Max, Team 또는 Enterprise 요금제를 사용하는 경우, 스킬, 서브에이전트, 플러그인 및 MCP 서버별 사용 내역이 포함됩니다. 자세한 내용은 비용 추적 가이드를 참조하세요. /cost 및 /stats는 별칭입니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []

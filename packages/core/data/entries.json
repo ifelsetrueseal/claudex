@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-12T04:44:52.009Z",
+  "fetchedAt": "2026-11-19T04:53:59.385Z",
   "baselineAt": "2026-06-20",
   "sources": [
     "https://code.claude.com/docs/en/commands.md",
@@ -12,10 +12,10 @@
       "name": "/add-dir",
       "args": "<path>",
       "hasRequiredArg": true,
-      "description": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press `Tab` to accept one. Most `.claude/` configuration [isn't discovered](https://code.claude.com/docs/en/permissions.md#additional-directories-grant-file-access-not-configuration) from the added directory. You can't add most [network paths](https://code.claude.com/docs/en/errors.md#working-directory-is-a-network-path), such as `\\\\server\\share`. After a successful add, your [`DirectoryAdded` hooks](https://code.claude.com/docs/en/hooks#directoryadded) run. When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished",
+      "description": "Add a working directory for file access. Type a partial path to see matching directory suggestions; press `Tab` to accept one. Most `.claude/` configuration [isn't discovered](https://code.claude.com/docs/en/permissions.md#additional-directories-grant-file-access-not-configuration) from the added directory. You can't add most [network paths](https://code.claude.com/docs/en/errors.md#working-directory-is-a-network-path), such as `\\\\server\\share`. After a successful add, your [`DirectoryAdded` hooks](https://code.claude.com/docs/en/hooks#directoryadded) run. If you run `/add-dir` while Claude is responding, Claude's next tool call can access the directory once you confirm the add",
       "descriptionKo": "현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 `.claude/` 구성 정보는 추가된 디렉터리에서 [탐지되지 않습니다](https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration). 나중에 `--continue` 또는 `--resume`을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "aliases": [],
-      "searchText": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration isn't discovered from the added directory. You can't add most network paths, such as \\\\server\\share. After a successful add, your DirectoryAdded hooks run. When you run it while Claude is responding, Claude Code asks you to confirm the directory right away, and once you confirm, Claude's next tool call in the same turn can access it. Before v2.1.234, Claude Code queued the command until the turn finished 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
+      "searchText": "Add a working directory for file access. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration isn't discovered from the added directory. You can't add most network paths, such as \\\\server\\share. After a successful add, your DirectoryAdded hooks run. If you run /add-dir while Claude is responding, Claude's next tool call can access the directory once you confirm the add 현재 세션 동안 파일 액세스를 위한 작업 디렉터리를 추가합니다. 대부분의 .claude/ 구성 정보는 추가된 디렉터리에서 탐지되지 않습니다. 나중에 --continue 또는 --resume을 사용하여 추가된 디렉터리에서 세션을 재개할 수 있습니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -320,12 +320,12 @@
       "name": "/config",
       "args": "[key=value ...]",
       "hasRequiredArg": false,
-      "description": "Open the [Settings](https://code.claude.com/docs/en/settings.md) interface to adjust theme, model, [output style](https://code.claude.com/docs/en/output-styles.md), and other preferences. Pass one or more `key=value` pairs to set a setting directly without opening the interface, for example `/config thinking=false`, `/config theme=dark`, or `/config model=sonnet`. The `key=value` form also works in non-interactive mode (`-p`) and from the Claude mobile app via [Remote Control](https://code.claude.com/docs/en/remote-control.md). The `key=value` form can't turn on a setting that needs your confirmation in the panel, such as [`autoContinueAtUsageLimit`](https://code.claude.com/docs/en/interactive-mode#turn-automatic-continue-off), though it can turn one off. Run `/config --help` to list the keys it accepts. Alias: `/settings`",
+      "description": "Open the [Settings](https://code.claude.com/docs/en/settings.md) interface to adjust preferences. Pass `key=value` pairs to set a setting directly, for example `/config verbose=true`, `/config theme=dark`, or `/config model=sonnet`. That form also works in non-interactive mode (`-p`) and from the Claude mobile app via [Remote Control](https://code.claude.com/docs/en/remote-control.md). It can't turn on a setting that needs your confirmation in the panel, such as [`autoContinueAtUsageLimit`](https://code.claude.com/docs/en/interactive-mode#turn-automatic-continue-off). Run `/config --help` to list the keys it accepts. Alias: `/settings`",
       "descriptionKo": "[설정](https://code.claude.com/docs/en/settings) 인터페이스를 열어 테마, 모델, [출력 스타일](https://code.claude.com/docs/en/output-styles) 및 기타 기본 설정을 조정할 수 있습니다. v2.1.181부터는 하나 이상의 `key=value` 쌍을 전달하여 인터페이스를 열지 않고도 설정을 직접 지정할 수 있습니다(예: `/config thinking=false`). v2.1.182부터는 `/config theme=dark` 또는 `/config model=sonnet`와 같은 명명된 약어 키도 지원됩니다. `key=value` 형식은 비대화형 모드(`-p`) 및 [원격 제어](https://code.claude.com/docs/en/remote-control)에서도 작동합니다. `/config --help`를 실행하면 설정 가능한 모든 키와 해당 옵션을 확인할 수 있습니다. 별칭: `/settings`",
       "aliases": [
         "/settings"
       ],
-      "searchText": "Open the Settings interface to adjust theme, model, output style, and other preferences. Pass one or more key=value pairs to set a setting directly without opening the interface, for example /config thinking=false, /config theme=dark, or /config model=sonnet. The key=value form also works in non-interactive mode (-p) and from the Claude mobile app via Remote Control. The key=value form can't turn on a setting that needs your confirmation in the panel, such as autoContinueAtUsageLimit, though it can turn one off. Run /config --help to list the keys it accepts. Alias: /settings 설정 인터페이스를 열어 테마, 모델, 출력 스타일 및 기타 기본 설정을 조정할 수 있습니다. v2.1.181부터는 하나 이상의 key=value 쌍을 전달하여 인터페이스를 열지 않고도 설정을 직접 지정할 수 있습니다(예: /config thinking=false). v2.1.182부터는 /config theme=dark 또는 /config model=sonnet와 같은 명명된 약어 키도 지원됩니다. key=value 형식은 비대화형 모드(-p) 및 원격 제어에서도 작동합니다. /config --help를 실행하면 설정 가능한 모든 키와 해당 옵션을 확인할 수 있습니다. 별칭: /settings",
+      "searchText": "Open the Settings interface to adjust preferences. Pass key=value pairs to set a setting directly, for example /config verbose=true, /config theme=dark, or /config model=sonnet. That form also works in non-interactive mode (-p) and from the Claude mobile app via Remote Control. It can't turn on a setting that needs your confirmation in the panel, such as autoContinueAtUsageLimit. Run /config --help to list the keys it accepts. Alias: /settings 설정 인터페이스를 열어 테마, 모델, 출력 스타일 및 기타 기본 설정을 조정할 수 있습니다. v2.1.181부터는 하나 이상의 key=value 쌍을 전달하여 인터페이스를 열지 않고도 설정을 직접 지정할 수 있습니다(예: /config thinking=false). v2.1.182부터는 /config theme=dark 또는 /config model=sonnet와 같은 명명된 약어 키도 지원됩니다. key=value 형식은 비대화형 모드(-p) 및 원격 제어에서도 작동합니다. /config --help를 실행하면 설정 가능한 모든 키와 해당 옵션을 확인할 수 있습니다. 별칭: /settings",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -879,12 +879,12 @@
       "name": "/permissions",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review [recent auto mode denials](https://code.claude.com/docs/en/auto-mode-config.md#review-denials). You can also view and edit [auto mode classifier rules](https://code.claude.com/docs/en/auto-mode-config.md#edit-rules-from-permissions) from the dialog's **Auto mode** tab. Alias: `/allowed-tools`",
+      "description": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review [recent auto mode denials](https://code.claude.com/docs/en/auto-mode-config.md#review-denials). You can also view and edit [auto mode classifier rules](https://code.claude.com/docs/en/auto-mode-config.md#edit-rules-from-permissions) from the dialog's **Auto mode** tab. In the desktop app, edit your [settings files](https://code.claude.com/docs/en/auto-mode-config.md#where-the-classifier-reads-configuration) instead. Alias: `/allowed-tools`",
       "descriptionKo": "도구 권한에 대한 허용, 확인 요청 및 거부 규칙을 관리합니다. 대화형 대화 상자가 열리면 범위별로 규칙을 확인하고, 규칙을 추가하거나 제거하며, 작업 디렉터리를 관리하고, [최근 자동 모드 거부 내역](https://code.claude.com/docs/en/auto-mode-config#review-denials)을 검토할 수 있습니다. 별칭: `/allowed-tools`",
       "aliases": [
         "/allowed-tools"
       ],
-      "searchText": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review recent auto mode denials. You can also view and edit auto mode classifier rules from the dialog's Auto mode tab. Alias: /allowed-tools 도구 권한에 대한 허용, 확인 요청 및 거부 규칙을 관리합니다. 대화형 대화 상자가 열리면 범위별로 규칙을 확인하고, 규칙을 추가하거나 제거하며, 작업 디렉터리를 관리하고, 최근 자동 모드 거부 내역을 검토할 수 있습니다. 별칭: /allowed-tools",
+      "searchText": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review recent auto mode denials. You can also view and edit auto mode classifier rules from the dialog's Auto mode tab. In the desktop app, edit your settings files instead. Alias: /allowed-tools 도구 권한에 대한 허용, 확인 요청 및 거부 규칙을 관리합니다. 대화형 대화 상자가 열리면 범위별로 규칙을 확인하고, 규칙을 추가하거나 제거하며, 작업 디렉터리를 관리하고, 최근 자동 모드 거부 내역을 검토할 수 있습니다. 별칭: /allowed-tools",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1301,7 +1301,7 @@
       "name": "/slides",
       "args": "[brief]",
       "hasRequiredArg": false,
-      "description": "**[Skill](https://code.claude.com/docs/en/skills.md#bundled-skills).** Make a new presentation as a Claude Slides [artifact](https://code.claude.com/docs/en/artifacts.md#make-a-slide-deck) filled from your brief, for example `/slides a quarterly review of the platform team`. Requires Claude Code v2.1.265 or later, a session where [artifacts are available](https://code.claude.com/docs/en/artifacts.md#availability), and an account where the [Slides template is available](https://code.claude.com/docs/en/artifacts.md#start-from-a-slides-design-or-docs-template); otherwise the command doesn't appear. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
+      "description": "**[Skill](https://code.claude.com/docs/en/skills.md#bundled-skills).** Make a new presentation as a [Claude Slides](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them#h_11d5a9a5fa) artifact filled from your brief, for example `/slides a quarterly review of the platform team`. Requires Claude Code v2.1.265 or later, a session where [artifacts are available](https://code.claude.com/docs/en/artifacts.md#availability), and an account where the [Slides template is available](https://code.claude.com/docs/en/artifacts.md#start-from-a-slides-design-or-docs-template); otherwise the command doesn't appear. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
       "descriptionKo": "",
       "aliases": [],
       "searchText": "Skill. Make a new presentation as a Claude Slides artifact filled from your brief, for example /slides a quarterly review of the platform team. Requires Claude Code v2.1.265 or later, a session where artifacts are available, and an account where the Slides template is available; otherwise the command doesn't appear. Available on the Anthropic API. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and Claude Platform on AWS, artifacts aren't available, so the command is unavailable there",
@@ -1327,10 +1327,10 @@
       "name": "/status",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A `Session kind` row reads `background job · attached` or `background job · unattended` in a [background session](https://code.claude.com/docs/en/agent-view.md), depending on whether a terminal is attached, and `interactive` in any other session. Before v2.1.221, `/status` didn't show this row. Works while Claude is responding",
+      "description": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A `Session kind` row reads `background job · attached` or `background job · unattended` in a [background session](https://code.claude.com/docs/en/agent-view.md), depending on whether a terminal is attached, and `interactive` in any other session. Works while Claude is responding",
       "descriptionKo": "버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
       "aliases": [],
-      "searchText": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A Session kind row reads background job · attached or background job · unattended in a background session, depending on whether a terminal is attached, and interactive in any other session. Before v2.1.221, /status didn't show this row. Works while Claude is responding 버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
+      "searchText": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A Session kind row reads background job · attached or background job · unattended in a background session, depending on whether a terminal is attached, and interactive in any other session. Works while Claude is responding 버전, 모델, 계정 및 연결 상태를 보여주는 설정 화면(상태 탭)을 엽니다. 클로드가 응답하는 동안에도 현재 응답이 끝날 때까지 기다리지 않고 작동합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1353,10 +1353,10 @@
       "name": "/stickers",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Order Claude Code stickers",
+      "description": "Check Claude Code sticker availability",
       "descriptionKo": "클로드 코드 스티커 주문하기",
       "aliases": [],
-      "searchText": "Order Claude Code stickers 클로드 코드 스티커 주문하기",
+      "searchText": "Check Claude Code sticker availability 클로드 코드 스티커 주문하기",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1455,12 +1455,12 @@
     {
       "type": "command",
       "name": "/tui",
-      "args": "[default|fullscreen]",
+      "args": "[classic|fullscreen]",
       "hasRequiredArg": false,
-      "description": "Set the terminal UI renderer and relaunch into it with your conversation intact. `fullscreen` enables the [flicker-free alt-screen renderer](https://code.claude.com/docs/en/fullscreen.md). With no argument, prints the active renderer",
+      "description": "Set the terminal UI renderer and relaunch into it. `fullscreen` enables the [flicker-free alt-screen renderer](https://code.claude.com/docs/en/fullscreen.md). `default`, or `classic` on v2.1.327 or later, selects the classic renderer. With no argument, prints the active renderer",
       "descriptionKo": "터미널 UI 렌더러를 설정하고, 대화 내역을 그대로 유지한 채 해당 렌더러로 다시 실행합니다. ``fullscreen`` 명령어는 [깜빡임 없는 대체 화면 렌더러](https://code.claude.com/docs/en/fullscreen)를 활성화합니다. 인수를 지정하지 않으면 현재 활성화된 렌더러를 표시합니다.",
       "aliases": [],
-      "searchText": "Set the terminal UI renderer and relaunch into it with your conversation intact. fullscreen enables the flicker-free alt-screen renderer. With no argument, prints the active renderer 터미널 UI 렌더러를 설정하고, 대화 내역을 그대로 유지한 채 해당 렌더러로 다시 실행합니다. `fullscreen` 명령어는 깜빡임 없는 대체 화면 렌더러를 활성화합니다. 인수를 지정하지 않으면 현재 활성화된 렌더러를 표시합니다.",
+      "searchText": "Set the terminal UI renderer and relaunch into it. fullscreen enables the flicker-free alt-screen renderer. default, or classic on v2.1.327 or later, selects the classic renderer. With no argument, prints the active renderer 터미널 UI 렌더러를 설정하고, 대화 내역을 그대로 유지한 채 해당 렌더러로 다시 실행합니다. `fullscreen` 명령어는 깜빡임 없는 대체 화면 렌더러를 활성화합니다. 인수를 지정하지 않으면 현재 활성화된 렌더러를 표시합니다.",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1509,10 +1509,10 @@
       "name": "/upgrade",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Open the upgrade page in your browser to switch to a higher plan tier. When the browser fails to open, the command shows a sign-in prompt without printing the URL",
+      "description": "Open the upgrade page in your browser to switch to a higher plan tier. When no browser can open the page, for example over SSH, the command prints the page's URL above its sign-in prompt. Printing the URL requires Claude Code v2.1.323 or later",
       "descriptionKo": "업그레이드 페이지를 열어 더 높은 요금제로 변경하세요",
       "aliases": [],
-      "searchText": "Open the upgrade page in your browser to switch to a higher plan tier. When the browser fails to open, the command shows a sign-in prompt without printing the URL 업그레이드 페이지를 열어 더 높은 요금제로 변경하세요",
+      "searchText": "Open the upgrade page in your browser to switch to a higher plan tier. When no browser can open the page, for example over SSH, the command prints the page's URL above its sign-in prompt. Printing the URL requires Claude Code v2.1.323 or later 업그레이드 페이지를 열어 더 높은 요금제로 변경하세요",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1535,10 +1535,10 @@
       "name": "/usage-credits",
       "args": "",
       "hasRequiredArg": false,
-      "description": "Configure usage credits, or request them from your admin, when you hit a limit. Opens your [usage-credits billing settings](https://code.claude.com/docs/en/costs.md#add-usage-credits-to-your-subscription) in the browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI, after confirming in a dialog that the request notifies their admins. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously `/extra-usage`",
+      "description": "Configure usage credits, or request them from your admin, when you hit a limit. Opens your [usage-credits billing settings](https://code.claude.com/docs/en/costs.md#add-usage-credits-to-your-subscription) in the browser. Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI. At a terminal where no browser can open the page, for example over SSH, the command prints the URL. Printing it requires Claude Code v2.1.205 or later. Previously `/extra-usage`",
       "descriptionKo": "한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: `/extra-usage`",
       "aliases": [],
-      "searchText": "Configure usage credits, or request them from your admin, when you hit a limit. Opens your usage-credits billing settings in the browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI, after confirming in a dialog that the request notifies their admins. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
+      "searchText": "Configure usage credits, or request them from your admin, when you hit a limit. Opens your usage-credits billing settings in the browser. Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI. At a terminal where no browser can open the page, for example over SSH, the command prints the URL. Printing it requires Claude Code v2.1.205 or later. Previously /extra-usage 한도에 도달해도 계속 사용할 수 있도록 사용 크레딧을 설정하세요. 이전 내용: /extra-usage",
       "firstSeen": "2026-06-20",
       "minVersion": "",
       "resources": []
@@ -1624,94 +1624,94 @@
   ],
   "officialVideos": [
     {
-      "videoId": "jKRl_CSVxyI",
-      "title": "Using Claude Opus 5.5 as your daily driver",
-      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
-      "published": "2026-09-23T16:41:37+00:00"
+      "videoId": "t2Zo3YAJdj4",
+      "title": "Five brand new ways to use Claude at work",
+      "url": "https://www.youtube.com/watch?v=t2Zo3YAJdj4",
+      "published": "2026-11-18T18:39:05+00:00"
     },
     {
-      "videoId": "LCQ0_t02OHY",
-      "title": "Sometimes the whole point of a project is who it’s for",
-      "url": "https://www.youtube.com/watch?v=LCQ0_t02OHY",
-      "published": "2026-09-23T15:43:14+00:00"
+      "videoId": "RRj07Hc3ikU",
+      "title": "A season on the farm with AI",
+      "url": "https://www.youtube.com/watch?v=RRj07Hc3ikU",
+      "published": "2026-11-17T18:43:13+00:00"
     },
     {
-      "videoId": "FcK--rzZfpA",
-      "title": "Meet Claude Opus 5.5",
-      "url": "https://www.youtube.com/watch?v=FcK--rzZfpA",
-      "published": "2026-09-22T17:47:25+00:00"
+      "videoId": "Up_Z9sVQdy0",
+      "title": "How Expedia Group builds with Claude managed agents",
+      "url": "https://www.youtube.com/watch?v=Up_Z9sVQdy0",
+      "published": "2026-11-16T15:28:33+00:00"
     },
     {
-      "videoId": "1f13Bl1sYkw",
-      "title": "Introducing Claude Opus 5.5",
-      "url": "https://www.youtube.com/watch?v=1f13Bl1sYkw",
-      "published": "2026-09-22T16:32:25+00:00"
+      "videoId": "YUYeHMsqbmY",
+      "title": "Introducing Claude Meetings",
+      "url": "https://www.youtube.com/watch?v=YUYeHMsqbmY",
+      "published": "2026-11-12T20:10:59+00:00"
     },
     {
-      "videoId": "K-pgPNFcAj4",
-      "title": "GPS, explained by Claude Opus 5.5",
-      "url": "https://www.youtube.com/watch?v=K-pgPNFcAj4",
-      "published": "2026-09-22T16:32:22+00:00"
+      "videoId": "p2xvJAbF-i4",
+      "title": "Building the Claude API for the frontier",
+      "url": "https://www.youtube.com/watch?v=p2xvJAbF-i4",
+      "published": "2026-11-12T17:00:11+00:00"
     },
     {
-      "videoId": "Ov-B6K1EsaI",
-      "title": "Claude Opus 5.5 rebuilds Earthrise in 3D, down to the second",
-      "url": "https://www.youtube.com/watch?v=Ov-B6K1EsaI",
-      "published": "2026-09-22T16:32:18+00:00"
+      "videoId": "Esh-w8QVCpE",
+      "title": "When to use every Claude model",
+      "url": "https://www.youtube.com/watch?v=Esh-w8QVCpE",
+      "published": "2026-11-12T16:34:54+00:00"
     },
     {
-      "videoId": "lCR9epzSNGc",
-      "title": "Claude Opus 5.5 builds daydreams that hold together",
-      "url": "https://www.youtube.com/watch?v=lCR9epzSNGc",
-      "published": "2026-09-22T16:32:15+00:00"
+      "videoId": "2_z9c-6AOSc",
+      "title": "Mariko Mori's world of radiant light",
+      "url": "https://www.youtube.com/watch?v=2_z9c-6AOSc",
+      "published": "2026-11-12T00:14:53+00:00"
     },
     {
-      "videoId": "uMsZ21ubIMM",
-      "title": "Claude Opus 5.5 turns graphite into gravity",
-      "url": "https://www.youtube.com/watch?v=uMsZ21ubIMM",
-      "published": "2026-09-22T16:32:04+00:00"
+      "videoId": "C33hJGt-ySg",
+      "title": "Fable 5.2 or Opus? When to use each model in Claude Code",
+      "url": "https://www.youtube.com/watch?v=C33hJGt-ySg",
+      "published": "2026-11-11T17:30:20+00:00"
     },
     {
-      "videoId": "kF1BvUK5_Mc",
-      "title": "Claude Cowork and chat are now one Claude",
-      "url": "https://www.youtube.com/watch?v=kF1BvUK5_Mc",
-      "published": "2026-09-21T14:34:21+00:00"
+      "videoId": "YewAJPawE7I",
+      "title": "Introducing Claude Whiteboards, Sheets, and Data",
+      "url": "https://www.youtube.com/watch?v=YewAJPawE7I",
+      "published": "2026-11-10T17:26:09+00:00"
     },
     {
-      "videoId": "71-8fJIGi34",
-      "title": "Which Claude model should you use?",
-      "url": "https://www.youtube.com/watch?v=71-8fJIGi34",
-      "published": "2026-09-18T16:22:53+00:00"
+      "videoId": "Gy1jSeSzAhk",
+      "title": "Your apps have moved into Claude",
+      "url": "https://www.youtube.com/watch?v=Gy1jSeSzAhk",
+      "published": "2026-11-10T17:26:06+00:00"
     },
     {
-      "videoId": "5qt_aGyAsKk",
-      "title": "Projects are now a conversation with Claude",
-      "url": "https://www.youtube.com/watch?v=5qt_aGyAsKk",
-      "published": "2026-09-17T17:04:42+00:00"
+      "videoId": "4sV2Wzo1V1s",
+      "title": "Meet Claude Fable 5.2",
+      "url": "https://www.youtube.com/watch?v=4sV2Wzo1V1s",
+      "published": "2026-11-09T19:04:05+00:00"
     },
     {
-      "videoId": "To5nrYqvR44",
-      "title": "Meet Claude Slides, Claude Design and Claude Docs",
-      "url": "https://www.youtube.com/watch?v=To5nrYqvR44",
-      "published": "2026-09-16T19:12:46+00:00"
+      "videoId": "vdYynH177h0",
+      "title": "Claude Fable 5.2 designs a working voice-assistant hub",
+      "url": "https://www.youtube.com/watch?v=vdYynH177h0",
+      "published": "2026-11-09T18:57:00+00:00"
     },
     {
-      "videoId": "qMUf-jwSpMo",
-      "title": "Claude Cowork and chat are now one Claude",
-      "url": "https://www.youtube.com/watch?v=qMUf-jwSpMo",
-      "published": "2026-09-16T16:18:12+00:00"
+      "videoId": "FMbXUxn_nBw",
+      "title": "Claude Mythos 5.2 predicts the structure of a therapy capsid",
+      "url": "https://www.youtube.com/watch?v=FMbXUxn_nBw",
+      "published": "2026-11-09T18:56:56+00:00"
     },
     {
-      "videoId": "LQkcGtkSLNQ",
-      "title": "Frontier Day | Claude for startups",
-      "url": "https://www.youtube.com/watch?v=LQkcGtkSLNQ",
-      "published": "2026-09-15T18:16:37+00:00"
+      "videoId": "6a1QSJlsYpU",
+      "title": "Introducing Claude Fable 5.2",
+      "url": "https://www.youtube.com/watch?v=6a1QSJlsYpU",
+      "published": "2026-11-09T18:56:50+00:00"
     },
     {
-      "videoId": "t6z0Ea0GwSk",
-      "title": "Salesforce in Claude",
-      "url": "https://www.youtube.com/watch?v=t6z0Ea0GwSk",
-      "published": "2026-09-15T14:47:54+00:00"
+      "videoId": "4ZsVR-6YOzs",
+      "title": "How Salesforce uses Claude Code",
+      "url": "https://www.youtube.com/watch?v=4ZsVR-6YOzs",
+      "published": "2026-11-06T17:03:04+00:00"
     }
   ]
 }
